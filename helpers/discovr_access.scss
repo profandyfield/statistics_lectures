@@ -45,14 +45,15 @@ $body-bg: $wht !default;
 $body-color: $txt !default;
 $link-color: $link !default;
 $selection-bg: $txt !default;
-$border-color:  $link;
+$border-color:  $link !default;
 $subtitle: $wht !default;
 $code-block-bg: rgba($quote, .01) !default;
 $code-bg: rgba($emph1, .1) !default;
 $code-color: $emph1 !default;
 
-
 /*-- scss:rules --*/
+
+
 
 .slide-background-content{
   background-image: url("https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg");
@@ -90,9 +91,23 @@ $code-color: $emph1 !default;
   color: $link !important;
 }
 
+/* tabset colours */
 
+.reveal .slide .panel-tabset a {
+  border-color: $txt;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
 
-
+.reveal .slide .panel-tabset a:hover {
+  border-color: $wht;
+  background-color: $link;
+  color: $wht;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
 
 /* callouts */
 
@@ -129,6 +144,7 @@ $code-color: $emph1 !default;
 .reveal .slide-menu-button .fa-bars::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(68, 126, 65)" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>') !important;
 }
+
 
 /* general styles */
 
