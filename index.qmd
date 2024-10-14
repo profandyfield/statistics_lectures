@@ -10,3 +10,40 @@ format:
     theme: [helpers/discovr_access.scss]
 ---
 
+## Discovering Statistics lectures
+
+1. [The SPINE of statistics: The linear model, parameters and estimation]()
+2. [The SPINE of statistics: standard error and confidence intervals]() 
+3. [The SPINE of statistics: NHST]()
+4. [Model fit and multiple predictors]()
+5. [The beast of bias](ds_05_bias/ds_bias.html)
+6. [Categorical predictors: comparing means]()
+7. [Contrast coding]()
+8. [Adjusting means]()
+9. [Factorial designs]()
+10. [Repeated measures designs]()
+11. [Mixed designs]()
+12. [Categorical outcomes]() 
+
+## An adventure in Statistics lectures
+
+1. [The SPINE of statistics: The linear model, parameters and estimation]()
+2. [The SPINE of statistics: standard error and confidence intervals]() 
+3. [The SPINE of statistics: NHST]()
+4. [Beyond significance testing]() 
+5. [Model fit and multiple predictors]()
+6. [The beast of bias](ais_06_bias/ais_bias.html)
+7. [Categorical predictors: comparing means]() 
+8. [Contrast coding]() 
+9. [Adjusting means]() 
+10. [Factorial designs]()
+11. [Multilevel models](ais_11_mlm/mlm.html)
+12. [Repeated measures as a multilevel model]() 
+13. [Growth models]() 
+14. [Categorical outcomes]()
+
+## Misc
+
+- [Getting started in R, RStudio and R Markdown]()
+- [Meta-analysis: overview](meta_analysis/meta_intro.html)
+
