@@ -6,40 +6,49 @@ format:
 
 
 
-![](media/dsr2_fig_06_05_error_zoom_01.png){}
+![](media/ds6_fig_06_03_pop_model_no_obs.png){}
 
 ::: notes
 The assumptions relate to the population, which of course we cannot observe.
 :::
 
-## Errors vs residuals
+## Normally distributed errors
 
-![](media/dsr2_fig_06_05_error_zoom_02.png){}
+![](media/ds6_fig_06_05_normal_errors.png){}
 
 ::: notes
-The population model will not be perfect. There will be error in prediction. These errors are known as disturbances or errors. Assumptions relate to these. 
+The population model will not be perfect. There will be error in prediction. These errors are known as disturbances or errors. Assumptions relate to these. At each level of the predictor, errors are assumed to be normal with fixed variance.
 :::
 
+## Normally distributed errors
 
+\
+
+::: txt_xl
+
+$$
+\begin{aligned}
+\text{Ringing}_i &= \hat{b}_0 + \hat{b}_1\text{Volume}_i + \varepsilon_i \\
+\varepsilon_i &\sim N(0, \sigma^2)
+\end{aligned}
+$$
+:::
 
 ## Errors (Population model)
 
-![](media/dsr2_fig_06_05_error_zoom_03.png){}
-
-## Errors (not observable)
-
-![](media/dsr2_fig_06_06_disturbances.png){}
+![](media/ds6_fig_06_06_pooled_errors.png){}
 
 ::: notes
-Assumptions relate to population errors. For example, we assume they have a normal distribution when we use OLS estimation. We cannot test this assumption directly because we cannot observe errors.
+Normal random variables (in this case errors) will sum to a normal distribution.
 :::
+
 
 ##  Residuals (are observable)
 
-![](media/dsr2_fig_06_07_sample_model.png){}
+![](media/ds6_fig_06_07_sample_model.png){}
 
 
 ::: notes
-Instead we look at the errors in prediction in the sample (known as residuals). If residuals are normally distributed then the population errors are likely to be as well.
+Assumptions relate to population errors. For example, we assume they have a normal distribution when we use OLS estimation. We cannot test this assumption directly because we cannot observe errors. Instead we look at the errors in prediction in the sample (known as residuals). If residuals are normally distributed then the population errors are likely to be as well.
 :::
 
