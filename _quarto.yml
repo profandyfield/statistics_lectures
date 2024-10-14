@@ -1,0 +1,21 @@
+project:
+  title: "Statistiocs lectures"
+  type: default
+editor: source
+
+format:
+  revealjs:
+    theme: [helpers/discovr_access.scss]
+    template-partials:
+      - /helpers/title-slide.html
+    title-slide-attributes:
+      data-background-image: shared_media/images/slide_background_title.jpg
+      data-background-size: 100%
+      data-background-position: center
+      data-background-opacity: "1"
+    slide-number: true
+    fig-align: center
+    chalkboard:
+      buttons: false
+    preview-links: auto
+

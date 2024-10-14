@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+.DS_Store
+.quarto
+media_dev/
+
+/.quarto/
+.Rdata
+.httr-oauth
