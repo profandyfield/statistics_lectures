@@ -38,7 +38,7 @@ format:
 9. [Adjusting means]() 
 10. [Factorial designs]()
 11. [Multilevel models](ais_11_mlm/mlm.html)
-12. [Repeated measures as a multilevel model]() 
+12. [Repeated measures as a multilevel model](ais_12_rm_designs/repeated_measures_lme.html) 
 13. [Growth models]() 
 14. [Categorical outcomes]()
 
