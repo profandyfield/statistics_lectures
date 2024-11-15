@@ -1,0 +1,36 @@
+---
+title: "space_middle"
+format: revealjs
+editor: source
+---
+
+##  {background-image="../shared_media/images/daze_mid_still.jpg" background-size="cover"}
+
+<audio>
+  <source src="../shared_media/audio/spaceship_interior.mp3" type="audio/mpeg">
+  <source src="../shared_media/audio/spaceship_interior.ogg" type="audio/ogg"/>
+</audio>
+
+::: notes
+**Hora**: Daze, you're back. Good news. The sniffer dogs did well, although the result was not significant, the sample was small and the effect sizes look strong. I'm optimistic.
+:::
+
+##  {background-video="../shared_media/video/daze_middle_01.mp4" background-size="cover"}
+
+::: notes
+**Daze**: We have intercepted another transmission.
+**Hora**: Oh no, show me.
+:::
+
+##  {background-video="../shared_media/video/transmission_02_lme.mp4" background-size="cover"}
+
+::: notes
+:::
+
+##  {background-video="../shared_media/video/daze_middle_02.mp4" background-size="cover"}
+
+::: notes
+**Daze**: I told you, not good news ... they don't like dogs! What kind of evil creatures are we dealing with?
+
+**Hora**: Masking with scents? Interesting. Let's do some more research.
+:::
