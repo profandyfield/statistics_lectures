@@ -6,8 +6,8 @@ editor: source
 
 ##  {background-image="../shared_media/images/daze_mid_still.jpg" background-size="cover"}
 
-<audio>
-  <source src="../shared_media/audio/spaceship_interior.mp3" type="audio/mpeg">
+<audio autoplay>
+  <source src="../shared_media/audio/spaceship_interior.mp3" type="audio/mpeg"/>
   <source src="../shared_media/audio/spaceship_interior.ogg" type="audio/ogg"/>
 </audio>
 
