@@ -256,3 +256,55 @@ style_my_kable <- function(kable_output, font_size = 18, nrows = 1, padding = 10
     kableExtra::row_spec(1:nrows, extra_css = pad_text)
 }
 
+get_row <- function(tidyobject, row, digits = 2, p_digits = 3){
+  n <- nrow(tidyobject)
+  dp <- paste0("%.", digits, "f")
+  p_dp <- paste0("%.", p_digits, "f")
+
+
+  tidyobject |>
+    dplyr::rename(
+      df = contains("df"),
+      p.value = contains("p.value")
+    ) |>
+    insight::standardize_names(style = "broom") |>
+    dplyr::mutate(
+      row_number = 1:n,
+      p.value = ifelse(p.value < 0.001, "*p* < 0.001", paste("*p* =", sprintf(p_dp, p.value))),
+      ci = paste0("[", sprintf(dp, conf.low), ", ", sprintf(dp, conf.high), "]"),
+      across(.cols = where(is.double), \(x) sprintf(dp, x))
+    ) |>
+    dplyr::filter(row_number == row)
+}
+
+report_pars <- function(tidyobject, row, digits = 2, p_digits = 3, fixed = TRUE, df_r = NULL, glm = F){
+  row <- get_row(tidyobject, row, digits, p_digits)
+
+  if(glm){
+    stat = "*z*"
+  } else {
+    stat = "*t*"
+  }
+
+  if(!is.null(df_r)){
+    t_text <- paste0(", ", stat, "(", df_r, ") = ")
+  } else {
+    t_text <- paste(",", stat, "= ")
+  }
+
+  if(fixed){
+    paste0(row$estimate, " ", row$ci, t_text, row$statistic, ", ", row$p.value)
+  } else {
+    if(is.na(row$conf.low) | is.na(row$conf.high)){
+      row$estimate
+    } else {
+      paste(row$estimate, row$ci)
+    }
+
+  }
+}
+
+
+
+
+
