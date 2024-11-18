@@ -462,21 +462,20 @@ $$
 
 ## Approaches to repeated measures designs
 
-Historic: Repeated measures ANOVA (RM-ANOVA)
+### Historic: Repeated measures ANOVA (RM-ANOVA)
 
-- Restricts the model in two ways
-- Assumes effects are equivalent across participants (the effect in participant 1 is the same as in participant 2)
-- Errors have compound symmetry/sphericity
+- Restricts the model in two (unrealistic) ways
+  1. Assumes effects are equivalent across participants (the effect in participant 1 is the same as in participant 2)
+  2. Errors have compound symmetry/sphericity
     - CS: The correlation between scores across conditions is the same
-    - Sphericity: differences between scores in pairs of conditions have the same variance
-    - These restrictions may be unrealistic
+    - Sphericity: differences between scores in pairs of conditions have equal variances
     
-Multilevel modelling (MLM) approach
+### Multilevel modelling (MLM) approach
 
 - Fewer restrictions: doesn't require CS or sphericity
-- MLM can include multiple hierarchical structures (e.g., observations within people, within clinics)
-- MLMs can (in general) cope with missing values RM-ANOVA cannot.
-- MLMs can be extended to categorical outcomes, RM-ANOVA cannot.
+- Can include multiple hierarchical structures (e.g., observations within people, within clinics)
+- In general, copes with missing values (RM-ANOVA doesn't)
+- Can be extended to categorical outcomes (RM-ANOVA cannot)
 - Contrast coding is possible
 
 
