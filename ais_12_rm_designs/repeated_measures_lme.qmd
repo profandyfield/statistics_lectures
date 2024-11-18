@@ -1041,6 +1041,14 @@ The fox scent increases vocalizations to humans and although it reduces vocaliza
 :::
 
 
+## Diagnostic plots
+
+```{r, echo = T, fig.width = 10, fig.height = 5.5}
+performance::check_model(scent_int, check = c("linearity", "homogeneity", "qq", "reqq"))
+```
+
+
+
 ##  {background-video="../shared_media/video/space_closing_scene.mp4" background-size="cover"}
 
 
