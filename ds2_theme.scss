@@ -1,0 +1,137 @@
+$mainFontSize: 24px;
+$heading1Size: 2.00em;
+$heading2Size: 1.55em;
+$heading3Size: 1.25em;
+$heading4Size: 1.00em;
+
+
+$grey: #616161 !default;
+$purple: #49345b !default;
+$mulberry: #882255  !default;
+$brown: #86753E  !default;
+$green: #427479 !default;
+$wht: #FFFFFF !default;
+$blue: #3C648C !default;
+
+
+$headingColor: $purple;
+
+$callout-color-note: $purple !default;
+$callout-color-tip: $green !default;
+$callout-color-important: $blue !default;
+$callout-color-caution: $brown !default;
+$callout-color-warning: $mulberry !default;
+
+
+
+
+
+/*-- scss:rules --*/
+
+
+.slide-background-content{
+  background-image: url("https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg");
+  background-size: cover;
+}
+
+
+
+/* hamburger colour */
+
+.reveal .slide-menu-button .fa-bars::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(68, 126, 65)" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>') !important;
+}
+
+.reveal .progress {
+  color: $mulberry !important;
+  height: 1%;
+}
+
+.reveal .slide h4 {
+  color: $blue !important;
+}
+
+.reveal .slide h3 {
+  color: $brown !important;
+}
+
+/* tabset colours */
+
+.reveal .slide .panel-tabset a {
+  border-color: $brand-grey;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.reveal .slide .panel-tabset a:hover {
+  border-color: $brand-white;
+  background-color: $brand-brown;
+  color: $brand-white;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+
+// start using css here
+
+p.subtitle {
+  color: white !important;
+}
+
+.title {
+  font-size: 60px !important;
+  color: white !important;
+}
+
+.author {
+  font-size: 40px;
+  color: white;
+}
+
+.institute {
+  font-size: 30px;
+  font-style: italic;
+  color: white;
+}
+
+
+.txt_300 {
+    font-size: 300%;
+}
+
+.txt_xl {
+    font-size: 150%;
+}
+
+.txt_l {
+    font-size: 125%;
+}
+
+.txt_tbl {
+  font-size: 80%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.bold_col {
+    color: $brand-brown;
+    font-weight: bold;
+}
+
+.txt_white {
+    color: white;
+}
+
+.txt_blue {
+    color: $blue;
+}
+
+.txt_mulberry {
+    color: $mulberry;
+}
+
+.alt {
+    color: $brand-mulberry;
+}

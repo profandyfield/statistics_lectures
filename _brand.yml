@@ -1,0 +1,31 @@
+color:
+  palette:
+    grey: "#616161"
+    purple: "#49345b"
+    mulberry: "#882255"
+    brown: "#86753E"
+    green: "#427479"
+    white: "#FFFFFF"
+    blue: "#3C648C"
+  foreground: grey
+  primary: brown
+  secondary: white
+  info: purple
+  success: green
+  warning: brown
+  danger: mulberry
+
+
+typography:
+  fonts:
+    - family: Poppins
+      source: google
+    - family: Sintony
+      source: google
+    - family: Fira Mono
+      source: google
+  base: Poppins
+  headings: Sintony
+  monospace: Fira Mono
+
+

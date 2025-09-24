@@ -1,11 +1,15 @@
 project:
-  title: "Statistiocs lectures"
+  title: "Statistics lectures"
   type: default
 editor: source
 
 format:
   revealjs:
-    theme: [helpers/discovr_access.scss]
+    background-image: url("https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg")
+    theme:
+      - brand
+      - ds2_theme.scss
+      - white
     template-partials:
       - /helpers/title-slide.html
     title-slide-attributes:
@@ -18,4 +22,6 @@ format:
     chalkboard:
       buttons: false
     preview-links: auto
+    code-fold: false
+    highlight: "kate"
 
