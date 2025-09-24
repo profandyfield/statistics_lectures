@@ -222,9 +222,7 @@ $$
 - [**I**]{.alt}nterpret: use the model to answer your question
 :::
 
-##
-
-![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
+## {background-image="../shared_media/images/dsr2_fig_04_39_workflow.png" background-size="cover"}
 
 
 ## Let's return to our question

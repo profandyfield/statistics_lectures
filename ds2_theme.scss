@@ -109,10 +109,22 @@ p.subtitle {
     font-size: 125%;
 }
 
-.txt_tbl {
-  font-size: 80%;
-  padding-bottom: 10px;
-  padding-top: 10px;
+.tbl_sm table {
+  font-size: .5em;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: #e6edf4;
+  }
+}
+
+.tbl_med table {
+  font-size: .75em;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: #e6edf4;
+  }
 }
 
 .bold_col {

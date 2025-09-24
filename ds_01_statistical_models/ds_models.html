@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-71b9ed9712dc2d51f88385e36d90d71f.css">
+  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-565b2c4aa8cb6cac11d994883adb8105.css">
   <link href="ds_models_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -544,6 +544,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">chisq.test</span>(zom_fct_tib<span class="sc">$</span>organism, zom_fct_tib<span class="sc">$</span>chip, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -566,6 +567,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </table>
 </div>
 </div>
+</div>
 </section>
 <section id="section-17" class="slide level2">
 <h2></h2>
@@ -576,7 +578,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="txt_tbl">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -623,7 +625,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="txt_tbl">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -671,7 +673,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <p><br>
 </p>
 <div class="fragment">
-<div class="txt_tbl">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -717,7 +719,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <p><br>
 </p>
 <div class="fragment">
-<div class="txt_tbl">
+<div class="tbl_med">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">t.test</span>(brains<span class="sc">$</span>organism, potatoes<span class="sc">$</span>organism)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -768,6 +770,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <p><br>
 </p>
 <div class="fragment">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -803,6 +806,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="section-22" class="slide level2">
 <h2></h2>
@@ -814,6 +818,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <p><br>
 </p>
 <div class="fragment">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -832,15 +837,15 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: white !important;">(Intercept)</td>
-<td style="text-align: right; background-color: white !important;">0.685</td>
-<td style="text-align: right; background-color: white !important;">0.051</td>
-<td style="text-align: right; background-color: white !important;">0.95</td>
-<td style="text-align: right; background-color: white !important;">0.584</td>
-<td style="text-align: right; background-color: white !important;">0.786</td>
-<td style="text-align: right; background-color: white !important;">13.390</td>
-<td style="text-align: right; background-color: white !important;">186</td>
-<td style="text-align: right; background-color: yellow !important; background-color: white !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.685</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.051</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.95</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.584</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.786</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">13.390</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">186</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor(chip)1</td>
@@ -858,6 +863,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="section-23" class="slide level2">
 <h2></h2>
@@ -871,6 +877,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <p><br>
 </p>
 <div class="fragment">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -887,13 +894,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: white !important;">me_lm</td>
-<td style="text-align: left; background-color: white !important;">me_lm</td>
-<td style="text-align: left; background-color: white !important;">glm</td>
-<td style="text-align: right; background-color: white !important;">3</td>
-<td style="text-align: right; background-color: white !important;">NA</td>
-<td style="text-align: right; background-color: white !important;">NA</td>
-<td style="text-align: right; background-color: yellow !important; background-color: white !important;">NA</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">me_lm</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">me_lm</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">glm</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">3</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">NA</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">NA</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">full_lm</td>
@@ -909,6 +916,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="section-24" class="slide level2">
 <h2></h2>
@@ -918,7 +926,7 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="txt_tbl">
+<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -935,13 +943,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: white !important;">(Intercept)</td>
-<td style="text-align: right; background-color: white !important;">0.60</td>
-<td style="text-align: right; background-color: white !important;">0.06</td>
-<td style="text-align: right; background-color: white !important;">0.48</td>
-<td style="text-align: right; background-color: white !important;">0.72</td>
-<td style="text-align: right; background-color: white !important;">10.12</td>
-<td style="text-align: right; background-color: yellow !important; background-color: white !important;">0.00</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.60</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.06</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.48</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.72</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">10.12</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.00</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">organism</td>
@@ -1030,13 +1038,8 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <li class="fragment"><span class="alt"><strong>I</strong></span>nterpret: use the model to answer your question</li>
 </ul>
 </section>
-<section id="section-27" class="slide level2">
+<section id="section-27" class="slide level2" data-background-image="../shared_media/images/dsr2_fig_04_39_workflow.png" data-background-size="cover">
 <h2></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../shared_media/images/dsr2_fig_04_39_workflow.png" class="quarto-figure quarto-figure-center" height="600"></p>
-</figure>
-</div>
 </section>
 <section id="lets-return-to-our-question" class="slide level2">
 <h2>Let’s return to our question</h2>

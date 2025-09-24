@@ -64,6 +64,7 @@ chisq.test(zom_fct_tib$organism, zom_fct_tib$chip, correct = FALSE)
 
 \ 
 
+::: tbl_med
 ```{r}
 #| echo: false
 
@@ -73,6 +74,8 @@ parameters::model_parameters(zom_chi) |>
   knitr::kable(digits = 3) |>
   kableExtra::column_spec(3, background = "yellow")
 ```
+
+:::
 
 ##
 ### A Spearman correlation?
@@ -89,7 +92,7 @@ zom_tib |>
 \ 
 
 ::: fragment
-::: txt_tbl
+::: tbl_med
 ```{r}
 #| echo: false
 
@@ -117,7 +120,7 @@ zom_tib |>
 \ 
 
 ::: fragment
-::: txt_tbl
+::: tbl_med
 
 ```{r}
 #| echo: false
@@ -147,7 +150,7 @@ zom_tib |>
 \
 
 ::: fragment
-::: txt_tbl
+::: tbl_med
 
 ```{r}
 #| echo: false
@@ -175,7 +178,7 @@ potatoes <- zom_tib |> dplyr::filter(chip == 1)
 \
 
 ::: fragment
-::: txt_tbl
+::: tbl_med
 
 ```{r}
 #| eval: false
@@ -212,6 +215,7 @@ zom_tib |>
 \
 
 ::: fragment
+::: tbl_med
 
 ```{r}
 #| echo: false
@@ -224,6 +228,7 @@ zom_tib |>
   kableExtra::row_spec(2, background = "white")
 ```
 
+:::
 :::
 
 ##
@@ -240,7 +245,7 @@ zom_tib |>
 \
 
 ::: fragment
-
+::: tbl_med
 ```{r}
 #| echo: false
  
@@ -249,9 +254,10 @@ zom_tib |>
   parameters::model_parameters() |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(9, background = "yellow") |> 
-  kableExtra::row_spec(1, background = "white")
+  kableExtra::row_spec(1, background = "#e6edf4")
 ```
 
+:::
 :::
 
 ##
@@ -270,7 +276,7 @@ performance::test_lrt(me_lm, full_lm)
 \
 
 ::: fragment
-
+::: tbl_med
 ```{r}
 #| echo: false
 
@@ -280,9 +286,10 @@ full_lm <- glm(n ~ organism*chip, family = "poisson", data = zom_freq)
 performance::test_lrt(me_lm, full_lm) |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(7, background = "yellow") |> 
-  kableExtra::row_spec(1, background = "white")
+  kableExtra::row_spec(1, background = "#e6edf4")
 ```
 
+:::
 :::
 
 
@@ -307,7 +314,7 @@ glmmTMB::glmmTMB(chip ~ organism + (1|canteen), data = zom_tib)
 \ 
 
 ::: fragment
-::: txt_tbl
+::: tbl_med
 
 ```{r}
 #| echo: false
@@ -320,7 +327,7 @@ ml_tbl <- glmmTMB::glmmTMB(chip ~ organism + (1|canteen), data = zom_tib) |>
 
 knitr::kable(ml_tbl, digits = 2) |> 
   kableExtra::column_spec(7, background = "yellow") |> 
-  kableExtra::row_spec(1, background = "white")
+  kableExtra::row_spec(1, background = "#e6edf4")
 ```
 
 :::
