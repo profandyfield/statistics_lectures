@@ -45,12 +45,18 @@ Use f to toggle fullscreen
 :::
 
 
-## {background-image="../shared_media/images/spine_map.png" background-size="cover"}
+## 
 
-## {background-image="media/spine_map_lec_02.png" background-size="cover"}
+::: r-stack
+![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
 
-## {background-image="../shared_media/images/dsr2_fig_04_39_workflow.png" background-size="cover"}
+![](media/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+:::
 
+
+##
+
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
 
 
 
