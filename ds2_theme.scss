@@ -4,7 +4,6 @@ $heading2Size: 1.55em;
 $heading3Size: 1.25em;
 $heading4Size: 1.00em;
 
-
 $grey: #616161 !default;
 $purple: #49345b !default;
 $mulberry: #882255  !default;
@@ -53,6 +52,36 @@ $callout-color-warning: $mulberry !default;
 
 .reveal .slide h3 {
   color: $brown !important;
+}
+
+/* table styles (td is data rows, th is heading rows) */
+
+.reveal .slide table tbody tr:nth-child(odd) {
+  background-color: #e6edf4;
+}
+
+
+.reveal .slide table td {
+   padding: 15px;
+   font-size: 18px;
+}
+
+.reveal .slide table th {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.reveal .slide .tbl_s table td,
+.reveal .slide .tbl_s table th {
+  font-size: 60%;
+  padding: 10px;
+}
+
+.reveal .slide .tbl_l table td,
+.reveal .slide .tbl_l table th {
+  font-size: 125%;
+  padding: 20px;
 }
 
 /* tabset colours */
@@ -115,26 +144,6 @@ p.subtitle {
 
 .txt_s {
     font-size: 75%;
-}
-
-.tbl_sm table {
-  font-size: .5em;
-  > tbody > tr:nth-of-type(odd) > * {
-    background-color: #e6edf4;
-  }
-}
-
-.tbl_med table {
-  font-size: .75em;
-  > tbody > tr:nth-of-type(odd) > * {
-    background-color: #e6edf4;
-  }
-}
-
-.tbl_lg table {
-  > tbody > tr:nth-of-type(odd) > * {
-    background-color: #e6edf4;
-  }
 }
 
 
