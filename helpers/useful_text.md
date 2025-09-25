@@ -21,23 +21,15 @@
 :::
 :::
 
+:::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
 ::: {.r-fit-text}
-:::
-
---- callouts
-
-
-::: tip
-`r cat_space()`
-
-:::
-
-::: notes
-`r pen()`
-:::
-
-::: tip
-`r bug()`
 :::
 
 ---code
@@ -75,35 +67,52 @@ LETTERS[x]
 
 ---- callouts ----
 
--- hypothesis
+-- caution
+
+use for THINKING/HYPOTHESES
+
 
 ::: {.callout-caution icon = false}
-## {{< fa brain >}} Hypothesis
+## {{< fa brain >}} Think about it!
 
 - xxxxx
 :::
 
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+Hypothesis
+
+- xxxxx
+:::
+
+
+
 -- tip
 
 ::: {.callout-tip icon = false}
-## `r cat_space()` What they are:
+## `r cat_space()` :
 
 - Intervals that contain the 'true' population value of the parameter in 95% of samples.
 
 :::
 
--- question
+-- note
 
-:::{.callout-note icon=false}
-## {{< fa question >}} Questions to ask yourself
+stats things
 
-- xxx?
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- Intervals that contain the 'true' population value of the parameter in 95% of samples.
 
 :::
 
+
+
 -- list
 
-:::{.callout-tip icon=false}
+:::{.callout-note icon=false}
 ## {{< fa list-ul >}} All models have a S.P.I.N.E
 
 ::: incremental
@@ -113,17 +122,26 @@ LETTERS[x]
 :::
 
 
+-- reportR
+
+:::{.callout-important icon=false}
+## {{< fa pencil >}} Report`r rproj()`
+
+
+:::
+
+
 -- warning
 
-::: fragment
 ::: {.callout-warning icon = false}
-## `r bug()` What they are not:
+## {{< fa skull >}} The danger zone!
+
+What they are not:
 
 - There is NOT a 95% probability that a given interval contains the population value.
     - It is *p* = 0 or *p* = 1, but you can’t know which!
 - They do NOT reflect confidence in the value of the population parameter.
 
-:::
 :::
 
 
