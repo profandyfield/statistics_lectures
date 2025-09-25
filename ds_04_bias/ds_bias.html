@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ds_bias_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ds_bias_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ds_bias_files/libs/quarto-html/popper.min.js"></script>
+<script src="ds_bias_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ds_bias_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ds_bias_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ds_bias_files/libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ds_bias_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="ds_bias_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.22">
+
+  <meta name="author" content="Professor Andy Field">
+  <title>The Beast of Bias</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ds_bias_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ds_bias_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ds_bias_files/libs/revealjs/dist/theme/quarto-52bec7c8fdb744b1f75a516080575022.css">
+  <link href="ds_bias_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ds_bias_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ds_bias_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ds_bias_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="ds_bias_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="ds_bias_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="ds_bias_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="ds_bias_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/dragon_castle_ppt_background_dark.jpg" data-background-opacity="1" data-background-position="center" data-background-size="100%" class="center">
+  <h1 class="title">The Beast of Bias</h1>
+  <p class="author">Professor Andy Field</p>
+  <p class="institute">University of Sussex</p>
+
+<!-- <audio controls>
+  <source src="media/wittr_prayer_of_transformation.mp3" type="audio/mpeg">
+  <source src="media/wittr_prayer_of_transformation.ogg" type="audio/ogg"/>
+</audio> -->
+
+
+
+<style>
+  tr:nth-child(n) {border:none; background-color: rgba(34, 34, 34, 0); line-height: 14px;}
+</style>
+
+<table style="border:none; border-collapse: collapse">
+  <tbody><tr>
+    <td><a href="https://bsky.app/profile/profandyfield.bsky.social" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/bs_logo_60.png">
+      </a>
+      <a href="https://www.youtube.com/user/ProfAndyField" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/youtube_60.png">
+      </a>
+      <a href="https://www.discoveringstatistics.com" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/ds_com_fav.png">
+      </a>
+      <a href="https://www.discovr.rocks" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/discovr_circle.png">
+      </a>
+      <a href="https://www.statisticsadventure.com" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/adventr_circle.png">
+      </a>
+    </td>
+  </tr>
+</tbody></table>
+
+</section>
+
+<section id="section" class="slide level2" data-background-image="media/lone_knight.jpg" data-background-size="cover">
+<h2></h2>
+<audio controls="" autoplay="">
+<source src="media/beast_of_bias_narration.mp3" type="audio/mpeg">
+<source src="media/beast_of_bias_narration.ogg" type="audio/ogg">
+</audio>
+<div class="center-h">
+<div class="txt_l">
+<div class="txt_white">
+<p>All is not well in the island of linearis modelus.</p>
+<p>For years, humans and dragons have lived in harmony, until recently.</p>
+<p>The rulers of the 134 kingdoms want the island for themselves.</p>
+<p>Through a campaign of propaganda, they have convinced their subjects</p>
+<p>that the dragons should be banished.</p>
+<p>They have sent their best knights to slay the dragons.</p>
+<p>Only Melvin, a wise wizzard of statistics, can save them.</p>
+<p>He meets with the commander in chief of the knights of the 134 kingdoms.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>I am Melvin, a wise wizzard of statistics. Who are you?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-1" class="slide level2" data-background-video="media/zach_i_am_zach_field_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Melvin: And what have you been sent to do?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-2" class="slide level2" data-background-video="media/zach_kill_dragons_thank_you_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>But dragons are nice, why would you want to do that?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-3" class="slide level2" data-background-video="media/zach_reasons_captions.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Melvin: That seems very old fashioned - I’m sure they kidnap princes too</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-4" class="slide level2" data-background-video="media/zach-only_kidnap_princesses_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Melvin: I’d better see what the dragons have to say about this.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-5" class="slide level2" data-background-video="media/arlo_stop_zach_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Melvin: Oh dear oh dear. I must save the dragons. Let’s look at those plots again …</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/spine_map.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>We’ve seen this map of the process of fitting models before</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media/spine_lec_04.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Today we focus on the final parts of the process - assessing bias in the model, and corrective action.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="part-1-outliers-and-do-dragons-eat-sheep" class="title-slide slide level1 center">
+<h1>Part 1: Outliers and do dragons eat sheep?</h1>
+<blockquote>
+<p>“Coz they eat all our sheep”</p>
+<p><em>Sir Knight Zach, Defender of the world of Military</em></p>
+</blockquote>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+
+<img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"><aside class="notes">
+<p>This is the plot the night showed me of the number of dragons in each area of the kingdom, and how many livestock were killed per week. It looks as though there is a positive relationship. Residual looks huge, which means it is an outlier, but this doesn’t necessarily mean that it has influenced the model. To see whether it has influenced the model we need to look at what happens when we fit the model <em>without</em> that observation (or those observations).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+
+<img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"><aside class="notes">
+<p>As you can see, without those observations, the line becomes flatter.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="detecting-outliers" class="slide level2">
+<h2>Detecting outliers</h2>
+<div class="fragment">
+<ul>
+<li>Graphs
+<ul>
+<li>Scatterplots (less helpful with several predictors)</li>
+<li>Histograms</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Standardized residual
+<ul>
+<li>In an average sample, 95% of standardized residuals should lie between <span class="math inline">\(\pm 2\)</span></li>
+<li>99% of standardized residuals should lie between <span class="math inline">\(\pm 2.5\)</span></li>
+<li>Any case for which the absolute value of the standardized residual is 3 or more, is likely to be an outlier</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="detecting-influential-cases" class="slide level2">
+<h2>Detecting influential cases</h2>
+<h3 id="df-beta">DF Beta</h3>
+<ul>
+<li>The change in <em>b</em> when a case is removed</li>
+<li>Be wary of standardized values with absolute values &gt; 1</li>
+</ul>
+<div class="fragment">
+<h4 id="full-sample">Full sample</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(51)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">18.82</td>
+<td style="text-align: center;">2.93</td>
+<td style="text-align: center;">(12.94, 24.69)</td>
+<td style="text-align: center;">6.43</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">1.38</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">(0.31, 2.44)</td>
+<td style="text-align: center;">2.59</td>
+<td style="text-align: center;">0.013</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<h4 id="influential-cases-removed">Influential cases removed</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(49)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">22.27</td>
+<td style="text-align: center;">1.64</td>
+<td style="text-align: center;">(18.98, 25.56)</td>
+<td style="text-align: center;">13.60</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">0.31</td>
+<td style="text-align: center;">0.31</td>
+<td style="text-align: center;">(-0.31, 0.93)</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.325</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we look only at kingdoms with dragons, the significant relationship between dragon numbers and livestock deaths is not significant - most important, it has dropped to virtually zero.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="detecting-influential-cases-1" class="slide level2">
+<h2>Detecting influential cases</h2>
+<h3 id="cooks-distance">Cook’s distance</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Measures the <em>influence</em> of a single case on the model as a whole</li>
+<li>Absolute values greater than 1 are cause for concern (Cook &amp; Weisberg , 1982), but check any &gt; 0.5.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="fu">check_outliers</span>(out_lm,</span>
+<span id="cb1-4"><a href=""></a>               <span class="at">method =</span> <span class="st">"cook"</span>,</span>
+<span id="cb1-5"><a href=""></a>               <span class="at">threshold =</span> <span class="fu">list</span>(<span class="st">'cook'</span> <span class="ot">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-6"><a href=""></a>               ) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href=""></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>There are, in fact two influential cases, not one. But they have the same values. Cook’s is OK, but the df beta (standardized) f or the slope is &gt; 1 giving cause for concern. We’d look at whether there were explanations for these observations being unusual. For example …</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-10" class="slide level2" data-background-video="media/shrek_burp.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>These two cases were kingdoms containing Ogres and not dragons. Given we want to know about the relationship between the dragon population and livestock deaths, we might reasonable fit the model without the kingdoms containing Ogres. What happens if we remove these cases?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="robust-estimation" class="slide level2">
+<h2>Robust estimation</h2>
+<h3 id="normal-model-ols">Normal model (OLS)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<span id="cb2-2"><a href=""></a><span class="fu">model_parameters</span>(out_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(51)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">18.82</td>
+<td style="text-align: center;">2.93</td>
+<td style="text-align: center;">(12.94, 24.69)</td>
+<td style="text-align: center;">6.43</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">1.38</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">(0.31, 2.44)</td>
+<td style="text-align: center;">2.59</td>
+<td style="text-align: center;">0.013</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<h3 id="robust-model">Robust model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>out_rob <span class="ot">&lt;-</span> robust<span class="sc">::</span><span class="fu">lmRob</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">model_parameters</span>(out_rob) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Fixed Effects</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(51)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">22.35</td>
+<td style="text-align: center;">1.81</td>
+<td style="text-align: center;">(18.72, 25.98)</td>
+<td style="text-align: center;">12.36</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">(-0.38, 0.98)</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.381</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we look only at kingdoms with dragons, the significant relationship between dragon numbers and livestock deaths is not significant - most important, it has dropped to virtually zero.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-11" class="slide level2" data-background-video="media/arlo_have_you_saved_the_dragons_yet_2_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>I think I may have done …</p>
+<p>CLICK</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-12" class="slide level2" data-background-image="media/zach_knight.jpg" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>So, you see, it was the ogre’s eating the sheep. Without them there’s no significant relationship between the number of dragons and the number of sheep eaten. Can you stop killing the dragons now?</p>
+<p>CLICK</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-13" class="slide level2" data-background-video="media/zach_shakes_head.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>CLICK: Zach chasing Arlo ….</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-14" class="slide level2" data-background-video="media/dragon_chase.mp4" data-background-size="cover">
+<h2></h2>
+</section></section>
+<section>
+<section id="part-2-linearity-spherical-errors-and-do-dragons-kidnap-royalty" class="title-slide slide level1 center">
+<h1>Part 2: Linearity, spherical errors and do dragons kidnap royalty?</h1>
+<blockquote>
+<p>“Coz they kidnap the princesses”</p>
+<p><em>Sir Knight Zach, Defender of the world of Military</em></p>
+</blockquote>
+</section>
+<section id="are-more-princesses-kidnapped-in-areas-with-more-dragons" class="slide level2">
+<h2>Are more princesses kidnapped in areas with more dragons?</h2>
+<div class="center-h">
+<div class="txt_mulberry">
+<p><span class="math display">\[\hat{\text{royalty}}_i = 3.98 + 0.12\text{dragons}_{i}\]</span></p>
+</div>
+</div>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(128)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">3.98</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">(3.39, 4.57)</td>
+<td style="text-align: center;">13.32</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">(5.30e-03, 0.23)</td>
+<td style="text-align: center;">2.07</td>
+<td style="text-align: center;">0.040</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>It seems like the number of dragons in an area significantly predicts the number of princesses kidnapped</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="are-more-princesses-kidnapped-in-areas-that-have-dragons" class="slide level2">
+<h2>Are more princesses kidnapped in areas that have dragons?</h2>
+<div class="center-h">
+<div class="txt_mulberry">
+<p><span class="math display">\[\hat{\text{royalty}}_i = 4.26 + 1.21\text{dragons}_{i}\]</span></p>
+</div>
+</div>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 9%">
+<col style="width: 21%">
+<col style="width: 10%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(87)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">4.26</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">(3.43, 5.08)</td>
+<td style="text-align: center;">10.28</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons (Dragons)</td>
+<td style="text-align: center;">1.21</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">(0.15, 2.26)</td>
+<td style="text-align: center;">2.27</td>
+<td style="text-align: center;">0.026</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-15-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>It seems like significantly more princesses are kidnapped in areas that have dragons compared to those without</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="key-assumptions-of-the-general-linear-model" class="slide level2">
+<h2>Key assumptions of the General Linear Model</h2>
+<h3 id="linearity-and-additivity">Linearity and additivity</h3>
+<div class="fragment">
+<h3 id="spherical-errors">Spherical errors</h3>
+<p>The population model should have:</p>
+<ul>
+<li>Homoscedastic errors
+<ul>
+<li>Inspect the model residuals</li>
+</ul></li>
+<li>Independent errors
+<ul>
+<li>Inspect the model residuals</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<h3 id="normality-of-something-or-other">Normality of something-or-other</h3>
+<ul>
+<li>Population model errors</li>
+<li>Sampling distribution</li>
+</ul>
+</div>
+</section>
+<section id="linearity-and-additivity-1" class="slide level2">
+<h2>Linearity and additivity</h2>
+<p>The relationship between predictor(s) and outcome is, in reality, linear</p>
+<div class="txt_mulberry">
+<p><span class="math display">\[\text{royalty}_i = \hat{b}_0 + \hat{b}_1\text{dragons}_{i} + e_i\]</span></p>
+</div>
+<p>The combined effect of predictors is additive</p>
+<div class="txt_mulberry">
+<p><span class="math display">\[\text{royalty}_i = \hat{b}_0 + \hat{b}_1\text{dragons}_{i} + \hat{b}_2\text{strict regime}_{i} + e_i\]</span></p>
+</div>
+<p><br>
+</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Test linearity using plots. If the data cloud looks banana shaped (curved), linearity probably can’t be assumed.</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Imagine we factored in how strict the regime was (i.e.&nbsp;how restricted royalty were and how much they were expected to conform to traditional roles. Might predict their desire to escape.). The effect of how many dragons and the regime of interest should be, in reality, additive.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="errors-vs.-residuals" class="slide level2">
+<h2>Errors vs.&nbsp;Residuals</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A model’s <strong>ERROR</strong>s refer to the differences between predicted values and observed values of the outcome variable <strong>in the population model</strong></li>
+<li>These values cannot be observed</li>
+</ul>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A model’s <strong>RESIDUAL</strong>s refer to the differences between predicted values and observed values of the outcome variable <strong>in the sample model</strong></li>
+<li>These values can be observed and are representative of the population model errors.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+
+<img data-src="media/ds6_fig_06_03_pop_model_no_obs.png" class="r-stretch"><aside class="notes">
+<p>The assumptions relate to the population, which of course we cannot observe.</p>
+<p>The population model will not be perfect. There will be error in prediction. These errors are known as disturbances or errors. Assumptions relate to these. At each level of the predictor, errors are assumed to be normal with fixed variance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="normally-distributed-errors" class="slide level2">
+<h2>Normally distributed errors</h2>
+<p><br>
+</p>
+<div class="txt_mulberry">
+<div class="txt_xl">
+<p><span class="math display">\[
+\begin{aligned}
+\text{Ringing}_i &amp;= \hat{b}_0 + \hat{b}_1\text{Volume}_i + \varepsilon_i \\
+\varepsilon_i &amp;\sim N(0, \sigma^2)
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="errors-population-model" class="slide level2">
+<h2>Errors (Population model)</h2>
+
+<img data-src="media/ds6_fig_06_06_pooled_errors.png" class="r-stretch"><aside class="notes">
+<p>Normal random variables (in this case errors) will sum to a normal distribution.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="residuals-are-observable" class="slide level2">
+<h2>Residuals (are observable)</h2>
+
+<img data-src="media/ds6_fig_06_07_sample_model.png" class="r-stretch"><aside class="notes">
+<p>Assumptions relate to population errors. For example, we assume they have a normal distribution when we use OLS estimation. We cannot test this assumption directly because we cannot observe errors. Instead we look at the errors in prediction in the sample (known as residuals). If residuals are normally distributed then the population errors are likely to be as well.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="spherical-errors-1" class="slide level2">
+<h2>Spherical errors</h2>
+<h3 id="errors-should-be-independent">Errors should be independent</h3>
+<ul>
+<li>The <strong>population</strong> error in prediction for one case should not be related to the error in prediction for another case (<strong>autocorrelation</strong>).</li>
+<li>Independent observations tend to lead to independent errors</li>
+<li><strong>Because we cannot observe population errors we inspect the sample residuals</strong></li>
+</ul>
+<div class="fragment">
+<h3 id="errors-should-be-homoscedastic">Errors should be homoscedastic</h3>
+<ul>
+<li>Variance of population errors (residuals) should be consistent at different values of the predictor variable</li>
+<li><strong>Because we cannot observe population errors we inspect the sample residuals</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<h3 id="violation-of-the-assumption">Violation of the assumption</h3>
+<ul>
+<li><em>b</em>s are unbiased but not optimal</li>
+<li>Standard error is incorrect
+<ul>
+<li>Therefore, <em>t</em>-tests, <em>p</em>-values and confidence intervals will also be incorrect</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="residuals-vs.-predicted-values" class="slide level2">
+<h2>Residuals vs.&nbsp;Predicted values</h2>
+
+<img data-src="media/dsr2_fig_06_28_pred_resid.png" class="r-stretch"></section>
+<section id="residuals-vs.-predicted-values-1" class="slide level2">
+<h2>Residuals vs.&nbsp;Predicted values</h2>
+
+<img data-src="media/dsr2_fig_06_28_pred_resid_overlay.png" class="r-stretch"></section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="homoscedastic">Homoscedastic</h3>
+<p><img data-src="media/hom_con_plot.png" width="450"></p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<h3 id="our-data">Our data</h3>
+<p><img data-src="media/het_con_plot.png" width="450"></p>
+</div>
+</div></div>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="homoscedastic-1">Homoscedastic</h3>
+<p><img data-src="media/hom_con_plot_layer.png" width="450"></p>
+</div><div class="column" style="width:50%;">
+<h3 id="our-data-heteroscedastic">Our data: Heteroscedastic</h3>
+<p><img data-src="media/het_con_plot_layer.png" width="450"></p>
+</div></div>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="homoscedastic-2">Homoscedastic</h3>
+<p><img data-src="media/hom_cat_plot.png"></p>
+</div><div class="column" style="width:50%;">
+<h3 id="our-data-1">Our data</h3>
+<p><img data-src="media/het_cat_plot.png"></p>
+</div></div>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="homoscedastic-3">Homoscedastic</h3>
+<p><img data-src="media/hom_cat_plot_layer.png"></p>
+</div><div class="column" style="width:50%;">
+<h3 id="our-data-heteroscedastic-1">Our data: Heteroscedastic</h3>
+<p><img data-src="media/het_cat_plot_layer.png"></p>
+</div></div>
+</section>
+<section id="section-20" class="slide level2" data-background-video="media/heteroscedasticity_song.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="levenes-test" class="slide level2">
+<h2>Levene’s Test</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-skull" aria-label="skull"></i> The danger zone!</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>You might hear about it but <strong>don’t use it</strong>: think about what we know about sample sizes and significance.</li>
+<li>For the avoidance of doubt, <strong>don’t use it</strong>.</li>
+<li>One more time … <strong>don’t use it</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-21" class="slide level2" data-background-video="media/shocked_baby_levene.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="section-22" class="slide level2" data-background-video="media/zach_dragon_hunt_caption.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="section-23" class="slide level2" data-background-video="media/dragon_chase_2.mp4" data-background-size="cover">
+<h2></h2>
+</section></section>
+<section>
+<section id="part-3-normality-and-does-dragons-poo-kill-crops" class="title-slide slide level1 center">
+<h1>Part 3: Normality and does dragons poo kill crops?</h1>
+<blockquote>
+<p>“Coz their dung doesn’t help our crops to grow”</p>
+<p><em>Sir Knight Zach, Defender of the world of Military</em></p>
+</blockquote>
+</section>
+<section id="is-dung-associated-with-crop-yield" class="slide level2">
+<h2>Is dung associated with crop yield?</h2>
+<div class="center-h">
+<div class="txt_mulberry">
+<p><span class="math display">\[\hat{\text{yield}}_i = 14.34 + 2.02\text{poop}_{i}\]</span></p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 18px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; padding: 10px;">(Intercept)</td>
+<td style="text-align: right; padding: 10px;">14.34</td>
+<td style="text-align: right; padding: 10px;">6.77</td>
+<td style="text-align: right; padding: 10px;">2.12</td>
+<td style="text-align: right; padding: 10px;">0.04</td>
+<td style="text-align: right; padding: 10px;">0.56</td>
+<td style="text-align: right; padding: 10px;">28.12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 10px;">poop</td>
+<td style="text-align: right; padding: 10px;">2.02</td>
+<td style="text-align: right; padding: 10px;">1.37</td>
+<td style="text-align: right; padding: 10px;">1.48</td>
+<td style="text-align: right; padding: 10px;">0.15</td>
+<td style="text-align: right; padding: 10px;">-0.77</td>
+<td style="text-align: right; padding: 10px;">4.82</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>It seems like the amount of poop doesn’t sig. affect crop yield.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="normally-distributed-errors-1" class="slide level2">
+<h2>Normally distributed errors</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-skull" aria-label="skull"></i> The danger zone!</strong></p>
+</div>
+<div class="callout-content">
+<p>People usually (falsely) think the data or population need to be normally distributed.</p>
+</div>
+</div>
+</div>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_bias_files/figure-revealjs/unnamed-chunk-20-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="normally-distributed-errors-2" class="slide level2">
+<h2>Normally distributed errors</h2>
+<div class="fragment">
+<h3 id="estimation">Estimation</h3>
+<ul>
+<li>Normal errors don’t really matter</li>
+<li>When errors are not normally distributed, <em>b</em> will be unbiased and optimal (i.e., will minimize the variance), but there may be classes of estimator (other than OLS) that are more accurate (Wilcox, 2010)</li>
+</ul>
+</div>
+<div class="fragment">
+<h3 id="confidence-intervals-and-significance-tests">Confidence intervals and significance tests</h3>
+<ul>
+<li>When residuals are normal
+<ul>
+<li>It can be shown that the <em>b</em>s have a normal sampling distribution.</li>
+<li>Test statistics of <em>b</em>s (usually testing the null of <em>b</em> = 0) follow a <em>t</em>-distribution.</li>
+</ul></li>
+<li>If they are not normal then
+<ul>
+<li>We can’t base confidence intervals on the properties of the normal distribution.</li>
+<li>We don’t know what distribution tests statistics have.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="the-central-limit-theorem-clt" class="slide level2">
+<h2>The Central Limit Theorem (CLT)</h2>
+<div class="center-h">
+<p><img data-src="media/dsr2_fig_06_12_clt.png" style="width:75.0%"></p>
+</div>
+</section>
+<section id="exploring-normality-of-model-errors" class="slide level2">
+<h2>Exploring normality of model errors</h2>
+<ul>
+<li>Check the distribution of the model residuals using a P-P/Q-Q plot</li>
+</ul>
+<h3 id="large-samples">Large samples</h3>
+<ul>
+<li>You don’t need to worry about this assumption in large samples because of the CLT</li>
+</ul>
+<h3 id="small-samples">Small samples</h3>
+<ul>
+<li>Use a <strong>bootstrap</strong> to get an empirical confidence interval and standard error (more on this later …)</li>
+</ul>
+</section>
+<section id="the-k-s-test" class="slide level2">
+<h2>The K-S Test</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-skull" aria-label="skull"></i> The danger zone!</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>You might hear about it but <strong>don’t use it</strong>: think about what we know about sample sizes and significance.</li>
+<li>For the avoidance of doubt, <strong>don’t use it</strong>.</li>
+<li>One more time … <strong>don’t use it</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-24" class="slide level2" data-background-video="media/shocked_cat_ks.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="section-25" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="normal-residuals">Normal residuals</h3>
+<p><img data-src="media/poop_norm_qq_plot.png"></p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<h3 id="our-residuals-non-normal">Our residuals: Non-normal</h3>
+<p><img data-src="media/poop_qq_plot.png"></p>
+</div>
+</div></div>
+<aside class="notes">
+<p>S-shape = heavy tails Curve above line = left skew Curve below loine = right skew (which is what we have here, see earlier histogram)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-26" class="slide level2" data-background-video="media/normality_song.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="section-27" class="slide level2" data-background-video="media/normality_song_instrumental.mp4" data-background-size="cover">
+<h2></h2>
+</section></section>
+<section>
+<section id="part-4-correcting-problems" class="title-slide slide level1 center">
+<h1>Part 4: Correcting problems</h1>
+
+</section>
+<section id="robust-procedures" class="slide level2">
+<h2>Robust procedures</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_08_13_robust_flow.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="robust-procedures-1" class="slide level2">
+<h2>Robust procedures</h2>
+<h3 id="the-bootstrap">The bootstrap</h3>
+<ul>
+<li>Standard errors are derived empirically using a resampling technique</li>
+<li>Results in robust confidence intervals and <em>p</em>-values</li>
+<li>Designed for small samples (when normality matters)</li>
+</ul>
+<div class="fragment">
+<h3 id="heteroskedasticity-consistent-standard-errors">Heteroskedasticity-consistent standard errors</h3>
+<ul>
+<li>Use a sandwich estimator</li>
+<li>HC3 and HC4 methods work best</li>
+</ul>
+</div>
+</section>
+<section id="section-28" class="slide level2" data-background-video="media/bootstrap_hippo.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="the-bootstrap-1" class="slide level2">
+<h2>The Bootstrap</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">26</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="center-h">
+<p>Mean = 23.03</p>
+</div>
+<div class="fragment">
+<p>Bootstrap sample 1:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="center-h">
+<p>Mean = 27.97</p>
+</div>
+</div>
+<div class="fragment">
+<p>Bootstrap sample 2:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="center-h">
+<p>Mean = 26.35</p>
+</div>
+</div>
+</section>
+<section id="section-29" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">26</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="center-h">
+<p><img data-src="media/bootstrap_hist.gif"></p>
+</div>
+</section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">26</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="center-h">
+<p><img data-src="media/bootstrap_hist.png" height="550"></p>
+</div>
+<aside class="notes">
+<p>next slide - video of dragon chase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-31" class="slide level2" data-background-video="media/zach_chops_arlos_tail.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Oh deary me, I must hurry up ….</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="do-dragons-really-kidnap-royalty" class="slide level2">
+<h2>Do dragons really kidnap royalty?</h2>
+<h3 id="normal-model-number-of-dragons">Normal model (number of dragons)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons,<span class="at">data =</span> hov_cont_tib)</span>
+<span id="cb4-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(128)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">3.98</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">(3.39, 4.57)</td>
+<td style="text-align: center;">13.32</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">(5.30e-03, 0.23)</td>
+<td style="text-align: center;">2.07</td>
+<td style="text-align: center;">0.040</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<h3 id="robust-model-number-of-dragons-hc4-standard-errors">Robust model (number of dragons) HC4 Standard errors</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cont_tib)</span>
+<span id="cb5-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(128)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">3.98</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">(3.50, 4.45)</td>
+<td style="text-align: center;">16.49</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">(-0.01, 0.24)</td>
+<td style="text-align: center;">1.81</td>
+<td style="text-align: center;">0.072</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we fit a robust model there’s no sig relationship between the number of dragons and how many royalty are kidnapped. (Note the (small) b doesn’t change - only the p and CIs)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="do-dragons-really-kidnap-royalty-1" class="slide level2">
+<h2>Do dragons really kidnap royalty?</h2>
+<h3 id="normal-model-dragons-or-not">Normal model (dragons or not)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
+<span id="cb6-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_gp_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 9%">
+<col style="width: 21%">
+<col style="width: 10%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(87)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">4.26</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">(3.43, 5.08)</td>
+<td style="text-align: center;">10.28</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons (Dragons)</td>
+<td style="text-align: center;">1.21</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">(0.15, 2.26)</td>
+<td style="text-align: center;">2.27</td>
+<td style="text-align: center;">0.026</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br>
+</p>
+<div class="fragment">
+<h3 id="robust-model-dragons-or-not-hc4-standard-errors">Robust model (dragons or not) HC4 standard errors</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
+<span id="cb7-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_gp_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 8%">
+<col style="width: 26%">
+<col style="width: 9%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(87)</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">4.26</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">(3.13, 5.39)</td>
+<td style="text-align: center;">7.50</td>
+<td style="text-align: center;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dragons (Dragons)</td>
+<td style="text-align: center;">1.21</td>
+<td style="text-align: center;">0.61</td>
+<td style="text-align: center;">(-5.94e-03, 2.42)</td>
+<td style="text-align: center;">1.98</td>
+<td style="text-align: center;">0.051</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we fit a robust model there’s no sig relationship between the number of dragons and how many royalty are kidnapped. (Note the (small) <em>b</em> doesn’t change - only the <em>p</em> and CIs)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="does-dragon-poo-help-crops-to-grow" class="slide level2">
+<h2>Does dragon poo help crops to grow?</h2>
+<h3 id="normal-model">Normal model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
+<span id="cb8-2"><a href=""></a>broom<span class="sc">::</span><span class="fu">tidy</span>(poop_lm, <span class="at">conf.int =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 18px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; padding: 10px;">(Intercept)</td>
+<td style="text-align: right; padding: 10px;">14.343</td>
+<td style="text-align: right; padding: 10px;">6.765</td>
+<td style="text-align: right; padding: 10px;">2.120</td>
+<td style="text-align: right; padding: 10px;">0.042</td>
+<td style="text-align: right; padding: 10px;">0.563</td>
+<td style="text-align: right; padding: 10px;">28.124</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 10px;">poop</td>
+<td style="text-align: right; padding: 10px;">2.023</td>
+<td style="text-align: right; padding: 10px;">1.371</td>
+<td style="text-align: right; padding: 10px;">1.476</td>
+<td style="text-align: right; padding: 10px;">0.150</td>
+<td style="text-align: right; padding: 10px;">-0.770</td>
+<td style="text-align: right; padding: 10px;">4.815</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<h3 id="bootstrap-model">Bootstrap model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
+<span id="cb9-2"><a href=""></a><span class="fu">model_parameters</span>(poop_lm, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">14.14</td>
+<td style="text-align: center;">(5.12, 25.92)</td>
+<td style="text-align: center;">0.002</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">poop</td>
+<td style="text-align: center;">2.06</td>
+<td style="text-align: center;">(0.09, 3.92)</td>
+<td style="text-align: center;">0.046</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we fit a robust model there is a sig relationship between the quantity of dragon poop and the yield of crops. (Note a 2% increase in yield per extra dragon, so with only 5 additional dragons Yield will improve by 10%)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-32" class="slide level2" data-background-video="media/arlo_have_you_saved_the_dragons_yet_2_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>I think I might just have …</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-33" class="slide level2" data-background-video="media/zach_not_allowed_to_kill_dragons_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>No, no more dragon slaying because I’m afraid you’ve been misled. When you remove the ogres, there’s no significant association between the presence of dragons and sheep being eaten. Also, when you fit robust models there’s no significant association between the presence of dragons and royalty going missing, but dragon poo does significantly improve crop yield. Your rulers have been feeding you, well … lies …</p>
+<p>CLICK VIDEO</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-34" class="slide level2" data-background-video="media/zach_what_can_i_kill_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>Maybe the rulers statisticians? But really, it’s not nice to kill anyone, so maybe we should all have a nice cup of tea … CLICK VIDEO</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-35" class="slide level2" data-background-video="media/zach_kill_you_caption.mp4" data-background-size="cover">
+<h2></h2>
+<aside class="notes">
+<p>CLICK VIDEO and run screaming from lecture theatre</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ds_bias_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ds_bias_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ds_bias_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: true,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

@@ -1,0 +1,18 @@
+---
+title: "spine_map_bias"
+format: revealjs
+---
+
+![](../shared_media/images/spine_map.png){fig-align="center" height=600}
+
+::: notes
+We've seen this map of the process of fitting models before
+:::
+
+## 
+
+![](media/spine_lec_04.png){fig-align="center" height=600}
+
+::: notes
+Today we focus on the final parts of the process - assessing bias in the model, and corrective action.
+:::
