@@ -12,8 +12,8 @@ format:
 
 ## Discovering Statistics lectures
 
-1. [The SPINE of statistics: The linear model, parameters and estimation]()
-2. [The SPINE of statistics: standard error and confidence intervals]() 
+1. [Statistical Models: What are they and why do we need them?](ds_01_statistical_models/ds_models.html)
+2. [Interpreting Models: Parameter estimates, confidence intervals and *p*-values](ds_02_interpretation/ds_interpretation.html) 
 3. [The SPINE of statistics: NHST]()
 4. [Model fit and multiple predictors]()
 5. [The beast of bias](ds_05_bias/ds_bias.html)
@@ -27,8 +27,8 @@ format:
 
 ## An adventure in Statistics lectures
 
-1. [The SPINE of statistics: The linear model, parameters and estimation]()
-2. [The SPINE of statistics: standard error and confidence intervals]() 
+1. [Statistical Models: What are they and why do we need them?](ds_01_statistical_models/ds_models.html)
+2. [Interpreting Models: Parameter estimates, confidence intervals and *p*-values](ds_02_interpretation/ds_interpretation.html) 
 3. [The SPINE of statistics: NHST]()
 4. [Beyond significance testing]() 
 5. [Model fit and multiple predictors]()
