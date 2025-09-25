@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-7238768eed82b2ba93d557ae0b5ef087.css">
+  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-80bc6ef0b694586696dd19ce982ab47e.css">
   <link href="ds_models_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -545,7 +545,6 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">chisq.test</span>(zom_fct_tib<span class="sc">$</span>organism, zom_fct_tib<span class="sc">$</span>chip, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -568,18 +567,17 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </table>
 </div>
 </div>
-</div>
 </section>
 <section id="section-17" class="slide level2">
 <h2></h2>
 <h3 id="a-spearman-correlation">A Spearman correlation?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>zom_tib <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href=""></a>  correlation<span class="sc">::</span><span class="fu">correlation</span>(<span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>correlation<span class="sc">::</span><span class="fu">correlation</span>(<span class="at">method =</span> <span class="st">"spearman"</span>, <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="tbl_med">
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -621,12 +619,12 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <h2></h2>
 <h3 id="a-kendalls-tau-correlation">A Kendall’s <span class="math inline">\(\tau\)</span> correlation?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>zom_tib <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href=""></a>  correlation<span class="sc">::</span><span class="fu">correlation</span>(<span class="at">method =</span> <span class="st">"kendall"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>correlation<span class="sc">::</span><span class="fu">correlation</span>(<span class="at">method =</span> <span class="st">"kendall"</span>, <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="tbl_med">
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -668,13 +666,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <h2></h2>
 <h3 id="a-pearson-correlation">A Pearson correlation?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>zom_tib <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href=""></a>  correlation<span class="sc">::</span><span class="fu">correlation</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>correlation<span class="sc">::</span><span class="fu">correlation</span>(<span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
 <div class="fragment">
-<div class="tbl_med">
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
@@ -717,40 +715,48 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <section id="section-20" class="slide level2">
 <h2></h2>
 <h3 id="a-t-test">A <em>t</em>-test?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">t.test</span>(chip <span class="sc">~</span> organism, <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href=""></a>  <span class="fu">model_parameters</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><br>
 </p>
 <div class="fragment">
-<div class="tbl_med">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">t.test</span>(brains<span class="sc">$</span>organism, potatoes<span class="sc">$</span>organism)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped caption-top" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate2</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">parameter</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">method</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">alternative</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Parameter</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean_Group1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean_Group2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Difference</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">CI</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">CI_low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">CI_high</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">t</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df_error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Alternative</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.11</td>
-<td style="text-align: right;">0.685</td>
-<td style="text-align: right;">0.576</td>
-<td style="text-align: right;">1.559</td>
-<td style="text-align: right; background-color: yellow !important;">0.121</td>
-<td style="text-align: right;">185.619</td>
-<td style="text-align: right;">-0.029</td>
-<td style="text-align: right;">0.248</td>
+<td style="text-align: left;">chip</td>
+<td style="text-align: left;">organism</td>
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">0.483</td>
+<td style="text-align: right; background-color: yellow !important;">0.117</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">-0.031</td>
+<td style="text-align: right;">0.265</td>
+<td style="text-align: right;">1.561</td>
+<td style="text-align: right;">147.014</td>
+<td style="text-align: right;">0.121</td>
 <td style="text-align: left;">Welch Two Sample t-test</td>
 <td style="text-align: left;">two.sided</td>
 </tr>
@@ -765,46 +771,45 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <h2></h2>
 <h3 id="one-way-anova">One-way ANOVA?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>zom_tib <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href=""></a>  <span class="fu">aov</span>(organism <span class="sc">~</span> <span class="fu">factor</span>(chip), <span class="at">data =</span> _)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">aov</span>(organism <span class="sc">~</span> <span class="fu">factor</span>(chip), <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href=""></a>  <span class="fu">test_wald</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
 <div class="fragment">
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">df</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">sumsq</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">meansq</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df_diff</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">F</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">factor(chip)</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.563</td>
-<td style="text-align: right;">0.563</td>
-<td style="text-align: right;">2.416</td>
-<td style="text-align: right; background-color: yellow !important;">0.122</td>
+<td style="text-align: left;">Null model</td>
+<td style="text-align: left;">aov</td>
+<td style="text-align: right;">187</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right; background-color: yellow !important;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: left; background-color: white !important;">Residuals</td>
+<td style="text-align: left; background-color: white !important;">Full model</td>
+<td style="text-align: left; background-color: white !important;">aov</td>
 <td style="text-align: right; background-color: white !important;">186</td>
-<td style="text-align: right; background-color: white !important;">43.373</td>
-<td style="text-align: right; background-color: white !important;">0.233</td>
-<td style="text-align: right; background-color: white !important;">NA</td>
-<td style="text-align: right; background-color: yellow !important; background-color: white !important;">NA</td>
+<td style="text-align: right; background-color: white !important;">1</td>
+<td style="text-align: right; background-color: white !important;">2.416</td>
+<td style="text-align: right; background-color: yellow !important; background-color: white !important;">0.122</td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </div>
@@ -813,13 +818,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <h2></h2>
 <h3 id="linear-model-regression">Linear model (Regression)?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>zom_tib <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">lm</span>(organism <span class="sc">~</span> <span class="fu">factor</span>(chip), <span class="at">data =</span> _)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">lm</span>(organism <span class="sc">~</span> <span class="fu">factor</span>(chip), <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href=""></a>  <span class="fu">model_parameters</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
 <div class="fragment">
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -864,7 +869,6 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="section-23" class="slide level2">
 <h2></h2>
@@ -873,12 +877,12 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>me_lm <span class="ot">&lt;-</span> <span class="fu">glm</span>(n <span class="sc">~</span> organism <span class="sc">+</span> chip, <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> zom_freq)</span>
 <span id="cb8-2"><a href=""></a>full_lm <span class="ot">&lt;-</span> <span class="fu">glm</span>(n <span class="sc">~</span> organism<span class="sc">*</span>chip, <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> zom_freq)</span>
 <span id="cb8-3"><a href=""></a></span>
-<span id="cb8-4"><a href=""></a>performance<span class="sc">::</span><span class="fu">test_lrt</span>(me_lm, full_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href=""></a>performance<span class="sc">::</span><span class="fu">test_lrt</span>(me_lm, full_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
 <div class="fragment">
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -917,17 +921,17 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="section-24" class="slide level2">
 <h2></h2>
 <h3 id="multilevel-model">Multilevel model?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>glmmTMB<span class="sc">::</span><span class="fu">glmmTMB</span>(chip <span class="sc">~</span> organism <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>canteen), <span class="at">data =</span> zom_tib)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>glmmTMB<span class="sc">::</span><span class="fu">glmmTMB</span>(chip <span class="sc">~</span> organism <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>canteen), <span class="at">data =</span> zom_tib) <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href=""></a>  <span class="fu">model_parameters</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
@@ -963,7 +967,6 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </div>

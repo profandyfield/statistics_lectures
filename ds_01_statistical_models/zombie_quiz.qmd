@@ -64,7 +64,7 @@ chisq.test(zom_fct_tib$organism, zom_fct_tib$chip, correct = FALSE)
 
 \ 
 
-::: tbl_med
+
 ```{r}
 #| echo: false
 
@@ -75,7 +75,6 @@ parameters::model_parameters(zom_chi) |>
   kableExtra::column_spec(3, background = "yellow")
 ```
 
-:::
 
 ##
 ### A Spearman correlation?
@@ -85,14 +84,15 @@ parameters::model_parameters(zom_chi) |>
 #| eval: false
 #| echo: true
 
-zom_tib |>
-  correlation::correlation(method = "spearman")
+correlation::correlation(method = "spearman", data = zom_tib) |>
+  display()
 ```
+
 
 \ 
 
 ::: fragment
-::: tbl_med
+::: tbl_s
 ```{r}
 #| echo: false
 
@@ -102,7 +102,6 @@ zom_tib |>
   kableExtra::kable_styling(bootstrap_options = "striped") |> 
   kableExtra::column_spec(8, background = "yellow")
 ```
-
 :::
 :::
 
@@ -113,15 +112,14 @@ zom_tib |>
 #| eval: false
 #| echo: true
 
-zom_tib |>
-  correlation::correlation(method = "kendall")
+correlation::correlation(method = "kendall", data = zom_tib) |> 
+  display()
 ```
 
 \ 
 
 ::: fragment
-::: tbl_med
-
+::: tbl_s
 ```{r}
 #| echo: false
 #| 
@@ -131,7 +129,6 @@ zom_tib |>
   kableExtra::kable_styling(bootstrap_options = "striped") |> 
   kableExtra::column_spec(8, background = "yellow")
 ```
-
 :::
 :::
 
@@ -143,15 +140,14 @@ zom_tib |>
 #| eval: false
 #| echo: true
 
-zom_tib |>
-  correlation::correlation()
+correlation::correlation(data = zom_tib) |> 
+  display()
 ```
 
 \
 
 ::: fragment
-::: tbl_med
-
+::: tbl_s
 ```{r}
 #| echo: false
 
@@ -161,7 +157,6 @@ zom_tib |>
   kableExtra::kable_styling(bootstrap_options = "striped") |> 
   kableExtra::column_spec(9, background = "yellow")
 ```
-
 :::
 :::
 
@@ -175,28 +170,28 @@ brains <- zom_tib |> dplyr::filter(chip == 0)
 potatoes <- zom_tib |> dplyr::filter(chip == 1)
 ```
 
-\
-
-::: fragment
-::: tbl_med
-
 ```{r}
 #| eval: false
 #| echo: true
 
-t.test(brains$organism, potatoes$organism)
+t.test(chip ~ organism, data = zom_tib) |> 
+  model_parameters() |> 
+  display()
 ```
 
+\
+
+::: fragment
+::: tbl_s
 ```{r}
 #| echo: false
 
-t.test(brains$organism, potatoes$organism) |>
-  broom::tidy() |> 
+t.test(chip ~ organism, data = zom_tib) |> 
+  model_parameters() |> 
   knitr::kable(digits = 3) |> 
   kableExtra::kable_styling(bootstrap_options = "striped") |> 
   kableExtra::column_spec(5, background = "yellow")
 ```
-
 :::
 :::
 
@@ -208,27 +203,24 @@ t.test(brains$organism, potatoes$organism) |>
 #| eval: false
 #| echo: true
 
-zom_tib |>
-  aov(organism ~ factor(chip), data = _)
+aov(organism ~ factor(chip), data = zom_tib) |>
+  test_wald() |> 
+  display()
 ```
 
 \
 
 ::: fragment
-::: tbl_med
-
 ```{r}
 #| echo: false
 #| 
-zom_tib |>
-  aov(organism ~ factor(chip), data = _) |>
-  broom::tidy() |> 
+
+aov(organism ~ factor(chip), data = zom_tib) |>
+  test_wald() |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(6, background = "yellow") |> 
   kableExtra::row_spec(2, background = "white")
 ```
-
-:::
 :::
 
 ##
@@ -238,26 +230,23 @@ zom_tib |>
 #| eval: false
 #| echo: true
 
-zom_tib |>
-  lm(organism ~ factor(chip), data = _)
+lm(organism ~ factor(chip), data = zom_tib) |> 
+  model_parameters() |> 
+  display()
 ```
 
 \
 
 ::: fragment
-::: tbl_med
 ```{r}
 #| echo: false
  
-zom_tib |>
-  lm(organism ~ factor(chip), data = _) |>
-  parameters::model_parameters() |> 
+lm(organism ~ factor(chip), data = zom_tib) |> 
+  model_parameters() |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(9, background = "yellow") |> 
   kableExtra::row_spec(1, background = "#e6edf4")
 ```
-
-:::
 :::
 
 ##
@@ -270,13 +259,13 @@ zom_tib |>
 me_lm <- glm(n ~ organism + chip, family = "poisson", data = zom_freq)
 full_lm <- glm(n ~ organism*chip, family = "poisson", data = zom_freq)
 
-performance::test_lrt(me_lm, full_lm)
+performance::test_lrt(me_lm, full_lm) |> 
+  display()
 ```
 
 \
 
 ::: fragment
-::: tbl_med
 ```{r}
 #| echo: false
 
@@ -288,8 +277,6 @@ performance::test_lrt(me_lm, full_lm) |>
   kableExtra::column_spec(7, background = "yellow") |> 
   kableExtra::row_spec(1, background = "#e6edf4")
 ```
-
-:::
 :::
 
 
@@ -308,14 +295,14 @@ zom_tib <- zom_tib |>
 #| echo: true
 #| eval: false
 
-glmmTMB::glmmTMB(chip ~ organism + (1|canteen), data = zom_tib)
+glmmTMB::glmmTMB(chip ~ organism + (1|canteen), data = zom_tib) |> 
+  model_parameters() |> 
+  display()
 ```
 
 \ 
 
 ::: fragment
-::: tbl_med
-
 ```{r}
 #| echo: false
 #| message: false
@@ -329,8 +316,6 @@ knitr::kable(ml_tbl, digits = 2) |>
   kableExtra::column_spec(7, background = "yellow") |> 
   kableExtra::row_spec(1, background = "#e6edf4")
 ```
-
-:::
 :::
 
 ##
