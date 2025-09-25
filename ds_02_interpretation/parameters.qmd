@@ -1,0 +1,103 @@
+---
+title: "parameters"
+format: revealjs
+---
+
+
+## Raw effect size (*b*)
+
+
+:::: columns
+::: {.column width="50%"}
+![](media/date_night_small.png){height=500}
+:::
+
+::: {.column width="50%"}
+
+- Does playing hard to get work?^[[Birnbaum et al. (2020). *Journal of Social and Personal Relationships*. Study 3.]( https://doi.org/10.1177/0265407520927469)]
+- Heterosexual participants conversed with an opposite-sex confederate over Instant
+Messenger for 8 mins
+- **Interest**: Final message coded for the number of expressions of romantic interest (range 0 to 4)
+- **Hard to get**: 3 items rated 1 (not at all) and 5 (very much so)
+  - *The other participant is hard to get*
+- **Mate value**: 4 items rated 1 (not at all) and 5 (very much so)
+  - *I perceive the other participant as a valued mate*
+
+:::
+:::
+
+## The model
+
+::: center-h
+::: txt_mulberry
+$$
+\text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i +e_i
+$$
+:::
+:::
+
+
+```{r}
+#| echo: false
+#| message: false
+
+# hard_tib <- readr::read_csv("data/birnbaum.csv")
+
+hard_tib <- haven::read_sav("data/birnbaum_study_3.sav", col_select = c(
+  "QualtricsID", "MCoding", "MHardtoGet", "MMateValue"
+)) |> 
+  dplyr::rename(
+    id = QualtricsID,
+    interest = MCoding,
+    hard_to_get = MHardtoGet,
+    mate_value = MMateValue
+  )
+
+hard_lm <- lm(interest ~ hard_to_get, data = hard_tib)
+more_hard_lm <- lm(interest ~ hard_to_get + mate_value, data = hard_tib)
+```
+
+
+:::: columns
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 3
+
+birm_gg <- ggplot2::ggplot(hard_tib, aes(x = hard_to_get, y = interest)) +
+  geom_point(size = 1, colour = mulberry, alpha = 0.6) +
+  stat_smooth(method = "lm", colour = blue, fill = blue) +
+  labs(y = "Expressions of interest (0-4)", x = "Perception that stooge was hard to get (1-5)") +
+  coord_cartesian(xlim = c(1, 5), ylim = c(0, 4)) +
+  scale_x_continuous(breaks = 01:5) +
+  scale_y_continuous(breaks = 1:4) +
+  theme_minimal()
+birm_gg
+```
+:::
+
+::: {.column width="60%"}
+::: tbl_med
+```{r}
+#| echo: false
+#| html-table-processing: none
+
+birm_noci_tbl <- model_parameters(hard_lm) 
+display(birm_noci_tbl)
+```
+:::
+:::
+:::
+
+
+
+::: incremental
+
+- As the perception that the other person was hard to get increased by 1 (on a scale from 1-5), **`r value_from_ez(birm_noci_tbl, row  = 2)`** more expressions of interest were made.
+- You'd need perceptions of 'hard to get' to increase by `r paste0("$\\frac{1}{", value_from_ez(birm_noci_tbl, row  = 2), "}$ = ", report_value(1/value_from_ez(birm_noci_tbl, row  = 2, as_is = T)))` on a 5-point scale to get 1 additional expression of interest.  
+
+:::
+
+

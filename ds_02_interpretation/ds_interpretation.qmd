@@ -1,0 +1,107 @@
+---
+title: "Interpreting Models"
+subtitle: "Parameter estimates, confidence intervals and *p*-values"
+author: "Professor Andy Field"
+institute: "University of Sussex"
+format: 
+  revealjs:
+    auto-play-media: true
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: ../shared_media/images/slide_background_title.jpg
+      data-background-size: 100%
+      data-background-position: center
+      data-background-opacity: "1"
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+# general
+library(easystats)
+library(tidyverse)
+# specific
+library(metafor)
+
+
+source("../helpers/discovr_helpers.R")
+source("../helpers/easystats_helpers.R")
+```
+
+
+##  Learning outcomes 
+
+::: incremental
+
+Be able to interpret
+
+- Parameter estimates
+- Standardized parameter estimates
+- Their confidence intervals
+- *p*-values
+
+:::
+
+::: notes
+Use C to toggle pen/markup
+Use backspace to delete markup
+Use f to toggle fullscreen
+:::
+
+
+## 
+
+::: r-stack
+![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
+
+![](media/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+:::
+
+
+##
+
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
+
+
+
+
+# Interpreting parameter estimates
+
+```{r, child = "parameters.qmd"}
+
+```
+
+# Standardized parameter estimates
+
+```{r, child = "zparameters.qmd"}
+
+```
+
+# Confidence intervals
+
+```{r, child = "ci.qmd"}
+
+```
+
+
+# Testing hypotheses
+
+```{r, child = "nhst.qmd"}
+
+```
+
+
+
+## Summary
+
+- To interpret models we need to look at a range of information
+- The raw parameter estimate tells us the effect in units we measured
+- The standardized parameter estimate tells us the effect in standard deviation units
+  - Can be compared across studies that use different measures
+- The confidence interval tells us about the uncertainty of our estimates
+- The *p*-value tells us about statistical 'significance'
+  - It must be interpretted within the context of the sample size and other information
+
