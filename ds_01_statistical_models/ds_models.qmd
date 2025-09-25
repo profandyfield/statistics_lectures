@@ -58,7 +58,9 @@ source("../helpers/discovr_helpers.R")
 ## 
 
 ::: {.callout-caution icon = false}
-## {{< fa brain >}} Hypothesis
+## {{< fa brain >}} Think about it!
+
+Hypothesis
 
 - Does attending concerts harm hearing?
 :::
@@ -184,8 +186,10 @@ $$
 $$
 
 
-:::{.callout-tip icon=false}
-## {{< fa list-ul >}} All models have a S.P.I.N.E
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+All models have a S.P.I.N.E
 
 ::: incremental
 - [**P**]{.alt}arameters. The $b_0$, $b_1$ ... $b_n$ are the model parameters.
@@ -200,8 +204,10 @@ $$
 
 ## Fitting models 
 
-:::{.callout-note icon=false}
-## {{< fa question >}} Questions to ask yourself
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it
+
+Questions to ask yourself
 
 - What variable is my outcome? What type is it?
 - What variable(s) are my predictors? What types are they?
@@ -222,8 +228,9 @@ $$
 - [**I**]{.alt}nterpret: use the model to answer your question
 :::
 
-## {background-image="../shared_media/images/dsr2_fig_04_39_workflow.png" background-size="cover"}
+## 
 
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
 
 ## Let's return to our question
 
@@ -552,8 +559,10 @@ The intercept is -37.12. That makes no sense - your ears can't ring for a minus 
 
 ## Confidence intervals
 
-::: {.callout-tip icon = false}
-## `r cat_space()` What they are:
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip 
+
+What confidence intervals are:
 
 - Intervals that contain the 'true' population value of the parameter in 95% of samples.
 
@@ -563,7 +572,9 @@ The intercept is -37.12. That makes no sense - your ears can't ring for a minus 
 
 ::: fragment
 ::: {.callout-warning icon = false}
-## `r bug()` What they are not:
+## {{< fa skull >}} The danger zone!
+
+What confidence intervals are NOT:
 
 - There is NOT a 95% probability that a given interval contains the population value.
     - It is *p* = 0 or *p* = 1, but you can’t know which!

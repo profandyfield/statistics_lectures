@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-565b2c4aa8cb6cac11d994883adb8105.css">
+  <link rel="stylesheet" href="ds_models_files/libs/revealjs/dist/theme/quarto-7238768eed82b2ba93d557ae0b5ef087.css">
   <link href="ds_models_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_models_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -384,9 +384,10 @@
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><i class="fa-solid fa-brain" aria-label="brain"></i> Hypothesis</strong></p>
+<p><strong><i class="fa-solid fa-brain" aria-label="brain"></i> Think about it!</strong></p>
 </div>
 <div class="callout-content">
+<p>Hypothesis</p>
 <ul>
 <li>Does attending concerts harm hearing?</li>
 </ul>
@@ -993,12 +994,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 \text{outcome}_i &amp;= b_0 + b_1\text{predictor 1}_{i} + b_2\text{predictor 2}_{i} + \dots + \text{error}_i
 \end{aligned}
 \]</span></p>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><i class="fa-solid fa-list-ul" aria-label="list-ul"></i> All models have a S.P.I.N.E</strong></p>
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
 </div>
 <div class="callout-content">
+<p>All models have a S.P.I.N.E</p>
 <ul>
 <li class="fragment"><span class="alt"><strong>P</strong></span>arameters. The <span class="math inline">\(b_0\)</span>, <span class="math inline">\(b_1\)</span> … <span class="math inline">\(b_n\)</span> are the model parameters.</li>
 <li class="fragment"><span class="alt"><strong>E</strong></span>stimation: model parameters are estimated from the data (<span class="math inline">\(\hat{b}_0\)</span>, <span class="math inline">\(\hat{b}_1\)</span> … <span class="math inline">\(\hat{b}_n\)</span>)</li>
@@ -1012,12 +1014,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </section>
 <section id="fitting-models" class="slide level2">
 <h2>Fitting models</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><i class="fa-solid fa-question" aria-label="question"></i> Questions to ask yourself</strong></p>
+<p><strong><i class="fa-solid fa-brain" aria-label="brain"></i> Think about it</strong></p>
 </div>
 <div class="callout-content">
+<p>Questions to ask yourself</p>
 <ul>
 <li>What variable is my outcome? What type is it?</li>
 <li>What variable(s) are my predictors? What types are they?</li>
@@ -1038,8 +1041,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <li class="fragment"><span class="alt"><strong>I</strong></span>nterpret: use the model to answer your question</li>
 </ul>
 </section>
-<section id="section-27" class="slide level2" data-background-image="../shared_media/images/dsr2_fig_04_39_workflow.png" data-background-size="cover">
+<section id="section-27" class="slide level2">
 <h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_04_39_workflow.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
 </section>
 <section id="lets-return-to-our-question" class="slide level2">
 <h2>Let’s return to our question</h2>
@@ -1336,12 +1344,13 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 </section>
 <section id="confidence-intervals" class="slide level2">
 <h2>Confidence intervals</h2>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><svg style="height:1.5em; top:.04em; position: relative; fill: #2C5577;" viewbox="0 0 640 512"><path d="M512,176a16,16,0,1,0-16-16A15.9908,15.9908,0,0,0,512,176ZM576,32.72461V32l-.46094.3457C548.81445,12.30469,515.97461,0,480,0s-68.81445,12.30469-95.53906,32.3457L384,32v.72461C345.35156,61.93164,320,107.82422,320,160c0,.38086.10938.73242.11133,1.11328A272.01015,272.01015,0,0,0,96,304.26562V176A80.08413,80.08413,0,0,0,16,96a16,16,0,0,0,0,32,48.05249,48.05249,0,0,1,48,48V432a80.08413,80.08413,0,0,0,80,80H352a32.03165,32.03165,0,0,0,32-32,64.0956,64.0956,0,0,0-57.375-63.65625L416,376.625V480a32.03165,32.03165,0,0,0,32,32h32a32.03165,32.03165,0,0,0,32-32V316.77539A160.036,160.036,0,0,0,640,160C640,107.82422,614.64844,61.93164,576,32.72461ZM480,32a126.94015,126.94015,0,0,1,68.78906,20.4082L512,80H448L411.21094,52.4082A126.94015,126.94015,0,0,1,480,32Zm64,64v64a64,64,0,0,1-128,0V96l21.334,16h85.332ZM480,480H448V351.99609A15.99929,15.99929,0,0,0,425.5,337.377L303.1875,391.75a100.1169,100.1169,0,0,0-67.25-84.89062,7.96929,7.96929,0,0,0-10.09375,5.76562l-3.875,15.5625a8.16346,8.16346,0,0,0,5.375,9.5625C252,346.875,272,375.625,272,401.90625V448h48a32.03165,32.03165,0,0,1,32,32H144c-26.94531,0-48.13086-22.27344-47.99609-49.21875.63671-127.52734,101.31054-231.53516,227.36914-238.14063A160.02931,160.02931,0,0,0,480,320Zm0-192A128.14414,128.14414,0,0,1,352,160c0-32.16992,12.334-61.25391,32-83.76367V160a96,96,0,0,0,192,0V76.23633C595.666,98.74609,608,127.83008,608,160A128.14414,128.14414,0,0,1,480,288ZM432,160a16,16,0,1,0,16-16A15.9908,15.9908,0,0,0,432,160ZM162.94531,68.76953l39.71094,16.56055,16.5625,39.71094a5.32345,5.32345,0,0,0,9.53906,0l16.5586-39.71094,39.71484-16.56055a5.336,5.336,0,0,0,0-9.541l-39.71484-16.5586L228.75781,2.957a5.325,5.325,0,0,0-9.53906,0l-16.5625,39.71289-39.71094,16.5586a5.336,5.336,0,0,0,0,9.541Z"></path></svg> What they are:</strong></p>
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
 </div>
 <div class="callout-content">
+<p>What confidence intervals are:</p>
 <ul>
 <li>Intervals that contain the ‘true’ population value of the parameter in 95% of samples.</li>
 </ul>
@@ -1354,9 +1363,10 @@ t = \frac{\bar{X}_1-\bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><svg style="height: 1em; top:.04em; position: relative; fill: #2F4F4F;" viewbox="0 0 576 512"><path d="M192,320h32V224H192Zm160,0h32V224H352ZM544,112H512a32.03165,32.03165,0,0,0-32,32v16H416V128h32a32.03165,32.03165,0,0,0,32-32V64a32.03165,32.03165,0,0,0-32-32H416a32.03165,32.03165,0,0,0-32,32H352a32.03165,32.03165,0,0,0-32,32v32H256V96a32.03165,32.03165,0,0,0-32-32H192a32.03165,32.03165,0,0,0-32-32H128A32.03165,32.03165,0,0,0,96,64V96a32.03165,32.03165,0,0,0,32,32h32v32H96V144a32.03165,32.03165,0,0,0-32-32H32A32.03165,32.03165,0,0,0,0,144V288a32.03165,32.03165,0,0,0,32,32H64v32a32.03165,32.03165,0,0,0,32,32h32v64a32.03165,32.03165,0,0,0,32,32h80a32.03165,32.03165,0,0,0,32-32V416a32.03165,32.03165,0,0,0-32-32h96a32.03165,32.03165,0,0,0-32,32v32a32.03165,32.03165,0,0,0,32,32h80a32.03165,32.03165,0,0,0,32-32V384h32a32.03165,32.03165,0,0,0,32-32V320h32a32.03165,32.03165,0,0,0,32-32V144A32.03165,32.03165,0,0,0,544,112ZM416,64h32V96H416ZM128,96V64h32V96ZM240,448H160V384h32v32h48Zm176,0H336V416h48V384h32ZM544,288H480v64H96V288H32V144H64V256H96V192h96V96h32v64H352V96h32v96h96v64h32V144h32Z"></path></svg> What they are not:</strong></p>
+<p><strong><i class="fa-solid fa-skull" aria-label="skull"></i> The danger zone!</strong></p>
 </div>
 <div class="callout-content">
+<p>What confidence intervals are NOT:</p>
 <ul>
 <li>There is NOT a 95% probability that a given interval contains the population value.
 <ul>
