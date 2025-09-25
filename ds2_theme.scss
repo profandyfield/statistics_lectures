@@ -11,7 +11,7 @@ $brown: #86753E  !default;
 $green: #427479 !default;
 $wht: #FFFFFF !default;
 $blue: #3C648C !default;
-
+$code_bg: #657284 !default;
 
 $headingColor: $purple;
 
@@ -21,8 +21,9 @@ $callout-color-important: $blue !default;
 $callout-color-caution: $brown !default;
 $callout-color-warning: $mulberry !default;
 
-
-
+$code-block-bg: rgba($code_bg, .01) !default;
+$code-bg: rgba($purple, .1) !default;
+$code-color: $purple !default;
 
 
 /*-- scss:rules --*/
@@ -82,6 +83,12 @@ $callout-color-warning: $mulberry !default;
 .reveal .slide .tbl_l table th {
   font-size: 125%;
   padding: 20px;
+}
+
+/* reduce font size in data tables */
+
+.reveal .slide table.dataTable td {
+  font-size: 80%;
 }
 
 /* tabset colours */
