@@ -9,7 +9,7 @@ format: revealjs
 
 :::: columns
 ::: {.column width="50%"}
-![](media/date_night_small.png){height=500}
+![](../shared_media/images/date_night_small.png){height=500}
 :::
 
 ::: {.column width="50%"}
