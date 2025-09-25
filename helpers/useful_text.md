@@ -19,7 +19,7 @@
 
 ::: {.column width="45%"}
 :::
-:::
+::::
 
 :::: columns
 ::: {.column width="50%"}
@@ -27,7 +27,7 @@
 
 ::: {.column width="50%"}
 :::
-:::
+::::
 
 ::: {.r-fit-text}
 :::
@@ -48,7 +48,7 @@ LETTERS[x]
 
 ::: center-h
 ::: txt_mulberry
-::: txt_300
+::: txt_l
 :::
 :::
 :::
@@ -61,9 +61,10 @@ LETTERS[x]
 ![](media/xxxx.png){fig-align="center" height=600}
 
 
-{fig-align="center" height=600}
+{.absolute top=200 left=0 width="350" height="300"}
+{.absolute top=50 right=50 width="450" height="250"}
+{.absolute bottom=20 right=100 width="300" height="300"}
 
-1050 x 700
 
 ---- callouts ----
 
@@ -144,4 +145,10 @@ What they are not:
 
 :::
 
+___ notes
 
+abs = width="30%", left="85%", top="15%"
+
+slides = 1050 x 700
+
+{.absolute width=x left=prop*1050 top=prop*1050}
