@@ -58,7 +58,15 @@ Use f to toggle fullscreen
 
 ![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
 
+## 
 
+::: tbl_l
+```{r}
+eddie_lm <- lm(energy ~ valence, data = discovr::eddiefy)
+model_parameters(eddie_lm) |> 
+  display()
+```
+:::
 
 
 ## Summary
