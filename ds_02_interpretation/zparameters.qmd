@@ -28,7 +28,6 @@ $$
 
 \
 
-::: tbl_med
 ```{r}
 #| echo: false
 #| message: false
@@ -36,7 +35,6 @@ $$
 zhard_tbl <- model_parameters(hard_lm, standardize = "refit")
 display(zhard_tbl)
 ```
-:::
 
 \
 

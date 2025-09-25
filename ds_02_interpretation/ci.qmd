@@ -74,15 +74,12 @@ $$
 :::
 
 
-::: tbl_med
 ```{r}
 #| echo: false
 
 display(birm_noci_tbl)
 ```
-:::
 
-\
 
 ::: incremental
 

@@ -79,7 +79,7 @@ birm_gg
 :::
 
 ::: {.column width="60%"}
-::: tbl_med
+::: tbl_s
 ```{r}
 #| echo: false
 #| html-table-processing: none
@@ -89,7 +89,7 @@ display(birm_noci_tbl)
 ```
 :::
 :::
-:::
+::::
 
 
 

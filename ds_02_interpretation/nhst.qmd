@@ -378,7 +378,7 @@ z200000 <- value_from_ez(zted200000_tbl, row = 2)
 :::: columns
 ::: {.column width="50%"}
 #### Study 1:
-::: tbl_med
+::: tbl_s
 ```{r warning = FALSE}
 ted200_lm |> 
   knitr::kable(digits = 3) |> 
@@ -390,7 +390,7 @@ ted200_lm |>
 
 ::: {.column width="50%"}
 #### Study 2:
-::: tbl_med
+::: tbl_s
 ```{r warning = FALSE}
 ted20_lm |> 
   knitr::kable(digits = 3) |> 
@@ -407,7 +407,7 @@ ted20_lm |>
 ### Zero effect (approx), significant *p*
 #### Study 3:
 ::: center-h
-::: tbl_med
+::: tbl_s
 ```{r warning = FALSE}
 ted200000_lm |> 
   knitr::kable(digits = 3) |> 
@@ -433,7 +433,7 @@ ted200000_lm |>
 :::: columns
 ::: {.column width="50%"}
 #### Study 1: [*n* = 200]{.txt_mulberry}
-::: tbl_med
+::: tbl_s
 ```{r results = 'asis', warning = FALSE}
 ted200_lm |> 
   knitr::kable(digits = 3) |> 
@@ -445,7 +445,7 @@ ted200_lm |>
 
 ::: {.column width="50%"}
 #### Study 2: [*n* = 20]{.txt_mulberry}
-::: tbl_med
+::: tbl_s
 ```{r results = 'asis', warning = FALSE}
 ted20_lm |> 
   knitr::kable(digits = 3) |> 
@@ -462,14 +462,13 @@ ted20_lm |>
 
 #### Study 3: [*n* = 200,000]{.txt_mulberry}
 ::: center-h
-::: tbl_med
+::: tbl_s
 ```{r results = 'asis', warning = FALSE}
 ted200000_lm |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(c(2, 5), background = "yellow") |> 
   kableExtra::row_spec(1, background = tbl_row)
 ```
-
 :::
 :::
 
@@ -640,7 +639,7 @@ forest
 :::: columns
 ::: {.column width="50%"}
 #### Study 1: [$\beta$ = `r z200`]{.txt_mulberry}
-::: tbl_med
+::: tbl_s
 ```{r, warning = FALSE}
 ted200_lm |> 
   knitr::kable(digits = 3) |> 
@@ -652,7 +651,7 @@ ted200_lm |>
 
 ::: {.column width="50%"}
 #### Study 2: [$\beta$ = `r z20`]{.txt_mulberry}
-::: tbl_med
+::: tbl_s
 ```{r, warning = FALSE}
 ted20_lm |> 
   knitr::kable(digits = 3) |> 
@@ -669,14 +668,13 @@ ted20_lm |>
 
 #### Study 3: [$\beta$ = `r z200000`]{.txt_mulberry}
 ::: center-h
-::: tbl_med
+::: tbl_s
 ```{r, warning = FALSE}
 ted200000_lm |> 
   knitr::kable(digits = 3) |> 
   kableExtra::column_spec(c(2, 5), background = "yellow") |> 
   kableExtra::row_spec(1, background = tbl_row)
 ```
-
 :::
 :::
 
@@ -705,13 +703,11 @@ $$
 :::
 
 
-::: tbl_med
 ```{r}
 #| echo: false
 
 display(birm_noci_tbl)
 ```
-:::
 
 ::: {.callout-note icon = false}
 ## {{< fa chart-line >}} Statis-tip
