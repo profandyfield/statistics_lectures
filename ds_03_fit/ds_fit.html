@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_fit_files/libs/revealjs/dist/theme/quarto-4b6139dfdc5d82746ab37cfd9819ca94.css">
+  <link rel="stylesheet" href="ds_fit_files/libs/revealjs/dist/theme/quarto-80bc6ef0b694586696dd19ce982ab47e.css">
   <link href="ds_fit_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_fit_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_fit_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -344,7 +344,7 @@
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<div class="tbl_med">
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -429,7 +429,7 @@
 </div>
 </div>
 <div class="center-h">
-<div class="tbl_med">
+<div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -474,8 +474,6 @@
 </div>
 </div>
 </div>
-<p><br>
-</p>
 <div class="fragmet">
 <ul>
 <li>As the perception that the other person was hard to get increased by 1 (on a scale from 1-5), <strong>0.13</strong> more expressions of interest were made (when mate value is constant)
@@ -3129,7 +3127,6 @@ F = \frac{\text{MS}_\text{M}}{\text{MS}_\text{R}} = \frac{13.25}{1.14} = 11.62 \
 </div>
 <p><br>
 </p>
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -3165,7 +3162,6 @@ F = \frac{\text{MS}_\text{M}}{\text{MS}_\text{R}} = \frac{13.25}{1.14} = 11.62 \
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="testing-the-model-fit-the-f-statistic-1" class="slide level2">
 <h2>Testing the model fit: the <em>F</em>-statistic</h2>
@@ -3182,7 +3178,6 @@ F = \frac{\text{MS}_\text{M}}{\text{MS}_\text{R}} = \frac{13.25}{1.14} = 11.62 \
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">test_wald</span>(more_hard_lm) <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -3217,7 +3212,6 @@ F = \frac{\text{MS}_\text{M}}{\text{MS}_\text{R}} = \frac{13.25}{1.14} = 11.62 \
 </table>
 </div>
 </div>
-</div>
 <p><br>
 </p>
 <div class="callout callout-important no-icon callout-titled callout-style-default">
@@ -3237,7 +3231,7 @@ F = \frac{\text{MS}_\text{M}}{\text{MS}_\text{R}} = \frac{13.25}{1.14} = 11.62 \
 <li><strong>R<sup>2</sup></strong>
 <ul>
 <li>The proportion of variance accounted for by the model</li>
-<li>The Pearson correlation coefficient between observed and predicted scores squared</li>
+<li>The Pearson correlation between observed and predicted scores squared</li>
 </ul></li>
 </ul>
 <div class="center-h">
@@ -3264,7 +3258,6 @@ R^2 = \frac{\text{SS}_\text{M}}{\text{SS}_\text{T}} = \frac{13.25}{22.40} = 0.59
 <span id="cb3-2"><a href=""></a>ite_fit <span class="ot">&lt;-</span> <span class="fu">model_performance</span>(ite_lm)</span>
 <span id="cb3-3"><a href=""></a><span class="fu">display</span>(ite_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="tbl_med">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -3294,7 +3287,6 @@ R^2 = \frac{\text{SS}_\text{M}}{\text{SS}_\text{T}} = \frac{13.25}{22.40} = 0.59
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="testing-the-model-fit-r2-1" class="slide level2">
 <h2>Testing the model fit: R<sub>2</sub></h2>
@@ -3307,7 +3299,6 @@ R^2 = \frac{\text{SS}_\text{M}}{\text{SS}_\text{T}} = \frac{13.25}{22.40} = 0.59
 </div>
 </div>
 </div>
-<div class="tbl_med">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">model_performance</span>(more_hard_lm) <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3336,7 +3327,6 @@ R^2 = \frac{\text{SS}_\text{M}}{\text{SS}_\text{T}} = \frac{13.25}{22.40} = 0.59
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <p><br>

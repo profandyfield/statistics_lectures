@@ -81,7 +81,7 @@ birm_gg
 :::
 
 ::: {.column width="60%"}
-::: tbl_med
+::: tbl_s
 ```{r}
 #| echo: false
 
@@ -156,7 +156,7 @@ $\hat{\text{interest}}_i = -0.490 + 0.126\text{ hard to get}_i + 0.386\text{ mat
 :::
 
 ::: center-h
-::: tbl_med
+::: tbl_s
 ```{r}
 #| echo: false
 
@@ -165,8 +165,6 @@ display(more_hard_tbl)
 ```
 :::
 :::
-
-\
 
 ::: fragmet
 

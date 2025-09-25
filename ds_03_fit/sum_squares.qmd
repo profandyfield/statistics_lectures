@@ -944,7 +944,6 @@ display(ite_aov)
 
 \
 
-::: tbl_med
 ```{r}
 #| echo: false
 #| message: false
@@ -954,7 +953,6 @@ ite_aov <- anova(ite_lm) |>
   model_parameters()
 display(ite_aov, footer = "")
 ```
-:::
 :::
 
 
@@ -981,7 +979,6 @@ test_wald(more_hard_lm) |>
   display()
 ```
 
-::: tbl_med
 ```{r}
 #| echo: false
 #| message: false
@@ -991,7 +988,7 @@ test_wald(more_hard_lm) |>
 hard_aov <- test_wald(more_hard_lm)
 display(hard_aov, footer = "")
 ```
-:::
+
 
 \
 
@@ -1006,7 +1003,7 @@ Overall, including both playing hard to get and mate value significantly improve
 
 - **R^2^**
   - The proportion of variance accounted for by the model
-  - The Pearson correlation coefficient between observed and predicted scores squared
+  - The Pearson correlation between observed and predicted scores squared
 
 ::: center-h
 ::: txt_mulberry
@@ -1038,7 +1035,6 @@ ite_fit <- model_performance(ite_lm)
 display(ite_fit)
 ```
 
-::: tbl_med
 ```{r}
 #| echo: false
 #| message: false
@@ -1047,7 +1043,6 @@ display(ite_fit)
 model_performance(ite_lm) |> 
   display()
 ```
-:::
 :::
 
 ## Testing the model fit: R~2~
@@ -1071,7 +1066,6 @@ hard_r <- model_performance(more_hard_lm)
 ```
 
 
-::: tbl_med
 ```{r}
 #| echo: true
 #| message: false
@@ -1080,7 +1074,6 @@ hard_r <- model_performance(more_hard_lm)
 model_performance(more_hard_lm) |> 
   display()
 ```
-:::
 
 \
 
