@@ -96,6 +96,10 @@ p.subtitle {
   color: white;
 }
 
+.center-h {
+  text-align: center;
+}
+
 
 .txt_300 {
     font-size: 300%;
@@ -109,10 +113,12 @@ p.subtitle {
     font-size: 125%;
 }
 
+.txt_s {
+    font-size: 75%;
+}
+
 .tbl_sm table {
   font-size: .5em;
-  padding-bottom: 20px;
-  padding-top: 20px;
   > tbody > tr:nth-of-type(odd) > * {
     background-color: #e6edf4;
   }
@@ -120,12 +126,17 @@ p.subtitle {
 
 .tbl_med table {
   font-size: .75em;
-  padding-bottom: 20px;
-  padding-top: 20px;
   > tbody > tr:nth-of-type(odd) > * {
     background-color: #e6edf4;
   }
 }
+
+.tbl_lg table {
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: #e6edf4;
+  }
+}
+
 
 .bold_col {
     color: $brand-brown;
