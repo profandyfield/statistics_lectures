@@ -107,7 +107,7 @@ rstudio <- function(scale = 1){
     scale = 1
   }
 
-  img_text <- "<img src=\"./media/r_studio_logo.png\" alt = \"The RStudio logo.\" class=\"inline-image\" width = \"177\", height = \"62\">"
+  img_text <- "<img src=\"../shared_media/images/r_studio_logo.png\" alt = \"The RStudio logo.\" class=\"inline-image\" width = \"177\", height = \"62\">"
   if(scale != 1){
     img_text <- gsub("177", 177*scale, img_text)
     img_text <- gsub("62", 62*scale, img_text)
@@ -121,10 +121,24 @@ quarto <- function(scale = 1){
     scale = 1
   }
 
-  img_text <- "<img src=\"./media/quarto_logo.png\" alt = \"The Quarto logo.\" class=\"inline-image\" width = \"320\" height = \"77\">"
+  img_text <- "<img src=\"../shared_media/images/quarto.png\" alt = \"The Quarto logo.\" class=\"inline-image\" width = \"320\" height = \"77\">"
   if(scale != 1){
     img_text <- gsub("320", 320*scale, img_text)
     img_text <- gsub("77", 77*scale, img_text)
+  }
+  htmltools::HTML(img_text)
+}
+
+quarto_white <- function(scale = 1){
+  if(scale > 1 | scale <= 0){
+    print("scale value must be between 0 and 1")
+    scale = 1
+  }
+
+  img_text <- "<img src=\"../shared_media/images/quarto_logo_white.png\" alt = \"The quarto logo.\" class=\"inline-image\" width = \"157\", height = \"34\">"
+  if(scale != 1){
+    img_text <- gsub("157", 157*scale, img_text)
+    img_text <- gsub("34", 34*scale, img_text)
   }
   htmltools::HTML(img_text)
 }

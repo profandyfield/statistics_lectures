@@ -92,7 +92,7 @@ Hypothesis
 -- tip
 
 ::: {.callout-tip icon = false}
-## `r cat_space()` :
+## `r cat_space()`:
 
 - Intervals that contain the 'true' population value of the parameter in 95% of samples.
 
@@ -137,13 +137,18 @@ stats things
 ::: {.callout-warning icon = false}
 ## {{< fa skull >}} The danger zone!
 
-What they are not:
+:::
 
-- There is NOT a 95% probability that a given interval contains the population value.
-    - It is *p* = 0 or *p* = 1, but you can’t know which!
-- They do NOT reflect confidence in the value of the population parameter.
+--- have a go
+
+::: {.callout-tip icon = false}
+## `r robot()` : Have a go!
+
+- Use project files!
+- Posit cloud automatically uses them!
 
 :::
+
 
 ___ notes
 
