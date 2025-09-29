@@ -1,0 +1,113 @@
+---
+title: "An Adventure in Statistics"
+subtitle: Getting Started with R, RStudio and Quarto
+author: "Professor Andy Field"
+institute: "University of Sussex"
+format: 
+  revealjs:
+    auto-play-media: true
+revealjs-plugins:
+  - editable
+filters:
+  - editable
+execute: 
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| echo: false
+
+# general
+library(easystats)
+library(tidyverse)
+# specific
+library(emo)
+
+source("../helpers/discovr_helpers.R")
+source("../helpers/easystats_helpers.R")
+
+set.seed(666)
+cloak_tib <- discovr::invisibility_cloak |> 
+  slice_sample(n = 3, by = cloak) |>  arrange(id)
+
+rm_id <- discovr::invisibility_rm |>
+  slice_sample(n = 5) |>  pull(id)
+
+cloak_tib_rm <- discovr::invisibility_rm |> 
+  filter(id %in% rm_id)
+
+eddie_tib <- discovr::eddiefy
+```
+
+
+##  Key information
+
+::: fragment
+
+### Teaching
+
+- 1 × weekly lecture (2 in weeks 1 and 2) on theory
+- 1 × weekly practical class (2 in weeks 1 and 2) about `r rproj()`,  `r rstudio(scale = 0.3)` and `r quarto(scale = 0.3)`
+
+:::
+::: fragment
+
+### Assessment
+
+- 2 × 48-hour Take Away Papers (TAPs)
+	- TAP 1: 25% (Week 6)
+	- TAP 2: 30% (Week 9)
+- Report: 45% (A1)
+
+:::
+
+::: notes
+Use C to toggle pen/markup
+Use backspace to delete markup
+Use f to toggle fullscreen
+:::
+
+#  Part 1: Introducing `r rproj()` and `r rstudio(scale = 0.4)`
+
+```{r, child = "why_r.qmd"}
+
+```
+
+
+#  Part 2: Workflow in `r rstudio(scale = 0.6)`
+
+```{r, child = "workflow.qmd"}
+```
+
+#  Part 3: Introducing `r quarto(scale = 1)`
+
+
+```{r, child = "quarto_intro.qmd"}
+```
+
+
+#  Part 4: Working with code 
+
+
+```{r, child = "coding.qmd"}
+```
+
+#  Part 5: The `tidyverse` and `easystats`
+
+
+```{r, child = "tidyverse.qmd"}
+```
+
+#  Part 6: Good habits
+
+```{r, child = "tips.qmd"}
+```
+
+
+#  Part 7: Getting the most from practical classes
+
+```{r, child = "practical_classes.qmd"}
+```
+

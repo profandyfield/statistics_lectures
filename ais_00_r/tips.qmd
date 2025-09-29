@@ -1,0 +1,109 @@
+---
+title: "tips"
+format: revealjs
+---
+
+##  `r rproj()` Style (Wickham, 2014)
+
+- `r rproj()` is case sensitive. In code chunks use lower case wherever possible
+
+::: fragment
+
+- Variable and function names should be lowercase with an underscore (_) to separate words
+  - Names should be concise and meaningful
+  - A variable representing children’s’ anxiety levels might be named `child_anxiety`
+  - `scores_on_the_child_manifest_anxiety_scale` is meaningful but too long, and `ca` is concise but not meaningful
+
+:::
+::: fragment
+
+- Place spaces around all operators (`=`, `+`, `-`, `<-`) to make code easier on the eye!
+
+:::
+::: fragment
+
+- Use suffixes that identify types of objects. Some personal examples
+  - `_tib` to denote a tibble (more them later), e.g. `anx_tib` for a tibble of data relating to anxiety)
+  - `_lm`, `_glm` to denote models built using `lm()` and `glm()`
+  - `_mlm` to denote multilevel models
+  - `_out` to denote output (e.g., `anx_out` contains the summary output from the above model
+
+:::
+
+## Tables: don't use raw output `r emo::ji("vomit")`
+
+```{r}
+#| eval: false
+
+eddiefy
+```
+
+```{r}
+#| echo: false
+
+head(eddiefy, 15)
+```
+
+
+
+## Tables: use `insight::display()`
+
+::: tbl_s
+```{r}
+eddie_tib |> 
+  display(caption = "Table 1: My nice table", digits = 2)
+```
+:::
+
+
+##  Getting help 
+
+To get help, use the `help()` function or `?`
+
+- `help(thing_you_want_help_with)`
+- `?thing_you_want_help_with`
+
+The `r rproj()` help files are frequently incomprehensible to mere mortals, but they are getting better!
+
+::: {.callout-tip icon = false}
+## `r cat_space()`: Tip
+
+Execute help commands at the command line
+
+- **Do NOT include `help()` or `?` in `r quarto(0.2)` files**
+
+:::
+
+
+
+::: fragment
+::: {.callout-tip icon = false}
+## `r robot()` : Have a go!
+
+Access the help files for the `mean()` function, by executing (in the console):
+
+- `?mean`
+
+:::
+:::
+
+
+##  Use a 'setup' code chunk 
+
+- Use a setup code chunk at the start of your document (directly below the YAML) that
+  - Loads all of the umbrella packages you plan to use (in alphabetic order)
+  - Loads any data that you plan to use
+
+
+::: txt_xl
+```{r}
+#| eval: false
+
+library(easystats)
+library(tidyverse)
+
+tap_tib <- here::here("data/tap_parenting.csv") |>
+  read_csv()
+```
+
+:::

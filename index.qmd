@@ -44,6 +44,6 @@ format:
 
 ## Misc
 
-- [Getting started in R, RStudio and R Markdown]()
+- [Getting started in R, RStudio and R Markdown](ais_00_r/ais_r.html)
 - [Meta-analysis: overview]()
 - [Meta-analysis: data]()
