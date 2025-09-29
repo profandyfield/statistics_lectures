@@ -11,7 +11,7 @@ $brown: #86753E  !default;
 $green: #427479 !default;
 $wht: #FFFFFF !default;
 $blue: #3C648C !default;
-$code_bg: #657284 !default;
+$code_bg_col: #657284 !default;
 
 $headingColor: $purple;
 
@@ -20,9 +20,8 @@ $callout-color-tip: $green !default;
 $callout-color-important: $blue !default;
 $callout-color-caution: $brown !default;
 $callout-color-warning: $mulberry !default;
-
-$code-block-bg: rgba($code_bg, .01) !default;
-$code-bg: rgba($purple, .1) !default;
+$code_bg: rgba($purple, 0.1) !default;
+$code-block-bg: rgba($code_bg_col, .01) !default;
 $code-color: $purple !default;
 
 
