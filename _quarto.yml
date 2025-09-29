@@ -24,4 +24,6 @@ format:
     preview-links: auto
     code-fold: false
     highlight: "kate"
+    revealjs-plugins:
+      - editable
 
