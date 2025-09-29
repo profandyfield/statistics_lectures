@@ -92,7 +92,7 @@ Hypothesis
 -- tip
 
 ::: {.callout-tip icon = false}
-## `r cat_space()`:
+## `r cat_space()`: Tip
 
 - Intervals that contain the 'true' population value of the parameter in 95% of samples.
 

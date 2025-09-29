@@ -50,7 +50,7 @@ head(eddiefy, 15)
 
 ::: tbl_s
 ```{r}
-eddie_tib |> 
+head(eddie_tib, 10) |> # shows first 10 rows only
   display(caption = "Table 1: My nice table", digits = 2)
 ```
 :::
