@@ -1,0 +1,219 @@
+---
+title: "Extending the model"
+format: revealjs
+---
+
+## Birnbaum revisited
+
+:::: columns
+::: {.column width="50%"}
+![](../shared_media/images/date_night_small.png){height=500}
+:::
+
+::: {.column width="50%"}
+
+- Does playing hard to get work?^[[Birnbaum et al. (2020). *Journal of Social and Personal Relationships*. Study 3.]( https://doi.org/10.1177/0265407520927469)]
+- Heterosexual participants conversed with an opposite-sex confederate over Instant
+Messenger for 8 mins
+- **Interest**: Final message coded for the number of expressions of romantic interest (range 0 to 4)
+- **Hard to get**: 3 items rated 1 (not at all) and 5 (very much so)
+  - *The other participant is hard to get*
+- **Mate value**: 4 items rated 1 (not at all) and 5 (very much so)
+  - *I perceive the other participant as a valued mate*
+
+:::
+:::
+
+## The model
+
+::: center-h
+::: txt_mulberry
+$$
+\text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i +e_i
+$$
+:::
+:::
+
+
+```{r}
+#| echo: false
+#| message: false
+
+# hard_tib <- readr::read_csv("data/birnbaum.csv")
+
+hard_tib <- haven::read_sav("data/birnbaum_study_3.sav", col_select = c(
+  "QualtricsID", "MCoding", "MHardtoGet", "MMateValue"
+)) |> 
+  dplyr::rename(
+    id = QualtricsID,
+    interest = MCoding,
+    hard_to_get = MHardtoGet,
+    mate_value = MMateValue
+  ) |> 
+  dplyr::mutate(
+    mean_interest = mean(interest)
+  )
+
+hard_lm <- lm(interest ~ hard_to_get, data = hard_tib)
+more_hard_lm <- lm(interest ~ hard_to_get + mate_value, data = hard_tib)
+more_hard_null <- lm(mean_interest ~ hard_to_get + mate_value, data = hard_tib)
+```
+
+
+:::: columns
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 3
+
+birm_gg <- ggplot2::ggplot(hard_tib, aes(x = hard_to_get, y = interest)) +
+  geom_point(size = 1, colour = mulberry, alpha = 0.6) +
+  stat_smooth(method = "lm", colour = blue, fill = blue) +
+  labs(y = "Expressions of interest (0-4)", x = "Perception that stooge was hard to get (1-5)") +
+  coord_cartesian(xlim = c(1, 5), ylim = c(0, 4)) +
+  scale_x_continuous(breaks = 01:5) +
+  scale_y_continuous(breaks = 1:4) +
+  theme_minimal()
+birm_gg
+```
+:::
+
+::: {.column width="60%"}
+::: tbl_s
+```{r}
+#| echo: false
+
+birm_noci_tbl <- model_parameters(hard_lm) 
+display(birm_noci_tbl)
+```
+:::
+:::
+:::
+
+\
+
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+- How do we extend the model to include mate value?
+:::
+
+
+## Extending the linear model
+
+
+::: center-h
+::: txt_mulberry
+::: txt_l
+$$
+\text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i
+$$
+:::
+:::
+:::
+
+::: center-h
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 9
+#| fig-height: 5
+
+
+s3d <- scatterplot3d::scatterplot3d(x = hard_tib$hard_to_get,
+                               y = hard_tib$mate_value,
+                               z = hard_tib$interest,
+                               color = alpha(blue, 0.6),
+                               angle = 10,
+                               pch = 16,
+                               zlim = c(0, 4),
+                               xlim = c(1, 5),
+                               ylim = c(1, 5),
+                               box = FALSE,
+                               cex.symbols = 2,
+                               ylab = "Mate value (1-5)",
+                               zlab = "Interest (0-4)",
+                               xlab = "Hard to get (1-5)"
+                               )
+
+s3d$plane3d(more_hard_lm, lty = 2, draw_polygon = TRUE, col = alpha(mulberry, 0.3), polygon_args = list(col = alpha(mulberry, 0.1), border = mulberry))
+```
+
+:::
+
+## Parameter estimates
+
+::: center-h
+::: txt_mulberry
+::: txt_l
+$\hat{\text{interest}}_i = -0.490 + 0.126\text{ hard to get}_i + 0.386\text{ mate value}_i$
+:::
+:::
+:::
+
+::: center-h
+::: tbl_s
+```{r}
+#| echo: false
+
+more_hard_tbl <- model_parameters(more_hard_lm) 
+display(more_hard_tbl)
+```
+:::
+:::
+
+::: fragmet
+
+* As the perception that the other person was hard to get increased by 1 (on a scale from 1-5), **`r value_from_ez(more_hard_tbl, row = 2)`** more expressions of interest were made (when mate value is constant)
+  + This effect is not significant, `r report_pe(more_hard_tbl, row = 2)`
+  + This is the effect of 'hard to get' on interest **adjusted for** the effect of 'mate value'
+
+:::
+::: fragmet
+
+* As the perception of mate value increased by 1 (on a scale from 1-5), **`r value_from_ez(more_hard_tbl, row = 3)`** more expressions of interest were made (when perceptions of being hard to get are constant)
+  + This effect is significant, `r report_pe(more_hard_tbl, row = 3)`
+  - This is the effect of 'mate value' on interest **adjusted for** the effect of 'hard to get'
+
+:::
+
+
+
+## How to enter predictors
+
+::: fragment
+
+- Hierarchical
+  - Experimenter decides the order in which variables are entered into the model
+  - Best for theory testing
+
+:::
+::: fragment
+
+- Forced entry
+  - All predictors are entered simultaneously
+
+:::
+::: fragment
+
+- Stepwise
+  - Predictors are selected using their semi-partial correlation with the outcome
+  - Can produce spurious results
+  - Use only for exploratory analysis
+ 
+::: 
+  
+# When a hierarchical model gets you dressed
+
+## {background-video="media/arlo_hierarchical_small.mp4" background-size="cover"}
+
+
+# When a stepwise model gets you dressed
+
+## {background-video="media/arlo_stepwise_small.mp4" background-size="cover"}
+
+## {background-video="media/arlo_outtake_small.mp4" background-size="cover"}

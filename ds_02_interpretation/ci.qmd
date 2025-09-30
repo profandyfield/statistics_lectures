@@ -1,0 +1,96 @@
+---
+title: "confidence intervals"
+format: revealjs
+---
+
+
+## {background-iframe="https://milton-the-cat.rocks/lm_sampling/" background-interactive=true}
+
+## {background-iframe="https://milton-the-cat.rocks/ci_explorer/" background-interactive=true}
+
+
+## Confidence intervals
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip 
+
+What confidence intervals are:
+
+- Intervals that contain the 'true' population value of the parameter in 95% of samples
+- They are related to the uncertainty in our parameter estimate
+  - Wide intervals (small sample) = lots of uncertainty
+  - Narrow intervals (large sample) = less uncertainty
+  
+:::
+
+\
+
+::: fragment
+::: {.callout-warning icon = false}
+## {{< fa skull >}} The danger zone!
+
+What confidence intervals are NOT:
+
+- There is NOT a 95% probability that a given interval contains the population value.
+    - It is *p* = 0 or *p* = 1, but you can’t know which!
+- They do NOT reflect confidence in the value of the population parameter.
+
+:::
+:::
+
+## A practical solution {.incremental}
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+We make an assumption (that could be wrong)
+
+- We assume that our sample **is** one of the 95% that yields a confidence interval containing the true value of the parameter.^[For an *x*% interval we assume our sample is one of the *x*%]
+- We acknowledge that this assumption will be incorrect 5% of the time.^[For an *x*% interval we will be wrong  (1-*x*)% of the time.]
+
+:::
+
+::: fragment
+### Under this assumption ...
+
+- The confidence interval can be interpreted as containing the true (population) value of the parameter.
+
+:::{.callout-important icon=false}
+## {{< fa pencil >}} Report`r rproj()`
+
+Assuming that this sample is one of the 95% that yields a confidence interval containing the true value of the parameter the effect could be as small as [`value of lower boundary`] or as large as [`value of upper boundary`]
+
+:::
+:::
+
+## Back to Birnbaum
+
+::: center-h
+::: txt_mulberry
+$$
+\text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i +e_i
+$$
+:::
+:::
+
+
+```{r}
+#| echo: false
+
+display(birm_noci_tbl)
+```
+
+
+::: incremental
+
+- [**Assuming that this sample is one of the 95% that yields a confidence interval containing the true value of the parameter ...**]{.bold_col}
+- As the perception that the other person was hard to get increases by 1, the corresponding change in the number of expressions made could be as small as **`r value_from_ez(birm_noci_tbl, row  = 2, value = "CI_low")`**. In other words, there are *fewer* expressions of interest.
+- As the perception that the other person was hard to get increases by 1, the corresponding change in the number of expressions made could be as large as **`r value_from_ez(birm_noci_tbl, row  = 2, value = "CI_high")`**. In other words, there are *more* expressions of interest.
+- It's plausible that as the perception that the other person was hard to get increases by 1, there is *no change* in expressions of interest (*b* = 0).
+- [**The assumption at the start might be false**]{.bold_col}
+
+:::
+
+## {background-video="../shared_media/video/hippo_burp.mp4" background-size="cover"}
+
+
