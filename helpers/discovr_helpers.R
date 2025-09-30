@@ -20,19 +20,14 @@ box_col <- "#807030"
 wht_col <- "#FFFFFF"
 quote_col <- "#657284"
 
-ong <- "#d47500"
-ong_dk <- "#d35400"
-red <- "#CA3E34"
-red_dk <- "#912D25"
-grn <- "#82b1b0"
-grn_dk <- "#427479"
-blu <- "#136CB9"
-blu_dk <- "#2C5577"
-bwn <- "#F3E2C4"
-bwn_dk <- "#775418"
-gry <- "#E8EAE5"
-gry_dk <- "#3F3F3F"
-purp <- "#6F709F"
+grey <- "#616161"
+purple <- "#49345b"
+mulberry <- "#882255"
+brown <- "#86753E"
+green <- "#427479"
+wht <- "#FFFFFF"
+blue <- "#3C648C"
+tbl_row <- "#e6edf4"
 
 
 
@@ -65,12 +60,12 @@ knit_print.fontawesome <- function(x, ...) { # nocov start
 # extract svg code
 
 
-alien <- function(fill = "default", height = 1){
+alien <- function(fill = mulberry, height = 1){
   code <- "<svg style=\"height: 1em; top:.04em; position: relative; fill: fill;\" viewBox=\"0 0 448 512\"><path d=\"M224,0C100.28125,0,0,88.0293,0,232.45117c0,111.77735,134.21484,224.59766,194.86328,269.875a48.71553,48.71553,0,0,0,58.27344,0C313.78516,457.04883,448,344.22852,448,232.45117,448,88.0293,347.6875,0,224,0Zm9.99219,476.68359a16.71415,16.71415,0,0,1-19.98633,0C171.30859,444.80859,32,332.99609,32,232.45117,32,114.42773,110.95312,32,224,32s192,82.42773,192,200.45117C416,332.99609,276.69141,444.80859,233.99219,476.68359ZM368,212H320a79.999,79.999,0,0,0-80,80v12a16.00079,16.00079,0,0,0,16,16h48a80.00021,80.00021,0,0,0,80-80V228A15.99954,15.99954,0,0,0,368,212Zm-64,76H272.166A48.06494,48.06494,0,0,1,320,244h31.834A48.06645,48.06645,0,0,1,304,288ZM128,212H80a15.99954,15.99954,0,0,0-16,16v12a80.00021,80.00021,0,0,0,80,80h48a16.00079,16.00079,0,0,0,16-16V292A79.999,79.999,0,0,0,128,212Zm16,76a48.06645,48.06645,0,0,1-47.834-44H128a48.06494,48.06494,0,0,1,47.834,44Z\"/></svg>"
     set_svg_props(code, fill, height)
 }
 
-bug <- function(fill = "default", height = 1){
+bug <- function(fill = mulberry, height = 1){
   code <- "<svg style=\"height: 1em; top:.04em; position: relative; fill: fill;\" viewBox=\"0 0 576 512\"><path d=\"M192,320h32V224H192Zm160,0h32V224H352ZM544,112H512a32.03165,32.03165,0,0,0-32,32v16H416V128h32a32.03165,32.03165,0,0,0,32-32V64a32.03165,32.03165,0,0,0-32-32H416a32.03165,32.03165,0,0,0-32,32H352a32.03165,32.03165,0,0,0-32,32v32H256V96a32.03165,32.03165,0,0,0-32-32H192a32.03165,32.03165,0,0,0-32-32H128A32.03165,32.03165,0,0,0,96,64V96a32.03165,32.03165,0,0,0,32,32h32v32H96V144a32.03165,32.03165,0,0,0-32-32H32A32.03165,32.03165,0,0,0,0,144V288a32.03165,32.03165,0,0,0,32,32H64v32a32.03165,32.03165,0,0,0,32,32h32v64a32.03165,32.03165,0,0,0,32,32h80a32.03165,32.03165,0,0,0,32-32V416a32.03165,32.03165,0,0,0-32-32h96a32.03165,32.03165,0,0,0-32,32v32a32.03165,32.03165,0,0,0,32,32h80a32.03165,32.03165,0,0,0,32-32V384h32a32.03165,32.03165,0,0,0,32-32V320h32a32.03165,32.03165,0,0,0,32-32V144A32.03165,32.03165,0,0,0,544,112ZM416,64h32V96H416ZM128,96V64h32V96ZM240,448H160V384h32v32h48Zm176,0H336V416h48V384h32ZM544,288H480v64H96V288H32V144H64V256H96V192h96V96h32v64H352V96h32v96h96v64h32V144h32Z\"/></svg>"
     set_svg_props(code, fill, height)
 }
@@ -112,7 +107,7 @@ rstudio <- function(scale = 1){
     scale = 1
   }
 
-  img_text <- "<img src=\"./media/r_studio_logo.png\" alt = \"The RStudio logo.\" class=\"inline-image\" width = \"177\", height = \"62\">"
+  img_text <- "<img src=\"../shared_media/images/r_studio_logo.png\" alt = \"The RStudio logo.\" class=\"inline-image\" width = \"177\", height = \"62\">"
   if(scale != 1){
     img_text <- gsub("177", 177*scale, img_text)
     img_text <- gsub("62", 62*scale, img_text)
@@ -126,10 +121,24 @@ quarto <- function(scale = 1){
     scale = 1
   }
 
-  img_text <- "<img src=\"./media/quarto_logo.png\" alt = \"The Quarto logo.\" class=\"inline-image\" width = \"320\" height = \"77\">"
+  img_text <- "<img src=\"../shared_media/images/quarto.png\" alt = \"The Quarto logo.\" class=\"inline-image\" width = \"320\" height = \"77\">"
   if(scale != 1){
     img_text <- gsub("320", 320*scale, img_text)
     img_text <- gsub("77", 77*scale, img_text)
+  }
+  htmltools::HTML(img_text)
+}
+
+quarto_white <- function(scale = 1){
+  if(scale > 1 | scale <= 0){
+    print("scale value must be between 0 and 1")
+    scale = 1
+  }
+
+  img_text <- "<img src=\"../shared_media/images/quarto_logo_white.png\" alt = \"The quarto logo.\" class=\"inline-image\" width = \"157\", height = \"34\">"
+  if(scale != 1){
+    img_text <- gsub("157", 157*scale, img_text)
+    img_text <- gsub("34", 34*scale, img_text)
   }
   htmltools::HTML(img_text)
 }
