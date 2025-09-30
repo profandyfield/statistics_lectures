@@ -118,7 +118,7 @@ editor: visual
 eddie_tib <- discovr::eddiefy
 
 dplyr::slice_sample(eddie_tib, n = 10) |> 
-  knitr::kable(digits = 2)
+  insight::display()
 ```
 :::
 
@@ -138,7 +138,7 @@ dplyr::slice_sample(eddie_tib, n = 10) |>
 eddie_tib <- discovr::eddiefy
 
 dplyr::slice_sample(eddie_tib, n = 10) |> 
-  knitr::kable(digits = 2)
+  insight::display()
 ```
 :::
 

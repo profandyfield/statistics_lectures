@@ -21,7 +21,7 @@ format: revealjs
 eddie_tib <- discovr::eddiefy
 
 dplyr::slice_sample(eddie_tib, n = 10) |> 
-  knitr::kable(digits = 2)
+  insight::display()
 ```
 :::
 
@@ -119,7 +119,7 @@ randomNames(n = 5)
 
 ##  Installing and loading packages 
 
-- You need to install the package into `r rproj()`’s repository of packages on your computer.
+- You need to install the package into `r rproj()`'s repository of packages on your computer.
 - Every time you update or re-install `r rproj()` you need to re-install packages to use them.
 
 ::: txt_xl
@@ -282,7 +282,7 @@ path_to_data <- here::here("data/eddiefy.csv")
 
 ### The `readr` package
 
-The `read_csv(file = "filepath")` function reads CSV files.^[This is from the `readr` function which is part of tidyverse so we don't need to use `readr::read_csv()` because we have loaded all tidyverse packages. We have not loaded `here` so we **do* need to use `here::here()`.] 
+The `read_csv(file = "filepath")` function reads CSV files.^[This is from the `readr` function which is part of tidyverse so we don't need to use `readr::read_csv()` because we have loaded all tidyverse packages. We have not loaded `here` so we **do** need to use `here::here()`.] 
 
 :::txt_xl
 ```{r}
