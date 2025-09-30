@@ -6,7 +6,10 @@
 .DS_Store
 .quarto
 media_dev/
+archive/
 
 /.quarto/
 .Rdata
 .httr-oauth
+
+**/*.quarto_ipynb
