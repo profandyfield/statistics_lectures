@@ -151,6 +151,9 @@ ss_1989 +
 So we can quantify 'fit' using sums of squares. In this very simple case the total error in prediction from using the mean is 0.26, but what does this mean? Ideally we need a frame of reference. Let's look at the same data for the greatest album ever written Piece of Mind by Iron Maiden.
 :::
 
+## {background-video="media/flight_of_icarus_vancouver.mp4" background-size="cover"}
+
+
 ## Is the average energy score a good fit?
 
 :::: columns

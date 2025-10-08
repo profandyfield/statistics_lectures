@@ -150,7 +150,7 @@ s3d$plane3d(more_hard_lm, lty = 2, draw_polygon = TRUE, col = alpha(mulberry, 0.
 ::: center-h
 ::: txt_mulberry
 ::: txt_l
-$\hat{\text{interest}}_i = -0.490 + 0.126\text{ hard to get}_i + 0.386\text{ mate value}_i$
+$\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate value}_i$
 :::
 :::
 :::

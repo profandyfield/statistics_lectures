@@ -999,9 +999,9 @@ Overall, including both playing hard to get and mate value significantly improve
 :::
 
 
-## Testing the model fit: R^2^
+## Testing the model fit: *R*^2^
 
-- **R^2^**
+- ***R*^2^**
   - The proportion of variance accounted for by the model
   - The Pearson correlation between observed and predicted scores squared
 
@@ -1045,7 +1045,7 @@ model_performance(ite_lm) |>
 ```
 :::
 
-## Testing the model fit: R~2~
+## Testing the model fit: *R*^2^
 
 ::: center-h
 ::: txt_mulberry
