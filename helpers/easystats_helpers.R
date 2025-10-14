@@ -1,5 +1,11 @@
 # Easystats helpers
 
+# remove redundant decimals
+
+remove_redundant_decimals <- function(text){
+  str_remove(text, '\\.?0+$')
+}
+
 # format p-values
 report_p <- function(p, p_digits = 3){
   p_dp <- paste0("%.", p_digits, "f")
@@ -62,8 +68,8 @@ percent_from_ez <- function(ezobj, row = 1, value = "Coefficient", digits = 0){
 # report likelihood ratio and wald tests
 
 report_lrt <- function(lrt, row = 2, digits = 2, p_digits = 3, df_digits = 0){
-  dfm <- value_from_ez(lrt, row = row, value = "df_diff", digits = df_digits)
-  dfr <- value_from_ez(lrt, row = row, value = "df", digits = df_digits)
+  dfm <- value_from_ez(lrt, row = row, value = "df_diff", digits = df_digits) |> remove_redundant_decimals()
+  dfr <- value_from_ez(lrt, row = row, value = "df", digits = df_digits) |> remove_redundant_decimals()
   p <- value_from_ez(lrt, row = row, value = "p", p_digits = p_digits)
 
   if(exists("F", where = lrt)){
@@ -83,7 +89,7 @@ report_pe <- function(ezobj, row = 2, digits = 2, p_digits = 3, df_digits = 0, s
   ci <- paste0("(", value_from_ez(ezobj, row = row, value = "CI_low", digits = digits), ", ", value_from_ez(ezobj, row = row, value = "CI_high", digits = digits), ")")
 
   if(exists("t", where = ezobj)){
-    df <- value_from_ez(ezobj, row = row, value = "df_error", digits = df_digits)
+    df <- value_from_ez(ezobj, row = row, value = "df_error", digits = df_digits) |> remove_redundant_decimals()
     t <- value_from_ez(ezobj, row = row, value = "t", digits = digits)
     paste0(symbol, " = ", b, " ", ci, ", *t*(", df, ") = ", t, ", ", p)
   } else {
@@ -100,7 +106,7 @@ report_ss <- function(ezobj, row = 2, digits = 2, p_digits = 3, df_digits = 0, s
   ci <- paste0("(", value_from_ez(ezobj, row = row, value = "CI_low", digits = digits), ", ", value_from_ez(ezobj, row = row, value = "CI_high", digits = digits), ")")
 
   if(exists("t", where = ezobj)){
-    df <- value_from_ez(ezobj, row = row, value = "df", digits = df_digits)
+    df <- value_from_ez(ezobj, row = row, value = "df", digits = df_digits) |> remove_redundant_decimals()
     t <- value_from_ez(ezobj, row = row, value = "t", digits = digits)
     paste0(symbol, " = ", b, " ", ci, ", *t*(", df, ") = ", t, ", ", p)
   } else {
@@ -112,8 +118,8 @@ report_ss <- function(ezobj, row = 2, digits = 2, p_digits = 3, df_digits = 0, s
 # report contrasts
 
 report_con <- function(ezobj, row = 2, digits = 2, p_digits = 3, df_digits = 0){
-  df1 <- value_from_ez(ezobj, row = row, value = "df1", digits = df_digits, as_is = T)
-  df2 <- value_from_ez(ezobj, row = row, value = "df2", digits = df_digits, as_is = T)
+  df1 <- value_from_ez(ezobj, row = row, value = "df1", digits = df_digits, as_is = T) |> remove_redundant_decimals()
+  df2 <- value_from_ez(ezobj, row = row, value = "df2", digits = df_digits, as_is = T) |> remove_redundant_decimals()
   f <- value_from_ez(ezobj, row = row, value = "F", digits = digits)
   p <- value_from_ez(ezobj, row = row, value = "p", p_digits = p_digits)
 
@@ -150,11 +156,11 @@ report_es <- function(es_obj, col, row = 1, digits = 2){
 report_ez_aov <- function(ez_aov, row = 1, digits = 2, p_digits = 3, df_digits = 0, es_type = "Omega2"){
   f <- value_from_ez(ez_aov, row = row, value = "F", digits = digits)
   p <- value_from_ez(ez_aov, row = row, value = "p", p_digits = p_digits)
-  dfm <- value_from_ez(ez_aov, row = row, value = "df", digits = df_digits)
+  dfm <- value_from_ez(ez_aov, row = row, value = "df", digits = df_digits) |> remove_redundant_decimals()
   if(exists("df_error", where = ez_aov)){
-    dfr <- value_from_ez(ez_aov, row = row, value = "df_error", digits = df_digits)
+    dfr <- value_from_ez(ez_aov, row = row, value = "df_error", digits = df_digits) |> remove_redundant_decimals()
   } else {
-    dfr <- value_from_ez(ez_aov, row = length(ez_aov$df), value = "df", digits = df_digits)
+    dfr <- value_from_ez(ez_aov, row = length(ez_aov$df), value = "df", digits = df_digits) |> remove_redundant_decimals()
   }
 
   out <- paste0("F(", dfm, ", ", dfr,  ") = ", f, ", ", p)
@@ -188,7 +194,7 @@ report_ez_aov <- function(ez_aov, row = 1, digits = 2, p_digits = 3, df_digits =
 report_ph <- function(ezobj, row = 2, digits = 2, p_digits = 3, df_digits = 0, symbol = "$\\bar{X}_\\text{Diff}$"){
   b <- value_from_ez(ezobj, row = row, value = "Difference", digits = digits)
   p <- value_from_ez(ezobj, row = row, value = "p", p_digits = p_digits)
-  df <- value_from_ez(ezobj, row = row, value = "df", digits = df_digits)
+  df <- value_from_ez(ezobj, row = row, value = "df", digits = df_digits) |> remove_redundant_decimals()
   ci <- paste0("(", value_from_ez(ezobj, row = row, value = "CI_low", digits = digits), ", ", value_from_ez(ezobj, row = row, value = "CI_high", digits = digits), ")")
   test_stat <- value_from_ez(ezobj, row = row, value = "t", digits = digits)
   stat_text <- paste0(", *t*(", df, ") = ", test_stat)
