@@ -60,6 +60,18 @@ $code-color: $purple !default;
   background-color: #e6edf4;
 }
 
+.reveal .slide .tbl_s_dk table td,
+.reveal .slide .tbl_s_dk table th {
+  font-size: 60%;
+  padding: 10px;
+  background-color: #e6edf4;
+}
+
+.reveal .slide .tbl_dk table td,
+.reveal .slide .tbl_dk table th {
+  background-color: #e6edf4;
+}
+
 
 .reveal .slide table td {
    padding: 15px;
@@ -162,6 +174,10 @@ p.subtitle {
     color: white;
 }
 
+.txt_ong {
+    color: #FFAD00;
+}
+
 .txt_blue {
     color: $blue;
 }
@@ -172,4 +188,9 @@ p.subtitle {
 
 .alt {
     color: $brand-mulberry;
+}
+
+.txt_dk_bg {
+  color: white;
+  background-color: rgba($brand-grey, .5);
 }
