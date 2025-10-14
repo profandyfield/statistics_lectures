@@ -1,0 +1,65 @@
+---
+title: "Cubit phone convo 1"
+format: revealjs
+---
+
+
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_01.mp4"
+  width="100%"
+  height="100%"
+></video>
+
+
+
+::: notes
+C: .... you look awful
+AF: Well, it's been a long term etc.
+:::
+
+##
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_02.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+::: notes
+
+C: Is it true that you are the greatest statistician in the land?
+AF: Well, on a good day I'm barely adequate. But I am cheap, and I am available.
+:::
+
+##
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_03.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+
+::: notes
+
+C: .... can you do it?
+AF: yes, sure, leave it with me ... byE!
+:::
+
+##
+
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_04.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+::: notes
+C: Thank you
+:::

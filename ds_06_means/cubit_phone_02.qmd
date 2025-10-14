@@ -1,0 +1,62 @@
+---
+title: "Cubit phone convo 1"
+format: revealjs
+---
+
+##
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_05.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+::: notes
+C: Hello, it is I, Cubit Zenom, King of the zombies. 
+AF: Hi.
+:::
+
+## 
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_06.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+
+::: notes
+C: I took your results to Azal and he said you have done a foolish thing.
+AF: Really?
+:::
+
+## 
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_07.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+::: notes
+
+C: I need you to take another look.
+AF: Ok, leave it with me.
+:::
+
+## 
+
+<video
+  data-autoplay
+  src="media/cubit_facetime_live_lecture_08.mp4"
+  width="100%"
+  height="100%" 
+></video>
+
+
+::: notes
+C: Bye!
+:::
