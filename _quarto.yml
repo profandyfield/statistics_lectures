@@ -5,7 +5,7 @@ editor: source
 
 format:
   revealjs:
-    background-image: url("https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg")
+    background-image: url("https://profandyfield.github.io/statistics_lectures/shared_media/images/slide_background_main.jpg")
     theme:
       - brand
       - ds2_theme.scss
