@@ -27,6 +27,7 @@ library(easystats)
 library(tidyverse)
 # specific
 library(rstanarm)
+library(logspline)
 
 source("../helpers/discovr_helpers.R")
 source("../helpers/easystats_helpers.R")
@@ -261,10 +262,10 @@ What [**credible**]{.txt_mulberry} intervals ARE:
 - The prior exerts more influence on estimates than an uninformative prior
 - Can be strong
   - A narrow distribution
-  - The prior has more influence that for a weak prior
+  - The prior has more influence than for a weak prior
 - Can be weak
   - A wider distribution
-  - The prior has less influence that for a strong prior
+  - The prior has less influence than for a strong prior
 - 'Congugate' distributions
   - Normal, Gamma, Beta
 
@@ -317,7 +318,7 @@ ggplot(tibble(x = c(-10, 50)), aes(x = x)) +
 ::: {.callout-caution icon = false}
 ## {{< fa brain >}} Think about it!
 
-Historic data:
+- Historic data:
   - For every £1000 pounds they spend on advertising they can expect 1000 album sales. This equates to a $b$ = 1. 
   - Although spending money on advertising typically increases sales, they have been known to go down.
 

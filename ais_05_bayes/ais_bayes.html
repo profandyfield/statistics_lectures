@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="ais_bayes_files/libs/revealjs/dist/theme/quarto-da6cb3e743c68c5f5d0f92e5de5e2941.css">
+  <link rel="stylesheet" href="ais_bayes_files/libs/revealjs/dist/theme/quarto-ae208772f336504f6132608c19f21d0e.css">
   <link href="ais_bayes_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ais_bayes_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ais_bayes_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -398,11 +398,11 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">133.88</td>
-<td style="text-align: center;">(119.79, 148.91)</td>
+<td style="text-align: center;">134.21</td>
+<td style="text-align: center;">(119.22, 149.23)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">3624</td>
+<td style="text-align: center;">3630</td>
 <td style="text-align: center;">Normal (193.20 +- 201.75)</td>
 </tr>
 <tr class="even">
@@ -410,8 +410,8 @@
 <td style="text-align: center;">0.10</td>
 <td style="text-align: center;">(0.08, 0.11)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">1.000</td>
-<td style="text-align: center;">4006</td>
+<td style="text-align: center;">0.999</td>
+<td style="text-align: center;">3845</td>
 <td style="text-align: center;">Normal (0.00 +- 0.42)</td>
 </tr>
 </tbody>
@@ -465,12 +465,12 @@
 <li>Can be strong
 <ul>
 <li>A narrow distribution</li>
-<li>The prior has more influence that for a weak prior</li>
+<li>The prior has more influence than for a weak prior</li>
 </ul></li>
 <li>Can be weak
 <ul>
 <li>A wider distribution</li>
-<li>The prior has less influence that for a strong prior</li>
+<li>The prior has less influence than for a strong prior</li>
 </ul></li>
 <li>‘Congugate’ distributions
 <ul>
@@ -532,7 +532,13 @@ b_0 \sim  N(20, 7)
 <p><strong><i class="fa-solid fa-brain" aria-label="brain"></i> Think about it!</strong></p>
 </div>
 <div class="callout-content">
-<p>Historic data: - For every £1000 pounds they spend on advertising they can expect 1000 album sales. This equates to a <span class="math inline">\(b\)</span> = 1. - Although spending money on advertising typically increases sales, they have been known to go down.</p>
+<ul>
+<li>Historic data:
+<ul>
+<li>For every £1000 pounds they spend on advertising they can expect 1000 album sales. This equates to a <span class="math inline">\(b\)</span> = 1.</li>
+<li>Although spending money on advertising typically increases sales, they have been known to go down.</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
@@ -637,11 +643,11 @@ b_1 \sim  N(1, 0.5)
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">26.84</td>
-<td style="text-align: center;">(-1.86, 53.87)</td>
-<td style="text-align: center;">96.12%</td>
-<td style="text-align: center;">1.001</td>
-<td style="text-align: center;">2173</td>
+<td style="text-align: center;">26.25</td>
+<td style="text-align: center;">(-0.97, 53.35)</td>
+<td style="text-align: center;">97.10%</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">2115</td>
 <td style="text-align: center;">Normal (20 +- 7.00)</td>
 </tr>
 <tr class="even">
@@ -649,8 +655,8 @@ b_1 \sim  N(1, 0.5)
 <td style="text-align: center;">0.10</td>
 <td style="text-align: center;">(0.06, 0.13)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">1.001</td>
-<td style="text-align: center;">2675</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">2440</td>
 <td style="text-align: center;">Normal (1 +- 0.50)</td>
 </tr>
 </tbody>
@@ -1144,20 +1150,20 @@ p(\text{human}|\text{match}) &amp;= \frac{p(\text{match}|\text{human})\times p(\
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">26.84</td>
-<td style="text-align: center;">(-1.86, 53.87)</td>
-<td style="text-align: center;">0.034</td>
-<td style="text-align: center;">1.001</td>
-<td style="text-align: center;">2173</td>
+<td style="text-align: center;">26.25</td>
+<td style="text-align: center;">(-0.97, 53.35)</td>
+<td style="text-align: center;">0.041</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">2115</td>
 <td style="text-align: center;">Normal (20 +- 7.00)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">adverts</td>
 <td style="text-align: center;">0.10</td>
 <td style="text-align: center;">(0.06, 0.13)</td>
-<td style="text-align: center;">421.08</td>
-<td style="text-align: center;">1.001</td>
-<td style="text-align: center;">2675</td>
+<td style="text-align: center;">601.16</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">2440</td>
 <td style="text-align: center;">Normal (1 +- 0.50)</td>
 </tr>
 </tbody>
@@ -1167,7 +1173,7 @@ p(\text{human}|\text{match}) &amp;= \frac{p(\text{match}|\text{human})\times p(\
 <p><br>
 </p>
 <ul>
-<li>We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 421.</li>
+<li>We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 601.</li>
 </ul>
 </section>
 <section id="summary" class="slide level2">
@@ -1364,7 +1370,7 @@ p(\text{human}|\text{match}) &amp;= \frac{p(\text{match}|\text{human})\times p(\
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/statistics_lectures/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
