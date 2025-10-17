@@ -50,7 +50,7 @@ Use f to toggle fullscreen
 ::: r-stack
 ![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
 
-![](media/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+![](../shared_media/images/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
 :::
 
 
