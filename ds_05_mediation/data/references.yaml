@@ -1,0 +1,53 @@
+---
+references:
+- id: gerlich2025
+  accessed: "14:39:06"
+  author:
+  - family: Gerlich
+    given: Michael
+  container-title: Societies
+  container-title-short: Societies
+  DOI: 10.3390/soc15010006
+  ISSN: 2075-4698
+  issue: 1
+  issued: 2025-01-03
+  key: AVM9K5ES
+  language: en
+  libraryID: 1
+  page: 6
+  providerKey: 2509FBBE-5BB0-44C4-B119-6083A81ED673
+  source: DOI.org (Crossref)
+  title: "AI Tools in Society: Impacts on Cognitive Offloading and the
+    Future of Critical Thinking"
+  title-short: AI Tools in Society
+  type: article-journal
+  URL: "https://www.mdpi.com/2075-4698/15/1/6"
+  volume: 15
+- id: greitemeyer2024
+  accessed: "13:43:56"
+  author:
+  - family: Greitemeyer
+    given: Tobias
+  - family: Kastenmüller
+    given: Andreas
+  container-title: Technology, Mind, and Behavior
+  container-title-short: Technology, Mind, and Behavior
+  DOI: 10.1037/tmb0000133
+  ISSN: 2689-0208
+  issue: 2
+  issued: 2024-05-20
+  key: H3G6G69T
+  language: en
+  libraryID: 1
+  page: 1-8
+  providerKey: 2509FBBE-5BB0-44C4-B119-6083A81ED673
+  rights: "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  source: DOI.org (Crossref)
+  title: "A longitudinal analysis of the willingness to use chatGPT for
+    academic cheating: Applying the theory of planned behavior."
+  title-short: A longitudinal analysis of the willingness to use chatGPT
+    for academic cheating
+  type: article-journal
+  URL: "https://tmb.apaopen.org/pub/v5k38sak"
+  volume: 5
+...

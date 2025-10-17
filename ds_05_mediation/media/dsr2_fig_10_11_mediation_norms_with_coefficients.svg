@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="33.14461 163.56497 499.348 188.154" width="499.348" height="188.154">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" fill-opacity="1" stroke="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_12">
+        <path d="M 380 262 L 512 262 C 516.97056 262 521 266.02944 521 271 L 521 288 C 521 292.97056 516.97056 297 512 297 L 380 297 C 375.02944 297 371 292.97056 371 288 L 371 271 C 371 266.02944 375.02944 262 380 262 Z" fill="#71cff2"/>
+        <path d="M 380 262 L 512 262 C 516.97056 262 521 266.02944 521 271 L 521 288 C 521 292.97056 516.97056 297 512 297 L 380 297 C 375.02944 297 371 292.97056 371 288 L 371 271 C 371 266.02944 375.02944 262 380 262 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(376 271.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="52.228" y="12" xml:space="preserve">AI use</tspan>
+        </text>
+      </g>
+      <g id="Line_11">
+        <line x1="191.93118" y1="279.5" x2="359.3" y2="279.5" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_10">
+        <path d="M 205.0743 165.06497 L 353.0743 165.06497 C 358.04486 165.06497 362.0743 169.09441 362.0743 174.06497 L 362.0743 191.06497 C 362.0743 196.03554 358.04486 200.06497 353.0743 200.06497 L 205.0743 200.06497 C 200.10374 200.06497 196.0743 196.03554 196.0743 191.06497 L 196.0743 174.06497 C 196.0743 169.09441 200.10374 165.06497 205.0743 165.06497 Z" fill="#e1cc69"/>
+        <path d="M 205.0743 165.06497 L 353.0743 165.06497 C 358.04486 165.06497 362.0743 169.09441 362.0743 174.06497 L 362.0743 191.06497 C 362.0743 196.03554 358.04486 200.06497 353.0743 200.06497 L 205.0743 200.06497 C 200.10374 200.06497 196.0743 196.03554 196.0743 191.06497 L 196.0743 174.06497 C 196.0743 169.09441 200.10374 165.06497 205.0743 165.06497 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(201.0743 174.89093)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="52.674" y="12" xml:space="preserve">Intention</tspan>
+        </text>
+      </g>
+      <g id="Line_8">
+        <line x1="362.0743" y1="182.56497" x2="437.50264" y2="253.9573" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_7">
+        <line x1="129.11118" y1="262" x2="188.53327" y2="191.51052" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_6">
+        <text transform="translate(35.144607 201.448)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="1.668" y="11" xml:space="preserve">b </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= 0.57 [0.50, 0.64] </tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="29.796" y="25.336" xml:space="preserve">p</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="25.336" xml:space="preserve"> &lt; 0.001</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <text transform="translate(423.2246 201.448)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="14210855e-21" y="11" xml:space="preserve">b </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= 0.24 [0.18, 0.30]</tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="28.128" y="25.336" xml:space="preserve">p</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="25.336" xml:space="preserve"> &lt; 0.001</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <text transform="translate(153.584 311.5572)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Direct effect,</tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> b </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= 0.04 [</tspan>
+          <tspan font-family="Menlo" font-size="12" fill="#666" y="11" xml:space="preserve">−</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">0.02, 0.10], </tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve">p</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve"> = 0.180</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <text transform="translate(145.7723 335.38297)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Indirect effect,</tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> b </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= 0.14 [0.10, 0.18], </tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve">p</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve"> &lt; 0.001</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <path d="M 75.29118 262 L 182.93118 262 C 187.90174 262 191.93118 266.02944 191.93118 271 L 191.93118 288 C 191.93118 292.97056 187.90174 297 182.93118 297 L 75.29118 297 C 70.32061 297 66.29118 292.97056 66.29118 288 L 66.29118 271 C 66.29118 266.02944 70.32061 262 75.29118 262 Z" fill="#71cff2"/>
+        <path d="M 75.29118 262 L 182.93118 262 C 187.90174 262 191.93118 266.02944 191.93118 271 L 191.93118 288 C 191.93118 292.97056 187.90174 297 182.93118 297 L 75.29118 297 C 70.32061 297 66.29118 292.97056 66.29118 288 L 66.29118 271 C 66.29118 266.02944 70.32061 262 75.29118 262 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(71.29118 271.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="8.038" y="12" xml:space="preserve">Subjective norms</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

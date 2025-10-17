@@ -1,0 +1,733 @@
+---
+title: "Mediation"
+author: "Professor Andy Field"
+institute: "University of Sussex"
+format: 
+  revealjs:
+    auto-play-media: true
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: ../shared_media/images/slide_background_title.jpg
+      data-background-size: 100%
+      data-background-position: center
+      data-background-opacity: "1"
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+# general
+library(DT)
+library(easystats)
+library(GGally)
+library(tidyverse)
+# specific
+
+source("../helpers/discovr_helpers.R")
+source("../helpers/easystats_helpers.R")
+
+
+gerlich_tib <- here::here("ds_05_mediation/data/gerlich_2025.rds") |> 
+  read_rds()
+
+greitemeyer_tib <- here::here("ds_05_mediation/data/greitemeyer_2024.rds") |> 
+  read_rds() |> 
+  dplyr::select(id, norms, intention, ai_use)
+```
+
+
+## {background-video="media/pirate_scene_r1_small.mp4" background-size="cover"}
+
+::: notes
+Use C to toggle pen/markup
+Use backspace to delete markup
+Use f to toggle fullscreen
+:::
+
+## {background-video="media/pirate_scene_r2_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_scene_1_1_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_academy_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_scene_1_2_small.mp4" background-size="cover"}
+
+## 
+
+::: r-stack
+![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
+
+![](../shared_media/images/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+:::
+
+
+##
+
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
+
+## Does AI-use reduce critical thinking?^[Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. *Societies*, 15(1): 6. [doi.org/10.3390/soc15010006](https://doi.org/10.3390/soc15010006).]
+
+- 669 participants (666 considered 'valid' `r emo::ji("devil")`)
+- Measures
+  - AI-tool usage (`ai`)
+  - Cognitive offloading (`cog_off`): externalisation of cognitive processes, often involving tools or external agents, such as notes, calculators, or digital tools like AI, to reduce cognitive load.
+  - Critical thinking (`crit: the capacity to think clearly and rationally, understand logical connections between ideas, evaluate arguments, and identify inconsistencies in reasoning
+
+::: fragment
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+Hypotheses
+
+- H~1~: Higher AI tool usage is associated with reduced critical thinking skills.
+- H~2~: Cognitive offloading mediates the relationship between AI tool usage and critical thinking skills.
+
+:::
+:::
+
+::: notes
+The measures are a shitshow in this study, items have different response scales, some measure frequency others, likelihood (e.g. very likely), agreement, dependency, confidence. AI usage conflates usage with trust. Critical thinking conflates general critical thinking with critical thinking about AI.
+:::
+
+## Measures
+
+- AI-tool usage 
+  - 5 items (1 = not at all/strongly disagree, 6 = always/strongly agree)
+  - *How often do you use AI tools*
+  - *To what extent do you rely on AI tools for decision-making?*
+  - *I often cross-check information provided by AI tools with other sources*
+- Cognitive offloading
+  - 5 items (1 = not at all/strongly disagree/unlikely, 6 = always/strongly agree)
+  - *How often do you use search engines like Google to find information quickly?*
+  - *When faced with a problem or question, how likely are you to search for the answer online rather than trying to figure it out yourself?*
+- Critical thinking
+  - 8 items (1 = not at all/strongly disagree, 6 = always/strongly agree)
+  - *How often do you critically evaluate the sources of information you encounter?*
+  - *I question the assumptions underlying the information provided by AI tools*
+
+
+## Mediation: the conceptual model
+
+![](media/total_effect.svg){fig-align="center" height=100}
+
+
+::: fragment
+![](media/mediated_effect.svg){fig-align="center" height=350}
+:::
+
+
+::: notes
+The total effect is made up of both the direct effect of the predictor on an outcome and its indirect effect via a mediator.
+:::
+
+
+## Key points
+
+:::: columns
+::: {.column width="50%"}
+
+> Mediation is when the relationship between a predictor and outcome can be explained by their relationship to a third variable.
+
+:::
+
+::: {.column width="50%"}
+![](media/mediated_effect.svg){fig-align="center" height=200}
+:::
+::::
+
+::: fragment
+
+- The [total effect]{.txt_mulberry} between a predictor and outcome can be broken down into:
+  - The [direct effect]{.txt_mulberry}, which is the relationship between the predictor and outcome **adjusting for** the mediator (path *c*)
+  - The [indirect effect]{.txt_mulberry}, which is the relationship between the predictor and outcome **via** for the mediator (path *ab*)
+- The [indirect effect quantifies mediation]{.txt_mulberry}
+  
+:::
+
+::: fragment
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\
+\text{Total effect} &= c + (a \times b)
+\end{aligned}
+$$
+
+:::
+:::
+:::
+
+## Mediation in practice
+
+![](media/dsr2_fig_10_10_mediation_ai_critical_thinking.svg){fig-align="center" height=500}
+
+::: fragment
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\
+\text{Total effect} &= c + (a \times b)
+\end{aligned}
+$$
+
+:::
+:::
+:::
+
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+```{r}
+DT::datatable(data = gerlich_tib ,
+              colnames = c('ID' = 1),
+                caption = 'Table 1: Data simulated to match Gerlich (2025)',
+                options = list(
+                dom = 'tp',
+                columnDefs = list(
+                  list(className = 'dt-center', targets = 1:3)
+                  ),
+                pageLength = 5)
+)
+```
+
+::: fragment
+
+```{r}
+#| echo: true
+
+describe_distribution(gerlich_tib) |> display()
+```
+:::
+
+::: notes
+All variables have similar ranges, means and SDs, which is why the standardized parameter estimates are very similar to the unstandardized ones.
+:::
+
+## [V]{.txt_ong}isualize
+
+```{r}
+#| echo: true
+
+ggscatmat(data = gerlich_tib, alpha = 0.5) + theme_minimal()
+```
+
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+## How do we specify the model?
+
+:::: columns
+::: {.column width="50%"}
+![](media/mediation_simple_lms.svg)
+:::
+
+::: {.column width="50%"}
+::: txt_mulberry
+$$
+\begin{aligned}
+\widehat{\text{Cognitive offloading}}_i &= \hat{a}\times \text{AI Use}_i \\
+\\
+\widehat{\text{Critical thinking}}_i &= \hat{b}\times \text{Cognitive offloading}_i \\
+\\
+\widehat{\text{Critical thinking}}_i &= \hat{c}\times \text{AI Use}_i
+\end{aligned}
+$$
+:::
+:::
+::::
+
+
+\
+
+::: fragment
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+Can we fit a series of regular linear models?
+
+- Each relationship is treated as independent
+  - We want to adjust the relationship between AI use and critical thinking for cognitive offloading
+  - How?
+
+:::
+:::
+
+## How do we specify the model?
+
+:::: columns
+::: {.column width="50%"}
+![](media/mediation_multiple_lm.svg)
+:::
+
+::: {.column width="50%"}
+::: txt_s
+::: txt_mulberry
+$$
+\begin{aligned}
+\\
+\\
+\widehat{\text{Critical thinking}}_i &= \hat{c}\text{AI Use}_i +\hat{b}\text{Cognitive offloading}_i \\
+\\
+\\
+\widehat{\text{Cognitive offloading}}_i &= \hat{a}\text{AI Use}_i  \\
+\end{aligned}
+$$
+:::
+:::
+:::
+::::
+
+::: fragment
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+Can we fit a series of regular linear models?
+
+- This gets us closer, because these models adjust the relationship between AI use and critical thinking for cognitive offloading, but ...
+- ... the relationships between between AI use, cognitive offloading and critical thinking are treated as independent from the relationship between AI use and cognitive offloading
+- The solution is to fit these models *simultaneously* using [**Structural Equation Modelling (SEM)**]{.alt}
+
+:::
+:::
+
+## Path analysis
+
+::: txt_xl
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: 1|2|4|5
+
+gerlich_mod <- 'crit_think ~ c*ai + b*cog_off
+                cog_off ~ a*ai
+       
+                indirect_effect := a*b
+                total_effect := c + (a*b)
+                '
+```
+:::
+
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\widehat{\text{Critical thinking}}_i &= \hat{c}\text{AI Use}_i +\hat{b}\text{Cognitive offloading}_i \\
+\widehat{\text{Cognitive offloading}}_i &= \hat{a}\text{AI Use}_i  \\
+\\
+\text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\
+\text{Total effect} &= c + (a \times b)
+\end{aligned}
+$$
+
+:::
+:::
+
+## Fitting the model
+
+::: txt_xl
+```{r}
+#| echo: true
+#| eval: true
+#| results: hide
+#| code-line-numbers: 8|9|10|11
+
+gerlich_mod <- 'crit_think ~ c*ai + b*cog_off
+                cog_off ~ a*ai
+       
+                indirect_effect := a*b
+                total_effect := c + (a*b)
+                '
+
+gerlich_fit <- lavaan::sem(model = gerlich_mod,
+                           data = gerlich_tib,
+                           missing = "FIML",
+                           estimator = "MLR")
+```
+:::
+
+
+## [E]{.txt_ong}valuate
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+::: txt_xl
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- As with other models, we can use `model_performance()` to get fit statistics, but these will always show perfect fit (we are fitting what's known as a [**saturated model**]{.alt}).
+- We cannot use `check_model()` to get diagnostic plots.
+- By using `estimator = "MLR"` we have fitted a robust model.
+
+:::
+:::
+
+## [I]{.txt_ong}nterpret parameter estimates, CIs and tests 
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(gerlich_fit) |> 
+  display()
+```
+
+\
+
+::: tbl_s
+```{r}
+model_parameters(gerlich_fit, component = "regression") |> 
+  format_table(title = "") |> 
+  display()
+```
+\
+
+```{r}
+model_parameters(gerlich_fit, component = "defined") |> 
+  format_table(title = "") |> 
+  display()
+```
+
+:::
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+## The fitted model
+
+![](media/dsr2_fig_10_11_mediation_critical_thinking_with_coefficients.svg){fig-align="center" height=500}
+
+## Standardized parameter estimates
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(gerlich_fit, standardize = TRUE) |> 
+  display()
+```
+
+\
+
+::: tbl_s
+```{r}
+model_parameters(gerlich_fit, standardize = TRUE, component = "regression") |> 
+  format_table(title = "") |> 
+  display()
+```
+\
+
+```{r}
+model_parameters(gerlich_fit, standardize = TRUE, component = "defined") |> 
+  format_table(title = "") |> 
+  display()
+```
+
+:::
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+## The fitted model
+
+![](media/dsr2_fig_10_11_mediation_critical_thinking_with_zcoefficients.svg){fig-align="center" height=500}
+
+
+## The squid of despair
+
+> Do AI use and cognitive offloading [cause]{.alt} lower critical thinking?
+
+![](../shared_media/images/beaker_zapped.gif){fig-align="center"}
+
+
+::: txt_xl
+::: {.callout-warning icon = false}
+## {{< fa skull >}} The danger zone!
+
+ - [**NO!!!**]{.alt} You cannot infer causality from these model
+
+:::
+:::
+
+## {background-video="media/pirate_scene_entry_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_scene_2_1_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_scene_2_2_small.mp4" background-size="cover"}
+
+
+
+## The theory of planned behaviour^[Ajzen, I. (1985). From intentions to actions: A theory of planned behavior. In J. Kuhl & J. Beckmann (Eds.), *Action control: From cognition to behavior*. Berlin, Heidelber, New York: Springer-Verlag. (pp. 11–39).]
+
+![](media/theory_of_planned_behaviour.svg){fig-align="center" height=500}
+
+## The theory of planned behaviour and AI^[Greitemeyer, T., & Kastenmüller, A. (2024). A longitudinal analysis of the willingness to use chatGPT for academic cheating: Applying the theory of planned behavior. *Technology, Mind, and Behavior*, 5(2), 1–8. [https://doi.org/10.1037/tmb0000133](https://doi.org/10.1037/tmb0000133)]
+
+- 610 participants
+- AI-tool usage (`ai_use`)
+  - 1 item (high score = cheated more often)
+  - *"How often have you used artificial intelligence like ChatGPT without indicating (i.e., not specifying that you used artificial intelligence) in the last 12 months for your seminar papers?"* (never to > 5)
+- Subjective norm (`norms`): 
+  - 3 items (high score = fine to cheat)
+  - *Most people who are important to me would look down on me if I used artificial intelligence without indicating it in a seminar paper* (likely-unlikely)
+- Intention to use AI (`intention`)
+  - 5 items (high score = greater intention)
+  - *Even if I had a good reason, I couldn't bring myself to use artificial intelligence in a seminar paper without indicating it (likely–unlikely)*
+
+::: notes
+They measured all variables in the theory, but we're going to look at only three.
+
+Subjective norm: an individual's perception about the particular behavior, which is influenced by the judgement of significant others (e.g., parents, spouse, friends, teachers)
+
+Behavioral intention: an individual's readiness to perform a given behavior. It is assumed to be an immediate antecedent of behavior.
+
+Behavior: an individual's observable response in a given situation with respect to a given target. 
+
+Perceived behavioral control: an individual's perceived ease or difficulty of performing the particular behavior.[1] The concept of perceived behavioral control is conceptually related to self-efficacy. 
+
+Attitude: is the person positive about the behaviour
+:::
+
+## Hypotheses
+
+> What can we predict from the theory of planned behaviour?
+
+![](../shared_media/images/beaker_hypothesis.gif){fig-align="center"}
+
+::: fragment
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Think about it!
+
+Hypotheses
+
+- H~1~: Higher subjective norms are associated with greater AI usage (without declaring it).
+- H~2~: Intention to use AI mediates the relationship between subjective norms and AI usage.
+
+:::
+:::
+
+
+
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+
+```{r}
+DT::datatable(data = greitemeyer_tib,
+                caption = 'Table 1: Data from Greitemeyer & Kastenmüller (2024)',
+                options = list(
+                dom = 'tp',
+                columnDefs = list(
+                  list(className = 'dt-center', targets = 1:3)
+                  ),
+                pageLength = 5)
+) |> 
+  formatRound('norms', 2)
+```
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+::: fragment
+
+```{r}
+#| echo: true
+
+describe_distribution(greitemeyer_tib) |> display()
+```
+:::
+
+
+## [V]{.txt_ong}isualize
+
+```{r}
+#| echo: true
+
+ggscatmat(data = greitemeyer_tib, alpha = 0.5) + theme_minimal()
+```
+
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+## The mediation model
+
+![](media/dsr2_fig_10_10_mediation_norms_ai.svg){fig-align="center" height=350}
+
+::: fragment
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\widehat{\text{AI use}}_i &= \hat{c}\text{Subjective norms}_i +\hat{b}\text{Intention}_i \\
+\widehat{\text{Intention}}_i &= \hat{a}\text{Subjective norms}_i  \\
+\\
+\text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\
+\text{Total effect} &= c + (a \times b)
+\end{aligned}
+$$
+
+:::
+:::
+:::
+
+
+
+
+## Specifying the model
+
+
+::: txt_xl
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: 1|2|4|5
+
+greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
+                    intention ~ a*norms
+       
+                    indirect_effect := a*b
+                    total_effect := c + (a*b)
+                    '
+```
+:::
+
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\widehat{\text{AI use}}_i &= \hat{c}\text{Subjective norms}_i +\hat{b}\text{Intention}_i \\
+\widehat{\text{Intention}}_i &= \hat{a}\text{Subjective norms}_i  \\
+\\
+\text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\
+\text{Total effect} &= c + (a \times b)
+\end{aligned}
+$$
+
+:::
+:::
+
+## Fitting the model
+
+::: txt_xl
+```{r}
+#| echo: true
+#| eval: true
+#| results: hide
+#| code-line-numbers: 8|9|10|11
+
+greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
+                    intention ~ a*norms
+       
+                    indirect_effect := a*b
+                    total_effect := c + (a*b)
+                    '
+
+greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
+                           data = greitemeyer_tib,
+                           missing = "FIML",
+                           estimator = "MLR")
+```
+:::
+
+
+## [E]{.txt_ong}valuate
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+::: txt_xl
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- As with other models, we can use `model_performance()` to get fit statistics, but these will always show perfect fit (we are fitting what's known as a [**saturated model**]{.alt}).
+- We cannot use `check_model()` to get diagnostic plots.
+- By using `estimator = "MLR"` we have fitted a robust model.
+
+:::
+:::
+
+## [I]{.txt_ong}nterpret parameter estimates, CIs and tests 
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(greitemeyer_fit) |> 
+  display()
+```
+
+\
+
+::: tbl_s
+```{r}
+model_parameters(greitemeyer_fit, component = "regression") |> 
+  format_table(title = "") |> 
+  display()
+```
+\
+
+```{r}
+model_parameters(greitemeyer_fit, component = "defined") |> 
+  format_table(title = "") |> 
+  display()
+```
+
+:::
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+## The fitted model
+
+![](media/dsr2_fig_10_11_mediation_norms_with_coefficients.svg){fig-align="center" height=500}
+
+## Standardized parameter estimates
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(greitemeyer_fit, standardize = TRUE) |> 
+  display()
+```
+
+\
+
+::: tbl_s
+```{r}
+model_parameters(greitemeyer_fit, standardize = TRUE, component = "regression") |> 
+  format_table(title = "") |> 
+  display()
+```
+\
+
+```{r}
+model_parameters(greitemeyer_fit, standardize = TRUE, component = "defined") |> 
+  format_table(title = "") |> 
+  display()
+```
+
+:::
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+## The fitted model
+
+![](media/dsr2_fig_10_11_mediation_norms_with_zcoefficients.svg){fig-align="center" height=500}
+
+## {background-video="media/pirate_scene_entry_deck_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_scene_3_small.mp4" background-size="cover"}
+
+## {background-video="media/pirate_academy_end_small.mp4" background-size="cover"}
+
+
+## Summary
+
+- Mediation is when the relationship between a predictor and outcome can be explained by their relationship to a third variable.
+- The [total effect]{.txt_mulberry} between a predictor and outcome can be broken down into:
+  - The [direct effect]{.txt_mulberry}, which is the relationship between the predictor and outcome **adjusting for** the mediator
+  - The [indirect effect]{.txt_mulberry}, which is the relationship between the predictor and outcome **via** for the mediator
+- We cannot infer causality from these models.
+
