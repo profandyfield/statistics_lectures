@@ -26,4 +26,6 @@ format:
     highlight: "kate"
     revealjs-plugins:
       - editable
+    show-notes: false
+    pdf-separate-fragments: false
 
