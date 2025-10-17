@@ -155,6 +155,43 @@ stats things
 ![](../shared_media/images/i_hex.png){.absolute top=0 left=800 height="80"}
 
 
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [V]{.txt_ong}isualize
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [E]{.txt_ong}valuate
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+## [I]{.txt_ong}nterpret parameter estimates, CIs and tests
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## Robust procedures
+
+![](../shared_media/images/dsr2_fig_08_13_robust_flow.png){fig-align="center" height=600}
+
+
+--- data table
+
+DT::datatable(data = gerlich_tib ,
+              colnames = c('ID' = 1),
+                caption = 'Table 1: Data simulated to match Gerlich (2025)',
+                options = list(
+                dom = 'tp',
+                columnDefs = list(
+                  list(className = 'dt-center', targets = 1:3)
+                  ),
+                pageLength = 5)
+)
+
 ___ notes
 
 abs = width="30%", left="85%", top="15%"
