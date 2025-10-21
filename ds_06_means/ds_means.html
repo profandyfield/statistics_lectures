@@ -679,6 +679,56 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 </div>
 </div>
 </section>
+<section id="standardized-effect-size-cohens-hatd" class="slide level2">
+<h2>Standardized effect size: Cohens <span class="math inline">\(\hat{d}\)</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Cohens <span class="math inline">\(\hat{d}\)</span> expresses the difference in means in standard deviation units</li>
+<li>Guide (but we’re not selling T-shirts …)
+<ul>
+<li><span class="math inline">\(\hat{d}\)</span> = 0.2 is small</li>
+<li><span class="math inline">\(\hat{d}\)</span> = 0.5 is medium</li>
+<li><span class="math inline">\(\hat{d}\)</span> = 0.8 is large</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="txt_mulberry">
+<p><span class="math display">\[
+\begin{aligned}
+\hat{d} &amp;= \frac{\bar{X}_1-\bar{X}_2}{s_p} \\
+s_p &amp;= \sqrt{\frac{(N_1-1)s^2_1 + (N_2-1)s^2_2}{N_1 + N_2 -2}}
+\end{aligned}
+\]</span></p>
+</div>
+</div></div>
+<p><br>
+</p>
+<div class="txt_l">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">cohens_d</span>(Fear <span class="sc">~</span> Costume, <span class="at">data =</span> zombie_tib, <span class="at">reference =</span> <span class="st">"Werewolf"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cohen’s d</th>
+<th style="text-align: left;">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1.18</td>
+<td style="text-align: left;">[0.75, 1.60]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="section-13" class="slide level2" data-background-video="media/cubit_azal_lecture_middle_captioned.mp4" data-background-size="cover">
 <h2></h2>
 </section>
@@ -1316,7 +1366,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1329,7 +1379,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1582,11 +1632,11 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <section id="the-model-3" class="slide level2">
 <h2>The model</h2>
 
-<img data-src="ds_means_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<img data-src="ds_means_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
 <section id="the-parameter-values" class="slide level2">
 <h2>The parameter values</h2>
 
-<img data-src="ds_means_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+<img data-src="ds_means_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
 <section id="the-parameter-values-1" class="slide level2">
 <h2>The parameter values</h2>
 <div class="cell">
@@ -2147,8 +2197,8 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="fragment">
 <div class="txt_l">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Fit model</span></span>
-<span id="cb2-2"><a href=""></a>human_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(fear <span class="sc">~</span> entity, <span class="at">data =</span> humans_tib)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Fit model</span></span>
+<span id="cb3-2"><a href=""></a>human_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(fear <span class="sc">~</span> entity, <span class="at">data =</span> humans_tib)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2187,7 +2237,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2201,7 +2251,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2215,7 +2265,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2229,7 +2279,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2243,7 +2293,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2257,7 +2307,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2271,7 +2321,7 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-33-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2283,9 +2333,9 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># get F</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">test_wald</span>(human_lm) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># get F</span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">test_wald</span>(human_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br>
 </p>
@@ -2327,9 +2377,9 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># get R^2</span></span>
-<span id="cb4-2"><a href=""></a><span class="fu">model_performance</span>(human_lm) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># get R^2</span></span>
+<span id="cb5-2"><a href=""></a><span class="fu">model_performance</span>(human_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br>
 </p>
@@ -2388,11 +2438,11 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="fragment">
 <div class="center-h">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">check_model</span>(human_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">check_model</span>(human_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-37-1.png" width="576"></p>
+<p><img data-src="ds_means_files/figure-revealjs/unnamed-chunk-39-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -2405,9 +2455,9 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 <div class="tbl_dk">
 <div class="center-h">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>welchf <span class="ot">&lt;-</span> <span class="fu">oneway.test</span>(fear <span class="sc">~</span> entity, <span class="at">data =</span> humans_tib)</span>
-<span id="cb6-2"><a href=""></a><span class="fu">model_parameters</span>(welchf) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>welchf <span class="ot">&lt;-</span> <span class="fu">oneway.test</span>(fear <span class="sc">~</span> entity, <span class="at">data =</span> humans_tib)</span>
+<span id="cb7-2"><a href=""></a><span class="fu">model_parameters</span>(welchf) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <caption>One-way analysis of means (not assuming equal variances)</caption>
@@ -2473,8 +2523,8 @@ Y_i &amp;= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\
 </div>
 <div class="tbl_dk">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">model_parameters</span>(human_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">model_parameters</span>(human_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <colgroup>

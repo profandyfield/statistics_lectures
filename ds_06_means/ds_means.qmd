@@ -417,6 +417,49 @@ model_parameters(zombie_lm) |>
 ```
 :::
 
+## Standardized effect size: Cohens $\hat{d}$
+
+:::: columns
+::: {.column width="50%"}
+- Cohens $\hat{d}$ expresses the difference in means in standard deviation units
+- Guide (but we're not selling T-shirts ...)
+  - $\hat{d}$ = 0.2 is small
+  - $\hat{d}$ = 0.5 is medium
+  - $\hat{d}$ = 0.8 is large
+:::
+
+::: {.column width="50%"}
+::: txt_mulberry
+$$
+\begin{aligned}
+\hat{d} &= \frac{\bar{X}_1-\bar{X}_2}{s_p} \\
+s_p &= \sqrt{\frac{(N_1-1)s^2_1 + (N_2-1)s^2_2}{N_1 + N_2 -2}}
+\end{aligned}
+$$
+:::
+:::
+::::
+
+\
+
+::: txt_l
+```{r}
+#| echo: true
+#| eval: false
+cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |> 
+  display()
+```
+:::
+
+```{r}
+#| echo: false
+
+cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |> 
+  format_table(footnote = "") |> 
+  display()
+```
+
+
 ## {background-video="media/cubit_azal_lecture_middle_captioned.mp4" background-size="cover"}
 
 ```{r, child = "cubit_phone_02.qmd"}
