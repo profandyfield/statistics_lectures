@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="33.14461 163.38 510.1726 187.52964" width="510.1726" height="187.52964">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="33.58861 163.38 509.7286 187.52964" width="509.7286" height="187.52964">
   <defs>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
       <g>
@@ -13,7 +13,7 @@
       </g>
     </marker>
   </defs>
-  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" fill-opacity="1" stroke="none">
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" fill="none" stroke="none" stroke-opacity="1">
     <title>Canvas 1</title>
     <g id="Canvas_1_Layer_1">
       <title>Layer 1</title>
@@ -48,10 +48,10 @@
         <line x1="370" y1="182.38" x2="437.9215" y2="253.5367" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
       </g>
       <g id="Graphic_6">
-        <text transform="translate(35.144607 201.448)" fill="#666">
-          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="1.668" y="11" xml:space="preserve">b </tspan>
+        <text transform="translate(35.58861 201.448)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="1.668" y="11" xml:space="preserve">a </tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= 0.89 [0.88, 0.90] </tspan>
-          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="29.796" y="25.336" xml:space="preserve">p</tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" x="29.352" y="25.336" xml:space="preserve">p</tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="25.336" xml:space="preserve"> &lt; 0.001</tspan>
         </text>
       </g>
@@ -70,7 +70,7 @@
       <g id="Graphic_4">
         <text transform="translate(171.7817 310.8068)" fill="#666">
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Direct effect,</tspan>
-          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> b </tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> c </tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= −0.20 [</tspan>
           <tspan font-family="Menlo" font-size="12" fill="#666" y="11" xml:space="preserve">−</tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">0.35, −0.05], </tspan>
@@ -81,7 +81,7 @@
       <g id="Graphic_3">
         <text transform="translate(164.234 334.57364)" fill="#666">
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Indirect effect,</tspan>
-          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> b </tspan>
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve"> ab </tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve">= −0.24 [−0.37, −0.10], </tspan>
           <tspan font-family="Helvetica Neue" font-style="italic" font-size="12" fill="#666" y="11" xml:space="preserve">p</tspan>
           <tspan font-family="Helvetica Neue" font-size="12" fill="#666" y="11" xml:space="preserve"> &lt; 0.001</tspan>

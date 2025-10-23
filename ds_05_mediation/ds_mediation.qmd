@@ -182,7 +182,7 @@ $$
 
 ## [L]{.txt_ong}oad and [L]{.txt_ong}ook
 
-![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+![](../shared_media/images/l_hex.png){.absolute top=0 left=900 height="80"}
 
 ```{r}
 DT::datatable(data = gerlich_tib ,
@@ -355,8 +355,6 @@ gerlich_fit <- lavaan::sem(model = gerlich_mod,
 
 ## [E]{.txt_ong}valuate
 
-![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
-
 ::: txt_xl
 ::: {.callout-note icon = false}
 ## {{< fa chart-line >}} Statis-tip
@@ -367,6 +365,8 @@ gerlich_fit <- lavaan::sem(model = gerlich_mod,
 
 :::
 :::
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
 ## [I]{.txt_ong}nterpret parameter estimates, CIs and tests 
 
@@ -529,7 +529,7 @@ DT::datatable(data = greitemeyer_tib,
   formatRound('norms', 2)
 ```
 
-![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+![](../shared_media/images/l_hex.png){.absolute top=0 left=900 height="80"}
 
 ::: fragment
 
@@ -635,8 +635,6 @@ greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
 
 ## [E]{.txt_ong}valuate
 
-![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
-
 ::: txt_xl
 ::: {.callout-note icon = false}
 ## {{< fa chart-line >}} Statis-tip
@@ -647,6 +645,8 @@ greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
 
 :::
 :::
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
 ## [I]{.txt_ong}nterpret parameter estimates, CIs and tests 
 
