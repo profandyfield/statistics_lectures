@@ -1078,19 +1078,13 @@ are kidnapped. (Note the (small) *b* doesn't change - only the *p* and CIs)
 
 ```{r}
 #| echo: true
-#| eval: false
+#| eval: true
 
 poop_lm <- lm(yield ~ poop, data = poop_tib)
-broom::tidy(poop_lm, conf.int = T)
+model_parameters(poop_lm) |> 
+  display()
 ```
 
-```{r}
-poop_lm_est <- lm(yield ~ poop, data = poop_tib) |> 
-  broom::tidy(conf.int = T)
-
-knitr::kable(poop_lm_est, digits = 3) |> 
-  style_my_kable(nrows = nrow(poop_lm_est))
-```
 
 ::: fragment
 ### Bootstrap model

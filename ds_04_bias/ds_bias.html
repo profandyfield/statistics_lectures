@@ -6,10 +6,10 @@
 <script src="ds_bias_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ds_bias_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ds_bias_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ds_bias_files/libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ds_bias_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="ds_bias_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="ds_bias_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.22">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Professor Andy Field">
   <title>The Beast of Bias</title>
@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_bias_files/libs/revealjs/dist/theme/quarto-52bec7c8fdb744b1f75a516080575022.css">
+  <link rel="stylesheet" href="ds_bias_files/libs/revealjs/dist/theme/quarto-ae208772f336504f6132608c19f21d0e.css">
   <link href="ds_bias_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_bias_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_bias_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -565,13 +565,13 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
 <span id="cb1-2"><a href=""></a></span>
 <span id="cb1-3"><a href=""></a><span class="fu">check_outliers</span>(out_lm,</span>
 <span id="cb1-4"><a href=""></a>               <span class="at">method =</span> <span class="st">"cook"</span>,</span>
 <span id="cb1-5"><a href=""></a>               <span class="at">threshold =</span> <span class="fu">list</span>(<span class="st">'cook'</span> <span class="ot">=</span> <span class="fl">0.5</span>)</span>
 <span id="cb1-6"><a href=""></a>               ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-7"><a href=""></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href=""></a>  <span class="fu">plot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="fragment">
@@ -619,9 +619,9 @@
 <h2>Robust estimation</h2>
 <h3 id="normal-model-ols">Normal model (OLS)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>out_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
 <span id="cb2-2"><a href=""></a><span class="fu">model_parameters</span>(out_lm) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -658,9 +658,9 @@
 <div class="fragment">
 <h3 id="robust-model">Robust model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>out_rob <span class="ot">&lt;-</span> robust<span class="sc">::</span><span class="fu">lmRob</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>out_rob <span class="ot">&lt;-</span> robust<span class="sc">::</span><span class="fu">lmRob</span>(livestock <span class="sc">~</span> dragons, <span class="at">data =</span> out_tib)</span>
 <span id="cb3-2"><a href=""></a><span class="fu">model_parameters</span>(out_rob) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <caption>Fixed Effects</caption>
@@ -1203,7 +1203,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 18px; margin-left: auto; margin-right: auto;">
+<table class="table caption-top" style="font-size: 18px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -1423,7 +1423,7 @@
 <h2>The Bootstrap</h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1512,7 +1512,7 @@
 <p>Bootstrap sample 1:</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1557,17 +1557,16 @@
 <td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
@@ -1576,18 +1575,19 @@
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">26</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
 </tr>
 </tbody>
@@ -1595,14 +1595,14 @@
 </div>
 </div>
 <div class="center-h">
-<p>Mean = 27.97</p>
+<p>Mean = 23.06</p>
 </div>
 </div>
 <div class="fragment">
 <p>Bootstrap sample 2:</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1645,47 +1645,47 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">yield</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">0</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">6</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">12</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">13</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">7</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">8</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">15</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">16</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">20</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">22</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">23</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">28</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">29</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">31</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">32</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">40</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">44</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">47</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">48</td>
 <td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
-<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">69</td>
+<td style="text-align: right; color: rgba(68, 126, 65, 255) !important; font-size: 12px;">95</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="center-h">
-<p>Mean = 26.35</p>
+<p>Mean = 23.32</p>
 </div>
 </div>
 </section>
@@ -1693,7 +1693,7 @@
 <h2></h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1783,7 +1783,7 @@
 <h2></h2>
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1902,9 +1902,9 @@
 <h2>Do dragons really kidnap royalty?</h2>
 <h3 id="normal-model-number-of-dragons">Normal model (number of dragons)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons,<span class="at">data =</span> hov_cont_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons,<span class="at">data =</span> hov_cont_tib)</span>
 <span id="cb4-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_lm) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1943,9 +1943,9 @@
 <div class="fragment">
 <h3 id="robust-model-number-of-dragons-hc4-standard-errors">Robust model (number of dragons) HC4 Standard errors</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cont_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>kidnap_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cont_tib)</span>
 <span id="cb5-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1998,9 +1998,9 @@
 <h2>Do dragons really kidnap royalty?</h2>
 <h3 id="normal-model-dragons-or-not">Normal model (dragons or not)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
 <span id="cb6-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_gp_lm) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <colgroup>
@@ -2047,9 +2047,9 @@
 <div class="fragment">
 <h3 id="robust-model-dragons-or-not-hc4-standard-errors">Robust model (dragons or not) HC4 standard errors</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>kidnap_gp_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(royalty <span class="sc">~</span> dragons, <span class="at">data =</span> hov_cat_tib)</span>
 <span id="cb7-2"><a href=""></a><span class="fu">model_parameters</span>(kidnap_gp_lm, <span class="at">vcov =</span> <span class="st">"HC4"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top" style="width:100%;">
 <colgroup>
@@ -2110,41 +2110,37 @@
 <h2>Does dragon poo help crops to grow?</h2>
 <h3 id="normal-model">Normal model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
-<span id="cb8-2"><a href=""></a>broom<span class="sc">::</span><span class="fu">tidy</span>(poop_lm, <span class="at">conf.int =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
+<span id="cb8-2"><a href=""></a><span class="fu">model_parameters</span>(poop_lm) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 18px; margin-left: auto; margin-right: auto;">
+<table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: center;">t(32)</th>
+<th style="text-align: center;">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; padding: 10px;">(Intercept)</td>
-<td style="text-align: right; padding: 10px;">14.343</td>
-<td style="text-align: right; padding: 10px;">6.765</td>
-<td style="text-align: right; padding: 10px;">2.120</td>
-<td style="text-align: right; padding: 10px;">0.042</td>
-<td style="text-align: right; padding: 10px;">0.563</td>
-<td style="text-align: right; padding: 10px;">28.124</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">14.34</td>
+<td style="text-align: center;">6.77</td>
+<td style="text-align: center;">(0.56, 28.12)</td>
+<td style="text-align: center;">2.12</td>
+<td style="text-align: center;">0.042</td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 10px;">poop</td>
-<td style="text-align: right; padding: 10px;">2.023</td>
-<td style="text-align: right; padding: 10px;">1.371</td>
-<td style="text-align: right; padding: 10px;">1.476</td>
-<td style="text-align: right; padding: 10px;">0.150</td>
-<td style="text-align: right; padding: 10px;">-0.770</td>
-<td style="text-align: right; padding: 10px;">4.815</td>
+<td style="text-align: left;">poop</td>
+<td style="text-align: center;">2.02</td>
+<td style="text-align: center;">1.37</td>
+<td style="text-align: center;">(-0.77, 4.82)</td>
+<td style="text-align: center;">1.48</td>
+<td style="text-align: center;">0.150</td>
 </tr>
 </tbody>
 </table>
@@ -2153,9 +2149,9 @@
 <div class="fragment">
 <h3 id="bootstrap-model">Bootstrap model</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>poop_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> poop, <span class="at">data =</span> poop_tib)</span>
 <span id="cb9-2"><a href=""></a><span class="fu">model_parameters</span>(poop_lm, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href=""></a>  <span class="fu">display</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -2281,6 +2277,7 @@
   <script src="ds_bias_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="ds_bias_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="ds_bias_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="ds_bias_files/libs/revealjs/plugin/revealeditable/editable.js"></script>
   <script src="ds_bias_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -2447,7 +2444,7 @@
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/statistics_lectures/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
@@ -2460,7 +2457,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2477,7 +2474,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, Revealeditable, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -2572,13 +2569,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
