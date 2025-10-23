@@ -31,7 +31,7 @@ tbl_font_size <- "12pt"
 ## What is a meta-analysis?
 
 ::: {.callout-note icon="false"}
-## Glass (1976)
+##  {{< fa list-ul >}} Glass (1976)
 
 *An "analysis of analyses"*
 :::
@@ -91,8 +91,8 @@ tbl_font_size <- "12pt"
 
 ## Literature search
 
-::: {.callout-important icon="false"}
-## Sources of bias
+::: {.callout-warning icon = false}
+## {{< fa skull >}} Sources of bias
 
 -   File-drawer problem
 -   Researcher bias
@@ -131,8 +131,8 @@ tbl_font_size <- "12pt"
 
 ## Examples of inclusion/exclusion criteria 
 
-::: {.callout-important icon="false"}
-## Sources of bias
+::: {.callout-warning icon = false}
+## {{< fa skull >}} Sources of bias
 
 -   Comparing apples and oranges
 -   GIGO
@@ -162,7 +162,7 @@ tbl_font_size <- "12pt"
 ## Effect sizes in meta-analysis 
 
 ::: {.callout-note icon="false"}
-## What we need
+## `r cat_space()`: What we need
 
 To do a meta-analysis we need (from each paper)
 
@@ -171,7 +171,7 @@ To do a meta-analysis we need (from each paper)
 :::
 
 ::: {.callout-tip icon="false"}
-## Effect size
+## {{< fa list-ul >}} Effect size
 
 Standardized version of a model parameter
 :::
@@ -192,18 +192,19 @@ Standardized version of a model parameter
 ::: {.column width="50%"}
 
 ::: {.callout-note icon="false"}
-## Cohens $\hat{d}$
+## {{< fa list-ul >}} Cohens $\hat{d}$
 
 Quantifies the difference between group means
 :::
 
-
+::: txt_mulberry
 $$
 \begin{aligned}
 \hat{d} &= \frac{\overline{X}_1-\overline{X}_2}{s_p} \\
 s_p &= \sqrt{\frac{(N_1-1)s^2_1 + (N_2-1)s^2_2}{N_1 + N_2 -2}}
 \end{aligned}
 $$
+:::
 :::
 
 :::: {.column width="50%"}
@@ -226,16 +227,18 @@ $$
 ## Pearson's $r$ 
 
 ::: {.callout-note icon="false"}
-## Pearson's $r$
+## {{< fa list-ul >}} Pearson's $r$
 
 Quantifies the association between two continuous variables
 :::
 
+::: txt_mulberry
 $$
 \begin{aligned}
 r &= \frac{\sum(x- \overline{X})(y - \overline{Y})}{(N-1)s_xs_y} \\
 \end{aligned}
 $$
+:::
 
 ### Key points
 
@@ -265,14 +268,15 @@ xmas_tbl <- tibble::tribble(
 "Total","250","150","400"
 ) |> 
   knitr::kable(align = 'lccc') |> 
-  kableExtra::row_spec(row = 3, color = red_dk) |> 
-  kableExtra::column_spec(4, color = red_dk)
+  kableExtra::row_spec(row = 3, color = mulberry) |> 
+  kableExtra::column_spec(4, color = mulberry)
 
 style_my_kable(xmas_tbl)
 ```
 :::
 
 ::: {.column width="50%"}
+::: txt_mulberry
 ::: txt_s
 $$
 \begin{aligned}
@@ -287,6 +291,7 @@ $$
 &= 0.15
 \end{aligned}
 $$
+:::
 :::
 :::
 :::::
