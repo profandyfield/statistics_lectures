@@ -60,6 +60,8 @@ LETTERS[x]
 
 ![](media/xxxx.png){fig-align="center" height=600}
 
+{.absolute width=200 left=0 top="300"}
+
 
 {.absolute top=200 left=0 width="350" height="300"}
 {.absolute top=50 right=50 width="450" height="250"}
