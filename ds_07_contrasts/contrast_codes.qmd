@@ -1,0 +1,48 @@
+---
+title: "contrast codes"
+format: revealjs
+---
+
+
+
+![](media/dsr2_fig_11_10_contrast_1_weights_01.svg){fig-align="center" height=600}
+
+
+##
+
+![](media/dsr2_fig_11_10_contrast_1_weights_02.svg){fig-align="center" height=600}
+
+##
+
+![](media/dsr2_fig_11_10_contrast_1_weights_03.svg){fig-align="center" height=600}
+
+##
+
+![](media/dsr2_fig_11_10_contrast_1_weights_04.svg){fig-align="center" height=600}
+
+
+##
+
+![](media/dsr2_fig_11_10_contrast_1_weights_05.svg){fig-align="center" height=600}
+
+
+##
+
+![](media/dsr2_fig_11_11_contrast_2_weights_01.svg){fig-align="center" height=600}
+
+##
+
+![](media/dsr2_fig_11_11_contrast_2_weights_02.svg){fig-align="center" height=600}
+
+##
+
+![](media/dsr2_fig_11_11_contrast_2_weights_03.svg){fig-align="center" height=600}
+
+## 
+
+![](media/dsr2_fig_11_11_contrast_2_weights_04.svg){fig-align="center" height=600}
+
+##
+
+![](media/dsr2_fig_11_11_contrast_2_weights_05.svg){fig-align="center" height=600}
+

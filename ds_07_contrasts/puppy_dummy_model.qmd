@@ -1,0 +1,71 @@
+---
+title: "puppy dummy model"
+format: revealjs
+---
+
+## [V]{.txt_ong}isualize the 'dummy' model
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 6
+
+
+puppy_tib <- puppy_tib |> 
+  mutate(
+    id_num = 1:15
+  )
+
+puppy_plot <- ggplot(puppy_tib, aes(id_num, happiness, colour = dose)) +
+  geom_point(size = 4) +
+  labs(x = "Therapy group", y = "Happiness (0-10)") +
+  scale_x_continuous(breaks = c(3, 8, 13), labels = c("No Puppies", "15 mins", "30 mins")) +
+  scale_colour_manual(values = c(blue, mulberry, brown)) +
+  scale_y_continuous(breaks = seq(0, 10, 1)) +
+  theme_minimal(base_size = 20) +
+  theme(legend.position = "none")
+
+puppy_plot
+```
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [V]{.txt_ong}isualize the 'dummy' model
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 6
+
+puppy_plot_ano <- puppy_plot +
+  annotate("segment", x = 1, y = mean_none, xend = 5, yend = mean_none, linewidth = 1, colour = blue) + 
+  annotate("segment", x = 6, y = mean_15, xend = 10, yend = mean_15, linewidth = 1, colour = mulberry) +
+  annotate("segment", x = 11, y = mean_30, xend = 15, yend = mean_30, linewidth = 1, colour = brown) 
+
+puppy_plot_means <- puppy_plot_ano +
+  annotate("text", x = 5, y = mean_none + 0.5, size = 6, colour = blue, label = mean_none) + 
+  annotate("text", x = 10, y = mean_15 + 0.5, size = 6, colour = mulberry, label = mean_15) +
+  annotate("text", x = 15, y = mean_30 + 0.5, size = 6, colour = brown, label = mean_30)
+puppy_plot_means
+```
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+## [V]{.txt_ong}isualize the 'dummy' model
+
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 6
+
+puppy_plot_ano_full <- puppy_plot_means +
+    annotate("text", x = 6, y = (mean_15 + mean_none)/2, label = deparse(bquote(hat(italic(b))[2])), parse = TRUE, size = 6) +
+  annotate("segment", x = 5.5, y = mean_15, xend = 5.5, yend = mean_none, colour = green, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both")) +
+  annotate("text", x = 11, y = (mean_30 + mean_none)/2, label = deparse(bquote(hat(italic(b))[1])), parse = TRUE, size = 6) +
+  annotate("segment", x = 10.5, y = mean_30, xend = 10.5, yend = mean_none, colour = green, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both"))
+
+puppy_plot_ano_full
+```
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="31.5 71.5 495.4031 398" width="495.4031" height="398">
+  <defs/>
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" fill="none" stroke="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_4">
+        <path d="M 99 73 L 326 73 C 330.97056 73 335 77.02944 335 82 L 335 129 C 335 133.97056 330.97056 138 326 138 L 99 138 C 94.02944 138 90 133.97056 90 129 L 90 82 C 90 77.02944 94.02944 73 99 73 Z" fill="#00ad99"/>
+        <path d="M 99 73 L 326 73 C 330.97056 73 335 77.02944 335 82 L 335 129 C 335 133.97056 330.97056 138 326 138 L 99 138 C 94.02944 138 90 133.97056 90 129 L 90 82 C 90 77.02944 94.02944 73 99 73 Z" stroke="#007928" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(95 79.477875)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="104.27" y="12" xml:space="preserve">SS</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" y="18" xml:space="preserve">M </tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="10.52" y="33.348083" xml:space="preserve">Variance explained by the experiment</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="28.688" y="48.696167" xml:space="preserve">Four groups: E1, E2, C1 and C2</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

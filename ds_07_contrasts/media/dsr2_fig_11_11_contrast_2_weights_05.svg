@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="31.578412 181.5 495.6843 255.89402" width="495.6843" height="255.89402">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#951256">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#666">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" fill="none" stroke="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_5">
+        <path d="M 46 183 L 118 183 C 122.97056 183 127 187.02944 127 192 L 127 239 C 127 243.97056 122.97056 248 118 248 L 46 248 C 41.029437 248 37 243.97056 37 239 L 37 192 C 37 187.02944 41.029437 183 46 183 Z" fill="#dc5e76"/>
+        <path d="M 46 183 L 118 183 C 122.97056 183 127 187.02944 127 192 L 127 239 C 127 243.97056 122.97056 248 118 248 L 46 248 C 41.029437 248 37 243.97056 37 239 L 37 192 C 37 187.02944 41.029437 183 46 183 Z" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(42 199.1229)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="13" fill="white" x="14.468" y="13" xml:space="preserve">Chunk 1</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="13" fill="white" x="16.054" y="29.37709" xml:space="preserve">30 mins</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <path d="M 180 183 L 252 183 C 256.97056 183 261 187.02944 261 192 L 261 239 C 261 243.97056 256.97056 248 252 248 L 180 248 C 175.02944 248 171 243.97056 171 239 L 171 192 C 171 187.02944 175.02944 183 180 183 Z" fill="#e1cc69"/>
+        <path d="M 180 183 L 252 183 C 256.97056 183 261 187.02944 261 192 L 261 239 C 261 243.97056 256.97056 248 252 248 L 180 248 C 175.02944 248 171 243.97056 171 239 L 171 192 C 171 187.02944 175.02944 183 180 183 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(176 200.15192)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="16.432" y="12" xml:space="preserve">Chunk 2</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="17.896" y="27.348083" xml:space="preserve">15 mins</tspan>
+        </text>
+      </g>
+      <g id="Group_8">
+        <g id="Graphic_10">
+          <path d="M 264.56828 183.50857 C 265.11686 183.50857 281.02743 182.18614 282.12462 191.60848 C 283.22192 201.03086 281.02738 213.594 284.31927 214.91644 C 287.61108 216.2389 291.45155 215.9083 291.45155 215.9083 C 291.45155 215.9083 282.16156 216.17952 281.02738 213.92463 C 279.89314 211.66988 280.51307 195.10379 277.76986 188.82222 C 275.0266 182.54062 264.01956 183.50857 264.56828 183.50857 Z" fill="#666"/>
+          <path d="M 264.56828 183.50857 C 265.11686 183.50857 281.02743 182.18614 282.12462 191.60848 C 283.22192 201.03086 281.02738 213.594 284.31927 214.91644 C 287.61108 216.2389 291.45155 215.9083 291.45155 215.9083 C 291.45155 215.9083 282.16156 216.17952 281.02738 213.92463 C 279.89314 211.66988 280.51307 195.10379 277.76986 188.82222 C 275.0266 182.54062 264.01956 183.50857 264.56828 183.50857 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_9">
+          <path d="M 264.56828 248.38148 C 265.11686 248.38148 281.02743 249.7039 282.12462 240.28157 C 283.22192 230.8592 281.02738 218.29604 284.31927 216.9736 C 287.61108 215.65115 291.45155 215.98175 291.45155 215.98175 C 291.45155 215.98175 282.16156 215.71053 281.02738 217.96542 C 279.89314 220.22017 280.51307 236.78626 277.76986 243.06783 C 275.0266 249.34943 264.01956 248.38148 264.56828 248.38148 Z" fill="#666"/>
+          <path d="M 264.56828 248.38148 C 265.11686 248.38148 281.02743 249.7039 282.12462 240.28157 C 283.22192 230.8592 281.02738 218.29604 284.31927 216.9736 C 287.61108 215.65115 291.45155 215.98175 291.45155 215.98175 C 291.45155 215.98175 282.16156 215.71053 281.02738 217.96542 C 279.89314 220.22017 280.51307 236.78626 277.76986 243.06783 C 275.0266 249.34943 264.01956 248.38148 264.56828 248.38148 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_11">
+        <text transform="translate(297 204.945)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Contrast 2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_170">
+        <text transform="translate(136 204.5)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">vs.</tspan>
+        </text>
+      </g>
+      <g id="Graphic_183">
+        <path d="M 438 183.44502 L 510 183.44502 C 514.97056 183.44502 519 187.47446 519 192.44502 L 519 239.44502 C 519 244.41558 514.97056 248.44502 510 248.44502 L 438 248.44502 C 433.02944 248.44502 429 244.41558 429 239.44502 L 429 192.44502 C 429 187.47446 433.02944 183.44502 438 183.44502 Z" fill="#cccec0"/>
+        <path d="M 438 183.44502 L 510 183.44502 C 514.97056 183.44502 519 187.47446 519 192.44502 L 519 239.44502 C 519 244.41558 514.97056 248.44502 510 248.44502 L 438 248.44502 C 433.02944 248.44502 429 244.41558 429 239.44502 L 429 192.44502 C 429 187.47446 433.02944 183.44502 438 183.44502 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(434 192.9229)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="7.45" y="12" xml:space="preserve">No puppies</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="20.446" y="27.348083" xml:space="preserve">(not  in </tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="14.332" y="42.696167" xml:space="preserve">contrast)</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_sign">
+      <title>sign</title>
+      <g id="Graphic_171">
+        <text transform="translate(297 275.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Sign of weight</tspan>
+        </text>
+      </g>
+      <g id="Graphic_172">
+        <text transform="translate(50 275)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Positive</tspan>
+        </text>
+      </g>
+      <g id="Graphic_173">
+        <text transform="translate(174 275)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Negative</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_mag">
+      <title>mag</title>
+      <g id="Graphic_174">
+        <text transform="translate(296 321.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Magnitude</tspan>
+        </text>
+      </g>
+      <g id="Graphic_175">
+        <text transform="translate(204 321.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_176">
+        <text transform="translate(76.5 321.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_185">
+        <text transform="translate(476 321.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">0</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_initial_weight">
+      <title>initial_weight</title>
+      <g id="Graphic_177">
+        <text transform="translate(297 367.6675)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Initial weight</tspan>
+        </text>
+      </g>
+      <g id="Graphic_178">
+        <text transform="translate(200.5 367)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="13.333" fill="black" x="0" y="17" xml:space="preserve">−</tspan>
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" y="17" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_179">
+        <text transform="translate(71.5 367)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">+1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_186">
+        <text transform="translate(476 367)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">0</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_weight">
+      <title>weight</title>
+      <g id="Line_181">
+        <path d="M 216.65384 249.49972 C 216.76922 255.4992 209.94302 261.6672 217 267.5 C 224.05698 273.3328 251.66737 261.169 258.99997 284.5 C 266.33257 307.831 265.99886 385.2564 261 407.5 C 257.63553 422.471 249.1368 420.4532 240.68767 418.59785" marker-end="url(#SharpArrow_Marker)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_182">
+        <path d="M 77.05082 249.48434 C 76.20063 255.3223 81.17447 261.58127 74.5 267 C 67.82553 272.41873 43.249375 259.16895 37 282 C 30.750625 304.83105 32.901243 381.8291 37 404 C 39.367993 416.8089 44.47295 417.27397 49.94277 416.0923" marker-end="url(#SharpArrow_Marker_2)" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_187">
+        <path d="M 479.96105 249.42954 C 480.97393 255.11912 476.49416 260.9888 483 266.5 C 489.50584 272.0112 512.334 258.3449 519 282.5 C 525.666 306.6551 528.1648 388.18563 523 411.445 C 519.3806 427.74475 509.3772 424.67823 499.70107 422.60253" marker-end="url(#SharpArrow_Marker_3)" stroke="#666" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_191">
+        <text transform="translate(297 413.89)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Final weight</tspan>
+        </text>
+      </g>
+      <g id="Graphic_190">
+        <text transform="translate(192.994 413.445)" fill="#99990f">
+          <tspan font-family="Helvetica Neue" font-size="13.333" fill="#99990f" x="0" y="17" xml:space="preserve">−</tspan>
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#99990f" y="17" xml:space="preserve">1/2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_189">
+        <text transform="translate(63.595 413.445)" fill="#951256">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#951256" x="0" y="17" xml:space="preserve">+1/2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_188">
+        <text transform="translate(476 413.445)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">0</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
