@@ -202,7 +202,7 @@ display(more_hard_tbl)
 
 - Stepwise
   - Predictors are selected using their semi-partial correlation with the outcome
-  - Can produce spurious results
+  - The model is unlikely to replicate in other samples (i.e., can produce spurious results)
   - Use only for exploratory analysis
  
 ::: 
