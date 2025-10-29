@@ -406,9 +406,13 @@ model_parameters(puppy_lm) |>
 ## {background-video="media/partitioning_chocolate_silent.mp4" background-size="cover"}
 
 
-```{r, child = "cake_analogy.qmd"}
+## The cake analogy again
 
-```
+![](media/contrast_cake_01.png){fig-align="center" height=600}
+
+## The cake analogy again
+
+![](media/contrast_cake_02.png){fig-align="center" height=600}
 
 ## Choosing contrasts
 
@@ -553,7 +557,7 @@ con_tbl |>
 :::
 :::
 
-## {background-image="media/milton_dawlish_beach_2018.jpg" background-size="cover"}
+## {background-image="media/milton_dawlish_beach_2018.JPG" background-size="cover"}
 
 :::: txt_white
 ### [The 'dummy' model]{.txt_white}
