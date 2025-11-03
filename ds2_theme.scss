@@ -60,6 +60,10 @@ $code-color: $purple !default;
   background-color: #e6edf4;
 }
 
+.reveal .slide table tbody td:hover {
+  background-color: #ffffa1;
+}
+
 .reveal .slide .tbl_s_dk table td,
 .reveal .slide .tbl_s_dk table th {
   font-size: 60%;
