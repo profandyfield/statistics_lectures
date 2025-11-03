@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="168.20905 219 562.39495 195" width="562.39495" height="195">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#951256">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke="none" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="168.20905" y="219" width="562.39495" height="195"/>
+    <g id="Canvas_1_base">
+      <title>base</title>
+      <g id="Graphic_3">
+        <path d="M 241.5 220.5 L 411.8314 220.5 C 416.80195 220.5 420.8314 224.52944 420.8314 229.5 L 420.8314 269.5 C 420.8314 274.47056 416.80195 278.5 411.8314 278.5 L 241.5 278.5 C 236.52944 278.5 232.5 274.47056 232.5 269.5 L 232.5 229.5 C 232.5 224.52944 236.52944 220.5 241.5 220.5 Z" fill="#dc5e76"/>
+        <path d="M 241.5 220.5 L 411.8314 220.5 C 416.80195 220.5 420.8314 224.52944 420.8314 229.5 L 420.8314 269.5 C 420.8314 274.47056 416.80195 278.5 411.8314 278.5 L 241.5 278.5 C 236.52944 278.5 232.5 274.47056 232.5 269.5 L 232.5 229.5 C 232.5 224.52944 236.52944 220.5 241.5 220.5 Z" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(237.5 226.97787)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="18" fill="white" x="43.841695" y="18" xml:space="preserve">Happiness</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="18" fill="white" x="69.833695" y="40.522125" xml:space="preserve">(pre)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <path d="M 594.104 287.5 L 720.104 287.5 C 725.0746 287.5 729.104 291.52944 729.104 296.5 L 729.104 336.5 C 729.104 341.47056 725.0746 345.5 720.104 345.5 L 594.104 345.5 C 589.13344 345.5 585.104 341.47056 585.104 336.5 L 585.104 296.5 C 585.104 291.52944 589.13344 287.5 594.104 287.5 Z" fill="#e1cc69"/>
+        <path d="M 594.104 287.5 L 720.104 287.5 C 725.0746 287.5 729.104 291.52944 729.104 296.5 L 729.104 336.5 C 729.104 341.47056 725.0746 345.5 720.104 345.5 L 594.104 345.5 C 589.13344 345.5 585.104 341.47056 585.104 336.5 L 585.104 296.5 C 585.104 291.52944 589.13344 287.5 594.104 287.5 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(590.104 293.97787)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="18" fill="#4b3d2a" x="21.676" y="18" xml:space="preserve">Happiness</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="18" fill="#4b3d2a" x="42.673" y="40.522125" xml:space="preserve">(post)</tspan>
+        </text>
+      </g>
+      <g id="Line_6">
+        <line x1="422.30147" y1="268.8912" x2="572.16725" y2="299.27814" marker-end="url(#SharpArrow_Marker)" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_15">
+        <text transform="translate(467.5 243.845)" fill="#951256">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="18" fill="#951256" x="15.161" y="17" xml:space="preserve">b</tspan>
+          <tspan font-family="Helvetica Neue" font-size="9" fill="#951256" y="21" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
