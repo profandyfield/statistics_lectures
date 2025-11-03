@@ -31,6 +31,27 @@ tbl_row <- "#e6edf4"
 
 
 
+#tol muted theme colours
+
+tol_muted <- khroma::color("muted")(9)
+tol_rose <- tol_muted[1]
+tol_indigo <- tol_muted[2]
+tol_sand <- tol_muted[3]
+tol_green <- tol_muted[4]
+tol_blue <- tol_muted[5]
+tol_byzantine <- tol_muted[6]
+tol_turquoise <- tol_muted[7]
+tol_bile <- tol_muted[8]
+tol_mulberry <- tol_muted[9]
+
+# other themes
+viridis_2 <- scales::viridis_pal(begin = 0.3, end = 0.9)(2)
+viridis_3 <- scales::viridis_pal(begin = 0.2, end = 0.9)(3)
+viridis_5 <- scales::viridis_pal()(5)
+viridis_6 <- scales::viridis_pal()(6)
+
+
+
 # set fontawesome icon class
 
 set_svg <- function(x){
