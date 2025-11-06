@@ -106,7 +106,7 @@ Use f to toggle fullscreen
 #| message: false
 #| warning: false
 
-pupluv_tib |> 
+puptreat_tib |> 
   DT::datatable(caption = 'Table 1: Data for the puppy therapy example',
                 options = list(
                 dom = 'tp',
@@ -549,6 +549,22 @@ puptreat_tib |>
 
 :::
 
+\
+
+::: tbl_s
+```{r}
+#| echo: true
+#| warning: FALSE
+#| message: FALSE
+
+puptreat_tib |> 
+  describe_distribution(select = post_happy) |> 
+  data_remove(c(Skewness, Kurtosis, n_Missing)) |> 
+  display()
+```
+
+:::
+
 
 ## [L]{.txt_ong}oad and [L]{.txt_ong}ook
 
@@ -630,8 +646,6 @@ contrasts(puptreat_tib$dose) <- cbind(puppy_vs_none, long_vs_short)
 puptreat_lm <- lm(post_happy ~ pre_happy + dose, data = puptreat_tib)
 ```
 :::
-
-## {background-video="media/milton_even_prettier_as_a_puppy.mp4" background-size="cover"}
 
 ## [E]{.txt_ong}valuate
 
