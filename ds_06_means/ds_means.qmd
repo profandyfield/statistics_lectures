@@ -487,6 +487,17 @@ cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |>
   
 :::
 
+::: txt_dk_bg
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- This experiment is using a **one-way independent design**.
+  - One-way = one predictor variable is manipulated (costume)
+  - Participants are assigned to independent groups
+
+:::
+:::
+
 ![](media/oval_human.png){.absolute width="150" left=750 top=35}
 ![](media/oval_zombie.png){.absolute width="150"  left=750 top=260}
 ![](media/oval_milton.png){.absolute width="150" left=750 top=470}
