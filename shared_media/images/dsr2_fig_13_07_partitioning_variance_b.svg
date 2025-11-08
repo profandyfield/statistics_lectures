@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="16.56 67.68 483.12 300.3" width="483.12" height="300.3">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_base">
+      <title>base</title>
+      <g id="Graphic_14"/>
+    </g>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_13">
+        <path d="M 106.2 73 L 484.84005 73 C 489.8106 73 493.84005 77.02944 493.84005 82 L 493.84005 129 C 493.84005 133.97056 489.8106 138 484.84005 138 L 106.2 138 C 101.22944 138 97.2 133.97056 97.2 129 L 97.2 82 C 97.2 77.02944 101.22944 73 106.2 73 Z" fill="#71cff2"/>
+        <path d="M 106.2 73 L 484.84005 73 C 489.8106 73 493.84005 77.02944 493.84005 82 L 493.84005 129 C 493.84005 133.97056 489.8106 138 484.84005 138 L 106.2 138 C 101.22944 138 97.2 133.97056 97.2 129 L 97.2 82 C 97.2 77.02944 101.22944 73 106.2 73 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(102.2 89.18697)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="182.47702" y="12" xml:space="preserve">SS</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="#36218e" y="16" xml:space="preserve">T</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" y="12" xml:space="preserve"> </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#36218e" x="153.76802" y="29.29007" xml:space="preserve">Total variability</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_Layer_2">
+      <title>Layer 2</title>
+      <g id="Graphic_12">
+        <path d="M 32 183 L 327.63998 183 C 332.61054 183 336.64 187.02944 336.64 192 L 336.64 239 C 336.64 243.97056 332.61054 248 327.63998 248 L 32 248 C 27.029437 248 23 243.97056 23 239 L 23 192 C 23 187.02944 27.029437 183 32 183 Z" fill="#00ab86"/>
+        <path d="M 32 183 L 327.63998 183 C 332.61054 183 336.64 187.02944 336.64 192 L 336.64 239 C 336.64 243.97056 332.61054 248 327.63998 248 L 32 248 C 27.029437 248 23 243.97056 23 239 L 23 192 C 23 187.02944 27.029437 183 32 183 Z" stroke="#007928" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(28 199.18697)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="139.497" y="12" xml:space="preserve">SS</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="white" y="16" xml:space="preserve">M</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" y="12" xml:space="preserve"> </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="white" x="10.675992" y="29.29007" xml:space="preserve">Variance explained by the experimental manipulation</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <path d="M 389.2574 183 L 454.25746 183 C 459.228 183 463.25746 187.02944 463.25746 192 L 463.25746 239 C 463.25746 243.97056 459.228 248 454.25746 248 L 389.2574 248 C 384.28684 248 380.2574 243.97056 380.2574 239 L 380.2574 192 C 380.2574 187.02944 384.28684 183 389.2574 183 Z" fill="#e1cc69"/>
+        <path d="M 389.2574 183 L 454.25746 183 C 459.228 183 463.25746 187.02944 463.25746 192 L 463.25746 239 C 463.25746 243.97056 459.228 248 454.25746 248 L 389.2574 248 C 384.28684 248 380.2574 243.97056 380.2574 239 L 380.2574 192 C 380.2574 187.02944 384.28684 183 389.2574 183 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(385.2574 192.01897)" fill="#545554">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#545554" x="25.10203" y="12" xml:space="preserve">SS</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="#545554" y="16" xml:space="preserve">R</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#545554" x="2.9420305" y="29.29007" xml:space="preserve">Unexplained </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#545554" x="13.94603" y="43.62607" xml:space="preserve">variance</tspan>
+        </text>
+      </g>
+      <g id="Line_10">
+        <line x1="333.94833" y1="138.98543" x2="375.86017" y2="175.50632" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_9">
+        <line x1="260.6112" y1="138.68903" x2="223.2082" y2="174.24933" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

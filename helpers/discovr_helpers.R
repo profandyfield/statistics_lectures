@@ -47,10 +47,9 @@ tol_mulberry <- tol_muted[9]
 # other themes
 viridis_2 <- scales::viridis_pal(begin = 0.3, end = 0.9)(2)
 viridis_3 <- scales::viridis_pal(begin = 0.2, end = 0.9)(3)
+viridis_4 <- scales::viridis_pal(begin = 0.2, end = 0.9)(4)
 viridis_5 <- scales::viridis_pal()(5)
 viridis_6 <- scales::viridis_pal()(6)
-
-
 
 # set fontawesome icon class
 

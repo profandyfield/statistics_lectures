@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="38.5 137.5 490 166" width="490" height="166">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_11">
+        <path d="M 386 203 L 518 203 C 522.97056 203 527 207.02944 527 212 L 527 229 C 527 233.97056 522.97056 238 518 238 L 386 238 C 381.02944 238 377 233.97056 377 229 L 377 212 C 377 207.02944 381.02944 203 386 203 Z" fill="#71cff2"/>
+        <path d="M 386 203 L 518 203 C 522.97056 203 527 207.02944 527 212 L 527 229 C 527 233.97056 522.97056 238 518 238 L 386 238 C 381.02944 238 377 233.97056 377 229 L 377 212 C 377 207.02944 381.02944 203 386 203 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(382 212.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="43.672" y="12" xml:space="preserve">Outcome</tspan>
+        </text>
+      </g>
+      <g id="Line_16">
+        <line x1="206" y1="156.5" x2="365.72684" y2="200.86857" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_40">
+        <path d="M 49 203 L 197 203 C 201.97056 203 206 207.02944 206 212 L 206 229 C 206 233.97056 201.97056 238 197 238 L 49 238 C 44.029437 238 40 233.97056 40 229 L 40 212 C 40 207.02944 44.029437 203 49 203 Z" fill="#71cff2"/>
+        <path d="M 49 203 L 197 203 C 201.97056 203 206 207.02944 206 212 L 206 229 C 206 233.97056 201.97056 238 197 238 L 49 238 C 44.029437 238 40 233.97056 40 229 L 40 212 C 40 207.02944 44.029437 203 49 203 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(45 212.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="47.892" y="12" xml:space="preserve">Moderator</tspan>
+        </text>
+      </g>
+      <g id="Graphic_61">
+        <path d="M 49 139 L 197 139 C 201.97056 139 206 143.02944 206 148 L 206 165 C 206 169.97056 201.97056 174 197 174 L 49 174 C 44.029437 174 40 169.97056 40 165 L 40 148 C 40 143.02944 44.029437 139 49 139 Z" fill="#71cff2"/>
+        <path d="M 49 139 L 197 139 C 201.97056 139 206 143.02944 206 148 L 206 165 C 206 169.97056 201.97056 174 197 174 L 49 174 C 44.029437 174 40 169.97056 40 165 L 40 148 C 40 143.02944 44.029437 139 49 139 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(45 148.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="51.558" y="12" xml:space="preserve">Predictor</tspan>
+        </text>
+      </g>
+      <g id="Graphic_169">
+        <path d="M 49 267 L 197 267 C 201.97056 267 206 271.02944 206 276 L 206 293 C 206 297.97056 201.97056 302 197 302 L 49 302 C 44.029437 302 40 297.97056 40 293 L 40 276 C 40 271.02944 44.029437 267 49 267 Z" fill="#71cff2"/>
+        <path d="M 49 267 L 197 267 C 201.97056 267 206 271.02944 206 276 L 206 293 C 206 297.97056 201.97056 302 197 302 L 49 302 C 44.029437 302 40 297.97056 40 293 L 40 276 C 40 271.02944 44.029437 267 49 267 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(45 276.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="14.514" y="12" xml:space="preserve">Predictor × Moderator</tspan>
+        </text>
+      </g>
+      <g id="Line_170">
+        <line x1="206" y1="220.5" x2="365.3" y2="220.5" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_171">
+        <line x1="206" y1="284.5" x2="365.6934" y2="242.00848" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

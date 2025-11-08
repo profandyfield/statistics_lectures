@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="ds_factorial_designs_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ds_factorial_designs_files/libs/quarto-html/tabby.min.js"></script>
+<script src="ds_factorial_designs_files/libs/quarto-html/popper.min.js"></script>
+<script src="ds_factorial_designs_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="ds_factorial_designs_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ds_factorial_designs_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="ds_factorial_designs_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ds_factorial_designs_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="ds_factorial_designs_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
+
+  <meta name="author" content="Professor Andy Field">
+  <title>Factorial designs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="ds_factorial_designs_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="ds_factorial_designs_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="ds_factorial_designs_files/libs/revealjs/dist/theme/quarto-86c43366cb17dff7bd77c417d5352692.css">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="ds_factorial_designs_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../shared_media/images/slide_background_title.jpg" data-background-opacity="1" data-background-position="center" data-background-size="100%" class="center">
+  <h1 class="title">Factorial designs</h1>
+  <p class="subtitle">Testing moderation using interactions</p>
+  <p class="author">Professor Andy Field</p>
+  <p class="institute">University of Sussex</p>
+
+<audio controls="">
+  <source src="../shared_media/audio/acdc_that_the_way.mp3" type="audio/mpeg">
+  <source src="../shared_media/audio/acdc_that_the_way.ogg" type="audio/ogg">
+</audio>
+
+
+
+<style>
+  tr:nth-child(n) {border:none; background-color: rgba(34, 34, 34, 0); line-height: 14px;}
+</style>
+
+<table style="border:none; border-collapse: collapse">
+  <tbody><tr>
+    <td><a href="https://bsky.app/profile/profandyfield.bsky.social" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/bs_logo_60.png">
+      </a>
+      <a href="https://www.youtube.com/user/ProfAndyField" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/youtube_60.png">
+      </a>
+      <a href="https://www.discoveringstatistics.com" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/ds_com_fav.png">
+      </a>
+      <a href="https://www.discovr.rocks" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/discovr_circle.png">
+      </a>
+      <a href="https://www.statisticsadventure.com" target="_blank">
+      <img style="vertical-align:middle; width:60px; height:60px" src="../shared_media/images/adventr_circle.png">
+      </a>
+    </td>
+  </tr>
+</tbody></table>
+
+</section>
+
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning outcomes</h2>
+<ul>
+<li class="fragment">What is a factorial design?</li>
+<li class="fragment">Moderation and interaction effects</li>
+<li class="fragment">Factorial designs and the GLM
+<ul>
+<li class="fragment">The process of E.V.I.L.</li>
+</ul></li>
+<li class="fragment">Breaking down interactions
+<ul>
+<li class="fragment">Plots</li>
+<li class="fragment">Simple effects analysis</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Use C to toggle pen/markup Use backspace to delete markup Use f to toggle fullscreen</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/spine_map.png" class="fragment quarto-figure quarto-figure-center" width="1050" height="594"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/spine_map_lec_02.png" class="fragment quarto-figure quarto-figure-center" width="1050" height="594"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_04_39_workflow.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="terminology" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li>Variables in experimental designs
+<ul>
+<li>Predictor variables referred to as <strong>independent variables (IV)</strong> because their value is independent of (is not being predicted from) other variables.</li>
+<li>Outcome variable referred to as the <strong>dependent variables (DV)</strong>, because their value ‘depends’ upon (is being predicted from) other variables.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Factorial design</strong>: Two or more predictor variables/IV have been manipulated</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong><em>n</em>-way design</strong>: The number of predictor variables/IVs manipulated
+<ul>
+<li>Two-way = 2 predictor variables/IVs manipulated</li>
+<li>Three-way = 3 predictor variables/IVs manipulated</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>The allocation of participants
+<ul>
+<li><strong>Independent design</strong> = different entities in all conditions</li>
+<li><strong>Repeated measures design</strong> = the same entities in all conditions</li>
+<li><strong>Mixed design</strong> = different entities in all conditions of at least one predictor/IV, the same entities in all conditions of at least one other predictor variable/IV</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section>
+<section id="moderation-do-video-games-lead-to-aggression" class="title-slide slide level1 center">
+<h1>Moderation: Do video games lead to aggression?</h1>
+
+</section>
+<section id="section-2" class="slide level2" data-background-video="../shared_media/video/warcraft_final.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="moderation" class="slide level2">
+<h2>Moderation</h2>
+<ul>
+<li>Is there a link between video games and aggression?
+<ul>
+<li>Outcome = aggressive behaviour (<code>aggress</code>)</li>
+<li>Callus Unemotional Traits (<code>caunts</code>)</li>
+<li>Video game Use (<code>vid_game</code>)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Imagine a scientist wanted to look at the relationship between playing violent video games such as Grand Theft Auto, MadWorld and Manhunt and aggression. She gathered data from 442 youths. She measured their aggressive behaviour (aggress), callous unemotional traits (caunts), and the number of hours per week they play video games (vid_game)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="moderation-the-theoretical-model" class="slide level2">
+<h2>Moderation: The theoretical model</h2>
+
+<img data-src="../shared_media/images/dsr2_fig_10_03_moderation_conceptual.svg" class="quarto-figure quarto-figure-center r-stretch" width="700"></section>
+<section id="categorical-moderator-variable" class="slide level2">
+<h2>Categorical moderator variable</h2>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="continuous-moderator-variable" class="slide level2">
+<h2>Continuous moderator variable</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_10_05_moderation_3d_surfaces.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="moderation-the-statistical-model" class="slide level2">
+<h2>Moderation: The statistical model</h2>
+
+<img data-src="../shared_media/images/dsr2_fig_10_06_moderation_stat_model.svg" class="quarto-figure quarto-figure-center r-stretch" width="700"><p><br></p>
+<div class="fragment">
+<div class="center-h">
+<div class="txt_mulberry">
+<p><span class="math display">\[
+\begin{aligned}
+\text{aggression}_i = \hat{b}_0 + \hat{b}_1\text{video games}_i + \hat{b}_2\text{caunts}_i + \hat{b}_3\text{video games}\times\text{caunts}_i + e_i
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="interactions-in-the-linear-model" class="slide level2">
+<h2>Interactions in the linear model</h2>
+<ul>
+<li>An interaction term is literally the product of the two variables:</li>
+</ul>
+<div class="center-h">
+<div class="txt_mulberry">
+<div class="txt_l">
+<p><span class="math display">\[
+\text{interaction} = \text{video_games} × \text{caunts}
+\]</span></p>
+</div>
+</div>
+</div>
+<h3 id="interpretation">Interpretation</h3>
+<ul>
+<li class="fragment">If the interaction term is significant, we have a significant moderation effect</li>
+<li class="fragment">The parameter estimate (<em>b</em>) for the interaction quantifies the size of the interaction effect</li>
+<li class="fragment">The effect of one predictor is stronger at some levels of another predictor</li>
+<li class="fragment">In factorial designs, the effect of one predictor is stronger in certain categories of the other predictor</li>
+<li class="fragment">Simple effects analysis</li>
+</ul>
+</section>
+<section id="section-3" class="slide level2" data-background-video="../shared_media/video/wii_injuries.mp4" data-background-size="cover">
+<h2></h2>
+</section>
+<section id="a-dangerous-example" class="slide level2">
+<h2>A dangerous example</h2>
+<div class="fragment">
+<ul>
+<li>Injury severity (0-20) measured during video games</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>40 Participants
+<ul>
+<li>10 = Xbox One kinect (Static game)</li>
+<li>10 = Xbox One kinect (Active game)</li>
+<li>10 = Nintendo Switch (Static game)</li>
+<li>10 = Nintendo Switch (Active game)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Variables:
+<ul>
+<li>Predictor = Type of <code>console</code> (Xbox or Switch)</li>
+<li>Predictor = Type of <code>game</code> (active or static)</li>
+<li>Outcome = <code>injury</code> severity (0 = no injury, 20 = severe injury)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>The model</li>
+</ul>
+<div class="center-h">
+<div class="txt_mulberry">
+<p><span class="math display">\[
+\begin{aligned}
+\text{injuries}_i = \hat{b}_0 + \hat{b}_1\text{game}_i + \hat{b}_2\text{console}_i + \hat{b}_3\text{game}\times\text{console}_i + e_i
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="partitioning-variance" class="slide level2">
+<h2>Partitioning variance</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_13_07_partitioning_variance_a.svg" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="partitioning-variance-1" class="slide level2">
+<h2>Partitioning variance</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_13_07_partitioning_variance_b.svg" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="partitioning-variance-2" class="slide level2">
+<h2>Partitioning variance</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../shared_media/images/dsr2_fig_13_07_partitioning_variance_c.svg" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="load-and-look" class="slide level2">
+<h2><span class="txt_ong">L</span>oad and <span class="txt_ong">L</span>ook</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>xbox_tib <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">group_by</span>(game, console) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">describe_distribution</span>(<span class="at">select =</span> injury, <span class="at">ci =</span> <span class="fl">0.95</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href=""></a>  <span class="fu">data_remove</span>(<span class="fu">c</span>(Variable, Skewness, Kurtosis, n_Missing)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 22%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">game</th>
+<th style="text-align: center;">console</th>
+<th style="text-align: center;">Mean</th>
+<th style="text-align: center;">95% CI (Mean)</th>
+<th style="text-align: center;">SD</th>
+<th style="text-align: center;">IQR</th>
+<th style="text-align: center;">Range</th>
+<th style="text-align: center;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Static</td>
+<td style="text-align: center;">Xbox One</td>
+<td style="text-align: center;">7.00</td>
+<td style="text-align: center;">(5.55, 8.55)</td>
+<td style="text-align: center;">2.67</td>
+<td style="text-align: center;">4.50</td>
+<td style="text-align: center;">(3.00, 11.00)</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Active</td>
+<td style="text-align: center;">Xbox One</td>
+<td style="text-align: center;">9.40</td>
+<td style="text-align: center;">(7.54, 11.36)</td>
+<td style="text-align: center;">3.37</td>
+<td style="text-align: center;">5.75</td>
+<td style="text-align: center;">(4.00, 14.00)</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Static</td>
+<td style="text-align: center;">Switch</td>
+<td style="text-align: center;">6.70</td>
+<td style="text-align: center;">(5.75, 7.80)</td>
+<td style="text-align: center;">1.95</td>
+<td style="text-align: center;">2.25</td>
+<td style="text-align: center;">(3.00, 10.00)</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Active</td>
+<td style="text-align: center;">Switch</td>
+<td style="text-align: center;">12.90</td>
+<td style="text-align: center;">(11.65, 14.20)</td>
+<td style="text-align: center;">2.51</td>
+<td style="text-align: center;">4.00</td>
+<td style="text-align: center;">(10.00, 18.00)</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img data-src="../shared_media/images/l_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="visualize" class="slide level2">
+<h2><span class="txt_ong">V</span>isualize</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">ggplot</span>(xbox_tib, <span class="fu">aes</span>(<span class="at">x =</span> console, <span class="at">y =</span> injury, <span class="at">colour =</span> game, <span class="at">shape =</span> game)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="st">"mean_cl_normal"</span>, <span class="at">geom =</span> <span class="st">"pointrange"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb2-4"><a href=""></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href=""></a>  <span class="fu">scale_colour_viridis_d</span>(<span class="at">begin =</span> <span class="fl">0.3</span>, <span class="at">end =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Type of console"</span>, <span class="at">y =</span> <span class="st">"Injury severity (0-20)"</span>, <span class="at">colour =</span> <span class="st">"Type of game"</span>, <span class="at">shape =</span> <span class="st">"Type of game"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-4-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/v_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="fit-the-model" class="slide level2">
+<h2>Fit the model</h2>
+<ul>
+<li>Remember that for <em>F</em>-statistics we typically want Type III sums of squares</li>
+<li>We can fit the model in the usual way using <code>lm()</code>, but …</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The <code>aov_4()</code> function from the <code>afex</code> package
+<ul>
+<li>An easier option</li>
+<li>Automatically sets contrasts</li>
+<li>Built in interaction plot with <code>afex_plot()</code></li>
+<li>But … no parameter estimates, limited diagnostic plots, no robust methods</li>
+</ul></li>
+</ul>
+<div class="txt_xl">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>xbox_afx <span class="ot">&lt;-</span> afex<span class="sc">::</span><span class="fu">aov_4</span>(injury <span class="sc">~</span> game<span class="sc">*</span>console <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>id), <span class="at">data =</span> xbox_tib)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="overall-model-summary" class="slide level2">
+<h2>Overall model summary</h2>
+<div class="txt_xl">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">model_parameters</span>(xbox_afx, <span class="at">es_type =</span> <span class="st">"omega"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href=""></a>  <span class="fu">display</span>(<span class="at">use_symbols =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>ANOVA estimation for factorial designs using ‘afex’</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 5%">
+<col style="width: 18%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Sum_Squares</th>
+<th style="text-align: center;">df</th>
+<th style="text-align: center;">Mean_Square</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">ω² (partial)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">game</td>
+<td style="text-align: center;">184.90</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">184.90</td>
+<td style="text-align: center;">25.86</td>
+<td style="text-align: center;">&lt; .001</td>
+<td style="text-align: center;">0.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">console</td>
+<td style="text-align: center;">25.60</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">25.60</td>
+<td style="text-align: center;">3.58</td>
+<td style="text-align: center;">0.067</td>
+<td style="text-align: center;">0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">game:console</td>
+<td style="text-align: center;">36.10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">36.10</td>
+<td style="text-align: center;">5.05</td>
+<td style="text-align: center;">0.031</td>
+<td style="text-align: center;">0.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: center;">257.40</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">7.15</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-pencil" aria-label="pencil"></i> Report<svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></strong></p>
+</div>
+<div class="callout-content">
+<p>The type of game significantly moderated the effect of the games console on injury severity, F(1, 36) = 5.05, <em>p</em> = 0.031, <span class="math inline">\(\hat{\omega}^2_p\)</span> = 0.09. The interaction explained 9% of the variance in injuries not attributable to other predictors.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluate-assumptions" class="slide level2" data-background-image="media/milton_20180720_100533_crop.jpg" data-background-size="cover">
+<h2><span class="txt_mulberry">E</span>valuate assumptions</h2>
+<div class="fragment">
+<div class="center-h">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">check_model</span>(xbox_afx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-8-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/e_hex.png" class="absolute" style="top: 0px; left: 800px; height: 80px; "></p>
+</section>
+<section id="interpret" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-1" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-console" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>console</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-console-1" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>console</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-console-2" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>console</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-console-3" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>console</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-game" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>game</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-game-1" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>game</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-main-effect-of-game-2" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the main effect of <code>game</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-the-interaction-moderation-effect" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret the interaction (moderation effect)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tbl_s">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>ANOVA estimation for factorial designs using ‘afex’</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 5%">
+<col style="width: 18%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Sum_Squares</th>
+<th style="text-align: center;">df</th>
+<th style="text-align: center;">Mean_Square</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">ω² (partial)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">game</td>
+<td style="text-align: center;">184.90</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">184.90</td>
+<td style="text-align: center;">25.86</td>
+<td style="text-align: center;">&lt; .001</td>
+<td style="text-align: center;">0.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">console</td>
+<td style="text-align: center;">25.60</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">25.60</td>
+<td style="text-align: center;">3.58</td>
+<td style="text-align: center;">0.067</td>
+<td style="text-align: center;">0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">game:console</td>
+<td style="text-align: center;">36.10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">36.10</td>
+<td style="text-align: center;">5.05</td>
+<td style="text-align: center;">0.031</td>
+<td style="text-align: center;">0.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: center;">257.40</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">7.15</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpreting-interactions" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpreting interactions</h2>
+<h3 id="console-moderating-the-effect-of-game">Console moderating the effect of game</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpreting-interactions-1" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpreting interactions</h2>
+<h3 id="console-moderating-the-effect-of-game-1">Console moderating the effect of game</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="txt_mulberry">
+<div class="txt_s">
+<p><span class="math display">\[
+\begin{aligned}
+\text{game}_\text{Switch} &amp;= \bar{X}_\text{active, Switch}-\bar{X}_\text{static, Switch} \\
+&amp;= 12.90 - 6.70 \\
+&amp;= 6.20
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{game}_\text{Xbox} &amp;= \bar{X}_\text{active, Xbox}-\bar{X}_\text{static, Xbox} \\
+&amp;= 9.40 - 7.00 \\
+&amp;= 2.40
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Interaction} &amp;= \text{game}_\text{Switch} - \text{game}_\text{Xbox} \\
+&amp;= 6.2 - 2.40 \\
+&amp;= 3.8
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div></div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="the-effect-of-type-of-game-within-consoles">The effect of type of game within consoles</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">estimate_contrasts</span>(<span class="at">model =</span> xbox_afx,</span>
+<span id="cb6-2"><a href=""></a>                   <span class="at">contrast =</span> <span class="st">"game"</span>,</span>
+<span id="cb6-3"><a href=""></a>                   <span class="at">by =</span> <span class="st">"console"</span>,</span>
+<span id="cb6-4"><a href=""></a>                   <span class="at">comparison =</span> <span class="st">"joint"</span>,</span>
+<span id="cb6-5"><a href=""></a>                   <span class="at">p_adjust =</span> <span class="st">"bonferroni"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-6"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Marginal Joint Test</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Contrast</th>
+<th style="text-align: left;">console</th>
+<th style="text-align: left;">df1</th>
+<th style="text-align: left;">df2</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">game</td>
+<td style="text-align: left;">Xbox One</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: right;">4.03</td>
+<td style="text-align: right;">0.105</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">game</td>
+<td style="text-align: left;">Switch</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: right;">26.88</td>
+<td style="text-align: right;">&lt; .001</td>
+</tr>
+</tbody>
+</table>
+<p><em>Predictors averaged: id; p-value adjustment method: Bonferroni</em></p>
+</div>
+</div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-pencil" aria-label="pencil"></i> Report<svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></strong></p>
+</div>
+<div class="callout-content">
+<p>The effect of playing active vs.&nbsp;static games is less significant for the Xbox than the switch. The difference in mean injuries between active and static games was not significantly different for the Xbox, <em>F</em>(1, 36) = 4.03, <em>p</em> = 0.105, but was for the Switch, <em>F</em>(1, 36) = 26.88, <em>p</em> &lt; 0.001.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-interactions-2" class="slide level2">
+<h2>Interpreting interactions</h2>
+<h3 id="game-moderating-the-effect-of-console">Game moderating the effect of console</h3>
+
+<img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
+<section id="interpreting-interactions-3" class="slide level2">
+<h2>Interpreting interactions</h2>
+<h3 id="game-moderating-the-effect-of-console-1">Game moderating the effect of console</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="txt_mulberry">
+<div class="txt_s">
+<p><span class="math display">\[
+\begin{aligned}
+\text{console}_\text{active} &amp;= \bar{X}_\text{active, Switch}-\bar{X}_\text{active, Xbox} \\
+&amp;= 12.90 - 9.4 \\
+&amp;= 3.5
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{console}_\text{static} &amp;= \bar{X}_\text{static, Switch}-\bar{X}_\text{static, Xbox} \\
+&amp;= 6.7 - 7.00 \\
+&amp;= -0.3
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Interaction} &amp;= \text{console}_\text{active} - \text{console}_\text{static} \\
+&amp;= 3.5 - (-0.3) \\
+&amp;= 3.8
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div></div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-analysis" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret: simple effects analysis</h2>
+<h3 id="the-effect-of-console-within-the-type-of-game">The effect of console within the type of game</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">estimate_contrasts</span>(<span class="at">model =</span> xbox_afx,</span>
+<span id="cb7-2"><a href=""></a>                   <span class="at">contrast =</span> <span class="st">"console"</span>,</span>
+<span id="cb7-3"><a href=""></a>                   <span class="at">by =</span> <span class="st">"game"</span>,</span>
+<span id="cb7-4"><a href=""></a>                   <span class="at">comparison =</span> <span class="st">"joint"</span>,</span>
+<span id="cb7-5"><a href=""></a>                   <span class="at">p_adjust =</span> <span class="st">"bonferroni"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Marginal Joint Test</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Contrast</th>
+<th style="text-align: left;">game</th>
+<th style="text-align: left;">df1</th>
+<th style="text-align: left;">df2</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">console</td>
+<td style="text-align: left;">Static</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">&gt; .999</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">console</td>
+<td style="text-align: left;">Active</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: right;">8.57</td>
+<td style="text-align: right;">0.012</td>
+</tr>
+</tbody>
+</table>
+<p><em>Predictors averaged: id; p-value adjustment method: Bonferroni</em></p>
+</div>
+</div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-pencil" aria-label="pencil"></i> Report<svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></strong></p>
+</div>
+<div class="callout-content">
+<p>The effect of playing Xbox vs.&nbsp;Switch games is less significant for static games than active ones. The difference in mean injuries between Xbox and Switch games was not significantly different for static games, <em>F</em>(1, 36) = 0.06, <em>p</em> = 1.000, but was for the active games, <em>F</em>(1, 36) = 8.57, <em>p</em> = 0.012.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="txt_xl">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-skull" aria-label="skull"></i> The danger zone!</strong></p>
+</div>
+<div class="callout-content">
+<p>Repeat the following mantra:</p>
+<p><strong>“It is never sensible to interpret main effects in the presence of a significant interaction effect.”</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2" data-background-video="../shared_media/video/lazinc_durt_the_time_is_here.mp4" data-background-size="cover">
+<h2></h2>
+</section></section>
+<section>
+<section id="the-beer-goggles-effect" class="title-slide slide level1 center">
+<h1>The beer goggles effect</h1>
+
+</section>
+<section id="a-science-reflecting-art-example" class="slide level2">
+<h2>A science reflecting art example</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The beer goggles effect: subjective perceptions of physical attractiveness become inaccurate after drinking alcohol</li>
+<li>Chen et al., (2014)<sup>1</sup>
+<ul>
+<li>Alcohol consumption reduces accuracy in symmetry judgements</li>
+<li>Symmetric faces have been shown to be rated as more attractive.</li>
+<li>If the beer-goggles effect is driven by alcohol impairing symmetry judgements then you’d expect a stronger effect for unattractive (asymmetric) faces than attractive (symmetric) ones</li>
+</ul></li>
+<li>Fictional data but matches Chen et al.&nbsp;findings</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><img data-src="../shared_media/images/zobo_chat_edit.png" height="500"></p>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Chen, et al., (2014). The moderating effect of stimulus attractiveness on the effect of alcohol consumption on attractiveness ratings. Alcohol and Alcoholism, 49, 515–519. <a href="https://doi.org/10.1093/alcalc/agu026">https://doi.org/10.1093/alcalc/agu026</a></p></li></ol></aside></section>
+<section id="study-design" class="slide level2">
+<h2>Study design</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>48 Participants (8 per group)</li>
+<li>Predictor: <code>alcohol</code>
+<ul>
+<li><strong>Placebo</strong> group: 500 ml of alcohol-free beer</li>
+<li><strong>Low-dose</strong> group: 500 ml of beer (4% ABV);</li>
+<li><strong>High-dose</strong> group: 500 ml of beer (7% ABV).</li>
+</ul></li>
+<li>Predictor: <code>facetype</code></li>
+<li>Rated 50 <strong>unattractive</strong> (asymmetric) faces</li>
+<li>Rated 50 <strong>attractive</strong> (symmetric) faces</li>
+<li>Outcome:
+<ul>
+<li>Median rating of the 50 photos on a scale from 0 (pass me a paper bag) to 10 (pass me their phone number)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><img data-src="../shared_media/images/zobo_chat_edit.png" height="500"></p>
+</div>
+</div></div>
+</section>
+<section id="load-and-look-1" class="slide level2">
+<h2><span class="txt_ong">L</span>oad and <span class="txt_ong">L</span>ook</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>goggles_tib <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href=""></a>  <span class="fu">group_by</span>(facetype, alcohol) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">describe_distribution</span>(<span class="at">select =</span> attractiveness, <span class="at">ci =</span> <span class="fl">0.95</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href=""></a>  <span class="fu">data_remove</span>(<span class="fu">c</span>(Variable, Skewness, Kurtosis, n_Missing)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href=""></a>  <span class="fu">display</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">facetype</th>
+<th style="text-align: center;">alcohol</th>
+<th style="text-align: center;">Mean</th>
+<th style="text-align: center;">95% CI (Mean)</th>
+<th style="text-align: center;">SD</th>
+<th style="text-align: center;">IQR</th>
+<th style="text-align: center;">Range</th>
+<th style="text-align: center;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Unattractive</td>
+<td style="text-align: center;">Placebo</td>
+<td style="text-align: center;">3.50</td>
+<td style="text-align: center;">(2.50, 4.38)</td>
+<td style="text-align: center;">1.60</td>
+<td style="text-align: center;">2.50</td>
+<td style="text-align: center;">(1.00, 6.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attractive</td>
+<td style="text-align: center;">Placebo</td>
+<td style="text-align: center;">6.38</td>
+<td style="text-align: center;">(5.88, 6.82)</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">(5.00, 8.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unattractive</td>
+<td style="text-align: center;">Low dose</td>
+<td style="text-align: center;">4.88</td>
+<td style="text-align: center;">(4.12, 5.69)</td>
+<td style="text-align: center;">1.25</td>
+<td style="text-align: center;">1.75</td>
+<td style="text-align: center;">(3.00, 7.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attractive</td>
+<td style="text-align: center;">Low dose</td>
+<td style="text-align: center;">6.50</td>
+<td style="text-align: center;">(5.93, 7.00)</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">(5.00, 8.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unattractive</td>
+<td style="text-align: center;">High dose</td>
+<td style="text-align: center;">6.62</td>
+<td style="text-align: center;">(6.00, 7.32)</td>
+<td style="text-align: center;">1.06</td>
+<td style="text-align: center;">1.75</td>
+<td style="text-align: center;">(5.00, 8.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attractive</td>
+<td style="text-align: center;">High dose</td>
+<td style="text-align: center;">6.12</td>
+<td style="text-align: center;">(5.43, 6.82)</td>
+<td style="text-align: center;">1.13</td>
+<td style="text-align: center;">2.00</td>
+<td style="text-align: center;">(5.00, 8.00)</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img data-src="../shared_media/images/l_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="visualize-1" class="slide level2">
+<h2><span class="txt_ong">V</span>isualize</h2>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/goggles_plot-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/v_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="fit-the-model-1" class="slide level2">
+<h2>Fit the model</h2>
+<div class="txt_xl">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>goggles_afx <span class="ot">&lt;-</span> afex<span class="sc">::</span><span class="fu">aov_4</span>(attractiveness <span class="sc">~</span> facetype<span class="sc">*</span>alcohol <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>id), <span class="at">data =</span> goggles_tib)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="fu">model_parameters</span>(goggles_afx, <span class="at">es_type =</span> <span class="st">"omega"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href=""></a>  <span class="fu">display</span>(<span class="at">use_symbols =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>ANOVA estimation for factorial designs using ‘afex’</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 17%">
+<col style="width: 5%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Sum_Squares</th>
+<th style="text-align: center;">df</th>
+<th style="text-align: center;">Mean_Square</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">ω² (partial)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">facetype</td>
+<td style="text-align: center;">21.33</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">21.33</td>
+<td style="text-align: center;">15.58</td>
+<td style="text-align: center;">&lt; .001</td>
+<td style="text-align: center;">0.23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">alcohol</td>
+<td style="text-align: center;">16.54</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8.27</td>
+<td style="text-align: center;">6.04</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">0.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">facetype:alcohol</td>
+<td style="text-align: center;">23.29</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">11.65</td>
+<td style="text-align: center;">8.51</td>
+<td style="text-align: center;">&lt; .001</td>
+<td style="text-align: center;">0.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: center;">57.50</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">1.37</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-pencil" aria-label="pencil"></i> Report<svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></strong></p>
+</div>
+<div class="callout-content">
+<p>The dose of alcohol significantly moderated the effect of the type of face on attractiveness ratings, F(2, 42) = 8.51, <em>p</em> &lt; 0.001, <span class="math inline">\(\hat{\omega}^2_p\)</span> = 0.24. The interaction explained 24% of the variance in injuries not attributable to other predictors.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluate-assumptions-1" class="slide level2" data-background-image="media/milton_20180720_100533_crop.jpg" data-background-size="cover">
+<h2><span class="txt_mulberry">E</span>valuate assumptions</h2>
+<div class="fragment">
+<div class="center-h">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">check_model</span>(goggles_afx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-34-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/e_hex.png" class="absolute" style="top: 0px; left: 800px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-1" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-facetype-within-alcohol-group">Simple effects: facetype within alcohol group</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Marginal Joint Test</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Contrast</th>
+<th style="text-align: left;">alcohol</th>
+<th style="text-align: left;">df1</th>
+<th style="text-align: left;">df2</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">facetype</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: right;">24.15</td>
+<td style="text-align: right;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">facetype</td>
+<td style="text-align: left;">Low dose</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: right;">7.72</td>
+<td style="text-align: right;">0.024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">facetype</td>
+<td style="text-align: left;">High dose</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: right;">0.73</td>
+<td style="text-align: right;">&gt; .999</td>
+</tr>
+</tbody>
+</table>
+<p><em>Predictors averaged: id; p-value adjustment method: Bonferroni</em></p>
+</div>
+</div>
+</section>
+<section id="interpret-simple-effects-2" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-facetype-within-alcohol-group-1">Simple effects: facetype within alcohol group</h3>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-36-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-3" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-facetype-within-alcohol-group-2">Simple effects: facetype within alcohol group</h3>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-37-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-4" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-alcohol-within-facetype">Simple effects: alcohol within facetype</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Marginal Joint Test</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Contrast</th>
+<th style="text-align: left;">facetype</th>
+<th style="text-align: left;">df1</th>
+<th style="text-align: left;">df2</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">alcohol</td>
+<td style="text-align: left;">Unattractive</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: right;">14.33</td>
+<td style="text-align: right;">&lt; .001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">alcohol</td>
+<td style="text-align: left;">Attractive</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">&gt; .999</td>
+</tr>
+</tbody>
+</table>
+<p><em>Predictors averaged: id; p-value adjustment method: Bonferroni</em></p>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-5" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-alcohol-within-facetype-1">Simple effects: alcohol within facetype</h3>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-39-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="interpret-simple-effects-6" class="slide level2">
+<h2><span class="txt_ong">I</span>nterpret simple effects</h2>
+<h3 id="simple-effects-alcohol-within-facetype-2">Simple effects: alcohol within facetype</h3>
+<div class="center-h">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ds_factorial_designs_files/figure-revealjs/unnamed-chunk-40-1.png" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img data-src="../shared_media/images/i_hex.png" class="absolute" style="top: 0px; left: 900px; height: 80px; "></p>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Factorial designs: two or more predictor variables are manipulated</li>
+<li>Moderation: Where the effect of one predictor differs at levels of another-</li>
+<li>Testing moderation (interaction effects)
+<ul>
+<li>The model: a linear model in which predictors are entered as well as their interaction</li>
+<li>Interpret interactions using plots or simple effects analysis, which quantifies the effect of one predictor at each level of another</li>
+<li>The process of E.V.I.L.</li>
+</ul></li>
+<li>Main effects
+<ul>
+<li>The effect of one predictor variable collapsed across levels of other predictors</li>
+<li>Uninteresting in the presence of a significant interaction</li>
+</ul></li>
+</ul>
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="ds_factorial_designs_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/revealeditable/editable.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="ds_factorial_designs_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: true,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/statistics_lectures/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, Revealeditable, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

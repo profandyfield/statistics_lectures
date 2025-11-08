@@ -171,12 +171,30 @@ stats things
 
 ![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
+## [E]{.txt_mulberry}valuate assumptions {background-image="media/milton_20180720_100533_crop.jpg" background-size="cover"}
+
+::: fragment
+::: center-h
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 6
+
+check_model(puptreat_lm)
+```
+:::
+:::
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
 ## [I]{.txt_ong}nterpret parameter estimates, CIs and tests
 
 ![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
 
 
-## Robust procedures
+## Robust procedures {}
 
 ![](../shared_media/images/dsr2_fig_08_13_robust_flow.png){fig-align="center" height=600}
 

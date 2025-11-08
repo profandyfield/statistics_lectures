@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="16.56 67.68 483.12 300.3" width="483.12" height="300.3">
+  <defs/>
+  <g id="Canvas_1" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_base">
+      <title>base</title>
+      <g id="Graphic_14"/>
+    </g>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_13">
+        <path d="M 106.2 73 L 484.84005 73 C 489.8106 73 493.84005 77.02944 493.84005 82 L 493.84005 129 C 493.84005 133.97056 489.8106 138 484.84005 138 L 106.2 138 C 101.22944 138 97.2 133.97056 97.2 129 L 97.2 82 C 97.2 77.02944 101.22944 73 106.2 73 Z" fill="#71cff2"/>
+        <path d="M 106.2 73 L 484.84005 73 C 489.8106 73 493.84005 77.02944 493.84005 82 L 493.84005 129 C 493.84005 133.97056 489.8106 138 484.84005 138 L 106.2 138 C 101.22944 138 97.2 133.97056 97.2 129 L 97.2 82 C 97.2 77.02944 101.22944 73 106.2 73 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(102.2 89.18697)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="182.47702" y="12" xml:space="preserve">SS</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="#36218e" y="16" xml:space="preserve">T</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" y="12" xml:space="preserve"> </tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="#36218e" x="153.76802" y="29.29007" xml:space="preserve">Total variability</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
