@@ -341,7 +341,7 @@ The type of game significantly moderated the effect of the games console on inju
 
 :::
 
-## [E]{.txt_mulberry}valuate assumptions {background-image="media/milton_20180720_100533_crop.jpg" background-size="cover"}
+## [E]{.txt_mulberry}valuate assumptions
 
 ::: fragment
 ::: center-h
@@ -517,6 +517,8 @@ xbox_int +
 ```
 
 ![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+## {background-video="../shared_media/video/lazinc_durt_the_time_is_here.mp4" background-size="cover"}
 
 ## [I]{.txt_ong}nterpret the interaction (moderation effect)
 
@@ -780,7 +782,8 @@ Repeat the following mantra:
 :::
 :::
 
-## {background-video="../shared_media/video/lazinc_durt_the_time_is_here.mp4" background-size="cover"}
+
+## {background-video="../shared_media/video/milton_meditation_butthole.mp4" background-size="cover"}
 
 # The beer goggles effect
 
@@ -920,7 +923,7 @@ The dose of alcohol significantly moderated the effect of the type of face on at
 :::
 
 
-## [E]{.txt_mulberry}valuate assumptions {background-image="media/milton_20180720_100533_crop.jpg" background-size="cover"}
+## [E]{.txt_mulberry}valuate assumptions
 
 ::: fragment
 ::: center-h
