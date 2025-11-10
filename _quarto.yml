@@ -23,6 +23,7 @@ format:
       buttons: false
     preview-links: auto
     code-fold: false
+    code-overflow: wrap
     highlight: "kate"
     revealjs-plugins:
       - editable
