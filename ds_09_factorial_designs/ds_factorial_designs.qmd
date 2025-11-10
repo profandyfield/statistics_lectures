@@ -165,7 +165,7 @@ $$
 
 ## Interactions in the linear model
 
-- An interaction term is literally the product of the two variables:
+- An interaction term is the product of the two variables:
 
 
 ::: center-h
@@ -178,7 +178,9 @@ $$
 :::
 :::
 
+::: fragment
 ### Interpretation
+:::
 
 ::: incremental
 
@@ -212,16 +214,25 @@ $$
 
 - Variables:
   - Predictor = Type of `console` (Xbox or Switch)
-  - Predictor = Type of `game` (active or static)
+  - Predictor = Type of `game` (static or active)
   - Outcome = `injury` severity (0 = no injury, 20 = severe injury)
 
 :::
-::: fragment
 
-- The model
+::: fragment
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+This is a **two-way independent factorial design**.
+
+:::
+:::
+
+## The model
 
 ::: center-h
 ::: txt_mulberry
+::: txt_l
 $$
 \begin{aligned}
 \text{injuries}_i = \hat{b}_0 + \hat{b}_1\text{game}_i + \hat{b}_2\text{console}_i + \hat{b}_3\text{game}\times\text{console}_i + e_i
@@ -776,7 +787,7 @@ Repeat the following mantra:
 ## A science reflecting art example
 
 :::: columns 
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 - The beer goggles effect: subjective perceptions of physical attractiveness become inaccurate after drinking alcohol
 - Chen et al., (2014)^[Chen, et al., (2014). The moderating effect of stimulus attractiveness on the effect of alcohol consumption on attractiveness ratings. Alcohol and Alcoholism, 49, 515–519. [https://doi.org/10.1093/alcalc/agu026](https://doi.org/10.1093/alcalc/agu026)]
@@ -787,7 +798,7 @@ Repeat the following mantra:
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ::: center-h
 
 ![](../shared_media/images/zobo_chat_edit.png){height=500}
@@ -800,7 +811,7 @@ Repeat the following mantra:
 ## Study design
 
 :::: columns 
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 - 48 Participants (8 per group)
 - Predictor: `alcohol`
@@ -813,9 +824,16 @@ Repeat the following mantra:
 - Outcome:
   - Median rating of the 50 photos on a scale from 0 (pass me a paper bag) to 10 (pass me their phone number)
 
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+This is a **two-way independent factorial design**.
+
+:::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ::: center-h
 
 ![](../shared_media/images/zobo_chat_edit.png){height=500}
