@@ -14,22 +14,20 @@ from: markdown+emoji
 
 ```{r, include=FALSE}
 
-library(dplyr)
-library(ggplot2)
-library(forcats)
+
+library(easystats)
+library(tidyverse)
 #non tidyverse
 library(DT)
+library(glmmTMB)
 
 
-library(broom.mixed)
-library(broom)
-library(datawizard)
-library(Hmisc)
-library(insight)
-library(interactions)
-library(lme4)
-library(lmerTest)
-library(modelbased)
+#library(broom.mixed)
+#library(broom)
+
+#library(interactions)
+#library(lme4)
+#library(lmerTest)
 
 
 here::here("helpers/discovr_helpers.R") |> source()
@@ -41,6 +39,8 @@ cosmetic_tib <- discovr::cosmetic |>
          months = days/30.42)
 ```
 
+# Part 1: Theory
+
 ## Learning outcomes
 
 -   Understand what hierarchical data are
@@ -49,11 +49,26 @@ cosmetic_tib <- discovr::cosmetic |>
 -   Understand how to build models
 -   Be able to conduct and interpret models of hierarchical data
 
+::: notes
+Use C to toggle pen/markup
+Use backspace to delete markup
+Use f to toggle fullscreen
+:::
+
+
 ## 
 
-```{r, child = "spine_map_models.qmd"}
+::: r-stack
+![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
 
-```
+![](../shared_media/images/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+:::
+
+
+##
+
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
+
 
 ## Hierarchical data
 
@@ -521,12 +536,10 @@ $$
 
 ## 
 
-![](media/dsr2_fig_14_12_mlm_process.png){fig-align="center" height="600"}
+![](media/dsr2_fig_14_12_mlm_process.svg){fig-align="center" height="600"}
 
-## Visualise the data
 
-::: panel-tabset
-### Data
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
 
 ```{r}
 cosmetic_tib |> 
@@ -534,36 +547,163 @@ cosmetic_tib |>
   DT::datatable()
 ```
 
-### Plot
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+```{r}
+#| echo: true
+#| eval: false
+
+cosmetic_tib |> 
+  describe_distribution(select = -c(bdi, weeks, months)) |> 
+  display()
+```
+
+
+```{r}
+cosmetic_tib |> 
+  describe_distribution(select = -c(bdi, weeks, months)) |> 
+  DT::datatable()
+```
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+::: panel-tabset
+### `post_qol`
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "post_qol") |> 
+  display()
+```
+
+```{r}
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "post_qol") |> 
+  DT::datatable() |> 
+  formatRound(c('Mean', 'SD', 'Skewness', 'Kurtosis'))
+```
+
+### `pre_qol`
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "pre_qol") |> 
+  display()
+```
+
+```{r}
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "pre_qol") |> 
+  DT::datatable() |> 
+  formatRound(c('Mean', 'SD', 'Skewness', 'Kurtosis'))
+```
+
+### `days`
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "days") |> 
+  display()
+```
+
+```{r}
+cosmetic_tib |> 
+  dplyr::group_by(clinic) |> 
+  describe_distribution(select = "days") |> 
+  DT::datatable() |> 
+  formatRound(c('Mean', 'SD', 'Skewness', 'Kurtosis'))
+```
+
+:::
+
+
+## [V]{.txt_ong}isualize
+
 
 ```{r}
 #| echo: false
 #| fig-width: 10
-#| fig-height: 5
-ggplot2::ggplot(cosmetic_tib, aes(days, post_qol)) +
-  geom_point(alpha = 0.5, size = 1) +
-  geom_smooth(method = "lm", size = 0.5) +
+#| fig-height: 6
+
+ggplot(cosmetic_tib, aes(days, post_qol)) +
+  geom_point(position = position_jitter(width = 0.1, height = NULL), alpha = 0.5, size = 1, colour = "#999933") +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.75, colour = "#CC6677") +
   coord_cartesian(xlim = c(0, 400), ylim = c(0, 100)) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
-  labs(x = "Days post surgery", y = "Quality of life after surgery (%)") +
-  facet_wrap(~ clinic, ncol = 8) +
+  labs(x = "Days post surgery", y = "Quality of life after surgery (%)", colour = "Clinic") +
+  facet_wrap(~ clinic, ncol = 7) +
   theme_minimal()
+
 ```
 
-### Summary stats
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
 
-```{r}
-cosmetic_tib |>
-  dplyr::group_by(clinic) |>
-  datawizard::describe_distribution(select = c("base_qol", "post_qol"), ci = 0.95) |> 
-  dplyr::mutate(
-    Clinic = stringr::str_remove(.group, "clinic="),
-    dplyr::across(.cols = is.numeric, \(col) round(col, 2))
-    ) |>
-  dplyr::select(Clinic, Variable:n) |> 
-  DT::datatable()
-```
+## Rescaling predictors
+
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+Within our model we have three predictors measured on very different scales:
+
+-	`days`: the days since surgery ranges from 0 to around 400
+-	`reason`: the reason for surgery ranges from 0 (change appearance) to 1 (physical reason)
+-	`base_qol`: baseline quality of life is measured on a scale ranging from 0 to 100.
+
+The associated variances will be really different, which can create problems with model convergence.
+
 :::
+
+::: fragment
+
+### Convert days
+
+- 1 year = 365 days (range 0 to 1.1)
+- 1 month ≈ 30 days (range 0 to 13)
+
+:::
+
+::: fragment
+::: center-h
+::: txt_mulberry
+::: txt_l
+$$
+\text{months} \approx \frac{12}{365}\times \text{days}
+$$
+:::
+:::
+:::
+:::
+
+
+
+::: notes
+The range of days is about 10 times that of base_qol and about 400 times that of reason, and this will mean that the associated variances will also be really different, which can create problems with model convergence. For example, if you try to fit the model in this chapter using lme4, it will fail to converge using days as a predictor. It’s better to pre-empt these potential issues, so let’s think about how we can make our predictor’s variances better balanced. The variables at the two extremes are days and reason. We can’t change the response scale for reason because it is categorical, but because days is a unit of time we can express it in different units. 
+:::
+
+
 
 ## Fitting a fixed-effect model on the pooled data
 
