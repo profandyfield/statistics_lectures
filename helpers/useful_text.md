@@ -171,9 +171,8 @@ stats things
 
 ![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
-## [E]{.txt_mulberry}valuate assumptions {background-image="media/milton_20180720_100533_crop.jpg" background-size="cover"}
+## [E]{.txt_mulberry}valuate assumptions
 
-::: fragment
 ::: center-h
 ```{r}
 #| echo: true
@@ -184,7 +183,6 @@ stats things
 
 check_model(puptreat_lm)
 ```
-:::
 :::
 
 ![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
