@@ -4,11 +4,10 @@ author: "Andy Field"
 institute: "University of Sussex"
 format: 
   revealjs:
-    theme: [add_ons/discovr_access.scss]
     template-partials:
       - title-slide.html
     title-slide-attributes:
-      data-background-image: media/spaceship_dark_ppt_hex.jpg
+      data-background-image: ../shared_media/images/spaceship_dark_ppt_hex.jpg
       data-background-size: 100%
       data-background-position: center
       data-background-opacity: "1"
@@ -19,22 +18,17 @@ execute:
 ---
 
 ```{r}
-library(dplyr)
-library(ggplot2)
-library(tibble)
+library(easystats)
+library(tidyverse)
 
 #non tidyverse
+library(DT)
 library(gt)
 library(kableExtra)
-library(lme4)
-library(lmerTest)
-library(modelbased)
-library(performance)
-library(parameters)
-library(DT)
-
+library(glmmTMB)
 
 here::here("helpers/discovr_helpers.R") |> source()
+here::here("helpers/easystats_helpers.R") |> source()
 
 sniff_tib <- discovr::sniffer_dogs
 scent_tib <- discovr::alien_scents
@@ -56,14 +50,16 @@ sniff_pars <- parameters::parameters(sniff_mod)
 
 ```
 
-##
+##  {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
-```{r, child = "spine_map_models.qmd"}
+::: r-stack
+![](../shared_media/images/spine_map.png){.fragment fig-align="center" width="1050" height="594"}
 
-```
+![](../shared_media/images/spine_map_lec_02.png){.fragment fig-align="center" width="1050" height="594"}
+:::
 
 
-##
+## {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ![](../shared_media/images/rm_design_sniffing_puppies.png){width=1000}
 
@@ -85,7 +81,7 @@ Like independent designs, repeated measures designs still compare the amount of 
 
 :::
 
-## Benefits of repeated measures designs
+## Benefits of repeated measures designs {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 - Sensitivity
     - Unsystematic variance is reduced
@@ -103,7 +99,7 @@ Repeated measures designs make more efficient use of participants and so save ti
 :::
 
 
-## Can puppies sniff out aliens?
+## Can puppies sniff out aliens? {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 - Outcome = vocalizations during 1 min sniffing (`vocalizations`)
 - Predictor: type of entity being sniffed (`entity`)
@@ -118,7 +114,7 @@ Repeated measures designs make more efficient use of participants and so save ti
 Imagine a scientist wanted to look at 
 :::
 
-## The data
+## The data {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ```{r}
 
@@ -150,8 +146,8 @@ sniff_dt|>
   ) |>
   gt::tab_style(
     style = list(
-      gt::cell_fill(color = red, alpha = 0.8),
-      gt::cell_text(weight = "bold", color = gry)
+      gt::cell_fill(color = mulberry, alpha = 0.8),
+      gt::cell_text(weight = "bold", color = "white")
       ),
     locations = gt::cells_grand_summary(
       columns = c(Alien, Human, Mannequin, Shapeshifter),
@@ -161,7 +157,7 @@ sniff_dt|>
 ```
 
 
-## The data in `r rproj()`
+## The data in `r rproj()` {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ```{r}
 sniff_tib|> 
@@ -177,7 +173,7 @@ sniff_tib|>
 ```
 
 
-## Repeated measures and the linear model
+## Repeated measures and the linear model {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 To keep things simple, imagine a design where dogs sniff only aliens or humans (e.g., two conditions)
 
@@ -185,7 +181,7 @@ To keep things simple, imagine a design where dogs sniff only aliens or humans (
 ::: columns
 :::{.column width="50%"}
 
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{i} & = \hat{b}_{0} + \hat{b}_{1}\text{entity}_{i} + e_{i}
@@ -195,7 +191,9 @@ $$
 :::
 
 :::{.column width="50%"}
-```{r, echo = F, results = 'asis'}
+```{r}
+#| results: asis
+
 dum_tbl <- tibble::tibble(
   `Entity sniffed` = c("Alien", "Human"),
   `Dummy variable (entity)` = c(1, 0)
@@ -211,29 +209,30 @@ dum_tbl|>
 
 </br>
 
-:::{.warning}
+::: {.callout-warning icon = false}
+## {{< fa skull >}} The danger zone!
 
-`r bug()` Same participants in all conditions
+Same participants in all conditions
 
 - Scores across conditions correlate
-  
 - Violates the assumption of independent residuals (think back to the lecture on bias)
+
 :::
 
 
-## Repeated measures: hierrachical data structure
+## Repeated measures: hierrachical data structure {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 ![](../shared_media/images/sniffer_dogs_data_hierarchy.png){width=1000}
 :::
 
 
-## Repeated measures and the linear model
+## Repeated measures and the linear model {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 Need to adjust the model to estimate this dependency
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j}) + (\hat{\beta}_{1} + \hat{u}_{1j})\text{entity}_{ij}+ e_{ij} \\
@@ -245,7 +244,10 @@ $$
 
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-```{r, fig.width = 10, fig.height = 7}
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+
 sniff_simp_tib <- sniff_tib|> 
   dplyr::filter(entity == "Human" | entity == "Alien")|> 
   dplyr::mutate(
@@ -260,9 +262,9 @@ sniff_pred_tib <- tibble::tibble(
 
 
 sniff_simp_plot <- ggplot(sniff_simp_tib, aes(entity_dum, vocalizations, colour = dog_name)) +
-  annotate("segment", x = 0, xend = 1,  y = sniff_pred_tib$vocalizations[1], yend = sniff_pred_tib$vocalizations[2], colour = gry_dk, size = 3, alpha = 0.7) +
-  annotate("point", x = 0,  y = sniff_pred_tib$vocalizations[1], colour = gry_dk, size = 7, shape = 15) +
-  annotate("point", x = 1,  y = sniff_pred_tib$vocalizations[2], colour = gry_dk, size = 7, shape = 15) +
+  annotate("segment", x = 0, xend = 1,  y = sniff_pred_tib$vocalizations[1], yend = sniff_pred_tib$vocalizations[2], colour = mulberry, size = 3, alpha = 0.7) +
+  annotate("point", x = 0,  y = sniff_pred_tib$vocalizations[1], colour = mulberry, size = 7, shape = 15) +
+  annotate("point", x = 1,  y = sniff_pred_tib$vocalizations[2], colour = mulberry, size = 7, shape = 15) +
   geom_point(size = 4) +
   coord_cartesian(xlim = c(-0.5, 1.5), ylim = c(0, 14)) +
   scale_y_continuous(breaks = seq(0, 14, 1)) +
@@ -275,7 +277,7 @@ sniff_simp_plot
 ```
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j})+ \hat{\beta}_{1}\text{entity}_{ij}+ e_{ij}
@@ -287,13 +289,16 @@ $$
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-```{r, fig.width = 10, fig.height = 7}
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+
 sniff_simp_plot +
   stat_summary(fun = mean, geom="line", aes(group = dog_name), size = 1)
 ```
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j}) + (\hat{\beta}_{1} + \hat{u}_{1j})\text{entity}_{ij}+ e_{ij}
@@ -303,7 +308,7 @@ $$
 :::
 
 
-## Repeated measures and the linear model
+## Repeated measures and the linear model {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshifter)
 
@@ -311,7 +316,9 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 - Let's just use default dummy coding
 
 
-```{r, echo = F, results = 'asis'}
+```{r}
+#| results: asis
+
 dum_tbl <- tibble::tibble(
   `Entity sniffed` = c("Alien", "Shapeshifter", "Human", "Mannequin"),
   `Dummy 1 (Alien vs. mannequin)` = c(1, 0, 0, 0),
@@ -329,7 +336,10 @@ dum_tbl|>
 
 
 
-```{r, fig.width = 11.5, fig.height = 5.5}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
+
 pal <- RColorBrewer::brewer.pal(5, "Set2")[c(1, 2, 3,4)]
 sniff_tib <- sniff_tib|> 
   dplyr::mutate(entity2 = forcats::fct_relevel(entity, "Mannequin", "Alien", "Shapeshifter", "Human"))
@@ -353,33 +363,36 @@ sniff_plot <- ggplot(sniff_tib, aes(entity2, vocalizations, colour = dog_name)) 
   theme_minimal(base_size = 18)
 
 sniff_plot_pred <- sniff_plot +
-    annotate("segment", x = 0.5, y = sniff_means$emmean[3], xend = 1.5, yend = sniff_means$emmean[3], size = 1, colour = gry_dk) +
-  annotate("segment", x = 1.5, y = sniff_means$emmean[1], xend = 2.5, yend = sniff_means$emmean[1], size = 1, colour = gry_dk) +
-  annotate("segment", x = 2.5, y = sniff_means$emmean[4], xend = 3.5, yend = sniff_means$emmean[4], size = 1, colour = gry_dk) +
-  annotate("segment", x = 3.5, y = sniff_means$emmean[2], xend = 4.5, yend = sniff_means$emmean[2], size = 1, colour = gry_dk)
+    annotate("segment", x = 0.5, y = sniff_means$emmean[3], xend = 1.5, yend = sniff_means$emmean[3], size = 1, colour = mulberry) +
+  annotate("segment", x = 1.5, y = sniff_means$emmean[1], xend = 2.5, yend = sniff_means$emmean[1], size = 1, colour = mulberry) +
+  annotate("segment", x = 2.5, y = sniff_means$emmean[4], xend = 3.5, yend = sniff_means$emmean[4], size = 1, colour = mulberry) +
+  annotate("segment", x = 3.5, y = sniff_means$emmean[2], xend = 4.5, yend = sniff_means$emmean[2], size = 1, colour = mulberry)
 sniff_plot_pred
 ```
 
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-```{r, fig.width = 11.5, fig.height = 5.5}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
+
 b_y <- (sniff_means$emmean + sniff_means$emmean[3])/2
 
 sniff_plot_beta <- sniff_plot_pred +
-  annotate("text", x = 1.7, y = b_y[1], label = bquote(hat(italic(beta))[1]), size = 6) +
-  annotate("segment", x = 1.5, y = sniff_means$emmean[3], xend = 1.5, yend = sniff_means$emmean[1], colour = gry_dk, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both")) +
-  annotate("text", x = 2.7, y = b_y[4], label = bquote(hat(italic(beta))[2]), size = 6) +
-  annotate("segment", x = 2.5, y = sniff_means$emmean[3], xend = 2.5, yend = sniff_means$emmean[4], colour = gry_dk, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both")) + 
-annotate("text", x = 3.7, y = b_y[2], label = bquote(hat(italic(beta))[3]), size = 6) +
-  annotate("segment", x = 3.5, y = sniff_means$emmean[3], xend = 3.5, yend = sniff_means$emmean[2], colour = gry_dk, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both"))
+  annotate("text", x = 1.7, y = b_y[1], label = "hat(italic(beta))[1]", parse = T, size = 6) +
+  annotate("segment", x = 1.5, y = sniff_means$emmean[3], xend = 1.5, yend = sniff_means$emmean[1], colour = green, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both")) +
+  annotate("text", x = 2.7, y = b_y[4], label = "hat(italic(beta))[2]", parse = T,  size = 6) +
+  annotate("segment", x = 2.5, y = sniff_means$emmean[3], xend = 2.5, yend = sniff_means$emmean[4], colour = green, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both")) + 
+annotate("text", x = 3.7, y = b_y[2], label = "hat(italic(beta))[3]", parse = T, size = 6) +
+  annotate("segment", x = 3.5, y = sniff_means$emmean[3], xend = 3.5, yend = sniff_means$emmean[2], colour = green, size = 1, arrow = arrow(length = unit(0.03, "npc"), ends = "both"))
 
 sniff_plot_beta
 ```
 
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
@@ -392,7 +405,9 @@ $$
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-```{r, fig.width = 11.5, fig.height = 5.5}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
 
 b1_tib <- sniff_tib|>  dplyr::filter(entity == "Mannequin" | entity == "Alien")
 b2_tib <- sniff_tib|>  dplyr::filter(entity == "Mannequin" | entity == "Shapeshifter")
@@ -404,7 +419,7 @@ sniff_plot_beta +
 
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
@@ -417,7 +432,10 @@ $$
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-```{r, fig.width = 11.5, fig.height = 5.5}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
+
 sniff_plot_beta +
   stat_summary(data = b1_tib, fun = mean, geom="line", aes(group = dog_name), size = 1, linetype = "longdash") +
   stat_summary(data = b2_tib, fun = mean, geom="line", aes(group = dog_name), size = 1, linetype = "longdash")
@@ -426,7 +444,7 @@ sniff_plot_beta +
 
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
@@ -439,7 +457,10 @@ $$
 ## {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-```{r, fig.width = 11.5, fig.height = 5.5}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
+
 sniff_plot_beta +
   stat_summary(data = b1_tib, fun = mean, geom="line", aes(group = dog_name), size = 1, linetype = "longdash") +
   stat_summary(data = b2_tib, fun = mean, geom="line", aes(group = dog_name), size = 1, linetype = "longdash") +
@@ -449,7 +470,7 @@ sniff_plot_beta +
 
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
@@ -460,7 +481,7 @@ $$
 :::
 :::
 
-## Approaches to repeated measures designs
+## Approaches to repeated measures designs {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ### Historic: Repeated measures ANOVA (RM-ANOVA)
 
@@ -479,12 +500,12 @@ $$
 - Contrast coding is possible
 
 
-## Fitting the model
+## Fitting the model {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ::: columns
 :::{.column width="50%}
 
-- Use `lme4::lme()` or `nlme::lme()`
+- Use `glmmTMB::glmmTMB()`
 
   - A trickier but more flexible option
   - Manually set contrasts
@@ -495,21 +516,55 @@ $$
 :::{.column width="50%}
 
 - The `afex::aov_4()` function
-
   - Specify the repeated measures with `(rm_predictors|id_var)`
-  
   - Automatically sets contrasts
-  
   - Built in interaction plot with `afex_plot()`
-  
-  - But ... no parameter estimates, diagnostic plots, or robust methods
-  
-  - See other lecture
+  - But ... no parameter estimates, limited diagnostic plots, or robust methods
+  - See alternative tutorial
 
 :::
 :::
 
-## Contrasts {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+## {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+![](../shared_media/images/dsr2_fig_04_39_workflow.png){fig-align="center" height=600}
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+```{r}
+#| echo: true
+
+sniff_tib |> 
+  group_by(entity) |> 
+  describe_distribution(select = "vocalizations") |> 
+  data_remove(c("Variable", "n_Missing")) |> # optional to remove redundant column
+  display()
+```
+
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+
+
+## [V]{.txt_ong}isualize {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
+ggplot(sniff_tib, aes(x = entity, y = vocalizations)) +
+  geom_violin(colour = "#999933", fill = "#DDCC77", alpha = 0.3) +
+  stat_summary(fun.data = "mean_cl_normal", colour = "#999933") +
+  scale_y_continuous(breaks = 0:12) +
+  labs(x = "Entity sniffed", y = "Vocalizations (in 1 minute)") +
+  theme_minimal()
+```
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+
+
+## Fit the model: Contrasts {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 If the dog training has been successful then we'd expect sniffer dogs to make more vocalizations when sniffing alien entities than non alien-entities. 
 
@@ -523,7 +578,10 @@ We have two 'chunks' in contrast 1 that would then need to be decomposed:
 Using the rules for contrast coding we'd get the codes in Table 4:
 
 :::{.center-h}
-```{r con_tbl, echo = FALSE, results = 'asis'}
+```{r}
+#| fig-width: 11.5
+#| fig-height: 5.5
+
 con_tbl <- tibble(
   `Group` = c("Alien", "Human", "Mannequin", "Shapeshifter"),
   `Contrast 1` = c("1/2", "-1/2", "-1/2", "1/2"),
@@ -541,82 +599,118 @@ knitr::kable(con_tbl,
 
 ## Fitting the model {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-```{r, echo = TRUE, eval = T}
- 
+::: txt_xl
+```{r}
+#| echo: true
+
 aliens_vs_non = c(1/2, -1/2, -1/2, 1/2)
 alien_vs_shape = c(1/2, 0, 0, -1/2)
 human_vs_manquin = c(0, 1/2, -1/2, 0)
 
-contrasts(sniff_tib$entity) <- cbind(aliens_vs_non, alien_vs_shape, human_vs_manquin)
+contrasts(sniff_tib$entity) <- cbind(aliens_vs_non,
+                                     alien_vs_shape,
+                                     human_vs_manquin)
 
-sniff_mod <- lmerTest::lmer(vocalizations ~ entity 
-                            + (1|dog_name), 
-                            data = sniff_tib)
-
+sniff_mlm <- glmmTMB::glmmTMB(vocalizations ~ entity + (1|dog_name),
+                              data = sniff_tib)
 ```
+:::
 
+## [E]{.txt_ong}valuate the model {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-## The model {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+```{r}
+#| echo: true
+#| eval: false
 
-```{r, echo = T, eval = F}
-performance::test_lrt(sniff_ent)
+test_lrt(sniff_mlm) |> 
+  display()
 ```
 
 </br> 
 
-```{r, results = 'asis'}
-performance::test_lrt(sniff_mod) |> 
+```{r}
+test_lrt(sniff_mlm) |> 
   select(-Model) |> 
-  knitr::kable(digits = 2, row.names = F) |> 
-  style_my_kable()
+  display()
 ```
 
 </br>
 
+```{r}
+sniff_mlm <- glmmTMB::glmmTMB(vocalizations ~ entity + (1|dog_name), data = sniff_tib)
+sniff_lrt <- test_lrt(sniff_mlm) 
+sniff_pars <- model_parameters(sniff_mlm) 
+```
 
-::: {.infobox}
 
-`r pencil()` The entity sniffed had a significant effect on the number of vocalizations by sniffer dogs, $\chi^2$(3) = 12.69, *p* = 0.01.
+
+:::{.callout-important icon=false}
+## {{< fa pencil >}} Report`r rproj()`
+
+
+The entity sniffed had a significant effect on the number of vocalizations by sniffer dogs, `r report_lrt(sniff_lrt)`.
 
 :::
 
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
-## Contrasts {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+## [E]{.txt_ong}valuate the model {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-```{r, results = F, echo = T}
-parameters::model_parameters(sniff_mod, effects = "fixed")
+```{r}
+#| echo: true
+
+model_performance(sniff_mlm) |> 
+  display()
+```
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+## [E]{.txt_mulberry}valuate assumptions {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+
+::: center-h
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 6
+
+check_model(sniff_mlm)
+```
+:::
+
+## [I]{.txt_ong}nterpret parameter estimates, CIs and tests {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(sniff_mlm, effects = "fixed") |> 
+  display()
 ```
 
 
 </br>
 
 ::: {.whitebox}
-```{r, echo = F}
-parameters::model_parameters(sniff_mod, effects = "fixed") |> 
-  format() |> 
-  knitr::kable(digits = 3) |> 
-  style_my_kable(nrows = 4)
+```{r}
+model_parameters(sniff_mlm, effects = "fixed") |> 
+  display()
 ```
 :::
 
 </br>
 
-:::{.infobox}
+:::{.callout-important icon=false}
+## {{< fa pencil >}} Report`r rproj()`
 
-`r pencil()` Contrasts revealed that vocalizations were significantly higher when sniffing aliens compared to non-aliens, `r report_pars(sniff_pars, row = 2)`), but vocalizations were not significantly different when sniffing different types of aliens, `r report_pars(sniff_pars, row = 3)` or when sniffing a human compared to a mannequin, `r report_pars(sniff_pars, row = 4)`)..
+Contrasts revealed that vocalizations were significantly higher when sniffing aliens compared to non-aliens, `r report_pe(sniff_pars, row = 2)`), and when sniffing an alien compared to a shapeshifter, `r report_pe(sniff_pars, row = 3)` but not when sniffing a human compared to a mannequin, `r report_pe(sniff_pars, row = 4)`).
 :::
 
-## Interpretation {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-```{r, fig.width=10, fig.height=6.5}
-ggplot2::ggplot(sniff_tib, aes(x = entity, y = vocalizations)) +
-  geom_point(colour = blu, alpha = 0.7, position = position_jitter(width = 0.1), size = 3) +
-  stat_summary(fun.data = "mean_cl_normal", geom = "pointrange", colour = ong, size = 1) +
-  coord_cartesian(ylim = c(0,10)) +
-  scale_y_continuous(breaks = 0:10) +
-  labs(x = "Entity sniffed", y = "Number of vocalizations") +
-  theme_minimal(base_size = 18)
-```
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
 
 
 ```{r, child = "space_middle.qmd"}
@@ -624,9 +718,9 @@ ggplot2::ggplot(sniff_tib, aes(x = entity, y = vocalizations)) +
 ```
 
 
-#  Scenting a victory ... factorial repeated measures designs
+#  Scenting a victory ... factorial repeated measures designs {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
-## Can scents distract the sniffer dogs?
+## Can scents distract the sniffer dogs? {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 ::: columns
 :::{.column width="70%"}
@@ -657,7 +751,7 @@ ggplot2::ggplot(sniff_tib, aes(x = entity, y = vocalizations)) +
 - We can model individual differences in all parameters
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} &= \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] + \\
@@ -672,7 +766,7 @@ $$
 - The simplest version of the repeated measures model instead treats the effects of predictor variables as fixed, but acknowledges that dogs, overall, will vary in their vocalizations:
 
 :::{.center-h}
-:::{.txt_red}
+:::{.txt_mulberry}
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
@@ -683,7 +777,8 @@ $$
 :::
 :::
 
-## The data {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 ```{r}
 scent_tib|> 
@@ -698,13 +793,36 @@ scent_tib|>
   )
 ```
 
-## The data
 
-```{r, fig.width=10, fig.height=6.5}
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+```{r}
+#| echo: true
+
+scent_tib |> 
+  group_by(entity, scent_mask) |> 
+  describe_distribution(select = "vocalizations")  |> 
+  data_remove(c("Variable", "n_Missing")) |> # optional to remove redundant column
+  display()
+```
+
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+
+
+
+
+## [V]{.txt_ong}isualize {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"} 
+
+```{r}
+#| fig-width: 10
+#| fig-height: 6.5
+
 scent_int_plot <- ggplot2::ggplot(scent_tib, aes(x = scent_mask, y = vocalizations, colour = entity)) +
   geom_point(alpha = 0.2, position = position_jitter(width = 0.1)) +
   stat_summary(fun.data = "mean_cl_normal", geom = "pointrange", size = 1) +
-  scale_colour_manual(values = c(blu, red, grn)) +
+  scale_colour_manual(values = viridis_3) +
   coord_cartesian(ylim = c(0,15)) +
   scale_y_continuous(breaks = 0:15) +
   labs(x = "Masking scent", y = "Number of vocalizations", colour  = "Entity") +
@@ -712,7 +830,11 @@ scent_int_plot <- ggplot2::ggplot(scent_tib, aes(x = scent_mask, y = vocalizatio
 scent_int_plot
 ```
 
-## Contrasts
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+
+
+## Fit the model: contrasts {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 We have a natural control group for the entity (human) so a natural contrast is to use dummy coding. 
 
@@ -724,11 +846,13 @@ We have a natural control group for the scent masks (no scent) so a natural cont
 - **Contrast 1**: {human} vs. {none}
 - **Contrast 2**: {fox} vs. {none}
 
-## Specifying contrasts
+## Specifying contrasts {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 The level order of the variables is:
 
-```{r echo = T}
+```{r}
+#| echo: true
+
 levels(scent_tib$entity)
 levels(scent_tib$scent_mask)
 ```
@@ -737,144 +861,211 @@ levels(scent_tib$scent_mask)
 We can do nothing (default dummy coding will do the above) or set up contrasts explicitly with:
 
 
-```{r echo = T, eval = F}
+```{r}
+#| echo: true
+#| eval: false
+
 contrasts(scent_tib$entity) <- contr.treatment(3, base = 1)
 contrasts(scent_tib$scent_mask) <- contr.treatment(3, base = 1)
 ```
 
 ## Building models {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
-```{r, echo = T}
-scent_base <- lmerTest::lmer(
+```{r}
+#| echo: true
+#| code-line-numbers: 1-3|6|10|14
+
+scent_base <- glmmTMB::glmmTMB(
   vocalizations ~ 1 + (1|dog_id),
-  data = scent_tib
-  )
+  data = scent_tib)
 
-scent_ent <- lmerTest::lmer(
+scent_ent <- glmmTMB::glmmTMB(
   vocalizations ~ entity + (1|dog_id),
-  data = scent_tib
-  )
+  data = scent_tib)
 
-scent_scent <- lmerTest::lmer(
+scent_scent <- glmmTMB::glmmTMB(
   vocalizations ~ entity + scent_mask + (1|dog_id),
-  data = scent_tib
-  )
+  data = scent_tib)
 
-scent_int <- lmerTest::lmer(
-  vocalizations ~ entity + scent_mask + entity:scent_mask + (1|dog_id),
-  data = scent_tib
-  )
+scent_int <- glmmTMB::glmmTMB(
+  vocalizations ~ entity + scent_mask + entity:scent_mask + (1|dog_id), 
+  data = scent_tib)
 ```
 
-##
+## [E]{.txt_ong}valuate {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
-```{r, eval = F, echo = T}
-performance::test_lrt(scent_base, scent_ent, scent_scent, scent_int)
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_performance(scent_int) |> 
+  display()
+```
+
+\
+
+:::{.whitebox}
+```{r}
+#| echo: false
+
+model_performance(scent_int) |> 
+  display()
+```
+:::
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+
+
+## [E]{.txt_ong}valuate {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+```{r}
+#| echo: true
+#| eval: false
+
+test_lrt(scent_base, scent_ent, scent_scent, scent_int) |> 
+  display()
 ```
 
 </br>
 
 :::{.whitebox}
 ```{r}
-performance::test_lrt(scent_base, scent_ent, scent_scent, scent_int)|> 
-  tibble::as_tibble()|>
-  dplyr::mutate(
-    p = afex::round_ps_apa(p)
-  ) |> 
-  select(-Model) |> 
-  knitr::kable(digits = 2, row.names = F) |> 
-  style_my_kable(nrows = 4)
+#| echo: false
+
+test_lrt(scent_base, scent_ent, scent_scent, scent_int) |>
+  data_remove("Model") |> 
+  display()
 ```
 
 :::
 
 </br>
 
-:::{.warning}
-
-`r bug()` Repeat the following mantra:
+::: {.callout-warning icon = false}
+## {{< fa skull >}} The danger zone!
 
 **"It is never sensible to interpret main effects in the presence of a significant interaction effect."**
 
 :::
 
-## Entity × scent_mask interaction {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
-:::{.infobox}
-`r pencil()` The interaction effect suggests that the effect of entity on vocalizations was significantly moderated by what scent the entity was wearing, $\chi^2$(4) = 183.79, *p* < .001.
+
+## [E]{.txt_mulberry}valuate assumptions {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+::: center-h
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| fig-width: 7
+#| fig-height: 6
+
+check_model(scent_int)
+```
 :::
 
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [I]{.txt_ong}nterpret: Entity × scent_mask interaction
+
+```{r}
+scent_lrt <- test_lrt(scent_base, scent_ent, scent_scent, scent_int)
+```
 
 
 :::{.center-h}
+```{r}
+#| fig-width: 10
+#| fig-height: 4.5
 
-```{r, fig.height = 5, fig.width = 10}
 scent_int_plot
 ```
-
 :::
 
-##
+:::{.callout-important icon=false}
+## {{< fa pencil >}} Report`r rproj()`
+
+The interaction effect suggests that the effect of entity on vocalizations was significantly moderated by what scent the entity was wearing, `r report_lrt(scent_lrt, row = 4)`.
+:::
 
 
-```{r, echo = T, eval = F}
-parameters::model_parameters(scent_int, effects = "fixed")
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## [I]{.txt_ong}nterpret {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_parameters(scent_int, effects = "fixed") |> 
+  display()
 ```
 
 </br>
 
 :::{.whitebox}
 
-```{r, results = 'asis'}
-scent_int_brm <- broom.mixed::tidy(scent_int, effects = "fixed") 
+```{r}
+scent_int_brm <- model_parameters(scent_int, effects = "fixed")
 
-scent_int_brm|>
-  knitr::kable(digits = 3) |> 
-  kableExtra::row_spec(6:9, background = "yellow") |> 
-  style_my_kable(nrows = 9)
+scent_int_brm |>
+  display()
 ```
 
 :::
 
-## Entity × scent_mask interaction: parameter 1
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## Entity × scent_mask interaction: parameter 1 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 
 ```{r}
-scent_int_brm|>
-  dplyr::filter(term == "entityShapeshifter:scent_maskHuman")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+scent_int_brm |>
+  dplyr::filter(Parameter == "entityShapeshifter:scent_maskHuman") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 scent_int_plot
 ```
 :::
 
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
 
-## Entity × scent_mask interaction: parameter 1
+## Entity × scent_mask interaction: parameter 1 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityShapeshifter:scent_maskHuman")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityShapeshifter:scent_maskHuman") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 c1_tib <- scent_tib|>
   dplyr::filter(entity != "Alien" & scent_mask != "Fox")
 
@@ -884,45 +1075,55 @@ scent_int_plot +
 ```
 :::
 
-## Entity × scent_mask interaction: parameter 2
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## Entity × scent_mask interaction: parameter 2 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityAlien:scent_maskHuman")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityAlien:scent_maskHuman") |> 
+  display()
 ```
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 scent_int_plot
 ```
 :::
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
 
 ::: notes
 The human scent increases vocalizations to humans and although it reduces vocalizations to aliens dogs are still able to discriminate between aliens smeared with human scent and humans smeared with human scent. And aliens smeared with human scent still have a lot more vocalizations than humans with no scent.
 :::
 
-## Entity × scent_mask interaction: parameter 2
+## Entity × scent_mask interaction: parameter 2 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityAlien:scent_maskHuman")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityAlien:scent_maskHuman") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 c2_tib <- scent_tib|>
   dplyr::filter(entity != "Shapeshifter" & scent_mask != "Fox")
 
@@ -932,21 +1133,23 @@ scent_int_plot +
 ```
 :::
 
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
 ::: notes
 The human scent increases vocalizations to humans and although it reduces vocalizations to shapeshifters, dogs are still able to discriminate between shapeshifters smeared with human scent and humans smeared with human scent. And shapeshifters smeared with human scent still have a lot more vocalizations than humans with no scent.
 :::
 
 
 
-## Entity × scent_mask interaction: parameter 3
+## Entity × scent_mask interaction: parameter 3 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityShapeshifter:scent_maskFox")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityShapeshifter:scent_maskFox") |> 
+  display()
 ```
 
 :::
@@ -954,28 +1157,36 @@ scent_int_brm|>
 
 :::{.center-h}
 
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 scent_int_plot
 ```
 
 :::
 
-## Entity × scent_mask interaction: parameter 3
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## Entity × scent_mask interaction: parameter 3 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityShapeshifter:scent_maskFox")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityShapeshifter:scent_maskFox") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 c3_tib <- scent_tib|>
   dplyr::filter(entity != "Alien" & scent_mask != "Human")
 
@@ -986,47 +1197,57 @@ scent_int_plot +
 
 :::
 
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
 ::: notes
 The fox scent increases vocalizations to humans and although it reduces vocalizations to shapeshifters dogs are still able to discriminate between shapeshifters smeared with fox scent and humans smeared with fox scent. And shapeshifters smeared with fox scent still have a lot more vocalizations than humans with no scent.
 :::
 
-## Entity × scent_mask interaction: parameter 4
+## Entity × scent_mask interaction: parameter 4 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityAlien:scent_maskFox")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityAlien:scent_maskFox") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 scent_int_plot
 ```
 
 :::
 
-## Entity × scent_mask interaction: parameter 4
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## Entity × scent_mask interaction: parameter 4 {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
 :::{.center-h}
 :::{.whitebox}
 ```{r}
 scent_int_brm|>
-  dplyr::filter(term == "entityAlien:scent_maskFox")|> 
-  knitr::kable(digits = 2) |> 
-  style_my_kable()
+  dplyr::filter(Parameter == "entityAlien:scent_maskFox") |> 
+  display()
 ```
 
 :::
 :::
 
 :::{.center-h}
-```{r, fig.width = 10, fig.height = 5.5}
+```{r}
+#| fig-width: 10
+#| fig-height: 5
+
 c4_tib <- scent_tib|>
   dplyr::filter(entity != "Shapeshifter" & scent_mask != "Human")
 
@@ -1036,16 +1257,12 @@ scent_int_plot +
 
 :::
 
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
 ::: notes
 The fox scent increases vocalizations to humans and although it reduces vocalizations to aliens dogs are still able to discriminate between aliens smeared with fox scent and humans smeared with fox scent. And aliens smeared with fox scent still have a lot more vocalizations than humans with no scent.
 :::
-
-
-## Diagnostic plots
-
-```{r, echo = T, fig.width = 10, fig.height = 5.5}
-performance::check_model(scent_int, check = c("linearity", "homogeneity", "qq", "reqq"))
-```
 
 
 

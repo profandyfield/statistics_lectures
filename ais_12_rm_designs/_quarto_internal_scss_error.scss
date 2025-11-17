@@ -1,4 +1,4 @@
-// quarto-scss-analysis-annotation { "quarto-version": "1.6.36" }
+// quarto-scss-analysis-annotation { "quarto-version": "1.8.25" }
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from format" }
 
@@ -16,7 +16,9 @@
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from user-defined SCSS" }
 
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sintony:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 // quarto-scss-analysis-annotation { "origin": "'functions' section from format" }
 
@@ -128,58 +130,65 @@ $code-block-bg: rgba($quote, .01) !default;
 $code-bg: rgba($emph1, .1) !default;
 $code-color: $emph1 !default;
 
-@import url(https://fonts.googleapis.com/css?family=Poppins:400,400italic,400bold);
-@import url(https://fonts.googleapis.com/css?family=Sintony:400,400bold);
-@import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
-
-$txt:     #707172 !default; // main text colour (against white), if background use with white text
-$h1_col: #7B67A2 !default; // H1 colour (against white), if background use with white text
-$emph1: #447E41  !default; // link colour (against white), if background use with white text
-$link: #BB5143  !default; // bold colour (against white), if background use with white text
-$box: #807030 !default; // box colour (against white), use with txt and h1_col text, do not use as text
-$wht: #FFFFFF !default; // use with white text
-$quote: #657284 !default; // use with white text
-$h4_col: #35597E !default; // use with white text
-
-
-// Primary/body text
-$mainFont: 'Poppins', sans-serif;
 $mainFontSize: 24px;
-$mainColor: $txt;
-
-// Vertical spacing between blocks of text
-$blockMargin: 20px;
-
-// Headings
-$headingMargin: 0 0 $blockMargin 0;
-$headingFont: 'Sintony', Impact, sans-serif;
-$headingColor: $h1_col;
-$headingLineHeight: 1.2;
-$headingLetterSpacing: normal;
-$headingTextTransform: none;
-$headingTextShadow: none;
-$headingFontWeight: normal;
-$heading1TextShadow: $headingTextShadow;
-
 $heading1Size: 2.00em;
 $heading2Size: 1.55em;
 $heading3Size: 1.25em;
 $heading4Size: 1.00em;
 
-$codeFont: 'Fira Mono';
+$grey: #616161 !default;
+$purple: #49345b !default;
+$mulberry: #882255  !default;
+$brown: #86753E  !default;
+$green: #427479 !default;
+$wht: #FFFFFF !default;
+$blue: #3C648C !default;
+$code_bg_col: #657284 !default;
+
+$headingColor: $purple;
+
+$callout-color-note: $purple !default;
+$callout-color-tip: $green !default;
+$callout-color-important: $blue !default;
+$callout-color-caution: $brown !default;
+$callout-color-warning: $mulberry !default;
+$code_bg: rgba($purple, 0.1) !default;
+$code-block-bg: rgba($code_bg_col, .01) !default;
+$code-color: $purple !default;
 
 
-// colors
-$body-bg: $wht !default;
-$body-color: $txt !default;
-$link-color: $link !default;
-$selection-bg: $txt !default;
-$border-color:  $link !default;
-$subtitle: $wht !default;
-$code-block-bg: rgba($quote, .01) !default;
-$code-bg: rgba($emph1, .1) !default;
-$code-color: $emph1 !default;
-
+/* typography variables from _brand.yml */
+// quarto-scss-analysis-annotation { "action": "push", "origin": "_brand.yml typography" }
+$font-family-monospace: Fira Mono !default;
+$headings-font-family: Sintony !default;
+$presentation-heading-font: Sintony !default;
+$font-family-base: Poppins !default;
+$mainFont: Poppins !default;
+$mermaid-font-family: Poppins !default;
+// quarto-scss-analysis-annotation { "action": "pop" }
+/* color variables from _brand.yml */
+// quarto-scss-analysis-annotation { "action": "push", "origin": "_brand.yml color" }
+$brand-grey: #616161 !default;
+$brand-purple: #49345b !default;
+$brand-mulberry: #882255 !default;
+$brand-brown: #86753E !default;
+$brand-green: #427479 !default;
+$brand-white: #FFFFFF !default;
+$brand-blue: #3C648C !default;
+$foreground: #616161 !default;
+$primary: #86753E !default;
+$secondary: #FFFFFF !default;
+$success: #427479 !default;
+$info: #49345b !default;
+$warning: #86753E !default;
+$danger: #882255 !default;
+$pre-color: #616161 !default;
+$body-color: #616161 !default;
+$body-secondary-color: #FFFFFF !default;
+$body-secondary: #FFFFFF !default;
+$body-tertiary: #FFFFFF !default;
+// quarto-scss-analysis-annotation { "action": "pop" }
+$theme: "brand" !default;
 
 // quarto-scss-analysis-annotation { "origin": "Defaults from Quarto's SCSS" }
 
@@ -381,8 +390,8 @@ $overlayElementFgColor: 0, 0, 0 !default;
 
 // -- END setting.scss --
 
-$code-copy-selector: "pre.sourceCode:hover > " !default;
-$code-white-space: pre !default;
+$code-copy-selector: "div.code-copy-outer-scaffold:hover > " !default;
+$code-white-space: pre-wrap !default;
 $tbl-cap-location: top !default;
 // main colors
 $body-bg: #fff !default;
@@ -1125,8 +1134,7 @@ details > summary > p:only-child {
 }
 
 // codeCopy
-pre.sourceCode,
-code.sourceCode {
+div.code-copy-outer-scaffold {
   position: relative;
 }
 
@@ -1616,10 +1624,6 @@ $mermaid-node-fg-color: $primary !default;
   margin-right: 5px;
   background-color: transparent;
   z-index: 3;
-}
-
-.code-copy-button:focus {
-  outline: none;
 }
 
 .code-copy-button-tooltip {
@@ -2161,9 +2165,6 @@ $panel-sidebar-padding: 0.5em;
   quarto-color.blackness($backgroundColor) > $code-block-theme-dark-threshhold
 ) {
   /*! dark */
-  .reveal div.callout.callout-style-default .callout-title {
-    color: #222;
-  }
 } @else {
   /*! light */
 }
@@ -2389,15 +2390,14 @@ kbd {
       }
 
       &.callout-title {
+        display: flex;
+        align-items: center;
+
         p {
           margin-top: 0.5em;
           margin-bottom: 0.5em;
+          color: var(--r-main-color);
         }
-      }
-
-      &.callout-title {
-        display: flex;
-        align-items: center;
       }
     }
 
@@ -2670,7 +2670,18 @@ $presentation-author-block-padding-right: if(
   }
 }
 
-
+/* color CSS variables from _brand.yml */
+// quarto-scss-analysis-annotation { "action": "push", "origin": "_brand.yml color" }
+:root {
+  --brand-grey: #616161;
+  --brand-purple: #49345b;
+  --brand-mulberry: #882255;
+  --brand-brown: #86753E;
+  --brand-green: #427479;
+  --brand-white: #FFFFFF;
+  --brand-blue: #3C648C;
+}
+// quarto-scss-analysis-annotation { "action": "pop" }
 
 
 .slide-background-content{
@@ -2678,84 +2689,7 @@ $presentation-author-block-padding-right: if(
   background-size: cover;
 }
 
-.reveal section div.center-h {
-	text-align: center;
-}
 
-.reveal .slide blockquote {
-  border-left: 3px solid $text-muted;
-  padding-left: 0.5em;
-  color: $quote //colour of text in blockquotes
-}
-
-.reveal .slide-logo {
-  height: 100px !important;
-  width: 100px!important;
-  max-width: unset !important;
-  max-height: unset !important;
-}
-
-.reveal .progress {
-  color: $emph1 !important;
-  height: 1%;
-}
-
-
-.reveal .slide h4 {
-  color: $h4_col !important;
-}
-
-.reveal .slide h3 {
-  color: $link !important;
-}
-
-/* tabset colours */
-
-.reveal .slide .panel-tabset a {
-  border-color: $txt;
-  border-width: 1px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-}
-
-.reveal .slide .panel-tabset a:hover {
-  border-color: $wht;
-  background-color: $link;
-  color: $wht;
-  border-width: 1px;
-  border-top-left-radius: 10px 10px;
-  border-top-right-radius: 10px 10px;
-}
-
-/* callouts */
-
-
-.reveal .slide div.callout-tip {
-  border-left-color: $box !important;
-}
-
-.reveal .slide div.callout-tip.callout-style-default .callout-title {
-  background-color: lighten($box, 50%);
-  color: $box
-}
-
-.reveal .slide div.callout-note {
-  border-left-color: $h4_col !important;
-}
-
-.reveal .slide div.callout-note.callout-style-default .callout-title {
-  background-color: lighten($h4_col, 40%);
-  color: $h4_col
-}
-
-.reveal .slide div.callout-warning {
-  border-left-color: $link !important;
-}
-
-.reveal .slide div.callout-warning.callout-style-default .callout-title {
-  background-color: lighten($link, 40%);
-  color: $link
-}
 
 /* hamburger colour */
 
@@ -2763,8 +2697,94 @@ $presentation-author-block-padding-right: if(
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(68, 126, 65)" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>') !important;
 }
 
+.reveal .progress {
+  color: $mulberry !important;
+  height: 1%;
+}
 
-/* general styles */
+.reveal .slide h4 {
+  color: $blue !important;
+}
+
+.reveal .slide h3 {
+  color: $brown !important;
+}
+
+/* table styles (td is data rows, th is heading rows) */
+
+.reveal .slide table tbody tr:nth-child(odd) {
+  background-color: #e6edf4;
+}
+
+.reveal .slide table tbody td:hover {
+  background-color: #ffffa1;
+}
+
+.reveal .slide .tbl_s_dk table td,
+.reveal .slide .tbl_s_dk table th {
+  font-size: 60%;
+  padding: 10px;
+  background-color: #e6edf4;
+}
+
+.reveal .slide .tbl_dk table td,
+.reveal .slide .tbl_dk table th {
+  background-color: #e6edf4;
+}
+
+
+.reveal .slide table td {
+   padding: 15px;
+   font-size: 18px;
+}
+
+.reveal .slide table th {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.reveal .slide .tbl_s table td,
+.reveal .slide .tbl_s table th {
+  font-size: 60%;
+  padding: 10px;
+}
+
+.reveal .slide .tbl_l table td,
+.reveal .slide .tbl_l table th {
+  font-size: 125%;
+  padding: 20px;
+}
+
+/* reduce font size in data tables */
+
+.reveal .slide table.dataTable td {
+  font-size: 80%;
+}
+
+/* tabset colours */
+
+.reveal .slide .panel-tabset a {
+  border-color: $brand-grey;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.reveal .slide .panel-tabset a:hover {
+  border-color: $brand-white;
+  background-color: $brand-brown;
+  color: $brand-white;
+  border-width: 1px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+.reveal .slide b, strong{
+  color: $brand-grey;
+}
+
+// start using css here
 
 p.subtitle {
   color: white !important;
@@ -2786,89 +2806,56 @@ p.subtitle {
   color: white;
 }
 
-/* reduce font size in data tables */
-
-.reveal .slide table.dataTable td {
-  font-size: 80%;
+.center-h {
+  text-align: center;
 }
 
-/* text size adjusters */
 
-.reveal .slide .txt_300 {
+.txt_300 {
     font-size: 300%;
 }
 
-.reveal .slide .txt_xl {
+.txt_xl {
     font-size: 150%;
 }
 
-.reveal .slide  .txt_l {
+.txt_l {
     font-size: 125%;
 }
 
-.reveal .slide  .txt_s {
+.txt_s {
     font-size: 75%;
 }
 
-.reveal .slide  .bold_col {
-    color: $link;
+
+.bold_col {
+    color: $brand-brown;
     font-weight: bold;
 }
 
-.reveal .slide  .txt_red {
-    color: $link;
-}
-
-.reveal .slide  .txt_white {
+.txt_white {
     color: white;
 }
 
-/* Pedagogic boxes */
-
-.tip {
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #136CB9;
-  background-color: #136CB9;
-  background-color: rgba(19, 108, 185, 0.1);
-  color: #2C5577;
+.txt_ong {
+    color: #FFAD00;
 }
 
-
-.note {
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #f3e2c4;
-  background-color: #f3e2c4;
-  background-color: rgba(243, 226, 196, 0.1);
-  color: #775418;
+.txt_blue {
+    color: $blue;
 }
 
-.warning {
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #CA3E34;
-  background-color: #CA3E34;
-  background-color: rgba(145, 45, 37, 0.1);
-  color: #912D25;
+.txt_mulberry {
+    color: $mulberry;
 }
 
-.infobox {
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #E8EAE5;
-  background-color: #E8EAE5;
-  background-color: rgba(232, 234, 229, 0.95);
-  color: #2F4F4F;
+.alt {
+    color: $brand-mulberry;
 }
 
-.whitebox {
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #FFFFFF;
-  background-color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.70);
-  color: #2C5577;
+.txt_dk_bg {
+  color: white;
+  background-color: rgba($brand-grey, .5);
 }
 
 
