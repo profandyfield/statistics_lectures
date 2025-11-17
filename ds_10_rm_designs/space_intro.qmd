@@ -1,0 +1,57 @@
+---
+title: "space_intro"
+format: revealjs
+editor: source
+---
+
+##  {background-video="../shared_media/video/space_opening_scene.mp4" background-size="cover"}
+
+::: notes
+
+:::
+
+##  {background-video="../shared_media/video/daze_intro_01.mp4" background-size="cover"}
+
+::: notes
+**Daze**: Hora Stet, I'm so glad to see you.
+
+**Hora Stet**: Daze? We thought you were dead. Where have you been?
+:::
+
+##  {background-video="../shared_media/video/daze_intro_02.mp4" background-size="cover"}
+
+::: notes
+**Daze**: On a long, dangerous, heroic mission, where I was very heroic. I have intercepted a transmission from Lazinc Durt, leader of the inane cult. It's not good news.
+
+**Hora**: What is it?
+:::
+
+##  {background-video="../shared_media/video/transmission_01.mp4" background-size="cover"}
+
+::: notes
+**Daze**: Let me show you ....
+:::
+
+##  {background-video="../shared_media/video/daze_intro_03.mp4" background-size="cover"}
+
+::: notes
+**Hora Stet**: Oh, that is bad ....
+
+**Daze**: Hora, how can we stop them?
+
+**Hora Stet**: We've been experimenting with training sniffer dogs to detect aliens but we need more research. Can you get me some sniffer dogs?
+:::
+
+##  {background-video="../shared_media/video/daze_intro_04.mp4" background-size="cover"}
+
+::: notes
+**Daze**: We have the best spaniels in the land, but we could only find 8 of them.
+
+**Hora Stet**: Hmmm, that's not many. I'm not sure what I can do with 8 spaniels. I may need to consult a higher intelligence.
+:::
+
+##  {background-video="../shared_media/video/space_hippo.mp4" background-size="cover"}
+
+::: notes
+**Prof Hippo**: What you need is a repeated measures design.
+:::
