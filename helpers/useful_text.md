@@ -154,8 +154,6 @@ stats things
 
 --- EVIL
 
-![](../shared_media/images/i_hex.png){.absolute top=0 left=800 height="80"}
-
 
 ## [L]{.txt_ong}oad and [L]{.txt_ong}ook
 
