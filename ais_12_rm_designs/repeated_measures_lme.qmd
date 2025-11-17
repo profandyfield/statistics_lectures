@@ -40,9 +40,6 @@ sniff_cons <- cbind(
   )
 
 contrasts(sniff_tib$entity) <-  sniff_cons
-sniff_mod <- lmerTest::lmer(vocalizations ~ entity + (1|dog_name), data = sniff_tib)
-sniff_lrt <- performance::test_lrt(sniff_mod)
-sniff_pars <- parameters::parameters(sniff_mod)
 ```
 
 
