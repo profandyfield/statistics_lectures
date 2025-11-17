@@ -21,7 +21,7 @@ format:
 7. [Contrast coding](ds_07_contrasts/ds_contrasts.html)
 8. [Adjusting means](ds_08_adjusted_means/ds_adjusted_means.html)
 9. [Factorial designs](ds_09_factorial_designs/ds_factorial_designs.html)
-10. [Repeated measures designs]()
+10. [Repeated measures designs](ds_10_rm_designs/repeated_measures_afex.html)
 11. [Mixed designs]()
 
 ## An adventure in Statistics lectures
