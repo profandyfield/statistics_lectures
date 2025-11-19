@@ -127,6 +127,74 @@ ggplot2::ggplot(rirs_tib, aes(days, post_qol, colour = clinic, fill = clinic)) +
 ```
 
 
+## (Potential) Benefits of MLMs
+
+::: fragment
+-   Modelling variability in effects across contexts
+    -   Model the variability in intercepts
+    -   Model the variability in slopes
+:::
+
+::: fragment
+-   Model violations of the assumption of spherical errors
+    -   Model differences in the variability of errors
+    -   Model relationships between errors
+        -   (Linear model for repeated observations -- next two weeks!)
+:::
+
+::: fragment
+-   Missing data
+    -   MLMs (in general) cope with missing data
+:::
+
+## Model assumptions
+
+::: fragment
+-   MLMs use maximum likelihood estimation not OLS
+:::
+
+::: fragment
+-   Familiar assumptions
+    -   Linearity and additivity
+    -   Level 1 errors are normally distributed with mean of zero and constant variance (i.e. homoscedasticity)
+    -   Independent errors (but we can model dependency)
+:::
+
+::: fragment
+-   New assumptions
+    -   Random effects (slopes and intercepts) are assumed to be normally distributed with mean of zero and constant variance (i.e. homoscedasticity)
+:::
+
+
+
+## Practical issues
+
+### Computing *p*-values
+
+-   There is no unifying method to compute *p*-values in multilevel models because the degrees of freedom of the test statistic are rarely known.
+-   df can be approximated (e.g., Satterthwaite and Kenward-Roger methods) but it's unclear how good these approximations are for complex models/complex covariance structures.
+
+## Practical issues
+
+### Should effects be fixed or random?
+
+::: fragment
+-   Three approaches
+    -   Theory-driven
+    -   Maximal model (Barr et al., 2013)
+    -   Data-driven (include random effects that improve fit)
+:::
+
+::: fragment
+-   Treat a predictor as a random effect if ... (Bolker, 2015)
+    -   You're **not** interested in differences between the levels.
+    -   You're interested in quantifying the variability across levels of the variable.
+    -   You're interested in generalizing beyond the observed levels of the contextual variable.
+    -   You have an unbalanced design.
+    -   You have a categorical predictor that is not direct relevant to the hypothesis but for which you need to adjust (a nuisance variable).
+:::
+
+
 ## 
 
 ![](media/dsr2_fig_14_12_mlm_process.svg){fig-align="center" height="600"}
@@ -315,11 +383,22 @@ The associated variances will be really different, which can create problems wit
 ::: fragment
 ::: center-h
 ::: txt_mulberry
-::: txt_l
 $$
 \text{months} \approx \frac{12}{365}\times \text{days}
 $$
 :::
+:::
+:::
+
+::: fragment
+::: center-h
+::: txt_mulberry
+$$
+\begin{aligned}
+\text{QoL}_{ij} &= [\beta_0  + \beta_1\text{Months}_{ij} + \beta_2\text{Pre QoL}_{ij} + \beta_3\text{Reason}_{ij} +  \beta_4\text{Months} \times \text{Reason}_{ij}] \\
+&\quad + [u_{0j} + u_{1j}\text{Months}_{ij}+ \varepsilon_{ij}]
+\end{aligned}
+$$
 :::
 :::
 :::
@@ -423,8 +502,8 @@ ggplot(data = models, aes(Coefficient)) +
 ::: txt_mulberry
 $$
 \begin{aligned}
-\text{QoL}_{ij} &= [\beta_0  + \beta_1\text{Days}_{ij} + \beta_2\text{Pre QoL}_{ij} + \beta_3\text{Reason}_{ij} +  \beta_4\text{Days} \times \text{Reason}_{ij}] \\
-&\quad + [u_{0j} + u_{1j}\text{Days}_{ij}+ \varepsilon_{ij}]
+\text{QoL}_{ij} &= [\beta_0  + \beta_1\text{Months}_{ij} + \beta_2\text{Pre QoL}_{ij} + \beta_3\text{Reason}_{ij} +  \beta_4\text{Months} \times \text{Reason}_{ij}] \\
+&\quad + [u_{0j} + u_{1j}\text{Months}_{ij}+ \varepsilon_{ij}]
 \end{aligned}
 $$
 :::
@@ -603,6 +682,7 @@ base_qol: This effect suggests that with other variables held constant, for ever
 
 ```{r}
 #| echo: true
+#| eval: false
 
 cosmetic_slopes <- estimate_slopes(cosmetic_mlm,
                                    trend = "months",
@@ -617,6 +697,8 @@ mlm_slopes <- estimate_slopes(cosmetic_mlm,
                                    trend = "months",
                                    by = "reason",
                                    ci = 0.95)
+
+display(mlm_slopes, footer = "")
 ```
 
 
