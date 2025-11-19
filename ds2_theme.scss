@@ -110,6 +110,7 @@ $code-color: $purple !default;
 
 .reveal .slide .panel-tabset a {
   border-color: $brand-grey;
+  color: $purple;
   border-width: 1px;
   border-top-left-radius: 10px 10px;
   border-top-right-radius: 10px 10px;
@@ -117,7 +118,7 @@ $code-color: $purple !default;
 
 .reveal .slide .panel-tabset a:hover {
   border-color: $brand-white;
-  background-color: $brand-brown;
+  background-color: rgba($purple, 0.2);
   color: $brand-white;
   border-width: 1px;
   border-top-left-radius: 10px 10px;
