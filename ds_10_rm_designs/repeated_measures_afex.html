@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="repeated_measures_afex_files/libs/revealjs/dist/theme/quarto-3a473f0c3056896679b036c5c0f7b84b.css">
+  <link rel="stylesheet" href="repeated_measures_afex_files/libs/revealjs/dist/theme/quarto-df0ffdd9f3f9ef7a9a670ee298308aec.css">
   <link href="repeated_measures_afex_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="repeated_measures_afex_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="repeated_measures_afex_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -439,6 +439,18 @@
 </ul></li>
 <li><code>dog_name</code> indicates the name of the dog (<em>N</em> = 8)</li>
 </ul>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
+</div>
+<div class="callout-content">
+<p>This is a <strong>one-way repeated measures design</strong>.</p>
+</div>
+</div>
+</div>
+</div>
 <aside class="notes">
 <p>Imagine a scientist wanted to look at</p>
 <style type="text/css">
@@ -457,23 +469,23 @@
 <h2>The data</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="qqywwdvubr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qqywwdvubr table {
+<div id="zbwmwioopl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zbwmwioopl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qqywwdvubr thead, #qqywwdvubr tbody, #qqywwdvubr tfoot, #qqywwdvubr tr, #qqywwdvubr td, #qqywwdvubr th {
+#zbwmwioopl thead, #zbwmwioopl tbody, #zbwmwioopl tfoot, #zbwmwioopl tr, #zbwmwioopl td, #zbwmwioopl th {
   border-style: none;
 }
 
-#qqywwdvubr p {
+#zbwmwioopl p {
   margin: 0;
   padding: 0;
 }
 
-#qqywwdvubr .gt_table {
+#zbwmwioopl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -499,12 +511,12 @@
   border-left-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_caption {
+#zbwmwioopl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qqywwdvubr .gt_title {
+#zbwmwioopl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -516,7 +528,7 @@
   border-bottom-width: 0;
 }
 
-#qqywwdvubr .gt_subtitle {
+#zbwmwioopl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -528,7 +540,7 @@
   border-top-width: 0;
 }
 
-#qqywwdvubr .gt_heading {
+#zbwmwioopl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -540,13 +552,13 @@
   border-right-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_bottom_border {
+#zbwmwioopl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_col_headings {
+#zbwmwioopl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -561,7 +573,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_col_heading {
+#zbwmwioopl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -581,7 +593,7 @@
   overflow-x: hidden;
 }
 
-#qqywwdvubr .gt_column_spanner_outer {
+#zbwmwioopl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -593,15 +605,15 @@
   padding-right: 4px;
 }
 
-#qqywwdvubr .gt_column_spanner_outer:first-child {
+#zbwmwioopl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qqywwdvubr .gt_column_spanner_outer:last-child {
+#zbwmwioopl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qqywwdvubr .gt_column_spanner {
+#zbwmwioopl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -613,11 +625,11 @@
   width: 100%;
 }
 
-#qqywwdvubr .gt_spanner_row {
+#zbwmwioopl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qqywwdvubr .gt_group_heading {
+#zbwmwioopl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -643,7 +655,7 @@
   text-align: left;
 }
 
-#qqywwdvubr .gt_empty_group_heading {
+#zbwmwioopl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -658,15 +670,15 @@
   vertical-align: middle;
 }
 
-#qqywwdvubr .gt_from_md > :first-child {
+#zbwmwioopl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qqywwdvubr .gt_from_md > :last-child {
+#zbwmwioopl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qqywwdvubr .gt_row {
+#zbwmwioopl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +697,7 @@
   overflow-x: hidden;
 }
 
-#qqywwdvubr .gt_stub {
+#zbwmwioopl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -698,7 +710,7 @@
   padding-right: 5px;
 }
 
-#qqywwdvubr .gt_stub_row_group {
+#zbwmwioopl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,15 +724,15 @@
   vertical-align: top;
 }
 
-#qqywwdvubr .gt_row_group_first td {
+#zbwmwioopl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qqywwdvubr .gt_row_group_first th {
+#zbwmwioopl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qqywwdvubr .gt_summary_row {
+#zbwmwioopl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -730,16 +742,16 @@
   padding-right: 5px;
 }
 
-#qqywwdvubr .gt_first_summary_row {
+#zbwmwioopl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_first_summary_row.thick {
+#zbwmwioopl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qqywwdvubr .gt_last_summary_row {
+#zbwmwioopl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -749,7 +761,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_grand_summary_row {
+#zbwmwioopl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -759,7 +771,7 @@
   padding-right: 5px;
 }
 
-#qqywwdvubr .gt_first_grand_summary_row {
+#zbwmwioopl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -769,7 +781,7 @@
   border-top-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_last_grand_summary_row_top {
+#zbwmwioopl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -779,11 +791,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_striped {
+#zbwmwioopl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qqywwdvubr .gt_table_body {
+#zbwmwioopl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -792,7 +804,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_footnotes {
+#zbwmwioopl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -806,7 +818,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_footnote {
+#zbwmwioopl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -815,7 +827,7 @@
   padding-right: 5px;
 }
 
-#qqywwdvubr .gt_sourcenotes {
+#zbwmwioopl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -829,7 +841,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qqywwdvubr .gt_sourcenote {
+#zbwmwioopl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -837,72 +849,72 @@
   padding-right: 5px;
 }
 
-#qqywwdvubr .gt_left {
+#zbwmwioopl .gt_left {
   text-align: left;
 }
 
-#qqywwdvubr .gt_center {
+#zbwmwioopl .gt_center {
   text-align: center;
 }
 
-#qqywwdvubr .gt_right {
+#zbwmwioopl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qqywwdvubr .gt_font_normal {
+#zbwmwioopl .gt_font_normal {
   font-weight: normal;
 }
 
-#qqywwdvubr .gt_font_bold {
+#zbwmwioopl .gt_font_bold {
   font-weight: bold;
 }
 
-#qqywwdvubr .gt_font_italic {
+#zbwmwioopl .gt_font_italic {
   font-style: italic;
 }
 
-#qqywwdvubr .gt_super {
+#zbwmwioopl .gt_super {
   font-size: 65%;
 }
 
-#qqywwdvubr .gt_footnote_marks {
+#zbwmwioopl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qqywwdvubr .gt_asterisk {
+#zbwmwioopl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qqywwdvubr .gt_indent_1 {
+#zbwmwioopl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qqywwdvubr .gt_indent_2 {
+#zbwmwioopl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qqywwdvubr .gt_indent_3 {
+#zbwmwioopl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qqywwdvubr .gt_indent_4 {
+#zbwmwioopl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qqywwdvubr .gt_indent_5 {
+#zbwmwioopl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qqywwdvubr .katex-display {
+#zbwmwioopl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qqywwdvubr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zbwmwioopl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1022,8 +1034,8 @@
 <h2>The data in <svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-390a086ae68966c1fe25" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-390a086ae68966c1fe25">{"x":{"filter":"none","vertical":false,"caption":"<caption>Table 2: Data for the sniffer dog example<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32"],["Milton","Milton","Milton","Milton","Woofy","Woofy","Woofy","Woofy","Ramsey","Ramsey","Ramsey","Ramsey","Mr. Snifficus III","Mr. Snifficus III","Mr. Snifficus III","Mr. Snifficus III","Willock","Willock","Willock","Willock","The Venerable Dr. Waggy","The Venerable Dr. Waggy","The Venerable Dr. Waggy","The Venerable Dr. Waggy","Lord Scenticle","Lord Scenticle","Lord Scenticle","Lord Scenticle","Professor Nose","Professor Nose","Professor Nose","Professor Nose"],["Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter"],[8,7,1,6,9,5,2,5,6,2,3,8,5,3,1,9,8,4,5,8,7,5,6,7,10,2,7,2,12,6,8,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dog_name<\/th>\n      <th>entity<\/th>\n      <th>vocalizations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tp","columnDefs":[{"className":"dt-center","targets":[1,2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dog_name","targets":1},{"name":"entity","targets":2},{"name":"vocalizations","targets":3}],"pageLength":10,"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-d4b889f8a60de038b63b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d4b889f8a60de038b63b">{"x":{"filter":"none","vertical":false,"caption":"<caption>Table 2: Data for the sniffer dog example<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32"],["Milton","Milton","Milton","Milton","Woofy","Woofy","Woofy","Woofy","Ramsey","Ramsey","Ramsey","Ramsey","Mr. Snifficus III","Mr. Snifficus III","Mr. Snifficus III","Mr. Snifficus III","Willock","Willock","Willock","Willock","The Venerable Dr. Waggy","The Venerable Dr. Waggy","The Venerable Dr. Waggy","The Venerable Dr. Waggy","Lord Scenticle","Lord Scenticle","Lord Scenticle","Lord Scenticle","Professor Nose","Professor Nose","Professor Nose","Professor Nose"],["Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter","Alien","Human","Mannequin","Shapeshifter"],[8,7,1,6,9,5,2,5,6,2,3,8,5,3,1,9,8,4,5,8,7,5,6,7,10,2,7,2,12,6,8,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dog_name<\/th>\n      <th>entity<\/th>\n      <th>vocalizations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tp","columnDefs":[{"className":"dt-center","targets":[1,2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dog_name","targets":1},{"name":"entity","targets":2},{"name":"vocalizations","targets":3}],"pageLength":10,"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1095,23 +1107,23 @@
 <div class="center-h">
 <div class="cell">
 <div class="cell-output-display">
-<div id="zkikgjgbfy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zkikgjgbfy table {
+<div id="uyjygnaywl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uyjygnaywl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zkikgjgbfy thead, #zkikgjgbfy tbody, #zkikgjgbfy tfoot, #zkikgjgbfy tr, #zkikgjgbfy td, #zkikgjgbfy th {
+#uyjygnaywl thead, #uyjygnaywl tbody, #uyjygnaywl tfoot, #uyjygnaywl tr, #uyjygnaywl td, #uyjygnaywl th {
   border-style: none;
 }
 
-#zkikgjgbfy p {
+#uyjygnaywl p {
   margin: 0;
   padding: 0;
 }
 
-#zkikgjgbfy .gt_table {
+#uyjygnaywl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1137,12 +1149,12 @@
   border-left-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_caption {
+#uyjygnaywl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zkikgjgbfy .gt_title {
+#uyjygnaywl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1154,7 +1166,7 @@
   border-bottom-width: 0;
 }
 
-#zkikgjgbfy .gt_subtitle {
+#uyjygnaywl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1166,7 +1178,7 @@
   border-top-width: 0;
 }
 
-#zkikgjgbfy .gt_heading {
+#uyjygnaywl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1178,13 +1190,13 @@
   border-right-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_bottom_border {
+#uyjygnaywl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_col_headings {
+#uyjygnaywl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1199,7 +1211,7 @@
   border-right-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_col_heading {
+#uyjygnaywl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1219,7 +1231,7 @@
   overflow-x: hidden;
 }
 
-#zkikgjgbfy .gt_column_spanner_outer {
+#uyjygnaywl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1231,15 +1243,15 @@
   padding-right: 4px;
 }
 
-#zkikgjgbfy .gt_column_spanner_outer:first-child {
+#uyjygnaywl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zkikgjgbfy .gt_column_spanner_outer:last-child {
+#uyjygnaywl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zkikgjgbfy .gt_column_spanner {
+#uyjygnaywl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1251,11 +1263,11 @@
   width: 100%;
 }
 
-#zkikgjgbfy .gt_spanner_row {
+#uyjygnaywl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zkikgjgbfy .gt_group_heading {
+#uyjygnaywl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1281,7 +1293,7 @@
   text-align: left;
 }
 
-#zkikgjgbfy .gt_empty_group_heading {
+#uyjygnaywl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1296,15 +1308,15 @@
   vertical-align: middle;
 }
 
-#zkikgjgbfy .gt_from_md > :first-child {
+#uyjygnaywl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zkikgjgbfy .gt_from_md > :last-child {
+#uyjygnaywl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zkikgjgbfy .gt_row {
+#uyjygnaywl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1323,7 +1335,7 @@
   overflow-x: hidden;
 }
 
-#zkikgjgbfy .gt_stub {
+#uyjygnaywl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1336,7 +1348,7 @@
   padding-right: 5px;
 }
 
-#zkikgjgbfy .gt_stub_row_group {
+#uyjygnaywl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1350,15 +1362,15 @@
   vertical-align: top;
 }
 
-#zkikgjgbfy .gt_row_group_first td {
+#uyjygnaywl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zkikgjgbfy .gt_row_group_first th {
+#uyjygnaywl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zkikgjgbfy .gt_summary_row {
+#uyjygnaywl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1368,16 +1380,16 @@
   padding-right: 5px;
 }
 
-#zkikgjgbfy .gt_first_summary_row {
+#uyjygnaywl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_first_summary_row.thick {
+#uyjygnaywl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zkikgjgbfy .gt_last_summary_row {
+#uyjygnaywl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1387,7 +1399,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_grand_summary_row {
+#uyjygnaywl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1397,7 +1409,7 @@
   padding-right: 5px;
 }
 
-#zkikgjgbfy .gt_first_grand_summary_row {
+#uyjygnaywl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1407,7 +1419,7 @@
   border-top-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_last_grand_summary_row_top {
+#uyjygnaywl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1417,11 +1429,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_striped {
+#uyjygnaywl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zkikgjgbfy .gt_table_body {
+#uyjygnaywl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1430,7 +1442,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_footnotes {
+#uyjygnaywl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1444,7 +1456,7 @@
   border-right-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_footnote {
+#uyjygnaywl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1453,7 +1465,7 @@
   padding-right: 5px;
 }
 
-#zkikgjgbfy .gt_sourcenotes {
+#uyjygnaywl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1467,7 +1479,7 @@
   border-right-color: #D3D3D3;
 }
 
-#zkikgjgbfy .gt_sourcenote {
+#uyjygnaywl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1475,72 +1487,72 @@
   padding-right: 5px;
 }
 
-#zkikgjgbfy .gt_left {
+#uyjygnaywl .gt_left {
   text-align: left;
 }
 
-#zkikgjgbfy .gt_center {
+#uyjygnaywl .gt_center {
   text-align: center;
 }
 
-#zkikgjgbfy .gt_right {
+#uyjygnaywl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zkikgjgbfy .gt_font_normal {
+#uyjygnaywl .gt_font_normal {
   font-weight: normal;
 }
 
-#zkikgjgbfy .gt_font_bold {
+#uyjygnaywl .gt_font_bold {
   font-weight: bold;
 }
 
-#zkikgjgbfy .gt_font_italic {
+#uyjygnaywl .gt_font_italic {
   font-style: italic;
 }
 
-#zkikgjgbfy .gt_super {
+#uyjygnaywl .gt_super {
   font-size: 65%;
 }
 
-#zkikgjgbfy .gt_footnote_marks {
+#uyjygnaywl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zkikgjgbfy .gt_asterisk {
+#uyjygnaywl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zkikgjgbfy .gt_indent_1 {
+#uyjygnaywl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zkikgjgbfy .gt_indent_2 {
+#uyjygnaywl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zkikgjgbfy .gt_indent_3 {
+#uyjygnaywl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zkikgjgbfy .gt_indent_4 {
+#uyjygnaywl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zkikgjgbfy .gt_indent_5 {
+#uyjygnaywl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zkikgjgbfy .katex-display {
+#uyjygnaywl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zkikgjgbfy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uyjygnaywl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2220,6 +2232,16 @@
 </ul>
 </div><div class="column" style="width:30%;">
 <p><img data-src="../shared_media/images/milton_animal_adventures_20200926_173443.jpg"></p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Statis-tip</strong></p>
+</div>
+<div class="callout-content">
+<p>This is a <strong>two-way repeated measures design</strong>.</p>
+</div>
+</div>
+</div>
 </div></div>
 </section>
 <section id="the-model" class="slide level2" data-background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" data-background-size="cover">
@@ -2249,8 +2271,8 @@
 <h2><span class="txt_ong">L</span>oad and <span class="txt_ong">L</span>ook</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-78ec63fdf26699b4d6eb" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-78ec63fdf26699b4d6eb">{"x":{"filter":"none","vertical":false,"caption":"<caption>Table 7: Data for the scent masking example<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450"],["56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","682h3","682h3","682h3","682h3","682h3","682h3","682h3","682h3","682h3","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","ik011","ik011","ik011","ik011","ik011","ik011","ik011","ik011","ik011","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","629m5","629m5","629m5","629m5","629m5","629m5","629m5","629m5","629m5","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","7q328","7q328","7q328","7q328","7q328","7q328","7q328","7q328","7q328","9t256","9t256","9t256","9t256","9t256","9t256","9t256","9t256","9t256","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","97ali","97ali","97ali","97ali","97ali","97ali","97ali","97ali","97ali","881d7","881d7","881d7","881d7","881d7","881d7","881d7","881d7","881d7","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","y193g","y193g","y193g","y193g","y193g","y193g","y193g","y193g","y193g","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","4g179","4g179","4g179","4g179","4g179","4g179","4g179","4g179","4g179","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","jt877","jt877","jt877","jt877","jt877","jt877","jt877","jt877","jt877","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67"],["Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human"],["Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None"],[7,9,8,11,6,8,3,3,3,8,8,10,10,7,10,6,4,3,13,5,5,4,4,7,8,2,2,7,10,12,9,6,12,8,2,2,11,9,11,10,9,7,7,5,2,6,9,11,8,9,11,5,4,2,8,7,11,6,4,11,9,4,3,8,15,13,13,11,15,9,7,5,12,15,13,11,11,12,10,3,4,7,7,13,8,9,6,5,3,3,8,11,10,6,8,6,7,4,3,8,9,7,7,6,7,7,3,3,9,9,11,8,7,13,9,5,3,14,15,15,11,12,10,10,4,4,13,11,14,10,11,11,5,5,4,5,7,9,6,9,8,5,4,2,10,9,12,9,8,7,7,5,4,12,10,16,11,9,13,8,5,3,7,8,10,9,6,9,5,4,2,12,13,15,9,9,16,7,5,3,8,11,9,8,9,11,7,3,1,9,9,12,8,11,10,6,3,4,8,7,9,10,12,9,9,3,3,14,11,18,14,8,13,8,6,3,10,9,11,10,9,10,7,8,3,5,3,11,9,5,9,7,5,3,11,13,12,12,11,12,7,6,3,12,12,15,7,8,9,10,4,3,6,10,13,7,8,8,5,2,3,9,7,8,9,9,6,4,3,2,13,19,19,16,14,16,9,5,6,7,9,12,7,9,12,8,5,4,10,12,12,7,9,11,8,3,4,9,13,13,11,8,10,7,7,3,10,10,14,8,8,11,9,4,2,11,10,11,8,16,14,9,4,5,9,9,13,11,8,12,8,5,3,9,11,16,11,9,13,9,6,4,10,7,10,6,7,7,6,4,3,8,8,10,4,7,12,5,1,2,12,12,17,12,14,13,11,5,4,11,13,17,7,10,13,11,5,5,9,10,8,6,8,12,7,3,2,7,9,8,8,10,10,4,3,1,10,9,17,6,8,5,7,6,2,5,8,15,7,4,7,3,2,1,5,10,14,9,11,14,8,4,2,7,9,9,11,9,8,10,3,2,11,11,13,10,11,15,10,5,4,9,12,11,7,8,10,7,4,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dog_id<\/th>\n      <th>entity<\/th>\n      <th>scent_mask<\/th>\n      <th>vocalizations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tp","columnDefs":[{"className":"dt-center","targets":[1,2,3]},{"className":"dt-right","targets":4},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dog_id","targets":1},{"name":"entity","targets":2},{"name":"scent_mask","targets":3},{"name":"vocalizations","targets":4}],"pageLength":10,"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-0bb6c662e69f6e4167db" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0bb6c662e69f6e4167db">{"x":{"filter":"none","vertical":false,"caption":"<caption>Table 7: Data for the scent masking example<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450"],["56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","56f9p","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","2m89y","682h3","682h3","682h3","682h3","682h3","682h3","682h3","682h3","682h3","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","7o1d2","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","2k3vo","ik011","ik011","ik011","ik011","ik011","ik011","ik011","ik011","ik011","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","1a19m","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","8ex22","629m5","629m5","629m5","629m5","629m5","629m5","629m5","629m5","629m5","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","13gbv","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","9rh3t","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","vagkw","7q328","7q328","7q328","7q328","7q328","7q328","7q328","7q328","7q328","9t256","9t256","9t256","9t256","9t256","9t256","9t256","9t256","9t256","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","kwbat","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","4ex74","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","0n7n8","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","rq46l","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","wbyb8","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","il0j6","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","36sdu","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","17jo3","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","18x8g","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","yn6pm","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","8d4sj","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","g5ggk","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","pyatf","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","l73ta","97ali","97ali","97ali","97ali","97ali","97ali","97ali","97ali","97ali","881d7","881d7","881d7","881d7","881d7","881d7","881d7","881d7","881d7","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","rf84i","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","amdw2","y193g","y193g","y193g","y193g","y193g","y193g","y193g","y193g","y193g","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","uf48a","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","b6fif","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","7ei00","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ja6a6","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","ub64o","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","gpq57","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","2peo7","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","3lxrp","4g179","4g179","4g179","4g179","4g179","4g179","4g179","4g179","4g179","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","fxxcm","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","q0uh8","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","7e62r","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","6n3p1","jt877","jt877","jt877","jt877","jt877","jt877","jt877","jt877","jt877","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","1sy79","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","bg7j4","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67","uxl67"],["Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human","Alien","Alien","Alien","Shapeshifter","Shapeshifter","Shapeshifter","Human","Human","Human"],["Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None","Fox","Human","None"],[7,9,8,11,6,8,3,3,3,8,8,10,10,7,10,6,4,3,13,5,5,4,4,7,8,2,2,7,10,12,9,6,12,8,2,2,11,9,11,10,9,7,7,5,2,6,9,11,8,9,11,5,4,2,8,7,11,6,4,11,9,4,3,8,15,13,13,11,15,9,7,5,12,15,13,11,11,12,10,3,4,7,7,13,8,9,6,5,3,3,8,11,10,6,8,6,7,4,3,8,9,7,7,6,7,7,3,3,9,9,11,8,7,13,9,5,3,14,15,15,11,12,10,10,4,4,13,11,14,10,11,11,5,5,4,5,7,9,6,9,8,5,4,2,10,9,12,9,8,7,7,5,4,12,10,16,11,9,13,8,5,3,7,8,10,9,6,9,5,4,2,12,13,15,9,9,16,7,5,3,8,11,9,8,9,11,7,3,1,9,9,12,8,11,10,6,3,4,8,7,9,10,12,9,9,3,3,14,11,18,14,8,13,8,6,3,10,9,11,10,9,10,7,8,3,5,3,11,9,5,9,7,5,3,11,13,12,12,11,12,7,6,3,12,12,15,7,8,9,10,4,3,6,10,13,7,8,8,5,2,3,9,7,8,9,9,6,4,3,2,13,19,19,16,14,16,9,5,6,7,9,12,7,9,12,8,5,4,10,12,12,7,9,11,8,3,4,9,13,13,11,8,10,7,7,3,10,10,14,8,8,11,9,4,2,11,10,11,8,16,14,9,4,5,9,9,13,11,8,12,8,5,3,9,11,16,11,9,13,9,6,4,10,7,10,6,7,7,6,4,3,8,8,10,4,7,12,5,1,2,12,12,17,12,14,13,11,5,4,11,13,17,7,10,13,11,5,5,9,10,8,6,8,12,7,3,2,7,9,8,8,10,10,4,3,1,10,9,17,6,8,5,7,6,2,5,8,15,7,4,7,3,2,1,5,10,14,9,11,14,8,4,2,7,9,9,11,9,8,10,3,2,11,11,13,10,11,15,10,5,4,9,12,11,7,8,10,7,4,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dog_id<\/th>\n      <th>entity<\/th>\n      <th>scent_mask<\/th>\n      <th>vocalizations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tp","columnDefs":[{"className":"dt-center","targets":[1,2,3]},{"className":"dt-right","targets":4},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dog_id","targets":1},{"name":"entity","targets":2},{"name":"scent_mask","targets":3},{"name":"vocalizations","targets":4}],"pageLength":10,"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

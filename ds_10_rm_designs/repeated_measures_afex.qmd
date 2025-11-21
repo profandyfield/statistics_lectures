@@ -108,6 +108,16 @@ Repeated measures designs make more efficient use of participants and so save ti
   - Shapeshifter (alien in humanoid form)
 - `dog_name` indicates the name of the dog (*N* = 8)
 
+
+::: fragment
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+This is a **one-way repeated measures design**.
+
+:::
+:::
+
 ::: notes
 
 Imagine a scientist wanted to look at 
@@ -567,6 +577,13 @@ estimate_contrasts(sniff_afx, contrast = "entity", p_adjust = "bonferroni") |>
 
 :::{.column width="30%"}
 ![](../shared_media/images/milton_animal_adventures_20200926_173443.jpg)
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+This is a **two-way repeated measures design**.
+
+:::
 :::
 :::
 
