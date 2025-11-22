@@ -39,7 +39,7 @@ format:
 11. [Multilevel models (Part II: Fitting models in R)](ais_11_mlmr/mlmr.html)
 12. [Repeated measures as a multilevel model](ais_12_rm_designs/repeated_measures_lme.html) 
 13. [Growth models]() 
-14. [Categorical outcomes]()
+14. [Categorical outcomes](ais_14_log_reg/ais_log_reg.html)
 
 ## Misc
 
