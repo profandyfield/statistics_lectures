@@ -199,10 +199,21 @@ p.subtitle {
 }
 
 .txt_dk_bg {
-  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid $brand-grey;
   background-color: rgba($brand-grey, .5);
+  color: white;
 }
 
 .whitebox {
   background-color: rgba(white, .5);
+}
+
+.whitebox9 {
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.90);
+  color: $blue;
 }
