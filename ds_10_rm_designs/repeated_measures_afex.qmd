@@ -187,7 +187,7 @@ sniff_tib|>
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{i} & = \hat{b}_{0} + \hat{b}_{1}\text{entity}_{i} + e_{i}
+\text{vocalizations}_{i} & = b_{0} + b_{1}\text{entity}_{i} + \varepsilon_{i}
 \end{aligned}
 $$
 :::
@@ -197,7 +197,7 @@ $$
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij} + e_{ij} \\
+\text{vocalizations}_{i} & = b_{0} + b_{1}\text{alien vs. manq}_{i} + b_{2}\text{shape vs. manq}_{i} + b_{3}\text{human vs. manq}_{i} + \varepsilon_{i} \\
 \end{aligned}
 $$
 :::
@@ -423,13 +423,21 @@ sniff_afx <- afex::aov_4(vocalizations ~ entity + (entity|dog_name),
 ## [E]{.txt_ong}valuate fit {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 
-::: {.whitebox}
-::: tbl_s
 ```{r}
 #| echo: true
+#| eval: false
 
 model_parameters(sniff_afx, es_type = "omega") |> 
   display(use_symbols = TRUE)
+```
+
+\
+
+::: {.whitebox}
+::: tbl_s
+```{r}
+model_parameters(sniff_afx, es_type = "omega") |> 
+  display(use_symbols = TRUE, footer = "")
 ```
 
 :::
@@ -598,6 +606,7 @@ $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
 &\quad \left[u_{0j} + e_{ij}\right]\\
+u_{0j} &\sim N(0, \sigma^{2}_{\mu_0})
 \end{aligned}
 $$
 
@@ -606,7 +615,7 @@ $$
 
 ::: fragment
 
-- $\hat{u}_{0j}$ represents the difference in vocalizations for a particular dog from the overall mean number of vocalizations
+- $u_{0j}$ represents the difference in vocalizations for a particular dog from the overall mean number of vocalizations
 - The model also includes a parameter that estimates the variance in vocalizations across dogs ($\sigma^{2}_{\mu_0}$)
 
 :::
