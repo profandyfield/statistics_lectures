@@ -597,7 +597,7 @@ This is a **two-way repeated measures design**.
 $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
-&\quad \left[\hat{u}_{0j} + e_{ij}\right]\\
+&\quad \left[u_{0j} + e_{ij}\right]\\
 \end{aligned}
 $$
 
@@ -698,7 +698,7 @@ model_parameters(scent_afx, es_type = "omega") |>
 #| echo: false
 
 model_parameters(scent_afx, es_type = "omega") |> 
-  display(use_symbols = TRUE)
+  display(use_symbols = TRUE, footer = "")
 ```
 
 :::

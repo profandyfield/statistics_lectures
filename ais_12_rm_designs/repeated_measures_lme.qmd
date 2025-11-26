@@ -190,7 +190,7 @@ To keep things simple, imagine a design where dogs sniff only aliens or humans (
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{i} & = \hat{b}_{0} + \hat{b}_{1}\text{entity}_{i} + e_{i}
+\text{vocalizations}_{i} & = b_{0} + b_{1}\text{entity}_{i} + \varepsilon_{i}
 \end{aligned}
 $$
 :::
@@ -241,8 +241,8 @@ Need to adjust the model to estimate this dependency
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j}) + (\hat{\beta}_{1} + \hat{u}_{1j})\text{entity}_{ij}+ e_{ij} \\
-& = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{entity}_{ij}\right]+ \left[\hat{u}_{0j} + \hat{u}_{1j}\text{entity}_{ij} + e_{ij}\right]\\
+\text{vocalizations}_{ij} & = (\beta_{0} + u_{0j}) + (\beta_{1} + u_{1j})\text{entity}_{ij}+ \varepsilon_{ij} \\
+& = \left[\beta_{0} + \beta_{1}\text{entity}_{ij}\right]+ \left[u_{0j} + u_{1j}\text{entity}_{ij} + \varepsilon_{ij}\right]\\
 \end{aligned}
 $$
 :::
@@ -286,7 +286,7 @@ sniff_simp_plot
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j})+ \hat{\beta}_{1}\text{entity}_{ij}+ e_{ij}
+\text{vocalizations}_{ij} & = (\beta_{0} + u_{0j})+ \beta_{1}\text{entity}_{ij}+ \varepsilon_{ij}
 \end{aligned}
 $$
 :::
@@ -307,7 +307,7 @@ sniff_simp_plot +
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = (\hat{\beta}_{0} + \hat{u}_{0j}) + (\hat{\beta}_{1} + \hat{u}_{1j})\text{entity}_{ij}+ e_{ij}
+\text{vocalizations}_{ij} & = (\beta_{0} + u_{0j}) + (\beta_{1} + u_{1j})\text{entity}_{ij}+ \varepsilon_{ij}
 \end{aligned}
 $$
 :::
@@ -401,8 +401,8 @@ sniff_plot_beta
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
-&\quad + \left[\hat{u}_{0j} + e_{ij}\right] \\
+\text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{alien vs. manq}_{ij} + \beta_{2}\text{shape vs. manq}_{ij} + \beta_{3}\text{human vs. manq}_{ij}\right] \\
+&\quad + \left[u_{0j} + \varepsilon_{ij}\right] \\
 \end{aligned}
 $$
 :::
@@ -428,8 +428,8 @@ sniff_plot_beta +
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
-&\quad + \left[\hat{u}_{0j} +  \hat{u}_{1j}\text{alien vs. manq}_{ij} +  e_{ij}\right] \\
+\text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{alien vs. manq}_{ij} + \beta_{2}\text{shape vs. manq}_{ij} + \beta_{3}\text{human vs. manq}_{ij}\right] \\
+&\quad + \left[u_{0j} +  u_{1j}\text{alien vs. manq}_{ij} +  \varepsilon_{ij}\right] \\
 \end{aligned}
 $$
 :::
@@ -453,8 +453,8 @@ sniff_plot_beta +
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
-&\quad + \left[\hat{u}_{0j} +  \hat{u}_{1j}\text{alien vs. manq}_{ij} + \hat{u}_{2j}\text{shape vs. manq}_{ij} + e_{ij}\right] \\
+\text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{alien vs. manq}_{ij} + \beta_{2}\text{shape vs. manq}_{ij} + \beta_{3}\text{human vs. manq}_{ij}\right] \\
+&\quad + \left[u_{0j} +  u_{1j}\text{alien vs. manq}_{ij} + u_{2j}\text{shape vs. manq}_{ij} + \varepsilon_{ij}\right] \\
 \end{aligned}
 $$
 :::
@@ -479,8 +479,8 @@ sniff_plot_beta +
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \left[\hat{\beta}_{0} + \hat{\beta}_{1}\text{alien vs. manq}_{ij} + \hat{\beta}_{2}\text{shape vs. manq}_{ij} + \hat{\beta}_{3}\text{human vs. manq}_{ij}\right] \\
-&\quad + \left[\hat{u}_{0j} +  \hat{u}_{1j}\text{alien vs. manq}_{ij} + \hat{u}_{2j}\text{shape vs. manq}_{ij} + \hat{u}_{3j}\text{human vs. manq}_{ij} + e_{ij}\right] \\
+\text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{alien vs. manq}_{ij} + \beta_{2}\text{shape vs. manq}_{ij} + \beta_{3}\text{human vs. manq}_{ij}\right] \\
+&\quad + \left[u_{0j} +  u_{1j}\text{alien vs. manq}_{ij} + u_{2j}\text{shape vs. manq}_{ij} + u_{3j}\text{human vs. manq}_{ij} + \varepsilon_{ij}\right] \\
 \end{aligned}
 $$
 
@@ -671,7 +671,7 @@ model_performance(sniff_mlm) |>
 
 ![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
 
-## [E]{.txt_mulberry}valuate assumptions {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+## [E]{.txt_ong}valuate assumptions {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
 ::: center-h
 ```{r}
@@ -767,8 +767,8 @@ This is a **two-way repeated measures design**.
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} &= \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] + \\
-&\quad \left[\hat{u}_{0j} + \hat{u}_{1j}\text{entity}_{ij} + \hat{u}_{2j}\text{scent}_{ij} + \hat{u}_{3j}(\text{entity}_{ij}\times\text{scent}_{ij}) + e_{ij}\right]\\
+\text{vocalizations}_{ij} &= \left[\beta_{0} + \beta_{1}\text{entity}_{ij} + \beta_{2}\text{scent}_{ij} + \beta_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] + \\
+&\quad \left[u_{0j} + u_{1j}\text{entity}_{ij} + u_{2j}\text{scent}_{ij} + u_{3j}(\text{entity}_{ij}\times\text{scent}_{ij}) + \varepsilon_{ij}\right]\\
 \end{aligned}
 $$
 
@@ -782,8 +782,8 @@ $$
 :::{.txt_mulberry}
 $$
 \begin{aligned}
-\text{vocalizations}_{ij} & = \left[\hat{b}_{0} + \hat{b}_{1}\text{entity}_{ij} + \hat{b}_{2}\text{scent}_{ij} + \hat{b}_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
-&\quad \left[\hat{u}_{0j} + e_{ij}\right]\\
+\text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{entity}_{ij} + \beta_{2}\text{scent}_{ij} + \beta_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
+&\quad \left[u_{0j} + \varepsilon_{ij}\right]\\
 \end{aligned}
 $$
 
@@ -907,32 +907,6 @@ scent_int <- glmmTMB::glmmTMB(
 
 ## [E]{.txt_ong}valuate {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
 
-
-```{r}
-#| echo: true
-#| eval: false
-
-model_performance(scent_int) |> 
-  display()
-```
-
-\
-
-:::{.whitebox}
-```{r}
-#| echo: false
-
-model_performance(scent_int) |> 
-  display()
-```
-:::
-
-![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
-
-
-
-## [E]{.txt_ong}valuate {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
-
 ```{r}
 #| echo: true
 #| eval: false
@@ -961,6 +935,31 @@ test_lrt(scent_base, scent_ent, scent_scent, scent_int) |>
 
 **"It is never sensible to interpret main effects in the presence of a significant interaction effect."**
 
+:::
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [E]{.txt_ong}valuate {background-image="../shared_media/images/spaceship_light_ppt_hex.jpg" background-size="cover"}
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+model_performance(scent_int) |> 
+  display()
+```
+
+\
+
+:::{.whitebox}
+```{r}
+#| echo: false
+
+model_performance(scent_int) |> 
+  display()
+```
 :::
 
 ![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
