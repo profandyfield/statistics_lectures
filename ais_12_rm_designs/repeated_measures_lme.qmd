@@ -784,6 +784,7 @@ $$
 \begin{aligned}
 \text{vocalizations}_{ij} & = \left[\beta_{0} + \beta_{1}\text{entity}_{ij} + \beta_{2}\text{scent}_{ij} + \beta_{3}(\text{entity}_{ij}\times\text{scent}_{ij})\right] +\\
 &\quad \left[u_{0j} + \varepsilon_{ij}\right]\\
+u_{0j} &\sim N(0, \sigma^{2}_{\mu_0})
 \end{aligned}
 $$
 
