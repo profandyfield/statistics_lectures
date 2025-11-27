@@ -456,7 +456,7 @@ sniff_aov <- model_parameters(sniff_afx, es_type = "omega")
 ## {{< fa pencil >}} Report`r rproj()`
 
 
-The entity sniffed had a significant effect on the number of vocalizations by sniffer dogs, `r report_ez_aov(sniff_aov, es_type = "Omega2_partial")`.
+The entity sniffed had a non-significant effect on the number of vocalizations by sniffer dogs, `r report_ez_aov(sniff_aov, es_type = "Omega2_partial")`.
 
 :::
 
@@ -476,6 +476,22 @@ The entity sniffed had a significant effect on the number of vocalizations by sn
 check_model(sniff_afx)
 ```
 :::
+
+
+## [I]{.txt_ong}nterpret {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
+
+::: txt_xl
+::: {.callout-warning icon = false}
+## {{< fa skull >}} The danger zone!
+
+- At this point we would stop interpreting the results **because the overall effect was non-significant**.
+- What follows is for pedagogic kicks and giggles.
+
+:::
+:::
+
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
 
 ## [I]{.txt_ong}nterpret contrasts {background-image="../shared_media/images/spaceship_light_2_ppt_hex.jpg" background-size="cover"}
 
