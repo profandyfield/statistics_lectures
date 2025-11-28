@@ -570,9 +570,9 @@ Repeat the following mantras:
 :::
 :::
 
-## {background-video="media/three_way_song_instrumental.mp4" background-size="cover"}
+## {background-video="media/three_way_design_song_instrumental.mp4" background-size="cover"}
 
-## {background-video="media/three_way_song.mp4" background-size="cover"}
+## {background-video="media/three_way_design_song.mp4" background-size="cover"}
 
 ## [Fit the model]{.txt_ong} {background-image="../shared_media/images/as_snowy_trees_white_126530339.jpg" background-size="cover"}
 
