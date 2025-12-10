@@ -299,9 +299,9 @@ $$
 ::: whitebox9
 $$
 \begin{aligned}
-\text{odds}_\text{delivery} &= \frac{\text{Number delivered}}{\text{Number not delivered}} \\
-&= \frac{250}{150} \\
-&= 1.67
+\text{odds}_\text{delivered after pudding} &= \frac{\text{Number delivered after pudding}}{\text{Number not delivered after pudding}} \\
+&= \frac{150}{28} \\
+&= 5.36
 \end{aligned}
 $$
 :::
