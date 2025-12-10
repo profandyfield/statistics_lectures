@@ -825,7 +825,7 @@ $$
 
 ![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
 
-## [I]{.txt_ong}[nterpret odds ratios]{txt_white} {background-image="../shared_media/images/as_snowy_trees_white_126530339.jpg" background-size="cover"}
+## [I]{.txt_ong}[nterpret odds ratios]{.txt_white} {background-image="../shared_media/images/as_snowy_trees_white_126530339.jpg" background-size="cover"}
 
 ```{r}
 #| echo: true
