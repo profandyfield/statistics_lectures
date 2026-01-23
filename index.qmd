@@ -46,3 +46,5 @@ format:
 - [Getting started in R, RStudio and R Markdown](ais_00_r/ais_r.html)
 - [TAP advice](ais_tap/ais_tap.html)
 - [Introduction to meta-analysis](meta_analysis/meta_intro.html)
+- [SAGE teaching demo](sage_teach_demo/mediation.html)
+

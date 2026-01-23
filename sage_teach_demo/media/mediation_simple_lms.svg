@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="98.95076 383.84697 419.43783 202.47258" width="419.43783" height="202.47258">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" fill-opacity="1" stroke="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_10">
+        <path d="M 375.8886 385.34697 L 507.8886 385.34697 C 512.85915 385.34697 516.8886 389.3764 516.8886 394.34697 L 516.8886 411.34697 C 516.8886 416.31754 512.85915 420.34697 507.8886 420.34697 L 375.8886 420.34697 C 370.91803 420.34697 366.8886 416.31754 366.8886 411.34697 L 366.8886 394.34697 C 366.8886 389.3764 370.91803 385.34697 375.8886 385.34697 Z" fill="#e1cc69"/>
+        <path d="M 375.8886 385.34697 L 507.8886 385.34697 C 512.85915 385.34697 516.8886 389.3764 516.8886 394.34697 L 516.8886 411.34697 C 516.8886 416.31754 512.85915 420.34697 507.8886 420.34697 L 375.8886 420.34697 C 370.91803 420.34697 366.8886 416.31754 366.8886 411.34697 L 366.8886 394.34697 C 366.8886 389.3764 370.91803 385.34697 375.8886 385.34697 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(371.8886 395.17293)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="12.646" y="12" xml:space="preserve">Cognitive offloading</tspan>
+        </text>
+      </g>
+      <g id="Line_8">
+        <line x1="266.45076" y1="485.08326" x2="355.1886" y2="485.08326" marker-end="url(#SharpArrow_Marker)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_7">
+        <line x1="266.45076" y1="402.84697" x2="355.1886" y2="402.84697" marker-end="url(#SharpArrow_Marker_2)" stroke="#36218e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_13">
+        <path d="M 109.45076 385.34697 L 257.45076 385.34697 C 262.42133 385.34697 266.45076 389.3764 266.45076 394.34697 L 266.45076 411.34697 C 266.45076 416.31754 262.42133 420.34697 257.45076 420.34697 L 109.45076 420.34697 C 104.4802 420.34697 100.45076 416.31754 100.45076 411.34697 L 100.45076 394.34697 C 100.45076 389.3764 104.4802 385.34697 109.45076 385.34697 Z" fill="#71cff2"/>
+        <path d="M 109.45076 385.34697 L 257.45076 385.34697 C 262.42133 385.34697 266.45076 389.3764 266.45076 394.34697 L 266.45076 411.34697 C 266.45076 416.31754 262.42133 420.34697 257.45076 420.34697 L 109.45076 420.34697 C 104.4802 420.34697 100.45076 416.31754 100.45076 411.34697 L 100.45076 394.34697 C 100.45076 389.3764 104.4802 385.34697 109.45076 385.34697 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 395.17293)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="60.228" y="12" xml:space="preserve">AI use</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <path d="M 109.45076 467.58326 L 257.45076 467.58326 C 262.42133 467.58326 266.45076 471.6127 266.45076 476.58326 L 266.45076 493.58326 C 266.45076 498.5538 262.42133 502.58326 257.45076 502.58326 L 109.45076 502.58326 C 104.4802 502.58326 100.45076 498.5538 100.45076 493.58326 L 100.45076 476.58326 C 100.45076 471.6127 104.4802 467.58326 109.45076 467.58326 Z" fill="#e1cc69"/>
+        <path d="M 109.45076 467.58326 L 257.45076 467.58326 C 262.42133 467.58326 266.45076 471.6127 266.45076 476.58326 L 266.45076 493.58326 C 266.45076 498.5538 262.42133 502.58326 257.45076 502.58326 L 109.45076 502.58326 C 104.4802 502.58326 100.45076 498.5538 100.45076 493.58326 L 100.45076 476.58326 C 100.45076 471.6127 104.4802 467.58326 109.45076 467.58326 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 477.4092)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="20.646" y="12" xml:space="preserve">Cognitive offloading</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <path d="M 375.8886 467.58326 L 507.8886 467.58326 C 512.85915 467.58326 516.8886 471.6127 516.8886 476.58326 L 516.8886 493.58326 C 516.8886 498.5538 512.85915 502.58326 507.8886 502.58326 L 375.8886 502.58326 C 370.91803 502.58326 366.8886 498.5538 366.8886 493.58326 L 366.8886 476.58326 C 366.8886 471.6127 370.91803 467.58326 375.8886 467.58326 Z" fill="#71cff2"/>
+        <path d="M 375.8886 467.58326 L 507.8886 467.58326 C 512.85915 467.58326 516.8886 471.6127 516.8886 476.58326 L 516.8886 493.58326 C 516.8886 498.5538 512.85915 502.58326 507.8886 502.58326 L 375.8886 502.58326 C 370.91803 502.58326 366.8886 498.5538 366.8886 493.58326 L 366.8886 476.58326 C 366.8886 471.6127 370.91803 467.58326 375.8886 467.58326 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(371.8886 477.4092)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="24.916" y="12" xml:space="preserve">Critical thinking</tspan>
+        </text>
+      </g>
+      <g id="Graphic_18">
+        <path d="M 375.8886 549.81955 L 507.8886 549.81955 C 512.85915 549.81955 516.8886 553.849 516.8886 558.81955 L 516.8886 575.81955 C 516.8886 580.7901 512.85915 584.81955 507.8886 584.81955 L 375.8886 584.81955 C 370.91803 584.81955 366.8886 580.7901 366.8886 575.81955 L 366.8886 558.81955 C 366.8886 553.849 370.91803 549.81955 375.8886 549.81955 Z" fill="#71cff2"/>
+        <path d="M 375.8886 549.81955 L 507.8886 549.81955 C 512.85915 549.81955 516.8886 553.849 516.8886 558.81955 L 516.8886 575.81955 C 516.8886 580.7901 512.85915 584.81955 507.8886 584.81955 L 375.8886 584.81955 C 370.91803 584.81955 366.8886 580.7901 366.8886 575.81955 L 366.8886 558.81955 C 366.8886 553.849 370.91803 549.81955 375.8886 549.81955 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(371.8886 559.6455)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="24.916" y="12" xml:space="preserve">Critical thinking</tspan>
+        </text>
+      </g>
+      <g id="Line_17">
+        <line x1="266.45076" y1="567.31955" x2="355.1886" y2="567.31955" marker-end="url(#SharpArrow_Marker_2)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_16">
+        <path d="M 109.45076 549.81955 L 257.45076 549.81955 C 262.42133 549.81955 266.45076 553.849 266.45076 558.81955 L 266.45076 575.81955 C 266.45076 580.7901 262.42133 584.81955 257.45076 584.81955 L 109.45076 584.81955 C 104.4802 584.81955 100.45076 580.7901 100.45076 575.81955 L 100.45076 558.81955 C 100.45076 553.849 104.4802 549.81955 109.45076 549.81955 Z" fill="#71cff2"/>
+        <path d="M 109.45076 549.81955 L 257.45076 549.81955 C 262.42133 549.81955 266.45076 553.849 266.45076 558.81955 L 266.45076 575.81955 C 266.45076 580.7901 262.42133 584.81955 257.45076 584.81955 L 109.45076 584.81955 C 104.4802 584.81955 100.45076 580.7901 100.45076 575.81955 L 100.45076 558.81955 C 100.45076 553.849 104.4802 549.81955 109.45076 549.81955 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 559.6455)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="60.228" y="12" xml:space="preserve">AI use</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

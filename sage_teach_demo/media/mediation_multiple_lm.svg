@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="98.95076 268.88544 419.43783 183.1282" width="419.43783" height="183.1282">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke="none" stroke-opacity="1" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_12">
+        <path d="M 375.8886 318.53648 L 507.8886 318.53648 C 512.85915 318.53648 516.8886 322.5659 516.8886 327.53648 L 516.8886 344.53648 C 516.8886 349.50704 512.85915 353.53648 507.8886 353.53648 L 375.8886 353.53648 C 370.91803 353.53648 366.8886 349.50704 366.8886 344.53648 L 366.8886 327.53648 C 366.8886 322.5659 370.91803 318.53648 375.8886 318.53648 Z" fill="#71cff2"/>
+        <path d="M 375.8886 318.53648 L 507.8886 318.53648 C 512.85915 318.53648 516.8886 322.5659 516.8886 327.53648 L 516.8886 344.53648 C 516.8886 349.50704 512.85915 353.53648 507.8886 353.53648 L 375.8886 353.53648 C 370.91803 353.53648 366.8886 349.50704 366.8886 344.53648 L 366.8886 327.53648 C 366.8886 322.5659 370.91803 318.53648 375.8886 318.53648 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(371.8886 328.36244)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="24.916" y="12" xml:space="preserve">Critical thinking</tspan>
+        </text>
+      </g>
+      <g id="Line_11">
+        <line x1="266.45076" y1="287.88544" x2="356.33835" y2="330.97857" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_10">
+        <path d="M 375.8886 415.51364 L 507.8886 415.51364 C 512.85915 415.51364 516.8886 419.5431 516.8886 424.51364 L 516.8886 441.51364 C 516.8886 446.4842 512.85915 450.51364 507.8886 450.51364 L 375.8886 450.51364 C 370.91803 450.51364 366.8886 446.4842 366.8886 441.51364 L 366.8886 424.51364 C 366.8886 419.5431 370.91803 415.51364 375.8886 415.51364 Z" fill="#e1cc69"/>
+        <path d="M 375.8886 415.51364 L 507.8886 415.51364 C 512.85915 415.51364 516.8886 419.5431 516.8886 424.51364 L 516.8886 441.51364 C 516.8886 446.4842 512.85915 450.51364 507.8886 450.51364 L 375.8886 450.51364 C 370.91803 450.51364 366.8886 446.4842 366.8886 441.51364 L 366.8886 424.51364 C 366.8886 419.5431 370.91803 415.51364 375.8886 415.51364 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(371.8886 425.3396)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="12.646" y="12" xml:space="preserve">Cognitive offloading</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <path d="M 109.45076 270.38544 L 257.45076 270.38544 C 262.42133 270.38544 266.45076 274.41487 266.45076 279.38544 L 266.45076 296.38544 C 266.45076 301.356 262.42133 305.38544 257.45076 305.38544 L 109.45076 305.38544 C 104.4802 305.38544 100.45076 301.356 100.45076 296.38544 L 100.45076 279.38544 C 100.45076 274.41487 104.4802 270.38544 109.45076 270.38544 Z" fill="#71cff2"/>
+        <path d="M 109.45076 270.38544 L 257.45076 270.38544 C 262.42133 270.38544 266.45076 274.41487 266.45076 279.38544 L 266.45076 296.38544 C 266.45076 301.356 262.42133 305.38544 257.45076 305.38544 L 109.45076 305.38544 C 104.4802 305.38544 100.45076 301.356 100.45076 296.38544 L 100.45076 279.38544 C 100.45076 274.41487 104.4802 270.38544 109.45076 270.38544 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 280.2114)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="60.228" y="12" xml:space="preserve">AI use</tspan>
+        </text>
+      </g>
+      <g id="Line_8">
+        <line x1="266.45076" y1="370.56503" x2="355.82416" y2="339.8402" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_13">
+        <path d="M 109.45076 415.51364 L 257.45076 415.51364 C 262.42133 415.51364 266.45076 419.5431 266.45076 424.51364 L 266.45076 441.51364 C 266.45076 446.4842 262.42133 450.51364 257.45076 450.51364 L 109.45076 450.51364 C 104.4802 450.51364 100.45076 446.4842 100.45076 441.51364 L 100.45076 424.51364 C 100.45076 419.5431 104.4802 415.51364 109.45076 415.51364 Z" fill="#71cff2"/>
+        <path d="M 109.45076 415.51364 L 257.45076 415.51364 C 262.42133 415.51364 266.45076 419.5431 266.45076 424.51364 L 266.45076 441.51364 C 266.45076 446.4842 262.42133 450.51364 257.45076 450.51364 L 109.45076 450.51364 C 104.4802 450.51364 100.45076 446.4842 100.45076 441.51364 L 100.45076 424.51364 C 100.45076 419.5431 104.4802 415.51364 109.45076 415.51364 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 425.3396)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="60.228" y="12" xml:space="preserve">AI use</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <path d="M 109.45076 353.06503 L 257.45076 353.06503 C 262.42133 353.06503 266.45076 357.09447 266.45076 362.06503 L 266.45076 379.06503 C 266.45076 384.0356 262.42133 388.06503 257.45076 388.06503 L 109.45076 388.06503 C 104.4802 388.06503 100.45076 384.0356 100.45076 379.06503 L 100.45076 362.06503 C 100.45076 357.09447 104.4802 353.06503 109.45076 353.06503 Z" fill="#e1cc69"/>
+        <path d="M 109.45076 353.06503 L 257.45076 353.06503 C 262.42133 353.06503 266.45076 357.09447 266.45076 362.06503 L 266.45076 379.06503 C 266.45076 384.0356 262.42133 388.06503 257.45076 388.06503 L 109.45076 388.06503 C 104.4802 388.06503 100.45076 384.0356 100.45076 379.06503 L 100.45076 362.06503 C 100.45076 357.09447 104.4802 353.06503 109.45076 353.06503 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(105.45076 362.891)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="20.646" y="12" xml:space="preserve">Cognitive offloading</tspan>
+        </text>
+      </g>
+      <g id="Line_19">
+        <line x1="266.45076" y1="433.01364" x2="355.1886" y2="433.01364" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

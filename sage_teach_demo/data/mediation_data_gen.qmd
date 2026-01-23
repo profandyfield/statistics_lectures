@@ -1,0 +1,232 @@
+---
+title: "mediation data dev"
+author: "Andy Field"
+format:
+  html:
+    embed-resources: true
+    theme: lux
+bibliography: references.yaml
+---
+
+```{r}
+#| label: setup
+#| message: false
+
+# Load libraries
+library(MASS)
+library(lavaan)
+library(easystats)
+library(tidyverse)
+
+set.seed(666)  # reproducibility
+```
+
+## Simulate data from @gerlich2025
+
+### Results from paper
+
+::: callout-note
+
+To further explore the relationship between AI tool usage and critical thinking, a mediation analysis was conducted, with cognitive offloading as the mediating variable. The analysis revealed that cognitive offloading significantly mediated this relationship. The total effect of AI tool usage on critical thinking was significant (*b* = −0.42, *SE* = 0.08, *p* \< 0.001). The indirect effect through cognitive offloading was also significant (*b* = −0.25, *SE* = 0.06, *p* \< 0.001), indicating that cognitive offloading partially mediates this relationship. The direct effect of AI usage remained significant (*b* = −0.17, *SE* = 0.05, *p* \< 0.01). These findings suggest that cognitive offloading plays a substantial role in explaining the negative impact of AI usage on critical thinking. This mediating role highlights the importance of addressing cognitive offloading when evaluating the broader implications of AI adoption on decision-making and critical thought processes.
+
+:::
+
+### Simulate data
+
+```{r}
+#| label: generate_data
+#| eval: false
+
+# Target correlation matrix
+target_cor <- matrix(c( 1.00,  0.89, -0.49,
+                        0.89,  1.00, -0.48,
+                        -0.49, -0.48,  1.00), nrow = 3, byrow = TRUE)
+
+# Check positive-definiteness
+eigen(target_cor)$values  # should all be > 0
+
+# Function to rescale continuous variable to integer range
+rescale_to_int <- function(x, min_val, max_val) {
+  scaled <- (x - min(x)) / (max(x) - min(x))
+  scaled_int <- round(scaled * (max_val - min_val) + min_val)
+  return(scaled_int)
+}
+
+# Optimization loop
+best_df <- NULL
+best_diff <- Inf
+n <- 666  # sample size from study
+
+my_mod <- 'crit ~ c*ai + b*cog
+          cog ~ a*ai
+       
+          indirect_effect := a*b
+          total_effect := c + (a*b)
+         '
+
+for (i in 1:500) {  # try 500 random seeds
+  raw <- mvrnorm(n = n, mu = c(0, 0, 0), Sigma = target_cor)
+  df <- as.data.frame(raw)
+  names(df) <- c("ai", "cog", "crit")
+  
+  df$ai   <- rescale_to_int(df$ai,   0, 25)
+  df$cog  <- rescale_to_int(df$cog,  0, 25)
+  df$crit <- rescale_to_int(df$crit, 0, 35)
+  
+  ai_fit <- lavaan::sem(my_mod, data = df, missing = "FIML", estimator = "MLR")
+  ai_pars <- model_parameters(ai_fit)
+  
+  te <- ai_pars$Coefficient[5]
+  ie <- ai_pars$Coefficient[4]
+  de <- ai_pars$Coefficient[4]
+  
+  effects <- c(te, ie, de)
+  targets <- c(-0.42, -0.25, -0.17)
+  
+  diff_val <- sum((effects - targets)^2)
+  if (diff_val < best_diff) {
+    best_diff <- diff_val
+    best_df <- df
+  }
+}
+
+# Show results
+cat("Best correlation matrix (rounded to 2 decimals):\n")
+print(round(cor(best_df), 2))
+cat("\nDifference from target (sum of squared errors):", round(best_diff, 4), "\n")
+
+head(best_df)
+
+### try mediation analysis
+my_mod <- 'crit ~ c*ai + b*cog
+          cog ~ a*ai
+       
+          indirect_effect := a*b
+          total_effect := c + (a*b)
+         '
+
+ai_fit <- lavaan::sem(my_mod, data = best_df, missing = "FIML", estimator = "MLR")
+
+model_parameters(ai_fit)
+
+```
+
+### Save data
+
+```{r}
+#| label: save_data
+#| eval: false
+
+gerlich_2025 <- best_tib |> 
+  dplyr::rename(crit_think = crit, cog_off = cog)
+
+here::here("ds_05_mediation/data/gerlich_2025.rds") |> saveRDS(object = gerlich_2025, file = _)
+```
+
+### Results for lecture
+
+```{r}
+#| label: model_results
+
+gerlich_tib <- here::here("ds_05_mediation/data/gerlich_2025.rds") |> 
+  read_rds()
+
+### try mediation analysis
+gerlich_mod <- 'crit_think ~ c*ai + b*cog_off
+                cog_off ~ a*ai
+       
+                indirect_effect := a*b
+                total_effect := c + (a*b)
+                '
+
+gerlich_fit <- lavaan::sem(model = gerlich_mod,
+                           data = gerlich_tib,
+                           missing = "FIML",
+                           estimator = "MLR")
+
+model_performance(gerlich_fit) |> 
+  display()
+
+model_parameters(gerlich_fit) |> 
+  display()
+
+
+model_parameters(gerlich_fit, standardize = TRUE) |> 
+  display()
+```
+
+
+
+## Data from @greitemeyer2024
+
+### Read in data
+
+```{r}
+#| label: get_greitemeyer_2024
+#| eval: false
+
+greitemeyer_2024 <- here::here("ds_05_mediation/data/greitemeyer_data.sav") |> 
+  haven::read_spss() |> 
+  haven::zap_labels() |>
+  rename(id = TX04, norms = norm, ai_use = H001, ai_use_t2 = time2) |> 
+  dplyr::select(id, ai_use:ai_use_t2)
+
+
+### try mediation analysis
+my_mod <- 'ai_use ~ c*norms + b*intention
+          intention ~ a*norms
+       
+          indirect_effect := a*b
+          total_effect := c + (a*b)
+         '
+
+ai_fit <- lavaan::sem(my_mod, data = greitemeyer_2024, missing = "FIML", estimator = "MLR")
+
+model_parameters(ai_fit)
+
+
+lm(ai_use ~ norms, data = greitemeyer_2024) |> model_parameters()
+
+```
+
+```{r}
+#| label: save_data2
+#| eval: false
+
+
+here::here("ds_05_mediation/data/greitemeyer_2024.rds") |> 
+  saveRDS(object = greitemeyer_2024, file = _)
+```
+
+### Results for lecture
+
+
+```{r}
+#| label: greitemeyer_results
+
+greitemeyer_tib <- here::here("ds_05_mediation/data/greitemeyer_2024.rds") |> 
+  read_rds()
+
+### try mediation analysis
+greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
+                    intention ~ a*norms
+       
+                    indirect_effect := a*b
+                    total_effect := c + (a*b)
+                    '
+
+greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
+                               data = greitemeyer_tib,
+                               missing = "FIML",
+                               estimator = "MLR")
+
+model_performance(greitemeyer_fit) |> 
+  display()
+
+model_parameters(greitemeyer_fit) |> 
+  display()
+
+model_parameters(greitemeyer_fit, standardize = TRUE) |> 
+  display()
+
+```
