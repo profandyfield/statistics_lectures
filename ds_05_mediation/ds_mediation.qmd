@@ -74,7 +74,7 @@ Use f to toggle fullscreen
 - Measures
   - AI-tool usage (`ai`)
   - Cognitive offloading (`cog_off`): externalisation of cognitive processes, often involving tools or external agents, such as notes, calculators, or digital tools like AI, to reduce cognitive load.
-  - Critical thinking (`crit`: the capacity to think clearly and rationally, understand logical connections between ideas, evaluate arguments, and identify inconsistencies in reasoning
+  - Critical thinking (`crit_think`): the capacity to think clearly and rationally, understand logical connections between ideas, evaluate arguments, and identify inconsistencies in reasoning
 
 ::: fragment
 ::: {.callout-caution icon = false}
