@@ -1,0 +1,616 @@
+---
+title: "The Chi Square test"
+author: "Professor Andy Field"
+institute: "University of Sussex"
+format: 
+  revealjs:
+    auto-play-media: true
+    template-partials:
+      - title-slide.html
+    title-slide-attributes:
+      data-background-image: ../shared_media/images/slide_background_title.jpg
+      data-background-size: 100%
+      data-background-position: center
+      data-background-opacity: "1"
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+# general
+library(easystats)
+library(tidyverse)
+# specific
+# remotes::install_github("haleyjeppson/ggmosaic")
+library(ggmosaic)
+library(knitr)
+library(kableExtra)
+
+
+source("../helpers/discovr_helpers.R")
+
+
+null_tib <- tibble::tibble(
+  Organism = c(rep("Human", 50), rep("Zombie", 50)) |> 
+    as_factor() |> 
+    fct_relevel("Zombie"), 
+  Chips = c(rep("Brain chips", 20), rep("Potato chips", 30), rep("Brain chips", 20), rep("Potato chips", 30))  |> as_factor()
+  )
+
+h1_tib <- tibble::tibble(
+  Organism = c(rep("Human", 50), rep("Zombie", 50)) |> 
+    as_factor()  |> 
+    fct_relevel("Zombie"), 
+  Chips = c(rep("Brain chips", 10), rep("Potato chips", 40), rep("Brain chips", 30), rep("Potato chips", 20))  |> as_factor()
+  )
+
+set.seed("7526")
+n_zom <- round(runif(1, min = 50, max = 150))
+n_hum <- round(runif(1, min = 50, max = 150))
+bc_hum <- round(n_hum*1/5)
+bc_zom <- round(n_zom*2/5)
+
+brain_tib <- tibble::tibble(
+  organism = c(rep("Human", n_hum), rep("Zombie", n_zom)) |> 
+    as_factor()  |> 
+    fct_relevel("Zombie"), 
+  chips = c(rep("Brain chips", bc_hum), rep("Potato chips", n_hum-bc_hum), rep("Brain chips", bc_zom), rep("Potato chips", n_zom-bc_zom))  |> as_factor()
+  )
+
+```
+
+## tl;dw
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+Use a chi-square test to:
+
+::: incremental
+
+- Test for an association between two categorical variables
+  - H~1~: There is an association between the variables.
+  - H~0~: There is **no** association between the variables. 
+- Each observation must fall into only 1 combination of categories (independence)
+- Data are frequencies
+- A significant test statistic $\chi^2$
+  - The observed frequencies are **inconsistent** with the null hypothesis being true
+  - Conclude: the association between variables is not zero
+- A non-significant test statistic $\chi^2$
+  - The observed frequencies are **consistent** with the null hypothesis being true
+  - Conclude: the association between variables could be zero
+  
+:::
+:::
+
+
+## Do zombie's like to eat brains?
+
+- There is a common cultural belief that zombies like to eat brains
+- If this is true we'd expect zombies to choose brains to eat more than other foods.
+- We wouldn't expect this preference in non-zombies.
+- A researcher counted how many humans and zombies choose brain chips or potato chips to accompany their dinner at the university canteen
+
+
+::: {.callout-caution icon = false}
+## {{< fa brain >}} Hypothesis
+
+- H~1~: There is an association between the type of organism and the type of chips eaten.
+- H~0~: There is **no** association between the type of organism and the type of chips eaten.
+:::
+
+## The Data
+
+- Data are counts/frequencies
+- Imagine we observed 50 humans and 50 zombies
+- If there is no association, how many observations would we expect in each cell?
+
+
+```{r}
+#| label: tbl_empty
+
+blk_tbl <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c("", "", ""),
+  `Potato chips` = c("", "", ""),
+  Total = c("50", "50", "100")
+  )
+
+display(blk_tbl)
+```
+
+
+
+## Expected values
+
+- What about if 40 had brain chips and 60 Potato chips?
+
+```{r}
+#| label: tbl_empty2
+
+blk_tbl2 <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c("", "", "40"),
+  `Potato chips` = c("", "", "60"),
+  Total = c("50", "50", "100")
+  )
+
+display(blk_tbl2)
+```
+
+```{r}
+h0_ggm <- ggplot(data = null_tib) +
+  geom_mosaic(aes(x = product(Organism, Chips), fill = Organism)) + 
+  scale_fill_viridis_d(begin = 0.2, end = 0.9) +
+  theme_minimal()
+
+h1_ggm <- ggplot(data = h1_tib) +
+  geom_mosaic(aes(x = product(Organism, Chips), fill = Organism)) + 
+  scale_fill_viridis_d(begin = 0.2, end = 0.9) +
+  theme_minimal()
+```
+
+## Expected values (generally)
+
+```{r}
+#| label: tbl_gen
+
+gen_tbl <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c("$\\frac{\\text{RT}_1 \\times \\text{CT}_1}{N}$", "$\\frac{\\text{RT}_1 \\times \\text{CT}_2}{N}$", "CT~1~"),
+  `Potato chips` = c("$\\frac{\\text{RT}_2 \\times \\text{CT}_1}{N}$", "$\\frac{\\text{RT}_2 \\times \\text{CT}_2}{N}$", "CT~2~"),
+  Total = c("RT~1~", "RT~2~", "$N$")
+  )
+
+kable(gen_tbl, escape = T, align = "c")
+```
+
+
+
+## Model (expected) values
+
+- The expected values when there's no association (i.e. the null is true)
+
+```{r}
+#| label: tbl_h0
+
+h0_tbl <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c("20", "20", "40"),
+  `Potato chips` = c("30", "30", "60"),
+  Total = c("50", "50", "100")
+  )
+
+display(h0_tbl)
+```
+
+::: center-h
+::: fragment
+
+```{r}
+#| fig-width: 7
+#| fig-height: 3.5
+
+h0_ggm
+```
+
+:::
+:::
+
+## Observed values
+
+
+```{r}
+#| label: tbl_h1
+
+h1_tbl <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c("10", "30", "40"),
+  `Potato chips` = c("40", "20", "60"),
+  Total = c("50", "50", "100")
+  )
+
+display(h1_tbl)
+```
+
+
+::: center-h
+::: fragment
+
+```{r}
+#| fig-width: 7
+#| fig-height: 3.5
+
+h1_ggm
+```
+
+:::
+:::
+
+## The Chi-square test
+
+$$
+\chi^2 = \sum\frac{\left(\text{observed}_{ij} - \text{model}_{ij}\right)^2}{\text{model}_{ij}}
+$$
+
+::::: columns
+:::: {.column width="50%"}
+### Model
+
+```{r}
+kable(h0_tbl, align = "c")
+h0_ggm
+```
+::::
+
+:::: {.column width="50%"}
+::: fragment
+### Observed
+
+```{r}
+kable(h1_tbl, align = "c") |> 
+  column_spec(2, background = c(turbo_2[1], turbo_2[2], ""), color = c("white", "white", "")) |> 
+  column_spec(3, background = c(turbo_2[2], turbo_2[1], ""), color = c("white", "white", "")) 
+h1_ggm
+```
+:::
+::::
+:::::
+
+```{r}
+#| label: brain_xtble
+
+# create the table
+brain_xtbl <- brain_tib |>
+  mutate(
+    organism = fct_relevel(organism, "Human") # order to match mosaic plot
+  ) |> 
+  data_tabulate(select = "organism", by = "chips", remove_na = TRUE)
+
+brain_mos <- ggplot(data = brain_tib) +
+  geom_mosaic(aes(x = product(organism, chips), fill = organism)) + 
+  scale_fill_viridis_d(begin = 0.2, end = 0.9) +
+  theme_minimal()
+
+brain_chi <- brain_xtbl |> 
+  as.table(simplify = TRUE) |> 
+  chisq.test()
+
+brain_pe <- model_parameters(brain_chi)
+brainz <- get_residuals(brain_chi)
+brain_exp <- get_predicted(brain_chi)
+
+null2_tib <- tibble::tibble(
+  organism = brain_tib$organism, 
+  chips = c(rep("Brain chips", round(brain_exp[1])), rep("Potato chips", round(brain_exp[3])), rep("Brain chips", round(brain_exp[2])), rep("Potato chips", round(brain_exp[4])))  |> as_factor()
+  )
+
+null_mos <- ggplot(data = null2_tib) +
+  geom_mosaic(aes(x = product(organism, chips), fill = organism)) + 
+  scale_fill_viridis_d(begin = 0.2, end = 0.9) +
+  theme_minimal()
+
+null_xtbl <- null2_tib |>
+  mutate(
+    organism = fct_relevel(organism, "Human") # order to match mosaic plot
+  ) |>
+  data_tabulate(select = "organism", by = "chips", remove_na = TRUE)
+```
+
+## In reality
+
+::: tbl_l
+
+```{r}
+
+real_tib <- tibble::tibble(
+  `Organism` = c("Human", "Zombie", "Total"),
+  `Brain chips` = c(bc_hum, bc_zom, bc_hum+bc_zom),
+  `Potato chips` = c(n_hum-bc_hum, n_zom-bc_zom, (n_hum-bc_hum)+(n_zom-bc_zom)),
+  Total = c(n_hum, n_zom, n_zom + n_hum)
+  ) 
+
+display(real_tib)
+  
+```
+
+:::
+
+## In reality
+
+$$
+\chi^2 = \sum\frac{\left(\text{observed}_{ij} - \text{model}_{ij}\right)^2}{\text{model}_{ij}}
+$$
+
+::::: columns
+:::: {.column width="50%"}
+### Observed
+
+```{r}
+kable(brain_xtbl, align = "c")
+brain_mos
+```
+::::
+
+:::: {.column width="50%"}
+::: fragment
+### Model
+
+```{r}
+kable(null_xtbl, align = "c")
+null_mos
+```
+:::
+::::
+:::::
+
+
+# The chi-square test using `r rproj()`
+
+## Fitting models is [E.V.I.L.]{.txt_ong}
+
+::: incremental
+
+- [L]{.txt_ong}ook and [L]{.txt_ong}oad: get the data into `r rproj()`, process it, summarize it (look)
+- [V]{.txt_ong}isualise: plot relevant information to understand the data/model
+- [E]{.txt_ong}valuate: is the model any good? Are its assumptions met? Does it 'fit' the data?
+- [I]{.txt_ong}nterpret: use the model to answer your question
+
+:::
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+```{r}
+brain_tib |>
+  DT::datatable(caption = 'Table 1: Zombie data',
+                options = list(
+                dom = 'tp',
+                columnDefs = list(
+                  list(className = 'dt-center', targets = 1:2)
+                  ),
+                pageLength = 10
+  )
+  )
+```
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+## [L]{.txt_ong}oad and [L]{.txt_ong}ook
+
+
+```{r}
+#| label: xtble
+#| echo: true
+
+# create the table
+brain_xtbl <- brain_tib |>
+  data_tabulate(select = "organism", by = "chips", remove_na = TRUE)
+
+# format for rendering
+display(brain_xtbl)
+```
+
+![](../shared_media/images/l_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [V]{.txt_ong}isualize
+
+
+```{r}
+#| label: mosaic
+#| echo: true
+
+ggplot(data = brain_tib) +
+  geom_mosaic(aes(x = product(organism, chips), fill = organism)) + 
+  theme_minimal()
+
+```
+
+![](../shared_media/images/v_hex.png){.absolute top=0 left=800 height="80"}
+
+
+## [I]{.txt_ong}nterpret
+
+
+```{r}
+#| label: chifit
+#| echo: true
+
+# fit model
+brain_chi <- brain_xtbl |> 
+  as.table(simplify = TRUE) |> 
+  chisq.test()
+
+# show results
+model_parameters(brain_chi) |> 
+  display()
+
+```
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## [I]{.txt_ong}nterpret
+
+
+```{r}
+#| label: chiz
+#| echo: true
+
+get_residuals(brain_chi)  |> 
+  display()
+```
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+## [I]{.txt_ong}nterpret
+
+
+```{r}
+#| label: or
+#| echo: true
+
+brain_xtbl |>
+  as.table(simplify = TRUE) |> 
+  oddsratio() |> 
+  display()
+```
+
+![](../shared_media/images/i_hex.png){.absolute top=0 left=900 height="80"}
+
+
+
+## [E]{.txt_mulberry}valuate assumptions
+
+```{r}
+#| label: expected
+#| echo: true
+
+get_predicted(brain_chi)  |> 
+  display()
+```
+
+![](../shared_media/images/e_hex.png){.absolute top=0 left=800 height="80"}
+
+
+# The Odds Ratio
+
+## tl;dw
+
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+The odds ratio:
+
+::: incremental
+
+- The odds of an event in one group relative to a comparison group
+  - The odds of recovery in those receiving surgery compared to those not receiving surgery
+  - The odds of getting a six pack in those doing Tai-Chi walking compared to those that don't
+- OR > 1: the odds of an event occurring are **greater** in the group of interest than in the comparison group.
+- OR < 1: the odds of an event occurring are **smaller** in the group of interest than in the comparison group.
+  
+:::
+:::
+
+## The Data
+
+- There is a common cultural belief that zombies like to eat brains
+- If this is true we'd expect zombies to choose brains to eat more than other foods.
+- A researcher counted how many humans and zombies choose brain chips or potato chips to accompany their dinner at the university canteen
+- Data are counts/frequencies
+
+## The odds of eating brain
+
+```{r}
+#| echo: false
+#| label: tbl8
+
+real_tib |> 
+  knitr::kable(align = 'lccc') |> 
+  kableExtra::row_spec(row = 3, background = mulberry, color = "white") |> 
+  kableExtra::column_spec(4, background = mulberry, color = "white")
+```
+
+\
+
+::::: columns
+:::: {.column width="45%"}
+::: fragment
+::: txt_s
+$$
+\begin{aligned}
+\text{odds}_\text{human eating brain} &= \frac{\text{Number eating brain}}{\text{Number eating potato}} \\
+&= \frac{27}{106} \\
+&= 0.255
+\end{aligned}
+$$
+:::
+:::
+::::
+
+:::: {.column width="10%"}
+:::: 
+
+:::: {.column width="45%"}
+::: fragment
+::: txt_s
+$$
+\begin{aligned}
+\text{odds}_\text{zombie eating brain} &= \frac{\text{Number eating brain}}{\text{Number eating potato}} \\
+&= \frac{36}{53} \\
+&= 0.679
+\end{aligned}
+$$
+:::
+:::
+::::
+:::::
+
+
+
+
+
+## The odds ratio
+
+:::: columns
+::: {.column width="45%"}
+$$
+\begin{aligned}
+\text{odds ratio} &= \frac{\text{odds}_\text{human eating brain}}{\text{odds}_\text{zombie eating brain}} \\
+&= \frac{0.255}{0.679} \\
+&= 0.38
+\end{aligned}
+$$
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- The odds of a human eating brains are 0.38 times those of a zombie eating brains 
+
+:::
+:::
+::::
+
+\
+
+::::: fragment
+:::: columns
+::: {.column width="45%"}
+$$
+\begin{aligned}
+\text{odds ratio} &= \frac{\text{odds}_\text{zombie eating brain}}{\text{odds}_\text{human eating brain}} \\
+&= \frac{0.679}{0.255} \\
+&= 2.66
+\end{aligned}
+$$
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+::: {.callout-note icon = false}
+## {{< fa chart-line >}} Statis-tip
+
+- The odds of a zombie eating brains are 2.66 times greater than the odds of a human eating brains 
+
+:::
+:::
+::::
+:::::
+
+
+
+
+
+
+
