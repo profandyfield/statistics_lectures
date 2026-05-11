@@ -13,3 +13,4 @@ archive/
 .httr-oauth
 
 **/*.quarto_ipynb
+.positai
