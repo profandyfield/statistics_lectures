@@ -51,6 +51,13 @@ viridis_4 <- scales::viridis_pal(begin = 0.2, end = 0.9)(4)
 viridis_5 <- scales::viridis_pal()(5)
 viridis_6 <- scales::viridis_pal()(6)
 
+
+# other themes
+turbo_2 <- scales::viridis_pal(begin = 0.2, end = 0.9, option = "turbo")(2)
+turbo_3 <- scales::viridis_pal(begin = 0.2, end = 0.9, option = "turbo")(3)
+turbo_5 <- scales::viridis_pal(option = "turbo")(5)
+turbo_6 <- scales::viridis_pal(option = "turbo")(6)
+
 # set fontawesome icon class
 
 set_svg <- function(x){
