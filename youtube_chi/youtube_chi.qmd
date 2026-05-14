@@ -59,6 +59,8 @@ brain_tib <- tibble::tibble(
   chips = c(rep("Brain chips", bc_hum), rep("Potato chips", n_hum-bc_hum), rep("Brain chips", bc_zom), rep("Potato chips", n_zom-bc_zom))  |> as_factor()
   )
 
+
+
 ```
 
 ## tl;dw
