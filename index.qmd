@@ -41,11 +41,14 @@ format:
 13. [Growth models](ais_13_growth/ais_growth.html) 
 14. [Categorical outcomes](ais_14_log_reg/ais_log_reg.html)
 
-## Misc
+## Practical classes
 
 - [Getting started in R, RStudio and R Markdown](ais_00_r/ais_r.html)
 - [TAP advice](ais_tap/ais_tap.html)
-- [The chi-square test](you_tube_chi/you_tube_chi.html)
-- [Introduction to meta-analysis](meta_analysis/meta_intro.html)
-- [SAGE teaching demo](sage_teach_demo/mediation.html)
 
+## Mini lectures
+
+- [Chi-square test](youtube_chi/youtube_chi.html)
+- [Introduction to meta-analysis](meta_analysis/meta_intro.html)
+- [R essentials](youtube_r/youtube_r.html)
+- [SAGE teaching demo](sage_teach_demo/mediation.html)
