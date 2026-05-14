@@ -54,6 +54,26 @@ $code-color: $purple !default;
   color: $brown !important;
 }
 
+.reveal .slide .bold_col {
+    color: $brand-brown;
+    font-weight: bold;
+}
+
+.reveal .slide .alt {
+    color: $brand-mulberry;
+}
+
+.reveal .slide .pkg {
+    color: $mulberry;
+    font-weight: bold;
+}
+
+.reveal .slide .ong_bold {
+    color: #FFAD00;
+    font-weight: bold;
+}
+
+
 /* table styles (td is data rows, th is heading rows) */
 
 .reveal .slide table tbody tr:nth-child(odd) {
@@ -173,11 +193,6 @@ p.subtitle {
 }
 
 
-.bold_col {
-    color: $brand-brown;
-    font-weight: bold;
-}
-
 .txt_white {
     color: white;
 }
@@ -192,10 +207,6 @@ p.subtitle {
 
 .txt_mulberry {
     color: $mulberry;
-}
-
-.alt {
-    color: $brand-mulberry;
 }
 
 .txt_dk_bg {
