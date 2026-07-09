@@ -100,7 +100,7 @@ install.packages("package_name")
 
 - Install the package `randomNames` from which the function `randomNames()` comes.
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| eval: false
 
@@ -110,7 +110,7 @@ install.packages("randomNames")
 
 In your code chunk execute: 
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| eval: false
 
@@ -157,7 +157,7 @@ randomNames()
 
 - Refer to functions using the `package::function()` format.
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| eval: false
 randomNames::randomNames()
@@ -284,7 +284,7 @@ datatable(data = eddie_tib ,
 
 ## Accessing variables (`$`)
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| echo: true
 #| eval: false
@@ -373,7 +373,7 @@ Arguments are like inputs in a dialog box
 
 ## Accessing variables (`$`)
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| echo: true
 #| eval: false
@@ -423,7 +423,7 @@ mean(x = eddie_tib$energy, trim = 0.2)
 - In a code chunk type the code below
 - Click ![](media/icon_run_code_chunk.png){height=18} to execute the code in the code chunk.
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| echo: true
 #| eval: false
@@ -476,7 +476,7 @@ We can use the [dplyr]{.pkg} functions
 - `select()` to choose variables
 - `filter()` to retain rows that match a condition
 
-:::txt_xl
+::: txt_xl
 ```{r}
 energy_tib <-  select(.data = eddie_tib, album_name, track_name, year, energy)
 classic_tib <- filter(.data = energy_tib, year < 1990)
@@ -533,7 +533,7 @@ eddie_tib |>
 - Makes code more readable
 - Create a new code chunk
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| echo: true
 #| eval: false
@@ -589,7 +589,7 @@ here::here(text_to_add)
 
 - In your code chunk execute 
 
-:::txt_xl
+::: txt_xl
 ```{r}
 #| echo: true
 #| eval: false
@@ -871,6 +871,9 @@ model_parameters(eddie_lm) |>
 
 ![](media/evil_process.png){fig-align="center"}
 
+
+
+
 ## The process of [E.V.I.L.]{.ong_bold} in `r rproj()`
 
 ![](media/evil_process_hex.png){fig-align="center"}
@@ -879,3 +882,52 @@ model_parameters(eddie_lm) |>
 
 ![](media/evil_process_functions.png){fig-align="center"}
 
+## The `mutate()` function
+
+> We use `mutate()` to create new variables in a tibble/dataframe
+
+:::: fragment
+
+- `mutate()` is from the [dplyr]{.pkg} package, which is part of [tidyverse]{.pkg}
+- It takes the general form
+
+::: txt_xl
+```{r}
+#| eval: false
+
+my_tib <- my_tib |> 
+  mutate(new_variable = some_instructions,
+         another_new_variable = some_instructions)
+```
+
+:::
+::::
+
+##
+
+::: {.callout-tip icon = false}
+## `r robot()` Have a go!
+
+Create two new variables in `eddie_tib`
+
+  - `song_duration` takes the existing variable `song_ms`, which is the song duration in milliseconds and converts to seconds by diving by 1000
+  - `band_age` converts the year the song was recorded into the number of years since their first album in 1980
+
+:::
+
+![](../shared_media/images/space_pirate_trans.png){.absolute top=0 right=0 height="200"}
+
+
+:::: fragment
+::: txt_xl
+```{r}
+#| echo: true
+#| eval: false
+
+eddie_tib <- eddie_tib |> 
+  mutate(song_duration = song_ms/1000,
+         band_age = year - 1980)
+```
+:::
+
+::::
