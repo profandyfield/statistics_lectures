@@ -57,6 +57,7 @@ turbo_2 <- scales::viridis_pal(begin = 0.2, end = 0.9, option = "turbo")(2)
 turbo_3 <- scales::viridis_pal(begin = 0.2, end = 0.9, option = "turbo")(3)
 turbo_5 <- scales::viridis_pal(option = "turbo")(5)
 turbo_6 <- scales::viridis_pal(option = "turbo")(6)
+turbo_10 <- scales::viridis_pal(begin = 0.05, end = 0.95, option = "turbo")(10)
 
 # set fontawesome icon class
 
