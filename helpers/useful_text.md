@@ -94,7 +94,7 @@ Hypothesis
 -- tip
 
 ::: {.callout-tip icon = false}
-## `r cat_space()`: Tip
+## `r cat_space()` Tip
 
 - Intervals that contain the 'true' population value of the parameter in 95% of samples.
 
@@ -144,7 +144,7 @@ stats things
 --- have a go
 
 ::: {.callout-tip icon = false}
-## `r robot()` : Have a go!
+## `r robot()` Have a go!
 
 - Use project files!
 - Posit cloud automatically uses them!
