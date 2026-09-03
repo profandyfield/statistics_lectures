@@ -149,6 +149,13 @@ $code-color: $purple !default;
   color: $brand-grey;
 }
 
+.reveal .slide iframe {
+      border: 4px solid $blue;
+			border-radius: 8px;
+			display: block;
+			margin: 0 auto;
+}
+
 // start using css here
 
 p.subtitle {
@@ -228,3 +235,4 @@ p.subtitle {
   background-color: rgba(255, 255, 255, 0.90);
   color: $blue;
 }
+
