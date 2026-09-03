@@ -1,0 +1,14 @@
+---
+references:
+- id: discovr
+  author:
+  - family: Field
+    given: Andy
+  DOI: 10.32614/CRAN.package.discovr
+  issued: 2026
+  providerKey: Packages
+  title: "discovr: Interactive Tutorials and Data for \"Discovering
+    Statistics Using R and RStudio\""
+  type: article
+  URL: "https://CRAN.R-project.org/package=discovr"
+...

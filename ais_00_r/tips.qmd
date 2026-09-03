@@ -3,6 +3,27 @@ title: "tips"
 format: revealjs
 ---
 
+##  Use a 'setup' code chunk 
+
+- Use a setup code chunk at the start of your document (directly below the YAML) that
+  - Loads all of the umbrella packages you plan to use (in alphabetic order)
+  - Loads any data that you plan to use
+
+
+::: txt_xl
+```{r}
+#| eval: false
+
+library(easystats)
+library(tidyverse)
+
+tap_tib <- here::here("data/tap_parenting.csv") |>
+  read_csv()
+```
+
+:::
+
+
 ##  `r rproj()` Style (Wickham, 2014)
 
 - `r rproj()` is case sensitive. In code chunks use lower case wherever possible
@@ -28,31 +49,6 @@ format: revealjs
   - `_mlm` to denote multilevel models
   - `_out` to denote output (e.g., `anx_out` contains the summary output from the above model
 
-:::
-
-## Tables: don't use raw output `r emo::ji("vomit")`
-
-```{r}
-#| eval: false
-
-eddiefy
-```
-
-```{r}
-#| echo: false
-
-head(eddiefy, 15)
-```
-
-
-
-## Tables: use `insight::display()`
-
-::: tbl_s
-```{r}
-head(eddie_tib, 10) |> # shows first 10 rows only
-  display(caption = "Table 1: My nice table", digits = 2)
-```
 :::
 
 
@@ -87,23 +83,31 @@ Access the help files for the `mean()` function, by executing (in the console):
 :::
 :::
 
-
-##  Use a 'setup' code chunk 
-
-- Use a setup code chunk at the start of your document (directly below the YAML) that
-  - Loads all of the umbrella packages you plan to use (in alphabetic order)
-  - Loads any data that you plan to use
+##  Have a go!
 
 
-::: txt_xl
-```{r}
-#| eval: false
+::: {.callout-tip icon = false}
+## `r robot()` : Have a go!
 
-library(easystats)
-library(tidyverse)
+![](../shared_media/images/space_pirate_trans.png){.absolute top=0 right=0 height="200"}
 
-tap_tib <- here::here("data/tap_parenting.csv") |>
-  read_csv()
-```
+- Move the code chunk containing `plot(energy_tib)` to the start of your document.
+- Click ![](media/quarto_render.png) to render the document.
 
 :::
+
+::: fragment
+::: {.callout-tip icon = false}
+## `r cat_space()`: Rendering tips
+
+- Code chunks are rendered **in the order they appear in the markdown document**.
+    - Make sure you create objects BEFORE you try to use them.
+
+- **Do NOT include ``install.packages()`` in `r quarto(0.2)` files** or the package will be installed every time you render the document!
+    - Execute ``install.packages()`` commands at the command line
+
+:::
+:::
+
+
+

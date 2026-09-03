@@ -35,7 +35,6 @@ A file created by `r rstudio(scale = 0.4)` with the extension [.Rproj]{.alt}
 
 ## Creating a project
 
-![](media/sussex_cloud.png){.absolute top=0 right=0 width="150"}
 
 ![](media/rs_cloud_new_project.png){.absolute top=150}
 
@@ -57,14 +56,12 @@ Within your `r rstudio(scale = 0.4)` project called `my_adventr` create folders 
 
 - `data`
 - `quarto`
-- `images`
   
 ::: fragment
 
 Copy the following files from canvas
 
 - `eddiefy.csv` to the `data` folder
-- `iron_maiden_logo.png` to the `images` folder
 
 :::
 
@@ -134,3 +131,34 @@ Image of the dialog box for editing the location of panes in RStudio
 ::: notes
 Image of the RStudio interface
 :::
+
+
+
+## Have a go: create a report
+
+![](../shared_media/images/space_pirate_trans.png){.absolute top=0 right=0 height="200"}
+
+- Test the hypothesis that Iron Maiden songs have got longer over the years.
+
+
+```{=html}
+<iframe width="780" height="600" src="./iron_maiden.html" title="A report about Iron Maiden"></iframe>
+```
+
+
+
+
+## The process of [E.V.I.L.]{.ong_bold}
+
+![](media/evil_process.png){fig-align="center"}
+
+
+## The process of [E.V.I.L.]{.ong_bold}
+
+```{=html}
+<iframe width="780" height="700" src="./iron_maiden.html" title="A report about Iron Maiden"></iframe>
+```
+
+
+
+

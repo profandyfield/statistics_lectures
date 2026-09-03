@@ -1,0 +1,57 @@
+---
+title: "quarto_tips"
+format: revealjs
+---
+
+##  Rendering
+
+
+::: {.callout-tip icon = false}
+## `r robot()` Have a go!
+
+![](../shared_media/images/space_pirate_trans.png){.absolute top=0 right=0 height="200"}
+
+- Move the code chunk containing the plot to the start of your document.
+- Click ![](media/quarto_render.png) to render the document.
+
+:::
+
+::: fragment
+::: {.callout-tip icon = false}
+## `r cat_space()`: Rendering tips
+
+- Code chunks are rendered **in the order they appear in the markdown document**.
+    - Make sure you create objects BEFORE you try to use them.
+
+- **Do NOT include ``install.packages()`` in `r quarto(0.2)` files** or the package will be installed every time you render the document!
+    - Execute ``install.packages()`` commands at the command line
+
+:::
+:::
+
+## YAML: Other useful options
+
+::: txt_xl
+```{r}
+#| eval: false
+
+---
+title: "Iron Maiden"
+author: "Andy Field"
+format:
+  html:
+    theme: materia  
+    embed-resources: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+editor: visual
+---
+```
+:::
+
+\
+
+- HTML options: [quarto.org/docs/reference/formats/html.html](https://quarto.org/docs/reference/formats/html.html)
+- Theme list: [quarto.org/docs/output-formats/html-themes.html](https://quarto.org/docs/output-formats/html-themes.html)

@@ -42,11 +42,30 @@ The practical classes are based on a package of interactive tutorials called `di
 - Watch the video at [https://youtu.be/mqT7c17tofE](https://youtu.be/mqT7c17tofE)
 :::
 
-##  Comp`r rproj()`tition!
-
-- Extend the quarto file you started after the lest session to include:
-  - Some `r rproj()` code (anything will do)
-- Submit by the deadline for a chance to win a prize.
+## Comp`r rproj()`tition!
 
 
-![](../shared_media/images/space_pirate_trans.png){fig-align="center"}
+::: txt_l
+::: {.callout-caution icon = false}
+## {{< fa heart >}}  Comp`r rproj()`tition!
+
+Write a document about you or something you feel passionate about. Include some of things we have learnt:
+  
+- Different level headers/text formats (bold, italic, etc.)
+- Hyperlinks
+- Callout
+- Citations
+- Themes
+- Tables
+- Figures
+- Code/Data
+
+:::
+:::
+
+[Submit by the deadline for a chance to win a prize!]{.pkg}
+
+![](../shared_media/images/space_pirate_trans.png){.absolute bottom=0 right=0 height="200"}
+
+
+## References

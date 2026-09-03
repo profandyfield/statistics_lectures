@@ -14,6 +14,7 @@ execute:
   echo: true
   warning: false
   message: false
+bibliography: references.yaml
 ---
 
 ```{r}
@@ -23,6 +24,7 @@ execute:
 library(easystats)
 library(tidyverse)
 # specific
+library(DT)
 library(emo)
 
 source("../helpers/discovr_helpers.R")
@@ -48,7 +50,7 @@ eddie_tib <- discovr::eddiefy
 
 ### Teaching
 
-- 1 × weekly lecture (2 in weeks 1 and 2) on theory
+- 1 × weekly lecture (2 in weeks 1, 2 & 7) on theory
 - 1 × weekly practical class (2 in weeks 1 and 2) about `r rproj()`,  `r rstudio(scale = 0.3)` and `r quarto(scale = 0.3)`
 
 :::
@@ -88,25 +90,29 @@ Use f to toggle fullscreen
 ```
 
 
-#  Part 4: Working with code 
+#  Part 4: Packages and Functions
+
+
+```{r, child = "packages_functions.qmd"}
+```
+
+#  Part 5: Using functions and the pipe operator
 
 
 ```{r, child = "coding.qmd"}
 ```
 
-#  Part 5: The `tidyverse` and `easystats`
+#  Part 6: Code tips
 
-
-```{r, child = "tidyverse.qmd"}
+```{r, child = "code_tips.qmd"}
 ```
 
-#  Part 6: Good habits
+#  Part 7: Quarto tips
 
-```{r, child = "tips.qmd"}
+```{r, child = "quarto_tips.qmd"}
 ```
 
-
-#  Part 7: Getting the most from practical classes
+#  Part 8: Getting the most from practical classes
 
 ```{r, child = "practical_classes.qmd"}
 ```
