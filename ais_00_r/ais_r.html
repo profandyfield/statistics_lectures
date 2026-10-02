@@ -6,10 +6,10 @@
 <script src="ais_r_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ais_r_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ais_r_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ais_r_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ais_r_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="ais_r_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="ais_r_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Professor Andy Field">
   <title>An Adventure in Statistics</title>
@@ -19,9 +19,6 @@
   <link rel="stylesheet" href="ais_r_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="ais_r_files/libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -103,6 +100,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -119,7 +117,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="ais_r_files/libs/revealjs/dist/theme/quarto-064eb4fb9dd36b4fd16c191c4f79aa78.css">
+  <link rel="stylesheet" href="ais_r_files/libs/revealjs/dist/theme/quarto-b47df8c36a20af4dff9a35b241ab8a4d.css">
   <link href="ais_r_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ais_r_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ais_r_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1394,7 +1392,7 @@ Table&nbsp;1: Descriptive statistics for Iron Maiden song durations (s)
 </figcaption>
 <div aria-describedby="tbl-spotify-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="cell caption-top">
+<table class="do-not-create-environment cell caption-top">
 <colgroup>
 <col style="width: 4%">
 <col style="width: 9%">
@@ -1735,7 +1733,7 @@ Table&nbsp;2: Descriptive statistics for Iron Maiden song durations (s)
 </figcaption>
 <div aria-describedby="tbl-spotify2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="cell caption-top">
+<table class="do-not-create-environment cell caption-top">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 11%">
@@ -1944,7 +1942,7 @@ Table&nbsp;2: Descriptive statistics for Iron Maiden song durations (s)
 <li><code>Insert &gt; @citation ...</code></li>
 <li>Use Zotero reference manager!
 <ul>
-<li>Guide: <a href="https://guides.lib.sussex.ac.uk/c.php?g=665332&amp;p=4858999">guides.lib.sussex.ac.uk/c.php?g=665332&amp;p=4858999</a></li>
+<li>Guide: <a href="https://guides.lib.sussex.ac.uk/zotero">guides.lib.sussex.ac.uk/zotero</a></li>
 </ul></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -2322,10 +2320,10 @@ is case sensitive. In code chunks use lower case wherever possible</li>
 <h2>References</h2>
 
 <script> window._input_file = "---\n" + "title: \"An Adventure in Statistics\"\n" + "subtitle: Getting Started with R, RStudio and Quarto\n" + "author: \"Professor Andy Field\"\n" + "institute: \"University of Sussex\"\n" + "format: \n" + "  revealjs:\n" + "    auto-play-media: true\n" + "revealjs-plugins:\n" + "  - editable\n" + "filters:\n" + "  - editable\n" + "execute: \n" + "  echo: true\n" + "  warning: false\n" + "  message: false\n" + "bibliography: references.yaml\n" + "---\n" + "\n" + "```{r}\n" + "#| echo: false\n" + "\n" + "# general\n" + "library(easystats)\n" + "library(tidyverse)\n" + "# specific\n" + "library(DT)\n" + "library(emo)\n" + "\n" + "source(\"../helpers/discovr_helpers.R\")\n" + "source(\"../helpers/easystats_helpers.R\")\n" + "\n" + "set.seed(666)\n" + "cloak_tib <- discovr::invisibility_cloak |> \n" + "  slice_sample(n = 3, by = cloak) |>  arrange(id)\n" + "\n" + "rm_id <- discovr::invisibility_rm |>\n" + "  slice_sample(n = 5) |>  pull(id)\n" + "\n" + "cloak_tib_rm <- discovr::invisibility_rm |> \n" + "  filter(id %in% rm_id)\n" + "\n" + "eddie_tib <- discovr::eddiefy\n" + "```\n" + "\n" + "\n" + "##  Key information\n" + "\n" + "::: fragment\n" + "\n" + "### Teaching\n" + "\n" + "- 1 × weekly lecture (2 in weeks 1, 2 & 7) on theory\n" + "- 1 × weekly practical class (2 in weeks 1 and 2) about `r rproj()`,  `r rstudio(scale = 0.3)` and `r quarto(scale = 0.3)`\n" + "\n" + ":::\n" + "::: fragment\n" + "\n" + "### Assessment\n" + "\n" + "- 2 × 48-hour Take Away Papers (TAPs)\n" + "	- TAP 1: 25% (Week 6)\n" + "	- TAP 2: 30% (Week 9)\n" + "- Report: 45% (A1)\n" + "\n" + ":::\n" + "\n" + "::: notes\n" + "Use C to toggle pen/markup\n" + "Use backspace to delete markup\n" + "Use f to toggle fullscreen\n" + ":::\n" + "\n" + "#  Part 1: Introducing `r rproj()` and `r rstudio(scale = 0.4)`\n" + "\n" + "```{r, child = \"why_r.qmd\"}\n" + "\n" + "```\n" + "\n" + "\n" + "#  Part 2: Workflow in `r rstudio(scale = 0.6)`\n" + "\n" + "```{r, child = \"workflow.qmd\"}\n" + "```\n" + "\n" + "#  Part 3: Introducing `r quarto(scale = 1)`\n" + "\n" + "\n" + "```{r, child = \"quarto_intro.qmd\"}\n" + "```\n" + "\n" + "\n" + "#  Part 4: Packages and Functions\n" + "\n" + "\n" + "```{r, child = \"packages_functions.qmd\"}\n" + "```\n" + "\n" + "#  Part 5: Using functions and the pipe operator\n" + "\n" + "\n" + "```{r, child = \"coding.qmd\"}\n" + "```\n" + "\n" + "#  Part 6: Code tips\n" + "\n" + "```{r, child = \"code_tips.qmd\"}\n" + "```\n" + "\n" + "#  Part 7: Quarto tips\n" + "\n" + "```{r, child = \"quarto_tips.qmd\"}\n" + "```\n" + "\n" + "#  Part 8: Getting the most from practical classes\n" + "\n" + "```{r, child = \"practical_classes.qmd\"}\n" + "```\n" + "\n" + ""</script>
-<script> window._input_filename = '/Volumes/homes/andyfield/documents/academic/teaching/statistics_lectures/ais_00_r/ais_r.qmd'</script>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<script> window._input_filename = '/Volumes/repository/teaching/statistics_lectures/ais_00_r/ais_r.qmd'</script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-discovr" class="csl-entry" role="listitem">
-Field, Andy. 2026. <span>“Discovr: Interactive Tutorials and Data for <span>‘Discovering Statistics Using R and RStudio’</span>.”</span> Preprint. <a href="https://doi.org/10.32614/CRAN.package.discovr">https://doi.org/10.32614/CRAN.package.discovr</a>.
+Field, Andy. 2026. <span>“Discovr: Interactive Tutorials and Data for <span>‘Discovering Statistics Using R and RStudio’</span>.”</span> <a href="https://doi.org/10.32614/CRAN.package.discovr">https://doi.org/10.32614/CRAN.package.discovr</a>.
 </div>
 </div>
 </section></section>

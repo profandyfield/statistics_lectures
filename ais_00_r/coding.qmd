@@ -215,7 +215,7 @@ display(summary_tbl)
 
 - `Insert > @citation ...`
 - Use Zotero reference manager!
-  - Guide: [guides.lib.sussex.ac.uk/c.php?g=665332&p=4858999](https://guides.lib.sussex.ac.uk/c.php?g=665332&p=4858999)
+  - Guide: [guides.lib.sussex.ac.uk/zotero](https://guides.lib.sussex.ac.uk/zotero)
 
 ![](media/insert_citation_zotero.png){fig-align="center" height=450}
 
