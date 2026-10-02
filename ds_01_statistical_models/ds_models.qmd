@@ -554,41 +554,6 @@ We might want to take it with a pinch of salt.
 The intercept is -37.12. That makes no sense - your ears can't ring for a minus amount of time. You'd expect the value to be zero in the population (0 db = 0 ringing). Illustrates that estimates are not accurate. Also, is it reasonable to assume a linear relationship here? Isn't it more likely that a range of low volumes ringing will be zero minutes, and at a certain threshold ringing kicks in. It is almost certainly not linear along the whole range of volumes.
 :::
 
-# Sampling variation
-
-
-## {background-iframe="https://milton-the-cat.rocks/lm_sampling/" background-interactive=true}
-
-
-## {background-iframe="https://milton-the-cat.rocks/ci_explorer/" background-interactive=true}
-
-
-## Confidence intervals
-
-::: {.callout-note icon = false}
-## {{< fa chart-line >}} Statis-tip 
-
-What confidence intervals are:
-
-- Intervals that contain the 'true' population value of the parameter in 95% of samples.
-
-:::
-
-\
-
-::: fragment
-::: {.callout-warning icon = false}
-## {{< fa skull >}} The danger zone!
-
-What confidence intervals are NOT:
-
-- There is NOT a 95% probability that a given interval contains the population value.
-    - It is *p* = 0 or *p* = 1, but you can’t know which!
-- They do NOT reflect confidence in the value of the population parameter.
-
-:::
-:::
-
 
 ## Summary
 
