@@ -6,10 +6,10 @@
 <script src="ds_interpretation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ds_interpretation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ds_interpretation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ds_interpretation_files/libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ds_interpretation_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="ds_interpretation_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="ds_interpretation_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.22">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Professor Andy Field">
   <title>Interpreting Models</title>
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="ds_interpretation_files/libs/revealjs/dist/theme/quarto-52bec7c8fdb744b1f75a516080575022.css">
+  <link rel="stylesheet" href="ds_interpretation_files/libs/revealjs/dist/theme/quarto-b47df8c36a20af4dff9a35b241ab8a4d.css">
   <link href="ds_interpretation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_interpretation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_interpretation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -355,10 +355,10 @@ z(\text{interest})_i = \hat{b}_0 + \hat{b}_1z(\text{hard to get})_i +e_i
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">-1.54e-16</td>
+<td style="text-align: center;">-1.64e-16</td>
 <td style="text-align: center;">0.09</td>
 <td style="text-align: center;">(-0.17, 0.17)</td>
-<td style="text-align: center;">-1.76e-15</td>
+<td style="text-align: center;">-1.87e-15</td>
 <td style="text-align: center;">&gt; .999</td>
 </tr>
 <tr class="even">
@@ -380,14 +380,22 @@ z(\text{interest})_i = \hat{b}_0 + \hat{b}_1z(\text{hard to get})_i +e_i
 </ul>
 </section></section>
 <section>
-<section id="confidence-intervals" class="title-slide slide level1 center">
-<h1>Confidence intervals</h1>
+<section id="sampling-variation" class="title-slide slide level1 center">
+<h1>Sampling variation</h1>
 
 </section>
 <section id="section-2" class="slide level2" data-background-iframe="https://milton-the-cat.rocks/lm_sampling/" data-background-interactive="true">
 <h2></h2>
+</section></section>
+<section>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence intervals</h1>
+
 </section>
-<section id="section-3" class="slide level2" data-background-iframe="https://milton-the-cat.rocks/ci_explorer/" data-background-interactive="true">
+<section id="section-3" class="slide level2" data-background-iframe="https://milton-the-cat.rocks/lm_sampling/" data-background-interactive="true">
+<h2></h2>
+</section>
+<section id="section-4" class="slide level2" data-background-iframe="https://milton-the-cat.rocks/ci_explorer/" data-background-interactive="true">
 <h2></h2>
 </section>
 <section id="confidence-intervals-1" class="slide level2">
@@ -516,7 +524,7 @@ z(\text{interest})_i = \hat{b}_0 + \hat{b}_1z(\text{hard to get})_i +e_i
 <li class="fragment"><span class="bold_col"><strong>The assumption at the start might be false</strong></span></li>
 </ul>
 </section>
-<section id="section-4" class="slide level2" data-background-video="../shared_media/video/hippo_burp.mp4" data-background-size="cover">
+<section id="section-5" class="slide level2" data-background-video="../shared_media/video/hippo_burp.mp4" data-background-size="cover">
 <h2></h2>
 </section></section>
 <section>
@@ -785,7 +793,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -797,11 +805,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.89</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.525</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">24.565</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.89</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.525</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">24.565</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -820,7 +828,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -832,11 +840,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.8</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">2.054</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">6.233</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.8</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">2.054</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">6.233</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -859,7 +867,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -871,11 +879,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.113</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.018</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">660.082</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.113</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.018</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">660.082</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -912,7 +920,7 @@ t = \frac{b}{SE_b}
 <div class="column" style="width:50%;">
 <h4 id="study-1-n-200">Study 1: <span class="txt_mulberry"><em>n</em> = 200</span></h4>
 <div class="tbl_s">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -924,11 +932,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.89</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.525</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">24.565</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.89</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.525</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">24.565</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -943,7 +951,7 @@ t = \frac{b}{SE_b}
 </div><div class="column" style="width:50%;">
 <h4 id="study-2-n-20">Study 2: <span class="txt_mulberry"><em>n</em> = 20</span></h4>
 <div class="tbl_s">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -955,11 +963,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.8</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">2.054</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">6.233</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.8</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">2.054</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">6.233</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -978,7 +986,7 @@ t = \frac{b}{SE_b}
 <h4 id="study-3-n-200000">Study 3: <span class="txt_mulberry"><em>n</em> = 200,000</span></h4>
 <div class="center-h">
 <div class="tbl_s">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -990,11 +998,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.113</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.018</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">660.082</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.113</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.018</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">660.082</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -1030,7 +1038,7 @@ t = \frac{b}{SE_b}
 <h1>When <em>p</em> &gt; .05 (not significant)</h1>
 
 </section>
-<section id="section-5" class="slide level2" data-background-video="media/animal_screams.mp4" data-background-size="cover">
+<section id="section-6" class="slide level2" data-background-video="media/animal_screams.mp4" data-background-size="cover">
 <h2></h2>
 </section></section>
 <section>
@@ -1038,7 +1046,7 @@ t = \frac{b}{SE_b}
 <h1>When <em>p</em> &lt; .05 (significant)</h1>
 
 </section>
-<section id="section-6" class="slide level2" data-background-video="media/dancing_cat.mp4" data-background-size="cover">
+<section id="section-7" class="slide level2" data-background-video="media/dancing_cat.mp4" data-background-size="cover">
 <h2></h2>
 </section>
 <section id="all-or-nothing-thinking" class="slide level2">
@@ -1132,7 +1140,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -1144,11 +1152,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.89</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.525</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">24.565</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.89</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.525</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">24.565</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -1167,7 +1175,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -1179,11 +1187,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.8</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">2.054</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">6.233</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.8</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">2.054</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">6.233</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -1206,7 +1214,7 @@ t = \frac{b}{SE_b}
 <div class="tbl_s">
 <div class="cell">
 <div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -1218,11 +1226,11 @@ t = \frac{b}{SE_b}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left; background-color: rgba(230, 237, 244, 255) !important;">(Intercept)</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">12.113</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">0.018</td>
-<td style="text-align: right; background-color: rgba(230, 237, 244, 255) !important;">660.082</td>
-<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 255) !important;">0.000</td>
+<td style="text-align: left; background-color: rgba(230, 237, 244, 1) !important;">(Intercept)</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">12.113</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">0.018</td>
+<td style="text-align: right; background-color: rgba(230, 237, 244, 1) !important;">660.082</td>
+<td style="text-align: right; background-color: yellow !important; background-color: rgba(230, 237, 244, 1) !important;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">groupBook</td>
@@ -1342,6 +1350,7 @@ t = \frac{b}{SE_b}
   <script src="ds_interpretation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="ds_interpretation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="ds_interpretation_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="ds_interpretation_files/libs/revealjs/plugin/revealeditable/editable.js"></script>
   <script src="ds_interpretation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1508,7 +1517,7 @@ t = \frac{b}{SE_b}
         mobileViewDistance: 2,
 
        // Parallax background image
-       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/presentations/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+       parallaxBackgroundImage: 'url(“https://profandyfield.github.io/statistics_lectures/shared_media/images/slide_background_main.jpg”)', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
@@ -1521,7 +1530,7 @@ t = \frac{b}{SE_b}
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1538,7 +1547,7 @@ t = \frac{b}{SE_b}
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, Revealeditable, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1633,13 +1642,14 @@ t = \frac{b}{SE_b}
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

@@ -80,6 +80,12 @@ Use f to toggle fullscreen
 
 ```
 
+# Sampling variation
+
+
+## {background-iframe="https://milton-the-cat.rocks/lm_sampling/" background-interactive=true}
+
+
 # Confidence intervals
 
 ```{r, child = "ci.qmd"}
