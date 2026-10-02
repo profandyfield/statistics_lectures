@@ -80,6 +80,12 @@ Hypothesis
 :::
 :::
 
+##
+
+```{=html}
+<iframe width="1000" height="600" src="https://milton-the-cat.rocks/gig_dashboard/" title="Shiny Gig Dashboard"></iframe>
+```
+
 
 
 ## Why do we fit models?
@@ -211,7 +217,7 @@ Questions to ask yourself
 
 - What variable is my outcome? What type is it?
 - What variable(s) are my predictors? What types are they?
-- What does the resulting form of the model?
+- What is the resulting form of the model?
 - Is it a good representation of the phenomenon?
 - Is this model a good fit of the data?
 :::
