@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="9.789914 181.5 544.2101 250.41154" width="544.2101" height="250.41154">
+  <defs/>
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" fill="none" stroke="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_5">
+        <path d="M 25.56 183 L 179 183 C 183.97056 183 188 187.02944 188 192 L 188 239 C 188 243.97056 183.97056 248 179 248 L 25.56 248 C 20.589437 248 16.56 243.97056 16.56 239 L 16.56 192 C 16.56 187.02944 20.589437 183 25.56 183 Z" fill="#dc5e76"/>
+        <path d="M 25.56 183 L 179 183 C 183.97056 183 188 187.02944 188 192 L 188 239 C 188 243.97056 183.97056 248 179 248 L 25.56 248 C 20.589437 248 16.56 243.97056 16.56 239 L 16.56 192 C 16.56 187.02944 20.589437 183 25.56 183 Z" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(21.56 199.1229)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="13" fill="white" x="55.188" y="13" xml:space="preserve">Chunk 1</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="13" fill="white" x="25.314" y="29.37709" xml:space="preserve">15 mins + 30 mins</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <path d="M 245 183.00002 L 378 183.00002 C 382.97056 183.00002 387 187.02946 387 192.00002 L 387 239.00002 C 387 243.97058 382.97056 248.00002 378 248.00002 L 245 248.00002 C 240.02944 248.00002 236 243.97058 236 239.00002 L 236 192.00002 C 236 187.02946 240.02944 183.00002 245 183.00002 Z" fill="#e1cc69"/>
+        <path d="M 245 183.00002 L 378 183.00002 C 382.97056 183.00002 387 187.02946 387 192.00002 L 387 239.00002 C 387 243.97058 382.97056 248.00002 378 248.00002 L 245 248.00002 C 240.02944 248.00002 236 243.97058 236 239.00002 L 236 192.00002 C 236 187.02946 240.02944 183.00002 245 183.00002 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(241 200.15194)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="46.932" y="12" xml:space="preserve">Chunk 2</tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#666" x="12.51" y="27.348083" xml:space="preserve">No puppies (control)</tspan>
+        </text>
+      </g>
+      <g id="Group_8">
+        <g id="Graphic_10">
+          <path d="M 399.0198 183.06356 C 399.5684 183.06356 415.47895 181.74113 416.57614 191.16347 C 417.67344 200.58585 415.4789 213.149 418.7708 214.47143 C 422.0626 215.79389 425.90307 215.4633 425.90307 215.4633 C 425.90307 215.4633 416.6131 215.7345 415.4789 213.47962 C 414.34466 211.22487 414.9646 194.65878 412.2214 188.3772 C 409.47814 182.0956 398.4711 183.06356 399.0198 183.06356 Z" fill="#666"/>
+          <path d="M 399.0198 183.06356 C 399.5684 183.06356 415.47895 181.74113 416.57614 191.16347 C 417.67344 200.58585 415.4789 213.149 418.7708 214.47143 C 422.0626 215.79389 425.90307 215.4633 425.90307 215.4633 C 425.90307 215.4633 416.6131 215.7345 415.4789 213.47962 C 414.34466 211.22487 414.9646 194.65878 412.2214 188.3772 C 409.47814 182.0956 398.4711 183.06356 399.0198 183.06356 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_9">
+          <path d="M 399.0198 247.93646 C 399.5684 247.93646 415.47895 249.2589 416.57614 239.83655 C 417.67344 230.41417 415.4789 217.85102 418.7708 216.5286 C 422.0626 215.20613 425.90307 215.53673 425.90307 215.53673 C 425.90307 215.53673 416.6131 215.2655 415.4789 217.5204 C 414.34466 219.77515 414.9646 236.34124 412.2214 242.6228 C 409.47814 248.9044 398.4711 247.93646 399.0198 247.93646 Z" fill="#666"/>
+          <path d="M 399.0198 247.93646 C 399.5684 247.93646 415.47895 249.2589 416.57614 239.83655 C 417.67344 230.41417 415.4789 217.85102 418.7708 216.5286 C 422.0626 215.20613 425.90307 215.53673 425.90307 215.53673 C 425.90307 215.53673 416.6131 215.2655 415.4789 217.5204 C 414.34466 219.77515 414.9646 236.34124 412.2214 242.6228 C 409.47814 248.9044 398.4711 247.93646 399.0198 247.93646 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_11">
+        <text transform="translate(437 204.5)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Contrast 1</tspan>
+        </text>
+      </g>
+      <g id="Graphic_170">
+        <text transform="translate(200 204.5)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">vs.</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_sign">
+      <title>sign</title>
+      <g id="Graphic_171">
+        <text transform="translate(437 275)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Sign of weight</tspan>
+        </text>
+      </g>
+      <g id="Graphic_172">
+        <text transform="translate(70.28 275)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Positive</tspan>
+        </text>
+      </g>
+      <g id="Graphic_173">
+        <text transform="translate(276 275)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Negative</tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_mag">
+      <title>mag</title>
+      <g id="Graphic_174">
+        <text transform="translate(436 321)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">Magnitude</tspan>
+        </text>
+      </g>
+      <g id="Graphic_175">
+        <text transform="translate(306 321)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">2</tspan>
+        </text>
+      </g>
+      <g id="Graphic_176">
+        <text transform="translate(96.78 321)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="18" fill="#666" x="0" y="17" xml:space="preserve">1</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

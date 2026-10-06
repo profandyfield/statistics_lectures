@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="37.5 130.66667 485 271.97582" width="485" height="271.97582">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" stroke="none" stroke-opacity="1" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_11">
+        <path d="M 380 298.19962 L 512 298.19962 C 516.97056 298.19962 521 302.22906 521 307.19962 L 521 324.19962 C 521 329.1702 516.97056 333.19962 512 333.19962 L 380 333.19962 C 375.02944 333.19962 371 329.1702 371 324.19962 L 371 307.19962 C 371 302.22906 375.02944 298.19962 380 298.19962 Z" fill="#71cff2"/>
+        <path d="M 380 298.19962 L 512 298.19962 C 516.97056 298.19962 521 302.22906 521 307.19962 L 521 324.19962 C 521 329.1702 516.97056 333.19962 512 333.19962 L 380 333.19962 C 375.02944 333.19962 371 329.1702 371 324.19962 L 371 307.19962 C 371 302.22906 375.02944 298.19962 380 298.19962 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(376 308.02558)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="43.672" y="12" xml:space="preserve">Outcome</tspan>
+        </text>
+      </g>
+      <g id="Line_16">
+        <line x1="205" y1="315.69962" x2="359.3" y2="315.69962" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_40">
+        <path d="M 213 201.19966 L 361 201.19966 C 365.97056 201.19966 370 205.2291 370 210.19966 L 370 227.19966 C 370 232.17022 365.97056 236.19966 361 236.19966 L 213 236.19966 C 208.02944 236.19966 204 232.17022 204 227.19966 L 204 210.19966 C 204 205.2291 208.02944 201.19966 213 201.19966 Z" fill="#e1cc69"/>
+        <path d="M 213 201.19966 L 361 201.19966 C 365.97056 201.19966 370 205.2291 370 210.19966 L 370 227.19966 C 370 232.17022 365.97056 236.19966 361 236.19966 L 213 236.19966 C 208.02944 236.19966 204 232.17022 204 227.19966 L 204 210.19966 C 204 205.2291 208.02944 201.19966 213 201.19966 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(209 211.02562)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="52.344" y="12" xml:space="preserve">Mediator</tspan>
+        </text>
+      </g>
+      <g id="Line_168">
+        <line x1="370" y1="218.69966" x2="437.9151" y2="289.7424" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_169">
+        <line x1="122" y1="298.19962" x2="195.59979" y2="226.84376" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_61">
+        <path d="M 48 298.19962 L 196 298.19962 C 200.97056 298.19962 205 302.22906 205 307.19962 L 205 324.19962 C 205 329.1702 200.97056 333.19962 196 333.19962 L 48 333.19962 C 43.029437 333.19962 39 329.1702 39 324.19962 L 39 307.19962 C 39 302.22906 43.029437 298.19962 48 298.19962 Z" fill="#71cff2"/>
+        <path d="M 48 298.19962 L 196 298.19962 C 200.97056 298.19962 205 302.22906 205 307.19962 L 205 324.19962 C 205 329.1702 200.97056 333.19962 196 333.19962 L 48 333.19962 C 43.029437 333.19962 39 329.1702 39 324.19962 L 39 307.19962 C 39 302.22906 43.029437 298.19962 48 298.19962 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(44 308.02558)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="51.558" y="12" xml:space="preserve">Predictor</tspan>
+        </text>
+      </g>
+      <g id="Graphic_170">
+        <text transform="translate(251 147.73151)" fill="#666">
+          <tspan font-family="Helvetica" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Indirect effect</tspan>
+        </text>
+      </g>
+      <g id="Group_171">
+        <g id="Graphic_173">
+          <path d="M 446.68725 195.7119 C 446.68725 195.1709 453.19766 179.47987 406.81074 178.39782 C 360.42357 177.31566 298.57416 179.47992 292.06375 176.23345 C 285.55318 172.98706 287.1807 169.19959 287.1807 169.19959 C 287.1807 169.19959 285.8455 178.36139 296.94648 179.47992 C 308.0468 180.5985 389.60304 179.98713 420.5277 182.6925 C 451.45254 185.39788 446.68725 196.25305 446.68725 195.7119 Z" fill="#797979"/>
+          <path d="M 446.68725 195.7119 C 446.68725 195.1709 453.19766 179.47987 406.81074 178.39782 C 360.42357 177.31566 298.57416 179.47992 292.06375 176.23345 C 285.55318 172.98706 287.1807 169.19959 287.1807 169.19959 C 287.1807 169.19959 285.8455 178.36139 296.94648 179.47992 C 308.0468 180.5985 389.60304 179.98713 420.5277 182.6925 C 451.45254 185.39788 446.68725 196.25305 446.68725 195.7119 Z" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_172">
+          <path d="M 127.31265 195.71194 C 127.31265 195.17093 120.80225 179.4799 167.18917 178.39785 C 213.57634 177.3157 275.42575 179.47995 281.93616 176.23348 C 288.44673 172.9871 286.8192 169.19962 286.8192 169.19962 C 286.8192 169.19962 288.1544 178.36142 277.05343 179.47995 C 265.9531 180.59854 184.39687 179.98716 153.4722 182.69252 C 122.54737 185.39791 127.31265 196.25308 127.31265 195.71194 Z" fill="#797979"/>
+          <path d="M 127.31265 195.71194 C 127.31265 195.17093 120.80225 179.4799 167.18917 178.39785 C 213.57634 177.3157 275.42575 179.47995 281.93616 176.23348 C 288.44673 172.9871 286.8192 169.19962 286.8192 169.19962 C 286.8192 169.19962 288.1544 178.36142 277.05343 179.47995 C 265.9531 180.59854 184.39687 179.98716 153.4722 182.69252 C 122.54737 185.39791 127.31265 196.25308 127.31265 195.71194 Z" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_174">
+        <text transform="translate(255 386.6425)" fill="#666">
+          <tspan font-family="Helvetica" font-size="12" fill="#666" x="0" y="11" xml:space="preserve">Direct effect</tspan>
+        </text>
+      </g>
+      <g id="Group_175">
+        <g id="Graphic_177">
+          <path d="M 368.2238 349.95326 C 368.2238 350.49427 371.5353 366.1853 347.9409 367.26735 C 324.34638 368.3495 292.8871 366.18525 289.5756 369.4317 C 286.26406 372.6781 287.0919 376.4656 287.0919 376.4656 C 287.0919 376.4656 286.41275 367.3038 292.05918 366.18525 C 297.7053 365.06666 339.1883 365.67804 354.91794 362.97268 C 370.64764 360.2673 368.2238 349.4121 368.2238 349.95326 Z" fill="#797979"/>
+          <path d="M 368.2238 349.95326 C 368.2238 350.49427 371.5353 366.1853 347.9409 367.26735 C 324.34638 368.3495 292.8871 366.18525 289.5756 369.4317 C 286.26406 372.6781 287.0919 376.4656 287.0919 376.4656 C 287.0919 376.4656 286.41275 367.3038 292.05918 366.18525 C 297.7053 365.06666 339.1883 365.67804 354.91794 362.97268 C 370.64764 360.2673 368.2238 349.4121 368.2238 349.95326 Z" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_176">
+          <path d="M 205.77617 349.95326 C 205.77617 350.49427 202.4647 366.1853 226.0591 367.26735 C 249.6536 368.3495 281.1129 366.18525 284.42436 369.4317 C 287.73592 372.6781 286.9081 376.4656 286.9081 376.4656 C 286.9081 376.4656 287.58723 367.3038 281.9408 366.18525 C 276.2947 365.06666 234.81167 365.67804 219.08204 362.97268 C 203.35234 360.2673 205.77617 349.4121 205.77617 349.95326 Z" fill="#797979"/>
+          <path d="M 205.77617 349.95326 C 205.77617 350.49427 202.4647 366.1853 226.0591 367.26735 C 249.6536 368.3495 281.1129 366.18525 284.42436 369.4317 C 287.73592 372.6781 286.9081 376.4656 286.9081 376.4656 C 286.9081 376.4656 287.58723 367.3038 281.9408 366.18525 C 276.2947 365.06666 234.81167 365.67804 219.08204 362.97268 C 203.35234 360.2673 205.77617 349.4121 205.77617 349.95326 Z" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_178">
+        <text transform="translate(143.33337 244.533)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="14" fill="#666" x="0" y="13" xml:space="preserve">a</tspan>
+        </text>
+      </g>
+      <g id="Graphic_179">
+        <text transform="translate(421.3333 244.533)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="14" fill="#666" x="0" y="13" xml:space="preserve">b</tspan>
+        </text>
+      </g>
+      <g id="Graphic_180">
+        <text transform="translate(283 326.86627)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-style="italic" font-size="14" fill="#666" x="0" y="13" xml:space="preserve">c</tspan>
+        </text>
+      </g>
+      <g id="Graphic_186">
+        <text transform="translate(44 135.66667)" fill="#666">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="#666" x="0" y="13" xml:space="preserve">Mediated relationship</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

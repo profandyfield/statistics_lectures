@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="38.5 51.5 485 135" width="485" height="135">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#36218e">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#99990f">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_11">
+        <path d="M 381 150 L 513 150 C 517.97056 150 522 154.02944 522 159 L 522 176 C 522 180.97056 517.97056 185 513 185 L 381 185 C 376.02944 185 372 180.97056 372 176 L 372 159 C 372 154.02944 376.02944 150 381 150 Z" fill="#71cff2"/>
+        <path d="M 381 150 L 513 150 C 517.97056 150 522 154.02944 522 159 L 522 176 C 522 180.97056 517.97056 185 513 185 L 381 185 C 376.02944 185 372 180.97056 372 176 L 372 159 C 372 154.02944 376.02944 150 381 150 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(377 159.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="43.672" y="12" xml:space="preserve">Outcome</tspan>
+        </text>
+      </g>
+      <g id="Line_16">
+        <line x1="206" y1="167.5" x2="360.3" y2="167.5" marker-end="url(#SharpArrow_Marker)" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_40">
+        <path d="M 214 53 L 362 53 C 366.97056 53 371 57.02944 371 62 L 371 79 C 371 83.97056 366.97056 88 362 88 L 214 88 C 209.02944 88 205 83.97056 205 79 L 205 62 C 205 57.02944 209.02944 53 214 53 Z" fill="#e1cc69"/>
+        <path d="M 214 53 L 362 53 C 366.97056 53 371 57.02944 371 62 L 371 79 C 371 83.97056 366.97056 88 362 88 L 214 88 C 209.02944 88 205 83.97056 205 79 L 205 62 C 205 57.02944 209.02944 53 214 53 Z" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(210 62.82596)" fill="#4b3d2a">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#4b3d2a" x="47.892" y="12" xml:space="preserve">Moderator</tspan>
+        </text>
+      </g>
+      <g id="Graphic_61">
+        <path d="M 49 150 L 197 150 C 201.97056 150 206 154.02944 206 159 L 206 176 C 206 180.97056 201.97056 185 197 185 L 49 185 C 44.029437 185 40 180.97056 40 176 L 40 159 C 40 154.02944 44.029437 150 49 150 Z" fill="#71cff2"/>
+        <path d="M 49 150 L 197 150 C 201.97056 150 206 154.02944 206 159 L 206 176 C 206 180.97056 201.97056 185 197 185 L 49 185 C 44.029437 185 40 180.97056 40 176 L 40 159 C 40 154.02944 44.029437 150 49 150 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(45 159.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="51.558" y="12" xml:space="preserve">Predictor</tspan>
+        </text>
+      </g>
+      <g id="Line_168">
+        <line x1="288" y1="88" x2="288.85284" y2="155.80093" marker-end="url(#SharpArrow_Marker_2)" stroke="#99990f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="157 66.5 342.5 179" width="342.5" height="179">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-3 -3 7 6" markerWidth="7" markerHeight="6" color="#951256">
+      <g>
+        <path d="M 2.3333333 0 L -1.4 -1.4 L 0 0 L 0 0 L -1.4 1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke="none" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_a">
+      <title>a</title>
+      <g id="Graphic_4">
+        <path d="M 186 68 L 470 68 C 474.97056 68 479 72.02944 479 77 L 479 124 C 479 128.97056 474.97056 133 470 133 L 186 133 C 181.02944 133 177 128.97056 177 124 L 177 77 C 177 72.02944 181.02944 68 186 68 Z" fill="#dc5e76"/>
+        <path d="M 186 68 L 470 68 C 474.97056 68 479 72.02944 479 77 L 479 124 C 479 128.97056 474.97056 133 470 133 L 186 133 C 181.02944 133 177 128.97056 177 124 L 177 77 C 177 72.02944 181.02944 68 186 68 Z" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(182 92.31145)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="13" fill="white" x="61.994" y="13" xml:space="preserve">Total variance in happiness</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <path d="M 167 179 L 300 179 C 304.97056 179 309 183.02944 309 188 L 309 235 C 309 239.97056 304.97056 244 300 244 L 167 244 C 162.02944 244 158 239.97056 158 235 L 158 188 C 158 183.02944 162.02944 179 167 179 Z" fill="#00ab86"/>
+        <path d="M 167 179 L 300 179 C 304.97056 179 309 183.02944 309 188 L 309 235 C 309 239.97056 304.97056 244 300 244 L 167 244 C 162.02944 244 158 239.97056 158 235 L 158 188 C 158 183.02944 162.02944 179 167 179 Z" stroke="#005c5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(163 196.15192)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="8.178" y="12" xml:space="preserve">Variance explained by </tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="47.73" y="27.348083" xml:space="preserve">puppies</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <path d="M 356 179 L 489 179 C 493.97056 179 498 183.02944 498 188 L 498 235 C 498 239.97056 493.97056 244 489 244 L 356 244 C 351.02944 244 347 239.97056 347 235 L 347 188 C 347 183.02944 351.02944 179 356 179 Z" fill="#71cff2"/>
+        <path d="M 356 179 L 489 179 C 493.97056 179 498 183.02944 498 188 L 498 235 C 498 239.97056 493.97056 244 489 244 L 356 244 C 351.02944 244 347 239.97056 347 235 L 347 188 C 347 183.02944 351.02944 179 356 179 Z" stroke="#36218e" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+        <text transform="translate(352 203.82596)" fill="#36218e">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="#36218e" x="8.952" y="12" xml:space="preserve">Unexplained variance</tspan>
+        </text>
+      </g>
+      <g id="Line_168">
+        <line x1="356.31716" y1="133.76143" x2="386.27424" y2="168.9491" marker-end="url(#SharpArrow_Marker)" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_169">
+        <line x1="299.68284" y1="133.76143" x2="269.40164" y2="169.32982" marker-end="url(#SharpArrow_Marker)" stroke="#951256" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>
