@@ -117,8 +117,6 @@ Video clip: [andy dungeon scream](https://profandyfield.github.io/statistics_lec
 
 ## Slide 22
 
-![Image: andy zombie (no description provided yet)](images/andy_zombie.jpg)
-
 A Zombie Quiz
 
 ## Slide 23: A zombie quiz

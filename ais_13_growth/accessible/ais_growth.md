@@ -284,8 +284,6 @@ Transform **block** and **block<sup>2</sup>** so that they are independent, that
 
 ## Slide 21: Visualize
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` r
 ggplot(train_tib, aes(x = block, y = vocalizations)) +
   geom_point(size = 1, alpha = 0.6, position = position_jitter(width = 0.1, height = 0.1), colour = "#CC6677") +
@@ -302,8 +300,6 @@ ggplot(train_tib, aes(x = block, y = vocalizations)) +
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
 ## Slide 22: Visualize
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 ggplot(train_tib, aes(x = block, y = vocalizations)) +

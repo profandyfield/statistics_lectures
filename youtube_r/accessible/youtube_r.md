@@ -242,8 +242,6 @@ eddie_tib$energy
 
 ## Slide 14
 
-![Image: function as bakery (no description provided yet)](images/function_as_bakery.png)
-
 ## Slide 15: What are functions?
 
 - We use functions to do things

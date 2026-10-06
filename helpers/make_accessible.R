@@ -32,6 +32,7 @@ make_accessible <- function(lectures = NULL,
                             icon_file = "helpers/discovr_helpers.R",
                             icon_labels = c(rproj = "R", spotify = "Spotify"),
                             max_table_rows = 50,
+                            include_backgrounds = FALSE,
                             lang = "en-GB",
                             report = "accessible_report.csv") {
 
@@ -55,10 +56,12 @@ make_accessible <- function(lectures = NULL,
     if (!dir.exists(lec_dir)) { warning("No folder called '", lec, "' - skipped."); next }
     decks <- .acc_find_decks(lec_dir)
     if (length(decks) == 0) { message(lec, ": no rendered deck found - skipped."); next }
+    # start each lecture with an empty images folder so no stale images are left behind
+    unlink(file.path(lec_dir, out_dir, "images"), recursive = TRUE)
     for (deck in decks) {
       message(lec, "/", basename(deck), " ...")
       res <- .acc_convert_deck(deck, lec, root, formats, out_dir, base_url,
-                               icons, max_table_rows, lang, pandoc)
+                               icons, max_table_rows, lang, pandoc, include_backgrounds)
       issues[[length(issues) + 1]] <- res
     }
   }
@@ -207,7 +210,7 @@ make_accessible <- function(lectures = NULL,
 # --- convert one deck ----------------------------------------------------------
 
 .acc_convert_deck <- function(html_file, lec, root, formats, out_dir, base_url,
-                              icons, max_table_rows, lang, pandoc) {
+                              icons, max_table_rows, lang, pandoc, include_backgrounds = FALSE) {
   deck_dir <- dirname(html_file)
   deck <- tools::file_path_sans_ext(basename(html_file))
   dest <- file.path(deck_dir, out_dir)
@@ -415,7 +418,7 @@ make_accessible <- function(lectures = NULL,
                                 .acc_media_url(bf, lec, base_url), .acc_esc(lab)))
     }
     bi <- xml2::xml_attr(sec, "data-background-image")
-    if (!is.na(bi)) {
+    if (include_backgrounds && !is.na(bi)) {
       xml2::xml_add_child(sec, .acc_frag(sprintf('<p><img src="%s" alt="%s" data-bg="1"></p>',
                                                  bi, if (is.na(bg_desc)) "" else .acc_esc(bg_desc))),
                           .where = 0)

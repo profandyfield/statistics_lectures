@@ -71,8 +71,6 @@ Video clip: [milton insert puppies](https://profandyfield.github.io/statistics_l
 
 ## Slide 9: Load and Look
 
-![Image: milton 20190724 155300 (no description provided yet)](images/milton_20190724_155300.JPG)
-
 ![Image: l hex (no description provided yet)](images/l_hex.png)
 
 |                            | No puppies | 15 mins | 30 mins |
@@ -91,8 +89,6 @@ $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 3.467`$
 ![Image: l hex (no description provided yet)](images/l_hex.png)
 
 ## Slide 10: The general linear model
-
-![Image: milton 20190801 160443 (no description provided yet)](images/milton_20190801_160443.JPG)
 
 ### Dummy coding
 
@@ -346,8 +342,6 @@ Video clip: [lazinc durt your time will come](https://profandyfield.github.io/st
 
 ## Slide 49: What the coding does
 
-![Image: milton 20190623 191707 (no description provided yet)](images/milton_20190623_191707.jpg)
-
 ### Dummy coding
 
 | Therapy group | Long (30 mins vs. no puppies) | Short 1 (15 mins vs. no puppies) |
@@ -365,8 +359,6 @@ Video clip: [lazinc durt your time will come](https://profandyfield.github.io/st
 | 30 mins | 1/3 | 1/2 |
 
 ## Slide 50
-
-![Image: milton dawlish beach 2018 (no description provided yet)](images/milton_dawlish_beach_2018.JPG)
 
 ### The ‘dummy’ model
 
@@ -526,8 +518,6 @@ model_parameters(puppy_trend) |>
 ![Plot (no description provided yet)](images/ds_contrasts_slide064_unnamed-chunk-30-1.png)
 
 ## Slide 65: Summary
-
-![Image: andy kissing milton 20180831 processed (no description provided yet)](images/andy_kissing_milton_20180831_processed.jpg)
 
 - Categorical predictors can be coded to test specific a priori hypotheses
 

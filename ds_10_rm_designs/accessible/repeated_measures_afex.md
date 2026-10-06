@@ -38,15 +38,11 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 
 ## Slide 9
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Image: spine map (no description provided yet)](images/spine_map.png)
 
 ![Image: spine map lec 02 (no description provided yet)](images/spine_map_lec_02.png)
 
 ## Slide 10
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ![Image: rm design sniffing puppies (no description provided yet)](images/rm_design_sniffing_puppies.png)
 
@@ -54,8 +50,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 - **Unsystematic variance**: variance created by unknown factors
 
 ## Slide 11: Benefits of repeated measures designs
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - Sensitivity
   - Unsystematic variance is reduced
@@ -65,8 +59,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
   - But, be careful of fatigue
 
 ## Slide 12: Can puppies sniff out aliens?
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - Outcome = vocalizations during 1 min sniffing (`vocalizations`)
 - Predictor: type of entity being sniffed (`entity`)
@@ -82,8 +74,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 
 ## Slide 13: The data
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 |  | dog_name | Alien | Human | Mannequin | Shapeshifter | Mean | Variance |
 |----|----|----|----|----|----|----|----|
 |  | Milton | 8 | 7 | 1 | 6 | 5.50 | 7.25 |
@@ -97,8 +87,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 | **Mean** | — | 8.12 | 4.25 | 4.12 | 5.75 | — | — |
 
 ## Slide 14: The data in R
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 |     | dog_name                | entity       | vocalizations |
 |-----|-------------------------|--------------|---------------|
@@ -139,8 +127,6 @@ Table 2: Data for the sniffer dog example
 
 ## Slide 15: Repeated measures and the linear model
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` math
  \begin{aligned} \text{vocalizations}_{i} & = b_{0} + b_{1}\text{entity}_{i} + \varepsilon_{i} \end{aligned} 
 ```
@@ -157,8 +143,6 @@ Table 2: Data for the sniffer dog example
 
 ## Slide 16: Approaches to repeated measures designs and the GLM
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ### Approach 1
 
 - Fit a different kind of model that adjusts for these dependencies (a **multilevel model**)
@@ -174,8 +158,6 @@ Table 2: Data for the sniffer dog example
 
 ## Slide 17: What is sphericity, \\\epsilon\\ ?
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 |  | Alien-Human | Alien-Mannequin | Alien-Shapeshifter | Human-Mannequin | Human-Shapeshifter | Mannequin-Shapeshifter |
 |----|----|----|----|----|----|----|
 | Milton | 1 | 7 | 2 | 6 | 1 | -5 |
@@ -189,8 +171,6 @@ Table 2: Data for the sniffer dog example
 | Variance | 5.27 | 4.29 | 25.70 | 11.55 | 14.29 | 26.55 |
 
 ## Slide 18: Sphericity, \\\epsilon\\
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 > The differences between pairs of groups should have equal variances
 
@@ -214,8 +194,6 @@ Video clip: [sphericity song](https://profandyfield.github.io/statistics_lecture
 
 ## Slide 20: Fitting the model
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 - The `afex::aov_4()` function
   - Specify the repeated measures with `(rm_predictors|id_var)`
   - Automatically sets contrasts
@@ -230,13 +208,9 @@ Video clip: [sphericity song](https://profandyfield.github.io/statistics_lecture
 
 ## Slide 21
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Image: dsr2 fig 04 39 workflow (no description provided yet)](images/dsr2_fig_04_39_workflow.png)
 
 ## Slide 22: Load and Look
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 sniff_tib |> 
@@ -257,15 +231,11 @@ sniff_tib |>
 
 ## Slide 23: Visualize
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_afex_slide023_unnamed-chunk-7-1.png)
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
 ## Slide 24: Fit the model: Contrasts
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 If the dog training has been successful then we’d expect sniffer dogs to make more vocalizations when sniffing alien entities than non alien-entities.
 
@@ -289,16 +259,12 @@ Table 4: Contrast coding for the entity variable
 
 ## Slide 25: Fitting the model
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 sniff_afx <- afex::aov_4(vocalizations ~ entity + (entity|dog_name),
                          data = sniff_tib)
 ```
 
 ## Slide 26: Evaluate fit
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ``` r
 model_parameters(sniff_afx, es_type = "omega") |> 
@@ -319,8 +285,6 @@ ANOVA estimation for factorial designs using ‘afex’
 
 ## Slide 27: Evaluate assumptions
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 check_model(sniff_afx)
 ```
@@ -328,8 +292,6 @@ check_model(sniff_afx)
 ![Plot (no description provided yet)](images/repeated_measures_afex_slide027_unnamed-chunk-13-1.png)
 
 ## Slide 28: Interpret
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 > **Warning: The danger zone!**
 >
@@ -339,8 +301,6 @@ check_model(sniff_afx)
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 29: Interpret contrasts
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ``` r
 sniff_cons <- cbind(
@@ -369,8 +329,6 @@ Marginal Contrasts Analysis
 
 ## Slide 30: Interpret post hoc tests
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 > **Warning: The danger zone!**
 >
 > - You wouldn’t do contrasts AND *post hoc* tests, you’d do one or the other.
@@ -394,8 +352,6 @@ Marginal Contrasts Analysis
 
 ## Slide 31
 
-![Image: daze mid still (no description provided yet)](images/daze_mid_still.jpg)
-
 Audio clip: [spaceship interior](https://profandyfield.github.io/statistics_lectures/shared_media/audio/spaceship_interior.mp3)
 
 ## Slide 32
@@ -412,11 +368,7 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 
 ## Slide 35 (new section): Scenting a victory … factorial repeated measures designs
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ## Slide 36: Can scents distract the sniffer dogs?
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - 50 sniffer dogs
   - Participated in all conditions
@@ -439,8 +391,6 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 
 ## Slide 37: The model
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 - Let’s simplify things by ignoring the fact that `entity` and `scent_mask` will be represented by two dummy variables each (and the interaction by 4!)
 - The simplest version of the repeated measures model instead treats the effects of predictor variables as fixed, but acknowledges that dogs, overall, will vary in their vocalizations
 
@@ -452,8 +402,6 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 - The model also includes a parameter that estimates the variance in vocalizations across dogs ($`\sigma^{2}_{\mu_0}`$)
 
 ## Slide 38: Load and Look
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 |     | dog_id | entity       | scent_mask | vocalizations |
 |-----|--------|--------------|------------|---------------|
@@ -512,8 +460,6 @@ Table 7: Data for the scent masking example (first 50 of 450 rows)
 
 ## Slide 39: Load and Look
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` r
 scent_tib |> 
   group_by(entity, scent_mask) |> 
@@ -538,15 +484,11 @@ scent_tib |>
 
 ## Slide 40: Visualize
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_afex_slide040_unnamed-chunk-22-1.png)
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
 ## Slide 41: Fit the model
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ``` r
 scent_afx <- afex::aov_4(vocalizations ~ entity*scent_mask + (entity*scent_mask|dog_id),
@@ -554,8 +496,6 @@ scent_afx <- afex::aov_4(vocalizations ~ entity*scent_mask + (entity*scent_mask|
 ```
 
 ## Slide 42: Evaluate
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 model_parameters(scent_afx, es_type = "omega") |> 
@@ -582,8 +522,6 @@ ANOVA estimation for factorial designs using ‘afex’
 
 ## Slide 43: Evaluate assumptions
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` r
 check_model(scent_afx)
 ```
@@ -593,8 +531,6 @@ check_model(scent_afx)
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
 ## Slide 44: Robust tests
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ![Image: sad spaniel face (no description provided yet)](images/sad_spaniel_face.jpg)
 
@@ -609,8 +545,6 @@ check_model(scent_afx)
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 46: Interpret simple effects
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ### The effect of `entity` within type of `scent_mask`
 
@@ -642,8 +576,6 @@ Marginal Joint Test
 
 ## Slide 47: Interpret simple effects
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ### The effect of `scent_mask` within each `entity`
 
 ``` r
@@ -674,13 +606,9 @@ Marginal Joint Test
 
 ## Slide 48: Interpret post hoc tests across an interaction
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_afex_slide048_unnamed-chunk-34-1.png)
 
 ## Slide 49: Interpret post hoc tests across an interaction
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 estimate_contrasts(model = scent_afx,
@@ -707,8 +635,6 @@ Marginal Contrasts Analysis
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 50: Interpret post hoc tests across an interaction
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 > **Important: ReportR**
 >

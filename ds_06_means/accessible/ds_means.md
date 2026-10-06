@@ -12,8 +12,6 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ## Slide 2
 
-![Image: hell fire background (no description provided yet)](images/hell_fire_background.jpg)
-
 Audio clip: [helloween narrative](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/helloween_narrative.mp3)
 
 Every Halloween the zombies and werewolves gather in an underground tomb.
@@ -268,8 +266,6 @@ Video clip: [cubit facetime live lecture 08](https://profandyfield.github.io/sta
 
 ## Slide 29: Another ghoulish example
 
-![Image: halloween pumpkin house (no description provided yet)](images/halloween_pumpkin_house.jpg)
-
 - Which is more scary?
   - Human
   - Zombie
@@ -437,8 +433,6 @@ human_lm <- lm(fear ~ entity, data = humans_tib)
 
 ## Slide 41 (new section): Evaluate the model
 
-![Image: halloween pumpkins at night (no description provided yet)](images/halloween_pumpkins_at_night.jpg)
-
 ## Slide 42: How to Evaluate
 
 ![Image: e hex (no description provided yet)](images/e_hex.png)
@@ -516,8 +510,6 @@ model_performance(human_lm) |>
 
 ## Slide 51: Evaluate assumptions
 
-![Image: halloween pumpkins fire (no description provided yet)](images/halloween_pumpkins_fire.jpg)
-
 ``` r
 check_model(human_lm)
 ```
@@ -525,8 +517,6 @@ check_model(human_lm)
 ![Plot (no description provided yet)](images/ds_means_slide051_unnamed-chunk-39-1.png)
 
 ## Slide 52: Robust F-statistic
-
-![Image: pumpkin maths background (no description provided yet)](images/pumpkin_maths_background.png)
 
 ``` r
 welchf <- oneway.test(fear ~ entity, data = humans_tib)
@@ -546,15 +536,11 @@ One-way analysis of means (not assuming equal variances)
 
 ## Slide 53 (new section): Interpret the model
 
-![Image: halloween lots of pumpkins (no description provided yet)](images/halloween_lots_of_pumpkins.jpg)
-
 ## Slide 54: Robust procedures
 
 ![Image: dsr2 fig 08 13 robust flow (no description provided yet)](images/dsr2_fig_08_13_robust_flow.png)
 
 ## Slide 55: Interpret parameter estimates, CIs and tests
-
-![Image: halloween trick or treat (no description provided yet)](images/halloween_trick_or_treat.jpg)
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 

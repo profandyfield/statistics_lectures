@@ -212,8 +212,6 @@ test_wald(incpt_lm, game_lm, console_lm, xbox_lm) |>
 
 ## Slide 24: Evaluate assumptions
 
-\[Missing image: media/milton_20180720_100533_crop.jpg\]
-
 ``` r
 check_model(xbox_lm)
 ```
@@ -541,8 +539,6 @@ test_wald(incpt_lm, face_lm, alcohol_lm, goggles_lm) |>
 > The dose of alcohol significantly moderated the effect of the type of face on attractiveness ratings, *F*(2, 42) = 8.51, *p* \< 0.001.
 
 ## Slide 52: Evaluate assumptions
-
-\[Missing image: media/milton_20180720_100533_crop.jpg\]
 
 ``` r
 check_model(goggles_lm)

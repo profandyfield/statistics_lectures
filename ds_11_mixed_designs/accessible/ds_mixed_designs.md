@@ -30,8 +30,6 @@ Video clip: [xmas santa 02](https://profandyfield.github.io/statistics_lectures/
 
 ## Slide 6: A festive example
 
-![Image: as blu house 93514381 (no description provided yet)](images/as_blu_house_93514381.jpg)
-
 Santa Claus wanted to test the effect of different types of treats on the speed of delivery in two types of helpers :
 
 - Predictors
@@ -41,8 +39,6 @@ Santa Claus wanted to test the effect of different types of treats on the speed 
   - **speed**: The speed at which presents were delivered (ms).
 
 ## Slide 7: The design
-
-![Image: as snowman wave 303329070 (no description provided yet)](images/as_snowman_wave_303329070.jpg)
 
 ![Image: santa two way mixed (no description provided yet)](images/santa_two_way_mixed.png)
 
@@ -54,8 +50,6 @@ Santa Claus wanted to test the effect of different types of treats on the speed 
 > - `helper` is an independent measure because participants could be an elf or a fairy but not both
 
 ## Slide 8: Load and Look
-
-![Image: as santa moon 36326866 (no description provided yet)](images/as_santa_moon_36326866.jpg)
 
 |     | id                                    | helper | treat   | speed |
 |-----|---------------------------------------|--------|---------|-------|
@@ -116,8 +110,6 @@ Table 1: Santa's data (first 50 of 200 rows)
 
 ## Slide 9: Load and Look
 
-![Image: as santa moon 36326866 (no description provided yet)](images/as_santa_moon_36326866.jpg)
-
 ``` r
 treat_tib |> 
   group_by(treat, helper) |> 
@@ -134,8 +126,6 @@ treat_tib |>
 | Mulled wine | Fairy  | 25.92 | 8.00 | 11.25 | (8.00, 41.00)  | -0.21    | -0.28    | 50  |
 
 ## Slide 10: Visualize
-
-![Image: as snowy trees 126530339 (no description provided yet)](images/as_snowy_trees_126530339.jpg)
 
 ``` r
 treat_int_gg <- ggplot(treat_tib, aes(x = treat, y = speed, colour = helper, shape = helper, fill = helper)) +
@@ -156,8 +146,6 @@ treat_int_gg
 
 ## Slide 11: The model
 
-![Image: as snowy trees 126530339 (no description provided yet)](images/as_snowy_trees_126530339.jpg)
-
 ``` math
  \begin{aligned} \text{speed}_{ij} &= \hat{b}_{0} + \hat{b}_{1}\text{helper}_{i} + \hat{b}_{2}\text{treat}_{ij} + \hat{b}_{3}\left(\text{helper}_{i} \times \text{treat}_{ij} \right) + u_{0j} + e_{i} \end{aligned} 
 ```
@@ -167,8 +155,6 @@ treat_afx <- afex::aov_4(speed ~ treat*helper + (treat|id), data = treat_tib)
 ```
 
 ## Slide 12: Evaluate
-
-![Image: as blu globe 391811093 (no description provided yet)](images/as_blu_globe_391811093.jpg)
 
 ``` r
 model_parameters(treat_afx, es_type = "omega") |> 
@@ -189,8 +175,6 @@ ANOVA estimation for factorial designs using ‘afex’
 
 ## Slide 13: Evaluate assumptions
 
-![Image: as santa vortex 94489562 (no description provided yet)](images/as_santa_vortex_94489562.jpg)
-
 ``` r
 check_model(treat_afx)
 ```
@@ -201,15 +185,11 @@ check_model(treat_afx)
 
 ## Slide 14: Interpret the main effect of treat
 
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
-
 ![Plot (no description provided yet)](images/ds_mixed_designs_slide014_unnamed-chunk-12-1.png)
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 15: Interpret the main effect of treat
-
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
 
 ![Plot (no description provided yet)](images/ds_mixed_designs_slide015_unnamed-chunk-13-1.png)
 
@@ -217,15 +197,11 @@ check_model(treat_afx)
 
 ## Slide 16: Interpret the main effect of treat
 
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
-
 ![Plot (no description provided yet)](images/ds_mixed_designs_slide016_unnamed-chunk-14-1.png)
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 17: Interpret
-
-![Image: as red santa globe 45715114 (no description provided yet)](images/as_red_santa_globe_45715114.jpg)
 
 | Parameter | Sum_Squares | Sum_Squares_Error | df | df (error) | Mean_Square | F | p | ω² (partial) |
 |----|----|----|----|----|----|----|----|----|
@@ -247,8 +223,6 @@ Video clip: [xmas scene 2](https://profandyfield.github.io/statistics_lectures/s
 
 ## Slide 19: A festive example
 
-![Image: as blu house 93514381 (no description provided yet)](images/as_blu_house_93514381.jpg)
-
 Santa Claus wanted to test the effect of different quantities of different types of treats on the speed of delivery in two types of helpers.
 
 Predictors
@@ -263,8 +237,6 @@ Outcome
 
 ## Slide 20: The design
 
-![Image: as snowman wave 303329070 (no description provided yet)](images/as_snowman_wave_303329070.jpg)
-
 ![Image: santa three way mixed (no description provided yet)](images/santa_three_way_mixed.png)
 
 > **Note: Statis-tip**
@@ -276,8 +248,6 @@ Outcome
 > - `helper` is an independent measure because participants could be an elf or a fairy but not both
 
 ## Slide 21: Load and Look
-
-![Image: as santa moon 36326866 (no description provided yet)](images/as_santa_moon_36326866.jpg)
 
 |     | id                                    | helper | treat   | quantity | speed |
 |-----|---------------------------------------|--------|---------|----------|-------|
@@ -338,8 +308,6 @@ Table 2: Santa's data (first 50 of 1000 rows)
 
 ## Slide 22: Extending the model
 
-![Image: as north pole 301582384 (no description provided yet)](images/as_north_pole_301582384.jpg)
-
 - Let’s simplify things by ignoring the fact that `quantity` will be represented by four dummy variables (as will all interactions that involve it)
 
 ``` math
@@ -347,8 +315,6 @@ Table 2: Santa's data (first 50 of 1000 rows)
 ```
 
 ## Slide 23: Summary of effects
-
-![Image: as tree train 93514522 (no description provided yet)](images/as_tree_train_93514522.jpg)
 
 We will get an *F*-statistic for the following effects:
 
@@ -372,8 +338,6 @@ We will get an *F*-statistic for the following effects:
 
 ## Slide 24: Contrasts
 
-![Image: as santa moon 37337682 (no description provided yet)](images/as_santa_moon_37337682.jpg)
-
 - For both `helper` and `treat` there are two categories so the Fs are directly interpretable.
 - For `quantity` we need 4 contrast variables. These would work:
   - **Contrast 1**: {two} vs. {one}
@@ -393,8 +357,6 @@ Video clip: [three way design song instrumental](https://profandyfield.github.io
 Video clip: [three way design song](https://profandyfield.github.io/statistics_lectures/ds_11_mixed_designs/media/three_way_design_song.mp4)
 
 ## Slide 27: Fit the model
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 ``` r
 xmas_afx <- afex::aov_4(speed ~ treat*quantity*helper + (treat*quantity|id), data = xmas_tib)
@@ -423,8 +385,6 @@ ANOVA estimation for factorial designs using ‘afex’
 
 ## Slide 28: Evaluate assumptions
 
-![Image: as log cabin 184043999 (no description provided yet)](images/as_log_cabin_184043999.jpg)
-
 ``` r
 check_model(xmas_afx)
 ```
@@ -434,8 +394,6 @@ check_model(xmas_afx)
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
 ## Slide 29: Interpret the highest-order interaction
-
-![Image: as snowy village (no description provided yet)](images/as_snowy_village.jpg)
 
 ``` r
 ggplot(xmas_tib, aes(x = quantity, y= speed, colour = treat)) +
@@ -453,8 +411,6 @@ ggplot(xmas_tib, aes(x = quantity, y= speed, colour = treat)) +
 ![Plot (no description provided yet)](images/ds_mixed_designs_slide029_unnamed-chunk-23-1.png)
 
 ## Slide 30: Contrasts across the interaction
-
-![Image: as santa vortex 94489562 (no description provided yet)](images/as_santa_vortex_94489562.jpg)
 
 ``` r
 three_way_emm <- estimate_means(model = xmas_afx, 
@@ -480,8 +436,6 @@ Marginal Contrasts Analysis
 
 ## Slide 31: Contrast 1
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
 | Five - One | Mulled.wine - Pudding | Fairy - Elf | 17.06 | (10.54, 23.58) | 2.56 | 6.66 | \< .001 |
@@ -491,8 +445,6 @@ Marginal Contrasts Analysis
 ![Image: elf 1 (no description provided yet)](images/elf_1.png)![Image: fairy 1 (no description provided yet)](images/fairy_1.png)
 
 ## Slide 32: Contrast 1
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
@@ -504,8 +456,6 @@ Marginal Contrasts Analysis
 
 ## Slide 33: Contrast 2
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
 | Four - One | Mulled.wine - Pudding | Fairy - Elf | 12.26 | (6.90, 17.62) | 2.11 | 5.82 | \< .001 |
@@ -515,8 +465,6 @@ Marginal Contrasts Analysis
 ![Image: elf 2 (no description provided yet)](images/elf_2.png)![Image: fairy 2 (no description provided yet)](images/fairy_2.png)
 
 ## Slide 34: Contrast 2
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
@@ -528,8 +476,6 @@ Marginal Contrasts Analysis
 
 ## Slide 35: Contrast 3
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
 | Three - One | Mulled.wine - Pudding | Fairy - Elf | 0.88 | (-3.37, 5.13) | 1.67 | 0.53 | \> .999 |
@@ -539,8 +485,6 @@ Marginal Contrasts Analysis
 ![Image: elf 3 (no description provided yet)](images/elf_3.png)![Image: fairy 3 (no description provided yet)](images/fairy_3.png)
 
 ## Slide 36: Contrast 3
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
@@ -552,8 +496,6 @@ Marginal Contrasts Analysis
 
 ## Slide 37: Contrast 4
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|
 | Two - One | Mulled.wine - Pudding | Fairy - Elf | -0.90 | (-3.67, 1.87) | 1.09 | -0.83 | \> .999 |
@@ -563,8 +505,6 @@ Marginal Contrasts Analysis
 ![Image: elf 4 (no description provided yet)](images/elf_4.png)![Image: fairy 4 (no description provided yet)](images/fairy_4.png)
 
 ## Slide 38: Contrast 4
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 | quantity_trt.vs.ctrl | treat_trt.vs.ctrl | helper_trt.vs.ctrl | Difference | CI | SE | t(98) | p |
 |----|----|----|----|----|----|----|----|

@@ -38,15 +38,11 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 
 ## Slide 9
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Image: spine map (no description provided yet)](images/spine_map.png)
 
 ![Image: spine map lec 02 (no description provided yet)](images/spine_map_lec_02.png)
 
 ## Slide 10
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ![Image: rm design sniffing puppies (no description provided yet)](images/rm_design_sniffing_puppies.png)
 
@@ -54,8 +50,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 - **Unsystematic variance**: variance created by unknown factors
 
 ## Slide 11: Benefits of repeated measures designs
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - Sensitivity
   - Unsystematic variance is reduced
@@ -65,8 +59,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
   - But, be careful of fatigue
 
 ## Slide 12: Can puppies sniff out aliens?
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - Outcome = vocalizations during 1 min sniffing (`vocalizations`)
 - Predictor: type of entity being sniffed (`entity`)
@@ -82,8 +74,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 
 ## Slide 13: The data
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 |  | dog_name | Alien | Human | Mannequin | Shapeshifter | Mean | Variance |
 |----|----|----|----|----|----|----|----|
 |  | Milton | 8 | 7 | 1 | 6 | 5.50 | 7.25 |
@@ -97,8 +87,6 @@ Video clip: [space hippo](https://profandyfield.github.io/statistics_lectures/sh
 | **Mean** | — | 8.12 | 4.25 | 4.12 | 5.75 | — | — |
 
 ## Slide 14: The data in R
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 |     | dog_name                | entity       | vocalizations |
 |-----|-------------------------|--------------|---------------|
@@ -139,8 +127,6 @@ Table 2: Data for the sniffer dog example
 
 ## Slide 15: Repeated measures and the linear model
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 To keep things simple, imagine a design where dogs sniff only aliens or humans (e.g., two conditions)
 
 ``` math
@@ -161,13 +147,9 @@ To keep things simple, imagine a design where dogs sniff only aliens or humans (
 
 ## Slide 16: Repeated measures: hierrachical data structure
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Image: sniffer dogs data hierarchy (no description provided yet)](images/sniffer_dogs_data_hierarchy.png)
 
 ## Slide 17: Repeated measures and the linear model
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 Need to adjust the model to estimate this dependency
 
@@ -177,8 +159,6 @@ Need to adjust the model to estimate this dependency
 
 ## Slide 18
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide018_unnamed-chunk-6-1.png)
 
 ``` math
@@ -187,8 +167,6 @@ Need to adjust the model to estimate this dependency
 
 ## Slide 19
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide019_unnamed-chunk-7-1.png)
 
 ``` math
@@ -196,8 +174,6 @@ Need to adjust the model to estimate this dependency
 ```
 
 ## Slide 20: Repeated measures and the linear model
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshifter)
 
@@ -213,13 +189,9 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 
 ## Slide 21
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide021_unnamed-chunk-9-1.png)
 
 ## Slide 22
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide022_unnamed-chunk-10-1.png)
 
@@ -229,8 +201,6 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 
 ## Slide 23
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide023_unnamed-chunk-11-1.png)
 
 ``` math
@@ -238,8 +208,6 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 ```
 
 ## Slide 24
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide024_unnamed-chunk-12-1.png)
 
@@ -249,8 +217,6 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 
 ## Slide 25
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide025_unnamed-chunk-13-1.png)
 
 ``` math
@@ -258,8 +224,6 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 ```
 
 ## Slide 26: Approaches to repeated measures designs
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ### Historic: Repeated measures ANOVA (RM-ANOVA)
 
@@ -280,8 +244,6 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 
 ## Slide 27: Fitting the model
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 - Use `glmmTMB::glmmTMB()`
 
   - A trickier but more flexible option
@@ -297,13 +259,9 @@ Back to our actual design (with 4 conditions: Alien, Human, Mannequin, Shapeshif
 
 ## Slide 28
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Image: dsr2 fig 04 39 workflow (no description provided yet)](images/dsr2_fig_04_39_workflow.png)
 
 ## Slide 29: Load and Look
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 sniff_tib |> 
@@ -324,15 +282,11 @@ sniff_tib |>
 
 ## Slide 30: Visualize
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide030_unnamed-chunk-15-1.png)
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
 ## Slide 31: Fit the model: Contrasts
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 If the dog training has been successful then we’d expect sniffer dogs to make more vocalizations when sniffing alien entities than non alien-entities.
 
@@ -356,8 +310,6 @@ Table 4: Contrast coding for the entity variable
 
 ## Slide 32: Fitting the model
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 aliens_vs_non = c(1/2, -1/2, -1/2, 1/2)
 alien_vs_shape = c(1/2, 0, 0, -1/2)
@@ -372,8 +324,6 @@ sniff_mlm <- glmmTMB::glmmTMB(vocalizations ~ entity + (1|dog_name),
 ```
 
 ## Slide 33: Evaluate the model
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ``` r
 test_lrt(sniff_mlm) |> 
@@ -395,8 +345,6 @@ Likelihood-Ratio-Test (LRT) for Model Comparison
 
 ## Slide 34: Evaluate the model
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 model_performance(sniff_mlm) |> 
   display()
@@ -412,8 +360,6 @@ model_performance(sniff_mlm) |>
 
 ## Slide 35: Evaluate assumptions
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 check_model(sniff_mlm)
 ```
@@ -421,8 +367,6 @@ check_model(sniff_mlm)
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide035_unnamed-chunk-22-1.png)
 
 ## Slide 36: Interpret parameter estimates, CIs and tests
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 ``` r
 model_parameters(sniff_mlm, effects = "fixed") |> 
@@ -446,8 +390,6 @@ Fixed Effects
 
 ## Slide 37
 
-![Image: daze mid still (no description provided yet)](images/daze_mid_still.jpg)
-
 Audio clip: [spaceship interior](https://profandyfield.github.io/statistics_lectures/shared_media/audio/spaceship_interior.mp3)
 
 ## Slide 38
@@ -464,11 +406,7 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 
 ## Slide 41 (new section): Scenting a victory … factorial repeated measures designs
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ## Slide 42: Can scents distract the sniffer dogs?
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 - 50 sniffer dogs
   - Participated in all conditions
@@ -491,8 +429,6 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 
 ## Slide 43: The model
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 - Let’s simplify things by ignoring the fact that `entity` and `scent_mask` will be represented by two dummy variables each (and the interaction by 4!)
 - We can model individual differences in all parameters
 
@@ -508,8 +444,6 @@ Video clip: [daze middle 02](https://profandyfield.github.io/statistics_lectures
 ```
 
 ## Slide 44: Load and Look
-
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
 
 |     | dog_id | entity       | scent_mask | vocalizations |
 |-----|--------|--------------|------------|---------------|
@@ -568,8 +502,6 @@ Table 7: Data for the scent masking example (first 50 of 450 rows)
 
 ## Slide 45: Load and Look
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` r
 scent_tib |> 
   group_by(entity, scent_mask) |> 
@@ -594,15 +526,11 @@ scent_tib |>
 
 ## Slide 46: Visualize
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ![Plot (no description provided yet)](images/repeated_measures_lme_slide046_unnamed-chunk-28-1.png)
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
 ## Slide 47: Fit the model: contrasts
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 We have a natural control group for the entity (human) so a natural contrast is to use dummy coding.
 
@@ -615,8 +543,6 @@ We have a natural control group for the scent masks (no scent) so a natural cont
 - **Contrast 2**: {fox} vs. {none}
 
 ## Slide 48: Specifying contrasts
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 The level order of the variables is:
 
@@ -641,8 +567,6 @@ contrasts(scent_tib$scent_mask) <- contr.treatment(3, base = 1)
 
 ## Slide 49: Building models
 
-![Image: spaceship light 2 ppt hex (no description provided yet)](images/spaceship_light_2_ppt_hex.jpg)
-
 ``` r
 scent_base <- glmmTMB::glmmTMB(
   vocalizations ~ 1 + (1|dog_id),
@@ -662,8 +586,6 @@ scent_int <- glmmTMB::glmmTMB(
 ```
 
 ## Slide 50: Evaluate
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 test_lrt(scent_base, scent_ent, scent_scent, scent_int) |> 
@@ -687,8 +609,6 @@ Likelihood-Ratio-Test (LRT) for Model Comparison (ML-estimator)
 
 ## Slide 51: Evaluate
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 ``` r
 model_performance(scent_int) |> 
   display()
@@ -701,8 +621,6 @@ model_performance(scent_int) |>
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
 ## Slide 52: Evaluate assumptions
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 check_model(scent_int)
@@ -723,8 +641,6 @@ check_model(scent_int)
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 54: Interpret
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 ``` r
 model_parameters(scent_int, effects = "fixed") |> 
@@ -749,8 +665,6 @@ Fixed Effects
 
 ## Slide 55: Entity × scent_mask interaction: parameter 1
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
 | entity (Shapeshifter) × scent mask (Human) | -2.82 | 0.50 | (-3.81, -1.83) | -5.59 | \< .001 |
@@ -762,8 +676,6 @@ Fixed Effects
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 56: Entity × scent_mask interaction: parameter 1
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
@@ -777,8 +689,6 @@ Fixed Effects
 
 ## Slide 57: Entity × scent_mask interaction: parameter 2
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
 | entity (Alien) × scent mask (Human) | -3.26 | 0.50 | (-4.25, -2.27) | -6.46 | \< .001 |
@@ -790,8 +700,6 @@ Fixed Effects
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 58: Entity × scent_mask interaction: parameter 2
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
@@ -805,8 +713,6 @@ Fixed Effects
 
 ## Slide 59: Entity × scent_mask interaction: parameter 3
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
 | entity (Shapeshifter) × scent mask (Fox) | -5.92 | 0.50 | (-6.91, -4.93) | -11.73 | \< .001 |
@@ -818,8 +724,6 @@ Fixed Effects
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 60: Entity × scent_mask interaction: parameter 3
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
@@ -833,8 +737,6 @@ Fixed Effects
 
 ## Slide 61: Entity × scent_mask interaction: parameter 4
 
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
-
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|
 | entity (Alien) × scent mask (Fox) | -7.22 | 0.50 | (-8.21, -6.23) | -14.31 | \< .001 |
@@ -846,8 +748,6 @@ Fixed Effects
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 62: Entity × scent_mask interaction: parameter 4
-
-![Image: spaceship light ppt hex (no description provided yet)](images/spaceship_light_ppt_hex.jpg)
 
 | Parameter | Coefficient | SE | 95% CI | z | p |
 |----|----|----|----|----|----|

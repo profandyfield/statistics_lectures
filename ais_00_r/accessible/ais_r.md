@@ -523,8 +523,6 @@ Table 1: Spotify data for Iron Maiden (first 50 of 163 rows)
 
 ## Slide 47
 
-![Image: function as bakery (no description provided yet)](images/function_as_bakery.png)
-
 ## Slide 48: What are functions?
 
 - We use functions to do things

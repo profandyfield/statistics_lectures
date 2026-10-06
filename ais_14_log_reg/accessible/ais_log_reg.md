@@ -30,8 +30,6 @@ Video clip: [xmas santa 02](https://profandyfield.github.io/statistics_lectures/
 
 ## Slide 6: A festive example
 
-![Image: as blu house 93514381 (no description provided yet)](images/as_blu_house_93514381.jpg)
-
 Santa Claus wanted to test the effects of different types of treats on whether presents got delivered:
 
 - Predictors
@@ -40,8 +38,6 @@ Santa Claus wanted to test the effects of different types of treats on whether p
   - **delivered**: Did the presents get delivered?
 
 ## Slide 7: Load and Look
-
-![Image: as santa moon 36326866 (no description provided yet)](images/as_santa_moon_36326866.jpg)
 
 |     | id                            | treat       | delivered     |
 |-----|-------------------------------|-------------|---------------|
@@ -102,8 +98,6 @@ Table 1: Santa's data (first 50 of 400 rows)
 
 ## Slide 8: If it were a standard linear model
 
-![Image: as snowy trees 126530339 (no description provided yet)](images/as_snowy_trees_126530339.jpg)
-
 ``` math
  \begin{aligned} \text{delivered}_{i} &= \hat{b}_{0} + \hat{b}_{1}\text{treat}_{i} + e_{i} \end{aligned} 
 ```
@@ -120,8 +114,6 @@ Assumption of linearity
 
 ## Slide 9: But it’s not a standard linear model
 
-![Image: as blu globe 391811093 (no description provided yet)](images/as_blu_globe_391811093.jpg)
-
 We predict the probability of the outcome occurring
 
 ``` math
@@ -133,8 +125,6 @@ We predict the probability of the outcome occurring
 > Note the equation contains the linear model
 
 ## Slide 10: Alternatively …
-
-![Image: as snowy trees 126530339 (no description provided yet)](images/as_snowy_trees_126530339.jpg)
 
 ``` math
  \begin{aligned} \ln\bigg(\frac{P(Y)}{1- P(Y)}\bigg) &= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\ \ln\bigg(\frac{P(\text{delivery})}{1- P(\text{delivery})}\bigg) &= \hat{b}_0 + \hat{b}_1\text{treat}_{i} + e_i \\ \end{aligned} 
@@ -151,13 +141,9 @@ We predict the probability of the outcome occurring
 
 ## Slide 11: Logs and exponents
 
-![Image: as red santa globe 45715114 (no description provided yet)](images/as_red_santa_globe_45715114.jpg)
-
 ![Image: log exp (no description provided yet)](images/log_exp.png)
 
 ## Slide 12: The odds ratio: exp(b)
-
-![Image: as snowman wave 303329070 (no description provided yet)](images/as_snowman_wave_303329070.jpg)
 
 ``` math
  \begin{aligned} \exp(b) = \frac{\text{odds after a unit change in the predictor}}{\text{original odds}} \end{aligned} 
@@ -177,8 +163,6 @@ We predict the probability of the outcome occurring
 
 ## Slide 13: Classification table
 
-![Image: as santa vortex 94489562 (no description provided yet)](images/as_santa_vortex_94489562.jpg)
-
 |                   | Delivered | Not delivered | Total |
 |-------------------|-----------|---------------|-------|
 | Christmas pudding | 150       | 28            | 178   |
@@ -193,8 +177,6 @@ We predict the probability of the outcome occurring
 
 ## Slide 14: The odds ratio
 
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
-
 ``` math
  \begin{aligned} \text{odds}_\text{delivered after pudding} &= \frac{\text{Number delivered after pudding}}{\text{Number not delivered after pudding}} \\ &= \frac{150}{28} \\ &= 5.36 \end{aligned} 
 ```
@@ -205,23 +187,17 @@ We predict the probability of the outcome occurring
 
 ## Slide 15: The odds ratio
 
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
-
 ``` math
  \begin{aligned} \text{odds ratio} &= \frac{\text{odds}_\text{delivered after wine}}{\text{odds}_\text{delivered after pudding}} \\ &= \frac{0.82}{5.36} \\ &= 0.15 \end{aligned} 
 ```
 
 ## Slide 16: The odds ratio
 
-![Image: as gingerbread 229820523 (no description provided yet)](images/as_gingerbread_229820523.jpg)
-
 ``` math
  \begin{aligned} \text{odds ratio} &= \frac{\text{odds}_\text{delivered after pudding}}{\text{odds}_\text{delivered after wine}} \\ &= \frac{5.36}{0.82} \\ &= 6.54 \end{aligned} 
 ```
 
 ## Slide 17: Interpret the parameters
-
-![Image: as santa over village 71686107 (no description provided yet)](images/as_santa_over_village_71686107.jpg)
 
 ``` r
 santa_mod <- glm(delivered ~ treat, data = santa_tib, family = binomial())
@@ -238,8 +214,6 @@ model_parameters(santa_mod) |>
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 18: Interpret the odds ratios
-
-![Image: as santa over village 71686107 (no description provided yet)](images/as_santa_over_village_71686107.jpg)
 
 ``` r
 model_parameters(santa_mod, exponentiate = TRUE) |> 
@@ -259,8 +233,6 @@ Video clip: [xmas scene 2](https://profandyfield.github.io/statistics_lectures/s
 
 ## Slide 20: A festive example
 
-![Image: as blu house 93514381 (no description provided yet)](images/as_blu_house_93514381.jpg)
-
 Santa Claus wanted to test the effects of different types of treats and the quantity of them consumed on whether presents got delivered:
 
 - Predictors
@@ -270,8 +242,6 @@ Santa Claus wanted to test the effects of different types of treats and the quan
   - **delivered**: Did the presents get delivered?
 
 ## Slide 21: Load and Look
-
-![Image: as santa moon 36326866 (no description provided yet)](images/as_santa_moon_36326866.jpg)
 
 |     | id                            | quantity | treat       | delivered     |
 |-----|-------------------------------|----------|-------------|---------------|
@@ -332,8 +302,6 @@ Table 2: Santa's data (first 50 of 400 rows)
 
 ## Slide 22: Extending the model
 
-![Image: as red snowflake 228468210 (no description provided yet)](images/as_red_snowflake_228468210.jpg)
-
 ``` math
  \begin{aligned} \text{delivered}_{i} &= \hat{b}_{0} + \hat{b}_{1}\text{treat}_{i} + \hat{b}_{2}\text{quantity}_{i} + \hat{b}_{3}\text{treat} \times \text{quantity}_{i} + e_{i} \end{aligned} 
 ```
@@ -353,8 +321,6 @@ Table 2: Santa's data (first 50 of 400 rows)
 
 ## Slide 23: Building the model
 
-![Image: as tree train 93514522 (no description provided yet)](images/as_tree_train_93514522.jpg)
-
 - Forced entry: all variables entered simultaneously.
 - Hierarchical: variables entered in blocks.
   - Blocks should be based on past research, or theory being tested.
@@ -363,8 +329,6 @@ Table 2: Santa's data (first 50 of 400 rows)
   - Should be used only for exploratory analysis.
 
 ## Slide 24: Things that can go wrong
-
-![Image: as blu house 93514381 (no description provided yet)](images/as_blu_house_93514381.jpg)
 
 ### Things we’ve met before
 
@@ -379,8 +343,6 @@ Table 2: Santa's data (first 50 of 400 rows)
 - Complete separation
 
 ## Slide 25: Incomplete information
-
-![Image: as santa moon 37337682 (no description provided yet)](images/as_santa_moon_37337682.jpg)
 
 ### Empty cells
 
@@ -402,8 +364,6 @@ Table 2: Santa's data (first 50 of 400 rows)
 | Mulled wine | 4        | 3         | \-            |
 
 ## Slide 26: Complete separation
-
-![Image: as krampus 374161953 (no description provided yet)](images/as_krampus_374161953.jpg)
 
 When the outcome variable can be perfectly predicted
 
@@ -433,8 +393,6 @@ Video clip: [logistic regression song](https://profandyfield.github.io/statistic
 
 ## Slide 29: Build the model
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 ``` r
 int_glm <- glm(delivered ~ 1, data = santa_tib, family = binomial())
 treat_glm <- update(int_glm, .~. + treat)
@@ -443,8 +401,6 @@ santa_glm <- update(quantity_glm, .~. + treat:quantity)
 ```
 
 ## Slide 30: Evaluate
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 ``` r
 test_lrt(int_glm, treat_glm, quantity_glm, santa_glm) |> 
@@ -464,8 +420,6 @@ Likelihood-Ratio-Test (LRT) for Model Comparison (ML-estimator)
 
 ## Slide 31: Evaluate assumptions
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 ``` r
 check_model(santa_glm)
 ```
@@ -475,8 +429,6 @@ check_model(santa_glm)
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
 ## Slide 32: Interpret parameter estimates, CIs and tests
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 ``` r
 model_parameters(santa_glm) |> 
@@ -493,8 +445,6 @@ model_parameters(santa_glm) |>
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 33: Interpret parameter estimates, CIs and tests
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 ``` r
 santa_tib |> 
@@ -532,8 +482,6 @@ santa_tib |>
 
 ## Slide 34: Interpret odds ratios
 
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
-
 ``` r
 model_parameters(santa_glm, exponentiate = TRUE) |> 
   display()
@@ -549,8 +497,6 @@ model_parameters(santa_glm, exponentiate = TRUE) |>
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 35: Interpret parameter estimates, CIs and tests
-
-![Image: as snowy trees white 126530339 (no description provided yet)](images/as_snowy_trees_white_126530339.jpg)
 
 ``` r
 santa_tib |> 
@@ -591,8 +537,6 @@ santa_tib |>
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
 ## Slide 36: Visualize
-
-![Image: as snowman wave 303329070 (no description provided yet)](images/as_snowman_wave_303329070.jpg)
 
 ``` r
 santa_probs <- estimate_means(santa_glm, by = c("quantity", "treat"))

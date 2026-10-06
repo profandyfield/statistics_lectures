@@ -10,8 +10,6 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ## Slide 2
 
-![Image: lone knight (no description provided yet)](images/lone_knight.jpg)
-
 Audio clip: [beast of bias narration](https://profandyfield.github.io/statistics_lectures/ds_04_bias/media/beast_of_bias_narration.mp3)
 
 All is not well in the island of linearis modelus.
@@ -161,8 +159,6 @@ Fixed Effects
 Video clip: [arlo have you saved the dragons yet 2 caption](https://profandyfield.github.io/statistics_lectures/ds_04_bias/media/arlo_have_you_saved_the_dragons_yet_2_caption.mp4)
 
 ## Slide 19
-
-![Image: zach knight (no description provided yet)](images/zach_knight.jpg)
 
 ## Slide 20
 

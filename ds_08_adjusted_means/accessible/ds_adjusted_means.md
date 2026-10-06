@@ -30,8 +30,6 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ## Slide 4: Extending the puppy example
 
-![Image: milton bed crop 2018 (no description provided yet)](images/milton_bed_crop_2018.jpg)
-
 - A puppy therapy RCT
   - A no puppies control group
   - 15 minutes of puppy therapy
@@ -42,8 +40,6 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
   - Happiness (0 = unhappy to 10 = happy) **before** (*pre*) treatment
 
 ## Slide 5: The data
-
-![Image: milton 20180308 202134 (no description provided yet)](images/milton_20180308_202134.jpg)
 
 |     | id    | dose       | pre_happy | post_happy |
 |-----|-------|------------|-----------|------------|
@@ -107,8 +103,6 @@ Table 1: Data for the puppy therapy example
 ```
 
 ## Slide 9: Contrasts
-
-![Image: milton 20190623 191707 (no description provided yet)](images/milton_20190623_191707.jpg)
 
 > **Caution: Think about it!**
 >
@@ -301,8 +295,6 @@ Video clip: [milton even prettier as a puppy](https://profandyfield.github.io/st
 
 ## Slide 28: The model
 
-![Image: milton 20180606 113722 crop (no description provided yet)](images/milton_20180606_113722_crop.jpg)
-
 ``` math
  \begin{aligned} \text{happy (post)}_i &= \hat{b}_0 + \hat{b}_1\text{happy (pre)}_i + \hat{b}_2\text{Contrast 1}_i + \hat{b}_3\text{Contrast 2}_i + e_i\\ \text{happy (post)}_i &= \hat{b}_0 + \hat{b}_1\text{happy (pre)}_i + \hat{b}_2\left(\text{puppies vs. none}\right)_i + \\ &\qquad \hat{b}_3\left(\text{30 vs 15 minutes}\right)_i + e_i\\ \end{aligned} 
 ```
@@ -386,8 +378,6 @@ ggplot(puptreat_tib, aes(x = dose, y = post_happy, colour = dose)) +
 
 ## Slide 32: Fit the model
 
-![Image: milton 20190627 072357 crop (no description provided yet)](images/milton_20190627_072357_crop.jpg)
-
 ### Set contrasts
 
 ``` r
@@ -450,8 +440,6 @@ Anova Table (Type 3 tests)
 
 ## Slide 35: Evaluate assumptions
 
-![Image: milton 20180720 100533 crop (no description provided yet)](images/milton_20180720_100533_crop.jpg)
-
 ``` r
 check_model(puptreat_lm)
 ```
@@ -487,8 +475,6 @@ model_parameters(puptreat_lm, vcov = "HC4") |>
 > - What do we expect the parameter estimates of `dose` to represent?
 
 ## Slide 39: Visualize the contrast model
-
-![Image: milton 20180720 100533 crop (no description provided yet)](images/milton_20180720_100533_crop.jpg)
 
 ![Plot (no description provided yet)](images/ds_adjusted_means_slide039_unnamed-chunk-25-1.png)
 
