@@ -145,7 +145,7 @@ s3d$plane3d(more_hard_lm, lty = 2, draw_polygon = TRUE, col = alpha(mulberry, 0.
 
 :::
 
-## Parameter estimates
+## Parameter estimates: hard to get
 
 ::: center-h
 ::: txt_mulberry
@@ -155,16 +155,20 @@ $\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate v
 :::
 :::
 
+\
+
 ::: center-h
-::: tbl_s
+
 ```{r}
 #| echo: false
 
 more_hard_tbl <- model_parameters(more_hard_lm) 
 display(more_hard_tbl)
 ```
+
 :::
-:::
+
+\
 
 ::: fragmet
 
@@ -173,6 +177,32 @@ display(more_hard_tbl)
   + This is the effect of 'hard to get' on interest **adjusted for** the effect of 'mate value'
 
 :::
+
+## Parameter estimates: mate value
+
+::: center-h
+::: txt_mulberry
+::: txt_l
+$\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate value}_i$
+:::
+:::
+:::
+
+\
+
+::: center-h
+
+```{r}
+#| echo: false
+
+more_hard_tbl <- model_parameters(more_hard_lm) 
+display(more_hard_tbl)
+```
+
+:::
+
+\
+
 ::: fragmet
 
 * As the perception of mate value increased by 1 (on a scale from 1-5), **`r value_from_ez(more_hard_tbl, row = 3)`** more expressions of interest were made (when perceptions of being hard to get are constant)
