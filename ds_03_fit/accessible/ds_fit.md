@@ -81,7 +81,7 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ![Plot (no description provided yet)](images/ds_fit_slide008_unnamed-chunk-10-1.png)
 
-## Slide 9: Parameter estimates
+## Slide 9: Parameter estimates: hard to get
 
 $`\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate value}_i`$
 
@@ -94,11 +94,22 @@ $`\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate 
 - As the perception that the other person was hard to get increased by 1 (on a scale from 1-5), **0.13** more expressions of interest were made (when mate value is constant)
   - This effect is not significant, $`\hat{b}`$ = 0.13 (-0.23, 0.48), *t*(125) = 0.70, *p* = 0.484
   - This is the effect of ‘hard to get’ on interest **adjusted for** the effect of ‘mate value’
+
+## Slide 10: Parameter estimates: mate value
+
+$`\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate value}_i`$
+
+| Parameter   | Coefficient | SE   | 95% CI        | t(125) | p     |
+|-------------|-------------|------|---------------|--------|-------|
+| (Intercept) | -0.49       | 0.62 | (-1.72, 0.74) | -0.79  | 0.432 |
+| hard to get | 0.13        | 0.18 | (-0.23, 0.48) | 0.70   | 0.484 |
+| mate value  | 0.39        | 0.17 | (0.05, 0.72)  | 2.31   | 0.023 |
+
 - As the perception of mate value increased by 1 (on a scale from 1-5), **0.39** more expressions of interest were made (when perceptions of being hard to get are constant)
   - This effect is significant, $`\hat{b}`$ = 0.39 (0.05, 0.72), *t*(125) = 2.31, *p* = 0.023
   - This is the effect of ‘mate value’ on interest **adjusted for** the effect of ‘hard to get’
 
-## Slide 10: How to enter predictors
+## Slide 11: How to enter predictors
 
 - Hierarchical
   - Experimenter decides the order in which variables are entered into the model
@@ -110,25 +121,25 @@ $`\hat{\text{interest}}_i = -0.49 + 0.13\text{ hard to get}_i + 0.39\text{ mate 
   - The model is unlikely to replicate in other samples (i.e., can produce spurious results)
   - Use only for exploratory analysis
 
-## Slide 11 (new section): When a hierarchical model gets you dressed
+## Slide 12 (new section): When a hierarchical model gets you dressed
 
-## Slide 12
+## Slide 13
 
 Video clip: [arlo hierarchical small](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/arlo_hierarchical_small.mp4)
 
-## Slide 13 (new section): When a stepwise model gets you dressed
-
-## Slide 14
-
-Video clip: [arlo stepwise small](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/arlo_stepwise_small.mp4)
+## Slide 14 (new section): When a stepwise model gets you dressed
 
 ## Slide 15
 
+Video clip: [arlo stepwise small](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/arlo_stepwise_small.mp4)
+
+## Slide 16
+
 Video clip: [arlo outtake small](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/arlo_outtake_small.mp4)
 
-## Slide 16 (new section): Model fit
+## Slide 17 (new section): Model fit
 
-## Slide 17: How do we tell if a model is a good fit?
+## Slide 18: How do we tell if a model is a good fit?
 
 - Let’s look at a simple model: the mean
 - How do we tell if it’s a good fit?
@@ -143,23 +154,23 @@ Video clip: [arlo outtake small](https://profandyfield.github.io/statistics_lect
 
 - The `spotifyr` package scrapes this data!
 
-## Slide 18: Is the average energy score a good fit?
-
-![Plot (no description provided yet)](images/ds_fit_slide018_unnamed-chunk-20-1.png)
-
-![Image: ts 1989 (no description provided yet)](images/ts_1989.png)
-
 ## Slide 19: Is the average energy score a good fit?
 
-![Plot (no description provided yet)](images/ds_fit_slide019_unnamed-chunk-21-1.png)
-
-Audio clip: [taylor swift satan](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/taylor_swift_satan.mp3)
+![Plot (no description provided yet)](images/ds_fit_slide019_unnamed-chunk-22-1.png)
 
 ![Image: ts 1989 (no description provided yet)](images/ts_1989.png)
 
 ## Slide 20: Is the average energy score a good fit?
 
-![Plot (no description provided yet)](images/ds_fit_slide020_unnamed-chunk-22-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide020_unnamed-chunk-23-1.png)
+
+Audio clip: [taylor swift satan](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/taylor_swift_satan.mp3)
+
+![Image: ts 1989 (no description provided yet)](images/ts_1989.png)
+
+## Slide 21: Is the average energy score a good fit?
+
+![Plot (no description provided yet)](images/ds_fit_slide021_unnamed-chunk-24-1.png)
 
 Audio clip: [taylor swift satan](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/taylor_swift_satan.mp3)
 
@@ -171,23 +182,15 @@ you know you want to”
 
 ![Image: ts 1989 (no description provided yet)](images/ts_1989.png)
 
-## Slide 21: Is the average energy score a good fit?
+## Slide 22: Is the average energy score a good fit?
 
-![Plot (no description provided yet)](images/ds_fit_slide021_unnamed-chunk-23-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide022_unnamed-chunk-25-1.png)
 
 ![Image: ts 1989 (no description provided yet)](images/ts_1989.png)
 
-## Slide 22
+## Slide 23
 
 Video clip: [flight of icarus vancouver](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/flight_of_icarus_vancouver.mp4)
-
-## Slide 23: Is the average energy score a good fit?
-
-![Plot (no description provided yet)](images/ds_fit_slide023_unnamed-chunk-24-1.png)
-
-![Plot (no description provided yet)](images/ds_fit_slide023_unnamed-chunk-25-1.png)
-
-![Image: ts 1989 (no description provided yet)](images/ts_1989.png)![Image: piece of mind (no description provided yet)](images/piece_of_mind.jpg)
 
 ## Slide 24: Is the average energy score a good fit?
 
@@ -205,7 +208,15 @@ Video clip: [flight of icarus vancouver](https://profandyfield.github.io/statist
 
 ![Image: ts 1989 (no description provided yet)](images/ts_1989.png)![Image: piece of mind (no description provided yet)](images/piece_of_mind.jpg)
 
-## Slide 26: Comparing sums of squares
+## Slide 26: Is the average energy score a good fit?
+
+![Plot (no description provided yet)](images/ds_fit_slide026_unnamed-chunk-30-1.png)
+
+![Plot (no description provided yet)](images/ds_fit_slide026_unnamed-chunk-31-1.png)
+
+![Image: ts 1989 (no description provided yet)](images/ts_1989.png)![Image: piece of mind (no description provided yet)](images/piece_of_mind.jpg)
+
+## Slide 27: Comparing sums of squares
 
 - Sums of squares represent **total** error
 - Because sums of squares are totals we can compare them only when they are based on the same number of scores.
@@ -219,15 +230,15 @@ Video clip: [flight of icarus vancouver](https://profandyfield.github.io/statist
  \begin{aligned} \text{MS} &= \frac{\text{SS}}{N-p} \\ &= \frac{\text{SS}}{N-1} \end{aligned} 
 ```
 
-## Slide 27: Is the average energy score a good fit?
+## Slide 28: Is the average energy score a good fit?
 
-![Plot (no description provided yet)](images/ds_fit_slide027_unnamed-chunk-30-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide028_unnamed-chunk-32-1.png)
 
-![Plot (no description provided yet)](images/ds_fit_slide027_unnamed-chunk-31-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide028_unnamed-chunk-33-1.png)
 
 ![Image: ts 1989 (no description provided yet)](images/ts_1989.png)![Image: piece of mind (no description provided yet)](images/piece_of_mind.jpg)
 
-## Slide 28: Illusory Truth Effect (ITE)1
+## Slide 29: Illusory Truth Effect (ITE)1
 
 - Repetition increases perceived truthfulness (Hasher et al., 1977)
 - This is equally true for plausible and implausible statements (Fazio et al., 2019)
@@ -236,11 +247,11 @@ Video clip: [flight of icarus vancouver](https://profandyfield.github.io/statist
 
 1.  Murray et al. (2020). <https://doi.org/10.31234/osf.io/9evzc>
 
-## Slide 29
+## Slide 30
 
 Video clip: [milton lecture amazing repeat](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/milton_lecture_amazing_repeat.mp4)
 
-## Slide 30: Illusory Truth Effect (ITE)1
+## Slide 31: Illusory Truth Effect (ITE)1
 
 - Repetition increases perceived truthfulness (Hasher et al., 1977)
 - This is equally true for plausible and implausible statements (Fazio et al., 2019)
@@ -255,7 +266,7 @@ Video clip: [milton lecture amazing repeat](https://profandyfield.github.io/stat
 
 1.  Murray et al. (2020). <https://doi.org/10.31234/osf.io/9evzc>
 
-## Slide 31: Testing the fit of the general linear model
+## Slide 32: Testing the fit of the general linear model
 
 To see whether the model is a reasonable ‘fit’ of the observed data we use the sum of squared errors (**SS**):
 
@@ -269,31 +280,31 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
   - How much better the model is at predicting *Y* than the mean
   - How well the model fits (in total)
 
-## Slide 32
+## Slide 33
 
 ![Image: ss pumpkin pie (no description provided yet)](images/ss_pumpkin_pie.png)
 
-## Slide 33
+## Slide 34
 
 ``` math
  \begin{aligned} \text{perceived truth}_i &= \hat{b}_0 + \hat{b}_1\text{repetition}_{i} + e_i \\ \hat{\text{perceived truth}}_i &= 1.28 + 0.54\text{ repetition}_{i} \\ \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide033_unnamed-chunk-48-1.png)
-
-## Slide 34
-
-### Total sum of squared error, SS<sub>T</sub>
-
-![Plot (no description provided yet)](images/ds_fit_slide034_unnamed-chunk-49-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide034_unnamed-chunk-50-1.png)
 
 ## Slide 35
 
 ### Total sum of squared error, SS<sub>T</sub>
 
-![Plot (no description provided yet)](images/ds_fit_slide035_unnamed-chunk-50-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide035_unnamed-chunk-51-1.png)
 
 ## Slide 36
+
+### Total sum of squared error, SS<sub>T</sub>
+
+![Plot (no description provided yet)](images/ds_fit_slide036_unnamed-chunk-52-1.png)
+
+## Slide 37
 
 ### Total sum of squared error, SS<sub>T</sub>
 
@@ -311,9 +322,9 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
 |          | 8    | 5     | 3.4             | 1.6   | 2.56          |
 | SS Total | —    | —     | —               | —     | 22.4          |
 
-![Plot (no description provided yet)](images/ds_fit_slide036_unnamed-chunk-52-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide037_unnamed-chunk-54-1.png)
 
-## Slide 37
+## Slide 38
 
 ### Total sum of squared errors, SS<sub>T</sub>
 
@@ -327,21 +338,21 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
  \begin{aligned} \text{df}_\text{T} &= N-p \\ &= 10 - 1 \\ &= 9 \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide037_unnamed-chunk-53-1.png)
-
-## Slide 38
-
-### Residual sum of squared errors, SS<sub>R</sub>
-
-![Plot (no description provided yet)](images/ds_fit_slide038_unnamed-chunk-54-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide038_unnamed-chunk-55-1.png)
 
 ## Slide 39
 
 ### Residual sum of squared errors, SS<sub>R</sub>
 
-![Plot (no description provided yet)](images/ds_fit_slide039_unnamed-chunk-55-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide039_unnamed-chunk-56-1.png)
 
 ## Slide 40
+
+### Residual sum of squared errors, SS<sub>R</sub>
+
+![Plot (no description provided yet)](images/ds_fit_slide040_unnamed-chunk-57-1.png)
+
+## Slide 41
 
 ### Residual sum of squared errors, SS<sub>R</sub>
 
@@ -359,9 +370,9 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
 |             | 8    | 5     | 5.63            | -0.63 | 0.40          |
 | SS Residual | —    | —     | —               | —     | 9.14          |
 
-![Plot (no description provided yet)](images/ds_fit_slide040_unnamed-chunk-57-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide041_unnamed-chunk-59-1.png)
 
-## Slide 41
+## Slide 42
 
 ### Residual sum of squared errors, SS<sub>R</sub>
 
@@ -372,21 +383,21 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
  \begin{aligned} \text{df}_\text{R} &= N-p \\ &= 10 - 2 \\ &= 8 \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide041_unnamed-chunk-58-1.png)
-
-## Slide 42
-
-### Model sum of squared errors, SS<sub>M</sub>
-
-![Plot (no description provided yet)](images/ds_fit_slide042_unnamed-chunk-59-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide042_unnamed-chunk-60-1.png)
 
 ## Slide 43
 
 ### Model sum of squared errors, SS<sub>M</sub>
 
-![Plot (no description provided yet)](images/ds_fit_slide043_unnamed-chunk-60-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide043_unnamed-chunk-61-1.png)
 
 ## Slide 44
+
+### Model sum of squared errors, SS<sub>M</sub>
+
+![Plot (no description provided yet)](images/ds_fit_slide044_unnamed-chunk-62-1.png)
+
+## Slide 45
 
 ### Model sum of squared errors, SS<sub>M</sub>
 
@@ -404,9 +415,9 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
 |       | 8    | 5     | 5.63            | 3.4  | 2.23  | 4.97          |
 | SS~M~ | —    | —     | —               | —    | —     | 13.25         |
 
-![Plot (no description provided yet)](images/ds_fit_slide044_unnamed-chunk-62-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide045_unnamed-chunk-64-1.png)
 
-## Slide 45
+## Slide 46
 
 ### Model sum of squared errors, SS<sub>M</sub>
 
@@ -418,9 +429,9 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
  \begin{aligned} \text{df}_\text{M} &= \text{df}_\text{T} - \text{df}_\text{R} \\ &= 9 - 8 \\ &= 1 \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide045_unnamed-chunk-63-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide046_unnamed-chunk-65-1.png)
 
-## Slide 46
+## Slide 47
 
 ``` math
  \begin{aligned} \text{SS}_\text{T} &= \text{SS}_\text{M} + \text{SS}_\text{R} \\ 22.40 &= 13.25 + 9.14 \end{aligned} 
@@ -430,43 +441,43 @@ To see whether the model is a reasonable ‘fit’ of the observed data we use t
 
 ![Image: ss pumpkin pie (no description provided yet)](images/ss_pumpkin_pie.png)
 
-## Slide 47: Extending the linear model
+## Slide 48: Extending the linear model
 
 ``` math
  \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide047_unnamed-chunk-64-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide048_unnamed-chunk-66-1.png)
 
-## Slide 48: Extending the linear model (SST)
-
-``` math
- \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
-```
-
-![Plot (no description provided yet)](images/ds_fit_slide048_unnamed-chunk-65-1.png)
-
-## Slide 49: Extending the linear model (SSR)
+## Slide 49: Extending the linear model (SST)
 
 ``` math
  \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide049_unnamed-chunk-66-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide049_unnamed-chunk-67-1.png)
 
-## Slide 50: Extending the linear model (SSM)
+## Slide 50: Extending the linear model (SSR)
 
 ``` math
  \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
 ```
 
-![Plot (no description provided yet)](images/ds_fit_slide050_unnamed-chunk-67-1.png)
+![Plot (no description provided yet)](images/ds_fit_slide050_unnamed-chunk-68-1.png)
 
-## Slide 51
+## Slide 51: Extending the linear model (SSM)
+
+``` math
+ \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
+```
+
+![Plot (no description provided yet)](images/ds_fit_slide051_unnamed-chunk-69-1.png)
+
+## Slide 52
 
 Video clip: [lazinc durt we are coming](https://profandyfield.github.io/statistics_lectures/ds_03_fit/media/lazinc_durt_we_are_coming.mp4)
 
-## Slide 52: Mean squared error (MS)
+## Slide 53: Mean squared error (MS)
 
 > **Note: Statis-tip**
 >
@@ -481,7 +492,7 @@ Video clip: [lazinc durt we are coming](https://profandyfield.github.io/statisti
  \text{MS} = \frac{\text{SS}}{\text{df}} 
 ```
 
-## Slide 53: Mean squared error (MS)
+## Slide 54: Mean squared error (MS)
 
 - **MS<sub>R</sub>**
   - Average residual/error variability (variability between the model and the observed data)
@@ -500,7 +511,7 @@ Video clip: [lazinc durt we are coming](https://profandyfield.github.io/statisti
  \begin{aligned} \text{MS}_\text{M} = \frac{\text{SS}_\text{M}}{\text{df}} = \frac{13.25}{1} = 13.25 \\ \end{aligned} 
 ```
 
-## Slide 54: Testing the model fit: the F-statistic
+## Slide 55: Testing the model fit: the F-statistic
 
 - If the model results in better prediction than using the mean, then MS<sub>M</sub> should be greater than MS<sub>R</sub>
 - The *F*-statistic is the ratio of MS<sub>M</sub> to MS<sub>R</sub>
@@ -521,7 +532,7 @@ display(ite_aov)
 | repetition | 13.26       | 1   | 13.26       | 11.61 | 0.009 |
 | Residuals  | 9.14        | 8   | 1.14        |       |       |
 
-## Slide 55: Testing the model fit: the F-statistic
+## Slide 56: Testing the model fit: the F-statistic
 
 ``` math
  \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
@@ -541,7 +552,7 @@ test_wald(more_hard_lm) |>
 >
 > Overall, including both playing hard to get and mate value significantly improved the fit of the model, *F*(2, 125) = 4.27, *p* = 0.016.
 
-## Slide 56: Testing the model fit: R2
+## Slide 57: Testing the model fit: R2
 
 - ***R*<sup>2</sup>**
   - The proportion of variance accounted for by the model
@@ -565,7 +576,7 @@ display(ite_fit)
 |------|------|------|------|-----------|------|-------|
 | 33.5 | 37.5 | 34.4 | 0.59 | 0.54      | 0.96 | 1.07  |
 
-## Slide 57: Testing the model fit: R2
+## Slide 58: Testing the model fit: R2
 
 ``` math
  \text{interest}_i = \hat{b}_0 + \hat{b}_1\text{hard to get}_i + \hat{b}_2\text{mate value}_i +e_i 
@@ -584,7 +595,7 @@ model_performance(more_hard_lm) |>
 >
 > Overall, including both playing hard to get and mate value significantly accounted for 6% of the variance in expressions of interest, or 5% adjusting for the number of predictors (*R*<sup>2</sup> = 0.06, *R*<sup>2</sup><sub>adjusted</sub> = 0.05).
 
-## Slide 58: Summary
+## Slide 59: Summary
 
 - Multiple predictors can be added to a linear model
   - *b*s are the change in the outcome associated with a unit change in the predictor **when other predictors are held constant**
