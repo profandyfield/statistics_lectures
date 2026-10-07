@@ -501,8 +501,7 @@ Imagine we factored in how strict the regime was (i.e. how restricted royalty we
 ### Errors should be independent
 
 - The **population** error in prediction for one case should not be related to the error in prediction for another case (**autocorrelation**).
-- Independent observations tend to lead to independent errors
-- **Because we cannot observe population errors we inspect the sample residuals**
+- **Independent observations tend to lead to independent errors**
 
 ::: fragment
 ### Errors should be homoscedastic
