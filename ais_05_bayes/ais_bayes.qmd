@@ -54,18 +54,19 @@ tol_rose <- tol_palette[1]
 
 ##  Learning outcomes 
 
-Bayes factors
-
-- Articulate the principles of Bayesian approaches
-- Define what a Bayes factor represents
-
-::: fragment
 
 Bayesian estimation 
 
 - Uninformative priors
 - Informatibe priors
 - Interpretation
+
+::: fragment
+
+Bayes factors
+
+- Articulate the principles of Bayesian approaches
+- Define what a Bayes factor represents
 
 :::
 
@@ -250,7 +251,7 @@ What [**confidence**]{.txt_mulberry} intervals are NOT:
 
 What [**credible**]{.txt_mulberry} intervals ARE:
 
-- Intervals that contain the 'true' population value of the parameter in 95% of samples
+- Intervals that contain the 'true' population value of the parameter with 0.95 (95%) probability.
 
 :::
 :::

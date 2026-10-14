@@ -12,16 +12,16 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ## Slide 2: Learning outcomes
 
-Bayes factors
-
-- Articulate the principles of Bayesian approaches
-- Define what a Bayes factor represents
-
 Bayesian estimation
 
 - Uninformative priors
 - Informatibe priors
 - Interpretation
+
+Bayes factors
+
+- Articulate the principles of Bayesian approaches
+- Define what a Bayes factor represents
 
 ## Slide 3
 
@@ -106,10 +106,10 @@ Video clip: [miltons walks 02](https://profandyfield.github.io/statistics_lectur
 
 ### Bayesian
 
-| Parameter   | Median | 95% CI           | pd   | Rhat  | ESS  | Prior                     |
-|-------------|--------|------------------|------|-------|------|---------------------------|
-| (Intercept) | 134.21 | (119.22, 149.23) | 100% | 1.000 | 3630 | Normal (193.20 +- 201.75) |
-| adverts     | 0.10   | (0.08, 0.11)     | 100% | 0.999 | 3845 | Normal (0.00 +- 0.42)     |
+| Parameter | Median | 95% CI | pd | Rhat | ESS (tail) | Prior |
+|----|----|----|----|----|----|----|
+| (Intercept) | 134.14 | (118.60, 149.08) | 100% | 1.000 | 2604 | Normal (193.20 +- 201.75) |
+| adverts | 0.10 | (0.08, 0.12) | 100% | 0.999 | 2409 | Normal (0.00 +- 0.42) |
 
 ## Slide 14: Confidence vs. Credible intervals
 
@@ -125,7 +125,7 @@ Video clip: [miltons walks 02](https://profandyfield.github.io/statistics_lectur
 >
 > What **credible** intervals ARE:
 >
-> - Intervals that contain the ‘true’ population value of the parameter in 95% of samples
+> - Intervals that contain the ‘true’ population value of the parameter with 0.95 (95%) probability.
 
 ## Slide 15: Informative priors
 
@@ -182,10 +182,10 @@ Video clip: [miltons walks 02](https://profandyfield.github.io/statistics_lectur
 
 ### Bayesian
 
-| Parameter   | Median | 95% CI         | pd     | Rhat  | ESS  | Prior               |
-|-------------|--------|----------------|--------|-------|------|---------------------|
-| (Intercept) | 26.25  | (-0.97, 53.35) | 97.10% | 1.000 | 2115 | Normal (20 +- 7.00) |
-| adverts     | 0.10   | (0.06, 0.13)   | 100%   | 1.000 | 2440 | Normal (1 +- 0.50)  |
+| Parameter   | Median | 95% CI         | pd     | Rhat  | ESS (tail) | Prior               |
+|-------------|--------|----------------|--------|-------|------------|---------------------|
+| (Intercept) | 26.83  | (-1.31, 52.48) | 96.97% | 1.001 | 2241       | Normal (20 +- 7.00) |
+| adverts     | 0.10   | (0.06, 0.13)   | 100%   | 1.000 | 2127       | Normal (1 +- 0.50)  |
 
 ## Slide 19
 
@@ -347,12 +347,12 @@ Video clip: [miltons walks 05](https://profandyfield.github.io/statistics_lectur
 
 ## Slide 35: Back to album sales
 
-| Parameter   | Median | 95% CI         | BF     | Rhat  | ESS  | Prior               |
-|-------------|--------|----------------|--------|-------|------|---------------------|
-| (Intercept) | 26.25  | (-0.97, 53.35) | 0.041  | 1.000 | 2115 | Normal (20 +- 7.00) |
-| adverts     | 0.10   | (0.06, 0.13)   | 601.16 | 1.000 | 2440 | Normal (1 +- 0.50)  |
+| Parameter   | Median | 95% CI         | BF    | Rhat  | ESS (tail) | Prior               |
+|-------------|--------|----------------|-------|-------|------------|---------------------|
+| (Intercept) | 26.83  | (-1.31, 52.48) | 0.045 | 1.001 | 2241       | Normal (20 +- 7.00) |
+| adverts     | 0.10   | (0.06, 0.13)   | 55.51 | 1.000 | 2127       | Normal (1 +- 0.50)  |
 
-- We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 601.
+- We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 56.
 
 ## Slide 36: Summary
 
