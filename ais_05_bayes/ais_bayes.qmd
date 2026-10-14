@@ -694,7 +694,7 @@ There's a 99% chance that you're human.
 ::: txt_mulberry
 $$
 \begin{aligned}
-\text{posterior odds} = \frac{p(\text{hypothesis 1}|\text{data})}{p(\text{hypothesis 2}|\text{data})} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01
+\text{posterior odds} = \frac{p(\text{Alt hypothesis}|\text{data})}{p(\text{Null hypothesis}|\text{data})} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01
 \end{aligned}
 $$
 :::
@@ -705,7 +705,7 @@ $$
 ::: txt_mulberry
 $$
 \begin{aligned}
-\frac{p(\text{alternative}|\text{data})}{p(\text{null}|\text{data})} = \frac{\frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p({\text{data})}}}{\frac{p(\text{data}|\text{null})\times p(\text{null})}{p({\text{data})}}} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01
+\frac{p(\text{alternative}|\text{data})}{p(\text{null}|\text{data})} = \frac{\frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p({\text{data})}}}{\frac{p(\text{data}|\text{null})\times p(\text{null})}{p({\text{data})}}}  = \frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p(\text{data}|\text{null})\times p(\text{null})} = 0.01
 \end{aligned}
 $$
 
@@ -773,16 +773,18 @@ $$
 
 ::: fragment
 ::: txt_mulberry
-::: txt_l
+::: txt_xl
 $$
 \begin{aligned}
 \frac{0.01}{0.99} &= \frac{1}{0.0495} \times \frac{0.0005}{0.9995} \\
+\\
 0.01 &= 20.20 \times 0.0005
 \end{aligned}
 $$
 :::
 :::
 :::
+
 
 ::: fragment
 ::: {.callout-note icon = false}

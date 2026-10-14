@@ -108,8 +108,8 @@ Video clip: [miltons walks 02](https://profandyfield.github.io/statistics_lectur
 
 | Parameter | Median | 95% CI | pd | Rhat | ESS (tail) | Prior |
 |----|----|----|----|----|----|----|
-| (Intercept) | 134.14 | (118.60, 149.08) | 100% | 1.000 | 2604 | Normal (193.20 +- 201.75) |
-| adverts | 0.10 | (0.08, 0.12) | 100% | 0.999 | 2409 | Normal (0.00 +- 0.42) |
+| (Intercept) | 133.91 | (118.98, 149.85) | 100% | 1.000 | 2467 | Normal (193.20 +- 201.75) |
+| adverts | 0.10 | (0.08, 0.12) | 100% | 1.000 | 2491 | Normal (0.00 +- 0.42) |
 
 ## Slide 14: Confidence vs. Credible intervals
 
@@ -184,8 +184,8 @@ Video clip: [miltons walks 02](https://profandyfield.github.io/statistics_lectur
 
 | Parameter   | Median | 95% CI         | pd     | Rhat  | ESS (tail) | Prior               |
 |-------------|--------|----------------|--------|-------|------------|---------------------|
-| (Intercept) | 26.83  | (-1.31, 52.48) | 96.97% | 1.001 | 2241       | Normal (20 +- 7.00) |
-| adverts     | 0.10   | (0.06, 0.13)   | 100%   | 1.000 | 2127       | Normal (1 +- 0.50)  |
+| (Intercept) | 27.45  | (-1.77, 54.25) | 96.53% | 1.002 | 1681       | Normal (20 +- 7.00) |
+| adverts     | 0.10   | (0.06, 0.13)   | 100%   | 1.001 | 1790       | Normal (1 +- 0.50)  |
 
 ## Slide 19
 
@@ -288,11 +288,11 @@ Video clip: [miltons walks 05](https://profandyfield.github.io/statistics_lectur
 ## Slide 31
 
 ``` math
- \begin{aligned} \text{posterior odds} = \frac{p(\text{hypothesis 1}|\text{data})}{p(\text{hypothesis 2}|\text{data})} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01 \end{aligned} 
+ \begin{aligned} \text{posterior odds} = \frac{p(\text{Alt hypothesis}|\text{data})}{p(\text{Null hypothesis}|\text{data})} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01 \end{aligned} 
 ```
 
 ``` math
- \begin{aligned} \frac{p(\text{alternative}|\text{data})}{p(\text{null}|\text{data})} = \frac{\frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p({\text{data})}}}{\frac{p(\text{data}|\text{null})\times p(\text{null})}{p({\text{data})}}} = \frac{p(\text{alien}|\text{match})}{p(\text{human}|\text{match})} = \frac{0.01}{0.99} = 0.01 \end{aligned} 
+ \begin{aligned} \frac{p(\text{alternative}|\text{data})}{p(\text{null}|\text{data})} = \frac{\frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p({\text{data})}}}{\frac{p(\text{data}|\text{null})\times p(\text{null})}{p({\text{data})}}} = \frac{p(\text{data}|\text{alternative})\times p(\text{alternative})}{p(\text{data}|\text{null})\times p(\text{null})} = 0.01 \end{aligned} 
 ```
 
 ``` math
@@ -318,7 +318,7 @@ Video clip: [miltons walks 05](https://profandyfield.github.io/statistics_lectur
 ![Image: bracket prior (no description provided yet)](images/bracket_prior.png)
 
 ``` math
- \begin{aligned} \frac{0.01}{0.99} &= \frac{1}{0.0495} \times \frac{0.0005}{0.9995} \\ 0.01 &= 20.20 \times 0.0005 \end{aligned} 
+ \begin{aligned} \frac{0.01}{0.99} &= \frac{1}{0.0495} \times \frac{0.0005}{0.9995} \\ \\ 0.01 &= 20.20 \times 0.0005 \end{aligned} 
 ```
 
 > **Note: Statis-tip**
@@ -347,12 +347,12 @@ Video clip: [miltons walks 05](https://profandyfield.github.io/statistics_lectur
 
 ## Slide 35: Back to album sales
 
-| Parameter   | Median | 95% CI         | BF    | Rhat  | ESS (tail) | Prior               |
-|-------------|--------|----------------|-------|-------|------------|---------------------|
-| (Intercept) | 26.83  | (-1.31, 52.48) | 0.045 | 1.001 | 2241       | Normal (20 +- 7.00) |
-| adverts     | 0.10   | (0.06, 0.13)   | 55.51 | 1.000 | 2127       | Normal (1 +- 0.50)  |
+| Parameter | Median | 95% CI | BF | Rhat | ESS (tail) | Prior |
+|----|----|----|----|----|----|----|
+| (Intercept) | 27.45 | (-1.77, 54.25) | 0.035 | 1.002 | 1681 | Normal (20 +- 7.00) |
+| adverts | 0.10 | (0.06, 0.13) | 1.14e+04 | 1.001 | 1790 | Normal (1 +- 0.50) |
 
-- We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 56.
+- We should shift our beliefs in advertising having a non-zero relationship to sales by a factor of about 11398.
 
 ## Slide 36: Summary
 
