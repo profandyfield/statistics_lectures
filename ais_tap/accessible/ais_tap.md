@@ -29,7 +29,11 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 > - **Code**: Create all of the objects you need to write the report
 > - **Report**: Write a succinct report that interprets the results of your model with reference to the hypothesis
 
-## Slide 3: Code
+## Slide 3: The model answer
+
+Interactive content: [Model answer from CANVAS](https://profandyfield.github.io/statistics_lectures/ais_tap/model_answer_2025.html)
+
+## Slide 4: Code
 
 > **Important: Code overview**
 >
@@ -47,7 +51,7 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
   - Don’t overthink it
   - You don’t have to include everything you do
 
-## Slide 4: Report
+## Slide 5: Report
 
 > **Important: Report overview**
 >
@@ -58,7 +62,7 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 
 ![Image: dsr2 fig 04 39 workflow (no description provided yet)](images/dsr2_fig_04_39_workflow.png)
 
-## Slide 5: Report
+## Slide 6: Report
 
 ### Tips
 
@@ -73,15 +77,19 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 - Interpret the size of the parameter estimates (and CIs) that test the hypotheses, and their real world substance.
   - Focussing only on *p*-values will not garner high marks.
 
-## Slide 6: Marking
+## Slide 7: Marking
 
 > **Caution: Assessment criteria**
 >
-> - **Theoretical understanding (70% of marks)**: This criterion assesses technical accuracy in your statistical thinking.
-> - **Coding (15% of marks)**: These marks relate to your R code. How elegant, succinct, and `discovr`-like is your Code?
-> - **Organization (15% of marks)**: how concise and well organised is your report? How well have you used the features of quarto to format your document?
+> - **Subject Knowledge and Understanding (70% of marks)**: This criterion assesses technical accuracy in your statistical thinking. Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis.
+> - **Practical Skills and Digital Capabilities (30% of marks)**: These marks relate to your R code and use of quarto to create a well presented report. How elegant, succinct, and `discovr`-like is your Code?
 
-## Slide 7: General advice
+- General PGT marking guidelines:
+  - [canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment](https://canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment)
+- Specific criteria for this module:
+  - [canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report](https://canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report)
+
+## Slide 8: General advice
 
 - You don’t need 48 hours
   - Do it on day 1, sleep well, quick review on day 2, then submit
@@ -101,6 +109,6 @@ This is a plain-text version of the lecture slides. Each slide starts with a hea
 > - Do not directly copy/paraphrase ANYTHING from the model answer.
 > - Collusion of any kind is NOT permitted on this module
 
-## Slide 8: End on a positive note …
+## Slide 9: End on a positive note …
 
-![Image: tap 01 2024 25 (no description provided yet)](images/tap_01_2024_25.png)
+![Image: tap 01 2025 26 (no description provided yet)](images/tap_01_2025_26.png)

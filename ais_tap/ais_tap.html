@@ -6,10 +6,10 @@
 <script src="ais_tap_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ais_tap_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ais_tap_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ais_tap_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ais_tap_files/libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="ais_tap_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="ais_tap_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Professor Andy Field">
   <title>Take-Away papers</title>
@@ -19,10 +19,16 @@
   <link rel="stylesheet" href="ais_tap_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="ais_tap_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -31,7 +37,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="ais_tap_files/libs/revealjs/dist/theme/quarto-ae208772f336504f6132608c19f21d0e.css">
+  <link rel="stylesheet" href="ais_tap_files/libs/revealjs/dist/theme/quarto-064eb4fb9dd36b4fd16c191c4f79aa78.css">
   <link href="ais_tap_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ais_tap_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ais_tap_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -197,6 +203,10 @@
 </div>
 </div>
 </section>
+<section id="the-model-answer" class="slide level2">
+<h2>The model answer</h2>
+<iframe width="780" height="600" src="./model_answer_2025.html" title="Model answer from CANVAS"></iframe>
+</section>
 <section id="code" class="slide level2">
 <h2>Code</h2>
 <div class="callout callout-important no-icon callout-titled callout-style-default">
@@ -224,7 +234,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="report-1" class="slide level2">
+<section id="report" class="slide level2">
 <h2>Report</h2>
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -247,7 +257,7 @@
 </figure>
 </div>
 </section>
-<section id="report-2" class="slide level2">
+<section id="report-1" class="slide level2">
 <h2>Report</h2>
 <h3 id="tips-1">Tips</h3>
 <ul>
@@ -278,15 +288,24 @@
 </div>
 <div class="callout-content">
 <ul>
-<li><strong>Theoretical understanding (70% of marks)</strong>: This criterion assesses technical accuracy in your statistical thinking.</li>
-<li><strong>Coding (15% of marks)</strong>: These marks relate to your <svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> code. How elegant, succinct, and <code>discovr</code>-like is your Code?</li>
-<li><strong>Organization (15% of marks)</strong>: how concise and well organised is your report? How well have you used the features of quarto to format your document?</li>
+<li><strong>Subject Knowledge and Understanding (70% of marks)</strong>: This criterion assesses technical accuracy in your statistical thinking. Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis.</li>
+<li><strong>Practical Skills and Digital Capabilities (30% of marks)</strong>: These marks relate to your <svg style="height: 1em; top:.04em; position: relative; fill: #136CB9;" viewbox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> code and use of quarto to create a well presented report. How elegant, succinct, and <code>discovr</code>-like is your Code?</li>
 </ul>
 </div>
 </div>
 </div>
+<ul>
+<li>General PGT marking guidelines:
+<ul>
+<li><a href="https://canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment">canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment</a></li>
+</ul></li>
+<li>Specific criteria for this module:
+<ul>
+<li><a href="https://canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report">canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report</a></li>
+</ul></li>
+</ul>
 <aside class="notes">
-<p><strong>Theoretical understanding (70% of marks)</strong>: This criterion assesses technical accuracy in your statistical thinking.Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis. For example, when describing a statistical procedure, or interpreting a statistical model, how technically accurate is your description/interpretation? How well do you understand the model you have fitted? How well have you related the models you have fitted to the original hypothesis and made a considered conclusion about the real world importance (or not) of the effects observed. Coding (15% of marks): These marks relate to your R code. How elegant, succinct, and tidyverse-like is your R Code? Is there evidence of AI-generated code? Organization (15% of marks): how concise and well organised is your report? Credit will be given to those who are selective in what analyses they include over those who include everything that they attempted. How well presented is your work? How well presented are plots and tables? How well have you used the features of quarto to format your document?</p>
+<p>Subject Knowledge and Understanding (70% of marks): This criterion assesses technical accuracy in your statistical thinking. Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis. For example, when describing a statistical procedure, or interpreting a statistical model, how technically accurate is your description/interpretation? How well do you understand the model you have fitted? How well have you related the models you have fitted to the original hypothesis and made a considered conclusion about the real world importance (or not) of the effects observed. Practical Skills and Digital Capabilities (30% of marks): These marks relate to your R code and use of quarto to create a well presented report. Have you used the code we we taught to address the set problem. Is your code elegant and succinct? How well have you used the features of quarto to create a well presented report?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -341,11 +360,11 @@
 <h2>End on a positive note …</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="media/tap_01_2024_25.png" class="quarto-figure quarto-figure-center" height="600"></p>
+<p><img data-src="media/tap_01_2025_26.png" class="quarto-figure quarto-figure-center" height="600"></p>
 </figure>
 </div>
 <aside class="notes">
-<p>Distinction - 45.28% Merit - 18.87% Pass - 20.75% Fail - 15.09%</p>
+<p>Distinction 37.50% Merit 18.75% Pass 21.88% Fail 21.88%</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

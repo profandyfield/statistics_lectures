@@ -59,6 +59,14 @@ Write a report containing two sections:
 :::
 :::
 
+## The model answer
+
+```{=html}
+<iframe width="780" height="600" src="./model_answer_2025.html" title="Model answer from CANVAS"></iframe>
+```
+
+
+
 ## Code
 
 :::{.callout-important icon=false}
@@ -123,16 +131,19 @@ Create all objects you need in this section (tables, plots, models etc)
 ::: {.callout-caution icon = false}
 ## {{< fa brain >}} Assessment criteria
 
-- **Theoretical understanding (70% of marks)**: This criterion assesses technical accuracy in your statistical thinking.
-- **Coding (15% of marks)**: These marks relate to your `r rproj()` code. How elegant, succinct, and `discovr`-like is your Code?
-- **Organization (15% of marks)**: how concise and well organised is your report? How well have you used the features of quarto to format your document?
+- **Subject Knowledge and Understanding (70% of marks)**: This criterion assesses technical accuracy in your statistical thinking. Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis.
+- **Practical Skills and Digital Capabilities (30% of marks)**: These marks relate to your `r rproj()` code and use of quarto to create a well presented report. How elegant, succinct, and `discovr`-like is your Code?
 
 :::
+
+- General PGT marking guidelines:
+  - [canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment](https://canvas.sussex.ac.uk/courses/3316/pages/examination-and-assessment)
+- Specific criteria for this module:
+  - [canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report](https://canvas.sussex.ac.uk/courses/39344/pages/marking-criteria-for-taps-and-report)
         
 ::: notes
-**Theoretical understanding (70% of marks)**: This criterion assesses technical accuracy in your statistical thinking.Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis. For example, when describing a statistical procedure, or interpreting a statistical model, how technically accurate is your description/interpretation? How well do you understand the model you have fitted? How well have you related the models you have fitted to the original hypothesis and made a considered conclusion about the real world importance (or not) of the effects observed.
-Coding (15% of marks): These marks relate to your R code. How elegant, succinct, and tidyverse-like is your R Code? Is there evidence of AI-generated code?
-Organization (15% of marks): how concise and well organised is your report? Credit will be given to those who are selective in what analyses they include over those who include everything that they attempted. How well presented is your work?  How well presented are plots and tables? How well have you used the features of quarto to format your document?
+Subject Knowledge and Understanding (70% of marks): This criterion assesses technical accuracy in your statistical thinking. Therefore, these marks relate to the statistical procedures you choose and how you interpret them in the context of the stated hypothesis. For example, when describing a statistical procedure, or interpreting a statistical model, how technically accurate is your description/interpretation? How well do you understand the model you have fitted? How well have you related the models you have fitted to the original hypothesis and made a considered conclusion about the real world importance (or not) of the effects observed.
+Practical Skills and Digital Capabilities (30% of marks): These marks relate to your R code and use of quarto to create a well presented report. Have you used the code we we taught to address the set problem. Is your code elegant and succinct? How well have you used the features of quarto to create a well presented report?
 :::
 
 ## General advice
@@ -167,12 +178,12 @@ Organization (15% of marks): how concise and well organised is your report? Cred
 ## End on a positive note ...
 
 
-![](media/tap_01_2024_25.png){fig-align="center" height=600}
+![](media/tap_01_2025_26.png){fig-align="center" height=600}
 
 ::: notes
-Distinction -  45.28%
-Merit - 18.87%
-Pass - 20.75%
-Fail - 15.09%
+Distinction 	37.50%
+Merit  	18.75%
+Pass 	21.88%
+Fail 	21.88%
 ::::
 
