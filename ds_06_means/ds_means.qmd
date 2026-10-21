@@ -25,6 +25,7 @@ library(DT)
 library(gt)
 library(easystats)
 library(tidyverse)
+library(sandwich)
 # specific
 
 source("../helpers/discovr_helpers.R")
@@ -116,11 +117,32 @@ Use f to toggle fullscreen
 
 :::
 
-# A ghoulish example
+# A ghoulish experiment
 
 ## {background-video="media/zombie_prank.mp4" background-size="cover"}
 
+## [A ghoulish experiment]{.txt_ong} {background-image="media/halloween_pumpkin_house.jpg" background-size="cover"}
 
+::: txt_dk_bg
+::: txt_white
+::: txt_xl
+
+- Research question
+  - Which is more scary: a zombie or werewolf?
+
+- Experimental design
+  - Independent groups
+  - Participants randomized to costume group
+
+- Predictor (independent) variable
+  - Costume (zombie, werewolf)
+
+- Outcome (dependent) variable
+  - Fear (0-10)
+  
+:::
+:::
+:::
 
 ##
 
@@ -469,25 +491,25 @@ cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |>
 
 ## [Another ghoulish example]{.txt_ong} {background-image="media/halloween_pumpkin_house.jpg" background-size="cover"}
 
+::: txt_dk_bg
 ::: txt_white
 
-- Which is more scary?
-  - Human
-  - Zombie
-  - Werewolf
+- Which is more scary: a human, zombie or werewolf?
 
-- Design
-  - Prank
+- Experimental design
+  - Independent groups
+  - Participants randomized to costume group
 
-- Outcome
-  - Fear
+- Predictor (independent) variable
+  - Costume (no costume, zombie, werewolf)
+
+- Outcome (dependent) variable
+  - Fear (0-10)
   
-- Process
-  - E.V.I.L.
+- Process of E.V.I.L.
   
 :::
 
-::: txt_dk_bg
 ::: {.callout-note icon = false}
 ## {{< fa chart-line >}} Statis-tip
 
@@ -498,9 +520,9 @@ cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |>
 :::
 :::
 
-![](media/oval_human.png){.absolute width="150" left=750 top=35}
-![](media/oval_zombie.png){.absolute width="150"  left=750 top=260}
-![](media/oval_milton.png){.absolute width="150" left=750 top=470}
+![](media/oval_human.png){.absolute width="150" left=800 top=35}
+![](media/oval_zombie.png){.absolute width="150"  left=800 top=260}
+![](media/oval_milton.png){.absolute width="150" left=800 top=470}
 
 
 

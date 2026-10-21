@@ -6,10 +6,10 @@
 <script src="ds_means_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ds_means_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ds_means_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ds_means_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="ds_means_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="ds_means_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="ds_means_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Professor Andy Field">
   <title>Categorical predictors</title>
@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="ds_means_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="ds_means_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -97,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ds_means_files/libs/revealjs/dist/theme/quarto-dff117a04bfff7015559a3c148d443fb.css">
+  <link rel="stylesheet" href="ds_means_files/libs/revealjs/dist/theme/quarto-064eb4fb9dd36b4fd16c191c4f79aa78.css">
   <link href="ds_means_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ds_means_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ds_means_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -191,7 +194,7 @@
       margin-right: 0; 
     }
   </style>
-  <link href="ds_means_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <link href="ds_means_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
   <script src="ds_means_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
   <link href="ds_means_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
   <script src="ds_means_files/libs/datatables-binding-0.34.0/datatables.js"></script>
@@ -393,12 +396,40 @@
 </div>
 </section>
 <section>
-<section id="a-ghoulish-example" class="title-slide slide level1 center">
-<h1>A ghoulish example</h1>
+<section id="a-ghoulish-experiment" class="title-slide slide level1 center">
+<h1>A ghoulish experiment</h1>
 
 </section>
 <section id="section-8" class="slide level2" data-background-video="media/zombie_prank.mp4" data-background-size="cover">
 <h2></h2>
+</section>
+<section id="a-ghoulish-experiment-1" class="slide level2" data-background-image="media/halloween_pumpkin_house.jpg" data-background-size="cover">
+<h2><span class="txt_ong">A ghoulish experiment</span></h2>
+<div class="txt_dk_bg">
+<div class="txt_white">
+<div class="txt_xl">
+<ul>
+<li>Research question
+<ul>
+<li>Which is more scary: a zombie or werewolf?</li>
+</ul></li>
+<li>Experimental design
+<ul>
+<li>Independent groups</li>
+<li>Participants randomized to costume group</li>
+</ul></li>
+<li>Predictor (independent) variable
+<ul>
+<li>Costume (zombie, werewolf)</li>
+</ul></li>
+<li>Outcome (dependent) variable
+<ul>
+<li>Fear (0-10)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
@@ -806,29 +837,26 @@ s_p &amp;= \sqrt{\frac{(N_1-1)s^2_1 + (N_2-1)s^2_2}{N_1 + N_2 -2}}
 </section>
 <section id="another-ghoulish-example" class="slide level2" data-background-image="media/halloween_pumpkin_house.jpg" data-background-size="cover">
 <h2><span class="txt_ong">Another ghoulish example</span></h2>
+<div class="txt_dk_bg">
 <div class="txt_white">
 <ul>
-<li>Which is more scary?
+<li><p>Which is more scary: a human, zombie or werewolf?</p></li>
+<li><p>Experimental design</p>
 <ul>
-<li>Human</li>
-<li>Zombie</li>
-<li>Werewolf</li>
+<li>Independent groups</li>
+<li>Participants randomized to costume group</li>
 </ul></li>
-<li>Design
+<li><p>Predictor (independent) variable</p>
 <ul>
-<li>Prank</li>
+<li>Costume (no costume, zombie, werewolf)</li>
 </ul></li>
-<li>Outcome
+<li><p>Outcome (dependent) variable</p>
 <ul>
-<li>Fear</li>
+<li>Fear (0-10)</li>
 </ul></li>
-<li>Process
-<ul>
-<li>E.V.I.L.</li>
-</ul></li>
+<li><p>Process of E.V.I.L.</p></li>
 </ul>
 </div>
-<div class="txt_dk_bg">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -846,7 +874,7 @@ s_p &amp;= \sqrt{\frac{(N_1-1)s^2_1 + (N_2-1)s^2_2}{N_1 + N_2 -2}}
 </div>
 </div>
 </div>
-<p><img data-src="media/oval_human.png" class="absolute" style="top: 35px; left: 750px; width: 150px; "> <img data-src="media/oval_zombie.png" class="absolute" style="top: 260px; left: 750px; width: 150px; "> <img data-src="media/oval_milton.png" class="absolute" style="top: 470px; left: 750px; width: 150px; "></p>
+<p><img data-src="media/oval_human.png" class="absolute" style="top: 35px; left: 800px; width: 150px; "> <img data-src="media/oval_zombie.png" class="absolute" style="top: 260px; left: 800px; width: 150px; "> <img data-src="media/oval_milton.png" class="absolute" style="top: 470px; left: 800px; width: 150px; "></p>
 </section>
 <section id="load-and-look" class="slide level2">
 <h2><span class="txt_ong">L</span>oad and <span class="txt_ong">L</span>ook</h2>
