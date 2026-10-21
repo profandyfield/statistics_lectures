@@ -68,19 +68,23 @@ Video clip: [cubit facetime live lecture 04](https://profandyfield.github.io/sta
   - The ‘fit’ represents the experimental manipulation (which defines the predictor)
   - ‘Significant’ fit equates to a ‘significant’ effect of the experimental manipulation
 
-## Slide 11 (new section): A ghoulish example
+## Slide 11 (new section): A ghoulish experiment
 
 ## Slide 12
 
 Video clip: [zombie prank](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/zombie_prank.mp4)
 
-## Slide 13
+## Slide 13: A ghoulish experiment
 
-![Image: ais standard error (no description provided yet)](images/ais_standard_error.png)
-
-### Same ghoul
-
-![Plot (no description provided yet)](images/ds_means_slide013_unnamed-chunk-4-1.png)
+- Research question
+  - Which is more scary: a zombie or werewolf?
+- Experimental design
+  - Independent groups
+  - Participants randomized to costume group
+- Predictor (independent) variable
+  - Costume (zombie, werewolf)
+- Outcome (dependent) variable
+  - Fear (0-10)
 
 ## Slide 14
 
@@ -88,17 +92,25 @@ Video clip: [zombie prank](https://profandyfield.github.io/statistics_lectures/d
 
 ### Same ghoul
 
-![Plot (no description provided yet)](images/ds_means_slide014_unnamed-chunk-5-1.png)
+![Plot (no description provided yet)](images/ds_means_slide014_unnamed-chunk-4-1.png)
 
 ## Slide 15
 
 ![Image: ais standard error (no description provided yet)](images/ais_standard_error.png)
 
-### Different ghouls
+### Same ghoul
 
-![Plot (no description provided yet)](images/ds_means_slide015_unnamed-chunk-6-1.png)
+![Plot (no description provided yet)](images/ds_means_slide015_unnamed-chunk-5-1.png)
 
 ## Slide 16
+
+![Image: ais standard error (no description provided yet)](images/ais_standard_error.png)
+
+### Different ghouls
+
+![Plot (no description provided yet)](images/ds_means_slide016_unnamed-chunk-6-1.png)
+
+## Slide 17
 
 | ID  | Costume | Fear | Numeric code |
 |-----|---------|------|--------------|
@@ -155,31 +167,31 @@ Video clip: [zombie prank](https://profandyfield.github.io/statistics_lectures/d
 
 Table 1: Data for the zombie vs. werewolf costume experiment (first 50 of 100 rows)
 
-## Slide 17: The model
-
-``` math
- \begin{aligned} Y_i &= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\ \text{Fear}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_{i} + e_i \end{aligned} 
-```
-
-![Plot (no description provided yet)](images/ds_means_slide017_unnamed-chunk-8-1.png)
-
 ## Slide 18: The model
 
 ``` math
  \begin{aligned} Y_i &= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\ \text{Fear}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_{i} + e_i \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_means_slide018_unnamed-chunk-9-1.png)
+![Plot (no description provided yet)](images/ds_means_slide018_unnamed-chunk-8-1.png)
 
 ## Slide 19: The model
+
+``` math
+ \begin{aligned} Y_i &= \hat{b}_0 + \hat{b}_1X_{i} + e_i \\ \text{Fear}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_{i} + e_i \end{aligned} 
+```
+
+![Plot (no description provided yet)](images/ds_means_slide019_unnamed-chunk-9-1.png)
+
+## Slide 20: The model
 
 ``` math
  \begin{aligned} \text{Fear}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_{i} + e_i \\ \hat{\text{Fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_{i} \\ \end{aligned} 
 ```
 
-![Plot (no description provided yet)](images/ds_means_slide019_unnamed-chunk-10-1.png)
+![Plot (no description provided yet)](images/ds_means_slide020_unnamed-chunk-10-1.png)
 
-## Slide 20: Dummy coding: b0
+## Slide 21: Dummy coding: b0
 
 - Dummy Coding
   - Zombie = 0,
@@ -192,7 +204,7 @@ Table 1: Data for the zombie vs. werewolf costume experiment (first 50 of 100 ro
  \begin{aligned} \hat{\text{fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Costume}_i \\ \bar{X}_\text{zombie} &= \hat{b}_0 + \hat{b}_1\times0 \\ \bar{X}_\text{zombie} &= \hat{b}_0 \end{aligned} 
 ```
 
-## Slide 21: Dummy coding: b1
+## Slide 22: Dummy coding: b1
 
 - When costume = werewolf
   - Costume = 1
@@ -206,7 +218,7 @@ Table 1: Data for the zombie vs. werewolf costume experiment (first 50 of 100 ro
  \begin{aligned} \bar{X}_\text{werewolf} &= \bar{X}_\text{zombie} + \hat{b}_1 \\ \hat{b}_1 &= \bar{X}_\text{werewolf} - \bar{X}_\text{zombie} \end{aligned} 
 ```
 
-## Slide 22: The linear model
+## Slide 23: The linear model
 
 - We can fit a linear model with fear as the outcome and the type of costume (zombie or werewolf) as the predictor, note:
   - Intercept (*b*<sub>0</sub>) is the mean of ‘zero coded’ group
@@ -223,7 +235,7 @@ model_parameters(zombie_lm) |>
 | (Intercept)        | 7.00        | 0.30 | (6.41, 7.59)   | 23.40 | \< .001 |
 | Costume (Werewolf) | -2.50       | 0.42 | (-3.34, -1.66) | -5.91 | \< .001 |
 
-## Slide 23: Standardized effect size: Cohens \\\hat{d}\\
+## Slide 24: Standardized effect size: Cohens \\\hat{d}\\
 
 - Cohens $`\hat{d}`$ expresses the difference in means in standard deviation units
 - Guide (but we’re not selling T-shirts …)
@@ -244,38 +256,44 @@ cohens_d(Fear ~ Costume, data = zombie_tib, reference = "Werewolf") |>
 |-----------|----------------|
 | 1.18      | \[0.75, 1.60\] |
 
-## Slide 24
+## Slide 25
 
 Video clip: [cubit azal lecture middle captioned](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_azal_lecture_middle_captioned.mp4)
 
-## Slide 25
+## Slide 26
 
 Video clip: [cubit facetime live lecture 05](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_facetime_live_lecture_05.mp4)
 
-## Slide 26
+## Slide 27
 
 Video clip: [cubit facetime live lecture 06](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_facetime_live_lecture_06.mp4)
 
-## Slide 27
+## Slide 28
 
 Video clip: [cubit facetime live lecture 07](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_facetime_live_lecture_07.mp4)
 
-## Slide 28
+## Slide 29
 
 Video clip: [cubit facetime live lecture 08](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_facetime_live_lecture_08.mp4)
 
-## Slide 29: Another ghoulish example
+## Slide 30: Another ghoulish example
 
-- Which is more scary?
-  - Human
-  - Zombie
-  - Werewolf
-- Design
-  - Prank
-- Outcome
-  - Fear
-- Process
-  - E.V.I.L.
+- Which is more scary: a human, zombie or werewolf?
+
+- Experimental design
+
+  - Independent groups
+  - Participants randomized to costume group
+
+- Predictor (independent) variable
+
+  - Costume (no costume, zombie, werewolf)
+
+- Outcome (dependent) variable
+
+  - Fear (0-10)
+
+- Process of E.V.I.L.
 
 > **Note: Statis-tip**
 >
@@ -285,7 +303,7 @@ Video clip: [cubit facetime live lecture 08](https://profandyfield.github.io/sta
 
 ![Image: oval human (no description provided yet)](images/oval_human.png)![Image: oval zombie (no description provided yet)](images/oval_zombie.png)![Image: oval milton (no description provided yet)](images/oval_milton.png)
 
-## Slide 30: Load and Look
+## Slide 31: Load and Look
 
 ![Image: l hex (no description provided yet)](images/l_hex.png)
 
@@ -302,19 +320,19 @@ Video clip: [cubit facetime live lecture 08](https://profandyfield.github.io/sta
 
 $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 4.47`$
 
-## Slide 31: Visualize the model
-
-![Image: v hex (no description provided yet)](images/v_hex.png)
-
-![Plot (no description provided yet)](images/ds_means_slide031_unnamed-chunk-17-1.png)
-
 ## Slide 32: Visualize the model
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
-![Plot (no description provided yet)](images/ds_means_slide032_unnamed-chunk-18-1.png)
+![Plot (no description provided yet)](images/ds_means_slide032_unnamed-chunk-17-1.png)
 
-## Slide 33: Dummy coding multiple categories
+## Slide 33: Visualize the model
+
+![Image: v hex (no description provided yet)](images/v_hex.png)
+
+![Plot (no description provided yet)](images/ds_means_slide033_unnamed-chunk-18-1.png)
+
+## Slide 34: Dummy coding multiple categories
 
 - You can code any categorical predictor into a series of dummy variables
   - Dummy variables must be entered in the same block
@@ -332,7 +350,7 @@ $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 4.47`$
  \begin{aligned} \hat{\text{Fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Zombie vs. Human}_i + \hat{b}_2\text{Werewolf vs. Human}_i \end{aligned} 
 ```
 
-## Slide 34: Dummy coding: b0
+## Slide 35: Dummy coding: b0
 
 - When entity = human
   - Zombie vs. Human = 0
@@ -351,7 +369,7 @@ $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 4.47`$
  \begin{aligned} \hat{\text{Fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Zombie vs. Human}_i + \hat{b}_2\text{Werewolf vs. Human}_i \\ \bar{X}_\text{human} &= \hat{b}_0 + \hat{b}_1\times 0 + \hat{b}_2\times 0 \\ \hat{b}_0 &= \bar{X}_\text{human} \end{aligned} 
 ```
 
-## Slide 35: Dummy coding: b1
+## Slide 36: Dummy coding: b1
 
 - When entity = zombie
   - Zombie vs. Human = 1
@@ -370,7 +388,7 @@ $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 4.47`$
  \begin{aligned} \hat{\text{Fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Zombie vs. Human}_i + \hat{b}_2\text{Werewolf vs. Human}_i \\ \bar{X}_\text{zombie} &= \hat{b}_0 + \hat{b}_1\times 1 + \hat{b}_2\times 0 \\ \bar{X}_\text{zombie} &= \hat{b}_0 + \hat{b}_1 \\ \hat{b}_1 &= \bar{X}_\text{zombie}- \hat{b}_0 \\ &= \bar{X}_\text{zombie}- \bar{X}_\text{human} \end{aligned} 
 ```
 
-## Slide 36: Dummy coding: b2
+## Slide 37: Dummy coding: b2
 
 - When entity = werewolf
   - Zombie vs. Human = 0
@@ -389,15 +407,15 @@ $`\text{Overall mean (} \bar{X}_\text{grand}\text{)} = 4.47`$
  \begin{aligned} \hat{\text{Fear}}_i &= \hat{b}_0 + \hat{b}_1\text{Zombie vs. Human}_i + \hat{b}_2\text{Werewolf vs. Human}_i \\ \bar{X}_\text{werewolf} &= \hat{b}_0 + \hat{b}_1\times 0 + \hat{b}_2\times 1 \\ \bar{X}_\text{werewolf} &= \hat{b}_0 + \hat{b}_2 \\ \hat{b}_2 &= \bar{X}_\text{werewolf}- \hat{b}_0 \\ &= \bar{X}_\text{werewolf}- \bar{X}_\text{human} \end{aligned} 
 ```
 
-## Slide 37: The model
+## Slide 38: The model
 
-![Plot (no description provided yet)](images/ds_means_slide037_unnamed-chunk-23-1.png)
-
-## Slide 38: The parameter values
-
-![Plot (no description provided yet)](images/ds_means_slide038_unnamed-chunk-24-1.png)
+![Plot (no description provided yet)](images/ds_means_slide038_unnamed-chunk-23-1.png)
 
 ## Slide 39: The parameter values
+
+![Plot (no description provided yet)](images/ds_means_slide039_unnamed-chunk-24-1.png)
+
+## Slide 40: The parameter values
 
 |          | Human | Zombie | Werewolf |
 |----------|-------|--------|----------|
@@ -414,7 +432,7 @@ $`\hat{b}_1 = \bar{X}_\text{zombie} - \bar{X}_\text{human} = 7.20 - 2.40 = 4.80`
 
 $`\hat{b}_2 = \bar{X}_\text{werewolf} - \bar{X}_\text{human} = 3.80 - 2.40 = 1.40`$
 
-## Slide 40
+## Slide 41
 
 ### The model
 
@@ -431,9 +449,9 @@ $`\hat{b}_2 = \bar{X}_\text{werewolf} - \bar{X}_\text{human} = 3.80 - 2.40 = 1.4
 human_lm <- lm(fear ~ entity, data = humans_tib)
 ```
 
-## Slide 41 (new section): Evaluate the model
+## Slide 42 (new section): Evaluate the model
 
-## Slide 42: How to Evaluate
+## Slide 43: How to Evaluate
 
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
@@ -453,35 +471,35 @@ human_lm <- lm(fear ~ entity, data = humans_tib)
 - Interpreted the same as other models
 - Residual plots will show vertical lines of dots (review the **Beast of Bias** lecture)
 
-## Slide 43: Total sum of squared error, SST
-
-![Plot (no description provided yet)](images/ds_means_slide043_unnamed-chunk-27-1.png)
-
 ## Slide 44: Total sum of squared error, SST
 
-![Plot (no description provided yet)](images/ds_means_slide044_unnamed-chunk-28-1.png)
+![Plot (no description provided yet)](images/ds_means_slide044_unnamed-chunk-27-1.png)
 
-## Slide 45: Residual sum of squared error, SSR
+## Slide 45: Total sum of squared error, SST
 
-![Plot (no description provided yet)](images/ds_means_slide045_unnamed-chunk-29-1.png)
+![Plot (no description provided yet)](images/ds_means_slide045_unnamed-chunk-28-1.png)
 
 ## Slide 46: Residual sum of squared error, SSR
 
-![Plot (no description provided yet)](images/ds_means_slide046_unnamed-chunk-30-1.png)
+![Plot (no description provided yet)](images/ds_means_slide046_unnamed-chunk-29-1.png)
 
-## Slide 47: Model sum of squared error, SSM
+## Slide 47: Residual sum of squared error, SSR
 
-![Plot (no description provided yet)](images/ds_means_slide047_unnamed-chunk-31-1.png)
+![Plot (no description provided yet)](images/ds_means_slide047_unnamed-chunk-30-1.png)
 
 ## Slide 48: Model sum of squared error, SSM
 
-![Plot (no description provided yet)](images/ds_means_slide048_unnamed-chunk-32-1.png)
+![Plot (no description provided yet)](images/ds_means_slide048_unnamed-chunk-31-1.png)
 
 ## Slide 49: Model sum of squared error, SSM
 
-![Plot (no description provided yet)](images/ds_means_slide049_unnamed-chunk-33-1.png)
+![Plot (no description provided yet)](images/ds_means_slide049_unnamed-chunk-32-1.png)
 
-## Slide 50: Overall fit
+## Slide 50: Model sum of squared error, SSM
+
+![Plot (no description provided yet)](images/ds_means_slide050_unnamed-chunk-33-1.png)
+
+## Slide 51: Overall fit
 
 ``` r
 # get F
@@ -508,15 +526,15 @@ model_performance(human_lm) |>
 >
 > The type of monster in the prank had a significant effect on fear levels, *F*(2, 12) = 5.02, *p* = 0.026, *R*<sup>2</sup> = 0.46.
 
-## Slide 51: Evaluate assumptions
+## Slide 52: Evaluate assumptions
 
 ``` r
 check_model(human_lm)
 ```
 
-![Plot (no description provided yet)](images/ds_means_slide051_unnamed-chunk-39-1.png)
+![Plot (no description provided yet)](images/ds_means_slide052_unnamed-chunk-39-1.png)
 
-## Slide 52: Robust F-statistic
+## Slide 53: Robust F-statistic
 
 ``` r
 welchf <- oneway.test(fear ~ entity, data = humans_tib)
@@ -534,13 +552,13 @@ One-way analysis of means (not assuming equal variances)
 >
 > The type of monster in the prank had a significant effect on fear levels, F(2, 7.74) = 6.89, *p* = 0.019.
 
-## Slide 53 (new section): Interpret the model
+## Slide 54 (new section): Interpret the model
 
-## Slide 54: Robust procedures
+## Slide 55: Robust procedures
 
 ![Image: dsr2 fig 08 13 robust flow (no description provided yet)](images/dsr2_fig_08_13_robust_flow.png)
 
-## Slide 55: Interpret parameter estimates, CIs and tests
+## Slide 56: Interpret parameter estimates, CIs and tests
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
@@ -562,14 +580,14 @@ model_parameters(human_lm, vcov = "HC4") |>
 >
 > The type of monster in the prank had a significant effect on fear levels, F(2, 7.74) = 6.89, *p* = 0.019. Compared to humans, zombies elicited greater fear, $`\hat{b}`$ = 4.80 (2.04, 7.56), *t*(12) = 3.79, *p* = 0.003, but werewolves did not, $`\hat{b}`$ = 1.40 (-2.31, 5.11), *t*(12) = 0.82, *p* = 0.427.
 
-## Slide 56
+## Slide 57
 
 Video clip: [cubit azal lecture end captioned](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/cubit_azal_lecture_end_captioned.mp4)
 
-## Slide 57
+## Slide 58
 
 Video clip: [f song instrumental](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/f_song_instrumental.mp4)
 
-## Slide 58
+## Slide 59
 
 Video clip: [f song](https://profandyfield.github.io/statistics_lectures/ds_06_means/media/f_song.mp4)
