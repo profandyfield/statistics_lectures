@@ -40,7 +40,7 @@ Video clip: [pirate scene 1 2 small](https://profandyfield.github.io/statistics_
 
 ## Slide 9: Does AI-use reduce critical thinking?1
 
-- 669 participants (666 considered ‘valid’ 😈)
+- 669 participants (666 considered ‘valid’ 👿)
 - Measures
   - AI-tool usage (`ai`)
   - Cognitive offloading (`cog_off`): externalisation of cognitive processes, often involving tools or external agents, such as notes, calculators, or digital tools like AI, to reduce cognitive load.
@@ -332,7 +332,15 @@ Video clip: [pirate scene 2 2 small](https://profandyfield.github.io/statistics_
 
 1.  Ajzen, I. (1985). From intentions to actions: A theory of planned behavior. In J. Kuhl & J. Beckmann (Eds.), *Action control: From cognition to behavior*. Berlin, Heidelber, New York: Springer-Verlag. (pp. 11–39).
 
-## Slide 30: The theory of planned behaviour and AI1
+## Slide 30
+
+![Image: theory of planned behaviour fade (no description provided yet)](images/theory_of_planned_behaviour_fade.svg)
+
+## Slide 31
+
+![Image: theory of planned behaviour mediate (no description provided yet)](images/theory_of_planned_behaviour_mediate.svg)
+
+## Slide 32: The theory of planned behaviour and AI1
 
 - 610 participants
 - AI-tool usage (`ai_use`)
@@ -349,7 +357,7 @@ Video clip: [pirate scene 2 2 small](https://profandyfield.github.io/statistics_
 
 1.  Greitemeyer, T., & Kastenmüller, A. (2024). A longitudinal analysis of the willingness to use chatGPT for academic cheating: Applying the theory of planned behavior. *Technology, Mind, and Behavior*, 5(2), 1–8. <https://doi.org/10.1037/tmb0000133>
 
-## Slide 31: Hypotheses
+## Slide 33: Hypotheses
 
 > What can we predict from the theory of planned behaviour?
 
@@ -362,7 +370,7 @@ Video clip: [pirate scene 2 2 small](https://profandyfield.github.io/statistics_
 > - H<sub>1</sub>: Higher subjective norms are associated with greater AI usage (without declaring it).
 > - H<sub>2</sub>: Intention to use AI mediates the relationship between subjective norms and AI usage.
 
-## Slide 32: Load and Look
+## Slide 34: Load and Look
 
 |     | id         | norms            | intention | ai_use |
 |-----|------------|------------------|-----------|--------|
@@ -431,17 +439,17 @@ describe_distribution(greitemeyer_tib) |> display()
 | intention | 3.55 | 1.83 | 3.00 | (1.00, 7.00) | 0.19     | -1.13    | 610 | 0         |
 | ai_use    | 1.53 | 1.27 | 0.00 | (1.00, 7.00) | 3.05     | 9.44     | 610 | 0         |
 
-## Slide 33: Visualize
+## Slide 35: Visualize
 
 ``` r
 ggscatmat(data = greitemeyer_tib, alpha = 0.5) + theme_minimal()
 ```
 
-![Plot (no description provided yet)](images/ds_mediation_slide033_unnamed-chunk-15-1.png)
+![Plot (no description provided yet)](images/ds_mediation_slide035_unnamed-chunk-15-1.png)
 
 ![Image: v hex (no description provided yet)](images/v_hex.png)
 
-## Slide 34: The mediation model
+## Slide 36: The mediation model
 
 ![Image: dsr2 fig 10 10 mediation norms ai (no description provided yet)](images/dsr2_fig_10_10_mediation_norms_ai.svg)
 
@@ -449,7 +457,7 @@ ggscatmat(data = greitemeyer_tib, alpha = 0.5) + theme_minimal()
  \begin{aligned} \widehat{\text{AI use}}_i &= \hat{c}\text{Subjective norms}_i +\hat{b}\text{Intention}_i \\ \widehat{\text{Intention}}_i &= \hat{a}\text{Subjective norms}_i \\ \\ \text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\ \text{Total effect} &= c + (a \times b) \end{aligned} 
 ```
 
-## Slide 35: Specifying the model
+## Slide 37: Specifying the model
 
 ``` r
 greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
@@ -464,7 +472,7 @@ greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
  \begin{aligned} \widehat{\text{AI use}}_i &= \hat{c}\text{Subjective norms}_i +\hat{b}\text{Intention}_i \\ \widehat{\text{Intention}}_i &= \hat{a}\text{Subjective norms}_i \\ \\ \text{Total effect} &= \text{Direct effect} + \text{Indirect effect} \\ \text{Total effect} &= c + (a \times b) \end{aligned} 
 ```
 
-## Slide 36: Fitting the model
+## Slide 38: Fitting the model
 
 ``` r
 greitemeyer_mod <- 'ai_use ~ c*norms + b*intention
@@ -480,7 +488,7 @@ greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
                            estimator = "MLR")
 ```
 
-## Slide 37: Evaluate
+## Slide 39: Evaluate
 
 > **Note: Statis-tip**
 >
@@ -490,7 +498,7 @@ greitemeyer_fit <- lavaan::sem(model = greitemeyer_mod,
 
 ![Image: e hex (no description provided yet)](images/e_hex.png)
 
-## Slide 38: Interpret parameter estimates, CIs and tests
+## Slide 40: Interpret parameter estimates, CIs and tests
 
 ``` r
 model_parameters(greitemeyer_fit) |> 
@@ -510,11 +518,11 @@ model_parameters(greitemeyer_fit) |>
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
-## Slide 39: The fitted model
+## Slide 41: The fitted model
 
 ![Image: dsr2 fig 10 11 mediation norms with coefficients (no description provided yet)](images/dsr2_fig_10_11_mediation_norms_with_coefficients.svg)
 
-## Slide 40: Standardized parameter estimates
+## Slide 42: Standardized parameter estimates
 
 ``` r
 model_parameters(greitemeyer_fit, standardize = TRUE) |> 
@@ -534,23 +542,23 @@ model_parameters(greitemeyer_fit, standardize = TRUE) |>
 
 ![Image: i hex (no description provided yet)](images/i_hex.png)
 
-## Slide 41: The fitted model
+## Slide 43: The fitted model
 
 ![Image: dsr2 fig 10 11 mediation norms with zcoefficients (no description provided yet)](images/dsr2_fig_10_11_mediation_norms_with_zcoefficients.svg)
 
-## Slide 42
+## Slide 44
 
 Video clip: [pirate scene entry deck small](https://profandyfield.github.io/statistics_lectures/ds_05_mediation/media/pirate_scene_entry_deck_small.mp4)
 
-## Slide 43
+## Slide 45
 
 Video clip: [pirate scene 3 small](https://profandyfield.github.io/statistics_lectures/ds_05_mediation/media/pirate_scene_3_small.mp4)
 
-## Slide 44
+## Slide 46
 
 Video clip: [pirate academy end small](https://profandyfield.github.io/statistics_lectures/ds_05_mediation/media/pirate_academy_end_small.mp4)
 
-## Slide 45: Summary
+## Slide 47: Summary
 
 - Mediation is when the relationship between a predictor and outcome can be explained by their relationship to a third variable.
 - The **total effect** between a predictor and outcome can be broken down into:

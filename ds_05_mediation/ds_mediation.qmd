@@ -465,6 +465,14 @@ model_parameters(gerlich_fit, standardize = TRUE, component = "defined") |>
 
 ![](media/theory_of_planned_behaviour.svg){fig-align="center" height=500}
 
+## 
+
+![](media/theory_of_planned_behaviour_fade.svg){fig-align="center" height=500}
+
+## 
+
+![](media/theory_of_planned_behaviour_mediate.svg){fig-align="center" height=500}
+
 ## The theory of planned behaviour and AI^[Greitemeyer, T., & Kastenmüller, A. (2024). A longitudinal analysis of the willingness to use chatGPT for academic cheating: Applying the theory of planned behavior. *Technology, Mind, and Behavior*, 5(2), 1–8. [https://doi.org/10.1037/tmb0000133](https://doi.org/10.1037/tmb0000133)]
 
 - 610 participants
