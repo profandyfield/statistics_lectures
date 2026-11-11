@@ -6,10 +6,10 @@
 <script src="mlm_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="mlm_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="mlm_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="mlm_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="mlm_files/libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="mlm_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="mlm_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Professor Andy Field">
   <title>Multilevel models</title>
@@ -19,10 +19,16 @@
   <link rel="stylesheet" href="mlm_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="mlm_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -31,7 +37,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="mlm_files/libs/revealjs/dist/theme/quarto-2fffc998b06e14e5a7e83b4e47428c6f.css">
+  <link rel="stylesheet" href="mlm_files/libs/revealjs/dist/theme/quarto-064eb4fb9dd36b4fd16c191c4f79aa78.css">
   <link href="mlm_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="mlm_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="mlm_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -710,37 +716,33 @@ u_n
 </ul>
 </div>
 </section>
-<section id="practical-issues" class="slide level2">
-<h2>Practical issues</h2>
-<h3 id="computing-p-values">Computing <em>p</em>-values</h3>
+<section id="practical-issues-computing-p-values" class="slide level2">
+<h2>Practical issues: computing <em>p</em>-values</h2>
 <ul>
 <li>There is no unifying method to compute <em>p</em>-values in multilevel models because the degrees of freedom of the test statistic are rarely known.</li>
 <li>df can be approximated (e.g., Satterthwaite and Kenward-Roger methods) but it’s unclear how good these approximations are for complex models/complex covariance structures.</li>
 </ul>
 </section>
-<section id="practical-issues-1" class="slide level2">
-<h2>Practical issues</h2>
-<h3 id="should-effects-be-fixed-or-random">Should effects be fixed or random?</h3>
+<section id="practical-issues-should-effects-be-fixed-or-random" class="slide level2">
+<h2>Practical issues: Should effects be fixed or random?</h2>
 <div class="fragment">
-<ul>
-<li>Three approaches
+<h3 id="three-approaches">Three approaches</h3>
 <ul>
 <li>Theory-driven</li>
 <li>Maximal model (Barr et al., 2013)</li>
 <li>Data-driven (include random effects that improve fit)</li>
-</ul></li>
 </ul>
 </div>
 <div class="fragment">
+<h3 id="treat-a-predictor-as-a-random-effect-if-bolker-2015">Treat a predictor as a random effect if … (Bolker, 2015)</h3>
 <ul>
-<li>Treat a predictor as a random effect if … (Bolker, 2015)
+<li>You’re <strong>not</strong> interested in differences between the levels.
 <ul>
-<li>You’re <strong>not</strong> interested in differences between the levels.</li>
+<li>You have a categorical predictor that is not direct relevant to the hypothesis but for which you need to adjust (a nuisance variable).</li>
+</ul></li>
 <li>You’re interested in quantifying the variability across levels of the variable.</li>
 <li>You’re interested in generalizing beyond the observed levels of the contextual variable.</li>
 <li>You have an unbalanced design.</li>
-<li>You have a categorical predictor that is not direct relevant to the hypothesis but for which you need to adjust (a nuisance variable).</li>
-</ul></li>
 </ul>
 </div>
 </section>

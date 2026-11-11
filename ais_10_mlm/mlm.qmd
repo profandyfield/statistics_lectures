@@ -476,38 +476,40 @@ $$
     -   Linearity and additivity
     -   Level 1 errors are normally distributed with mean of zero and constant variance (i.e. homoscedasticity)
     -   Independent errors (but we can model dependency)
+
 :::
 
 ::: fragment
 -   New assumptions
     -   Random effects (slopes and intercepts) are assumed to be normally distributed with mean of zero and constant variance (i.e. homoscedasticity)
+
 :::
 
-## Practical issues
-
-### Computing *p*-values
+## Practical issues: computing *p*-values
 
 -   There is no unifying method to compute *p*-values in multilevel models because the degrees of freedom of the test statistic are rarely known.
 -   df can be approximated (e.g., Satterthwaite and Kenward-Roger methods) but it's unclear how good these approximations are for complex models/complex covariance structures.
 
-## Practical issues
-
-### Should effects be fixed or random?
+## Practical issues: Should effects be fixed or random?
 
 ::: fragment
--   Three approaches
-    -   Theory-driven
-    -   Maximal model (Barr et al., 2013)
-    -   Data-driven (include random effects that improve fit)
+### Three approaches
+
+-   Theory-driven
+-   Maximal model (Barr et al., 2013)
+-   Data-driven (include random effects that improve fit)
+
 :::
 
 ::: fragment
--   Treat a predictor as a random effect if ... (Bolker, 2015)
-    -   You're **not** interested in differences between the levels.
-    -   You're interested in quantifying the variability across levels of the variable.
-    -   You're interested in generalizing beyond the observed levels of the contextual variable.
-    -   You have an unbalanced design.
-    -   You have a categorical predictor that is not direct relevant to the hypothesis but for which you need to adjust (a nuisance variable).
+###  Treat a predictor as a random effect if ... (Bolker, 2015)
+
+- You're **not** interested in differences between the levels.
+  - You have a categorical predictor that is not direct relevant to the hypothesis but for which you need to adjust (a nuisance variable).
+- You're interested in quantifying the variability across levels of the variable.
+- You're interested in generalizing beyond the observed levels of the contextual variable.
+- You have an unbalanced design.
+
 :::
 
 
